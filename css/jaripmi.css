@@ -288,18 +288,6 @@ Main components
     padding-top: 80px;
   }
 }
-.site-logo {
-  position: absolute;
-  top: 15px;
-  left: 16px;
-  display: block;
-  width: 174px;
-  z-index: 22;
-}
-.site-logo:hover {
-  cursor: pointer;
-}
-
 .site-logo img {
   display: block;
 }

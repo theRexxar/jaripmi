@@ -1,5 +1,10 @@
 
-// variables only for header
+// variables only for header$screen-sm: 576px;
+// $screen-md: 768px;
+// $screen-lg: 992px;
+// $screen-xl: 1200px;
+// $screen-xxl: 1400;
+
 
 $header-height: 80px;
 $header-see-all-height: 56px;
@@ -138,17 +143,18 @@ Main components
     }
 }
 
-.site-logo {
-    position: absolute;
-    top: 15px; // (header height - logo height) / 2 ==> mobile view
-    left: $gutter;
-    display: block;
-    width: $header-logo-width;
-    z-index: 22;
-    &:hover {
-        cursor: pointer;
-    }
-}
+// .site-logo {
+//     position: absolute;
+//     top: 15px; // (header height - logo height) / 2 ==> mobile view
+//     left: $gutter;
+//     display: block;
+//     width: $header-logo-width;
+//     z-index: 22;
+//     &:hover {
+//         cursor: pointer;
+//     }
+// }
+
 
 .site-logo img {
     display: block;

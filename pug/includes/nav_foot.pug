@@ -2,7 +2,7 @@
 .site-overlay
 // end overlay
 // start site nav
-nav.site-nav.w-100
+nav.site-nav.w-100.d-flex.justify-content-end
   #site-primary-nav.site-primary-nav.is-fixed
     ul.nav-group
         li
@@ -40,7 +40,9 @@ nav.site-nav.w-100
             a(href='#') Artikel
             
         li
-            a.uh-btn.btn-cta-header.bg-primary(href='#') Layanan Aduan
+            a.uh-btn.btn-cta-header.btn-gradient(href='#') 
+                i.bi.bi-telephone-fill.me-2.text-white
+                | Layanan Aduan
     //- ul.nav-group
     //-   li.has-children.small-children.first-xs
     //-     a

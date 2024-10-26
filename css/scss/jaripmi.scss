@@ -1,10 +1,7 @@
 @import "custom/variable";
-body{
-  font-family: $font-display;
-}
-.outline{
-    outline: solid 1px red;
-}
+@import "custom/utility";
+@import "custom/button";
+
 ol, ul {
     list-style: none;
   }
@@ -20,7 +17,6 @@ ol, ul {
   margin-top: -80px; // reflect to $header-height (80px)
   padding-top: 4rem;
   min-height: calc(100vh + 80px - 200px);
-  background-color: var(--b100);
 
   &> div{
       position: relative;

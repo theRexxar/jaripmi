@@ -13,6 +13,7 @@ jQuery(document).ready(function($){
 		if( $('.site-main-content').hasClass('nav-is-visible') ) {
 			closeNav();
 			$('.site-overlay').removeClass('is-visible');
+			$(".site-main-header").removeClass("header-active");
 		} else {
 			$(this).addClass('nav-is-visible');
 			$('.site-primary-nav').addClass('nav-is-visible');
@@ -21,6 +22,7 @@ jQuery(document).ready(function($){
 				$('body').addClass('overflow-hidden');
 			});
 			$('.site-overlay').addClass('is-visible');
+			$(".site-main-header").addClass("header-active");
 		}
 	});
 
@@ -30,17 +32,20 @@ jQuery(document).ready(function($){
 		if($('.site-primary-nav').hasClass('nav-is-visible')) {
 			closeNav();
 			$('.site-overlay').removeClass('is-visible');
+			$(".site-main-header").removeClass("header-active");
 		}
 	});
 	$('.nav-on-left .site-overlay').on('swipeleft', function(){
 		if($('.site-primary-nav').hasClass('nav-is-visible')) {
 			closeNav();
 			$('.site-overlay').removeClass('is-visible');
+			$(".site-main-header").removeClass("header-active");
 		}
 	});
 	$('.site-overlay').on('click', function(){
 		closeNav();
 		$('.site-overlay').removeClass('is-visible');
+		$(".site-main-header").removeClass("header-active");
 	});
 
 
@@ -58,9 +63,11 @@ jQuery(document).ready(function($){
 			selected.parent('.has-children').siblings('.has-children').children('ul').addClass('is-hidden').end().children('a').removeClass('selected');
 			selected.parent('.has-children').parent().siblings().children('.has-children').children('ul').addClass('is-hidden').end().children('a').removeClass('selected');
 			$('.site-overlay').addClass('is-visible');
+			$(".site-main-header").addClass("header-active");
 		} else {
 			selected.removeClass('selected').next('ul').addClass('is-hidden').end().parent('.has-children').parent().parent().removeClass('moves-out');
 			$('.site-overlay').removeClass('is-visible');
+			$(".site-main-header").removeClass("header-active");
 		}
 		// toggleSearch('close');
 	});
@@ -193,7 +200,7 @@ var TxtRotate = function(el, toRotate, period) {
 	// INJECT CSS
 	var css = document.createElement("style");
 	css.type = "text/css";
-	css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #F26921 }";
+	css.innerHTML = ".txt-rotate > .wrap { border-right: 0.05em solid #7bc7fe }";
 	document.body.appendChild(css);
   };
   

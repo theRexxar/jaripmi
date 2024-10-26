@@ -1537,81 +1537,11 @@ support for no js
 .section-hero:before {
   bottom: 0;
 }
-.text-wrapper {
-  display: inline-block;
-  height: 70px;
-  overflow: hidden;
-  margin-bottom: -15px;
-}
-.text-wrapper span {
-  display: block;
-  height: 70px;
-  line-height: 70px;
-  color: blue;
-  animation-name: spin_words;
-  animation-duration: 7s;
-  animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(0.71, 0.4, 0.42, 1.02);
-  -moz-animation-name: spin_words;
-  -moz-animation-duration: 7s;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-timing-function: cubic-bezier(0.71, 0.4, 0.42, 1.02);
-  -webkit-animation-name: spin_words;
-  -webkit-animation-duration: 7s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: cubic-bezier(0.71, 0.4, 0.42, 1.02);
-}
-
-@-webkit-keyframes spin_words {
-  10% {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
-  }
-  20% {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
-  }
-  40% {
-    -webkit-transform: translateY(-200%);
-            transform: translateY(-200%);
-  }
-  60% {
-    -webkit-transform: translateY(-200%);
-            transform: translateY(-200%);
-  }
-  80% {
-    -webkit-transform: translateY(-300%);
-            transform: translateY(-300%);
-  }
-  100% {
-    -webkit-transform: translateY(-300%);
-            transform: translateY(-300%);
-  }
-}
-
-@keyframes spin_words {
-  10% {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
-  }
-  20% {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
-  }
-  40% {
-    -webkit-transform: translateY(-200%);
-            transform: translateY(-200%);
-  }
-  60% {
-    -webkit-transform: translateY(-200%);
-            transform: translateY(-200%);
-  }
-  80% {
-    -webkit-transform: translateY(-300%);
-            transform: translateY(-300%);
-  }
-  100% {
-    -webkit-transform: translateY(-300%);
-            transform: translateY(-300%);
-  }
+.txt-rotate {
+  color: #0071cb;
+  background: -webkit-gradient(linear, left top, right top, from(#0071cb), color-stop(#007ccf), color-stop(#0087d3), color-stop(#0791d6), color-stop(#1d9cd8), color-stop(#30a6da), color-stop(#41b0dc), to(#52bade));
+  background: linear-gradient(90deg, #0071cb, #007ccf, #0087d3, #0791d6, #1d9cd8, #30a6da, #41b0dc, #52bade);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

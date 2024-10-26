@@ -35,65 +35,12 @@ ol, ul {
   }
 }
 
-
-
-.text-wrapper{
-  display: inline-block;
-  height: 70px;
-  overflow: hidden;
-  margin-bottom: -15px;
-  // outline: solid 1px red;
-  // background-color: aqua;
-    // background-clip: text;
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
-  span{
-    display: block;
-    // outline: solid 1px red;
-    height: 70px;
-    line-height: 70px;
-    color: blue;
-    // background-clip: text;
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
-    
-    // animation: spin_words 8s infinite cubic-bezier(.71,.4,.42,1.02);
-    animation-name: spin_words;
-    animation-duration: 7s;
-    animation-iteration-count: infinite;
-    animation-timing-function: cubic-bezier(.71,.4,.42,1.02);
-
-    -moz-animation-name: spin_words;
-    -moz-animation-duration: 7s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: cubic-bezier(.71,.4,.42,1.02);
-
-    -webkit-animation-name: spin_words;
-    -webkit-animation-duration: 7s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: cubic-bezier(.71,.4,.42,1.02);
-  }
+.txt-rotate{
+  color: $pmi-primary;
+  background: linear-gradient(90deg, #0071cb, #007ccf, #0087d3, #0791d6, #1d9cd8, #30a6da, #41b0dc, #52bade);
+  background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
 }
 
 
-// untuk 3 kata
-@keyframes spin_words {
-  10% {
-    transform: translateY(-100%);
-  }
-  20% {
-    transform: translateY(-100%);
-  }
-  40% {
-    transform: translateY(-200%);
-  }
-  60% {
-    transform: translateY(-200%);
-  }
-  80% {
-    transform: translateY(-300%);
-  }
-  100% {
-    transform: translateY(-300%);
-  }
-}

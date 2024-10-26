@@ -11,13 +11,20 @@ doctype html
 html(lang="id" page-class="home")
     include pug/includes/html_head.pug
     body
+        // Header 
         include pug/includes/nav_head.pug
 
-        main.site-main-content(style="height:150vh")
+        // Main content
+        main.site-main-content
             include pug/home/section_hero.pug
+            include pug/home/section_partners.pug
+            include pug/home/section_countries.pug
         
 
-        footer
+        // Footer
+        include pug/includes/footer.pug
+
+        // Header Menu
         include pug/includes/nav_foot.pug
 
     include pug/includes/html_foot.pug

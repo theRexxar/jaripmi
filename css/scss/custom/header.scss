@@ -15,6 +15,8 @@ $c-grey-lighten-1: #bababa;
 $c-border: #e3e3e3;
 $c-neutral: #011148;
 
+$c-chevron: $pmi-neutral-300;
+
 
 $c-anchor: $pmi-blue-500;
 $c-anchor-hover: $pmi-blue-600;
@@ -31,7 +33,7 @@ $container-max-width: $screen-xl; // from variables.scss
 $header-icon-check:"021"; // from urbanicon
 $header-font-sm: 14px;
 $header-font-md: 16px;
-$header-font-lg: 18px;
+$header-font-lg: 16px;
 $header-logo-width: 174px;
 $header-dropdown-width-sm: $header-side-nav-width;
 
@@ -521,7 +523,7 @@ Main components
         height: $header-height;
         width: auto;
         width: 100%;
-        width: calc(100% - #{$header-logo-width + $gutter*2});
+        // width: calc(100% - #{$header-logo-width + $gutter*2});
         // float: right;
         overflow: visible;
         background: transparent;
@@ -916,7 +918,7 @@ Main components
         -ms-transform-origin: 50% 50%;
         -o-transform-origin: 50% 50%;
         transform-origin: 50% 50%;
-        background: #E3E3E3;
+        background: $c-chevron;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         -webkit-transition: width 0.3s, -webkit-transform 0.3s;

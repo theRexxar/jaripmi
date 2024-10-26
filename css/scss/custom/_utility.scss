@@ -30,13 +30,13 @@ body{
 }
 
 ::selection {
-    // background: $c-navy-base;
+    background: $pmi-blue-700;
     /* Safari */
     color: #fff;
 }
 
 ::-moz-selection {
-    // background: $c-navy-base;
+    background: $pmi-blue-700;
     /* Firefox */
     color: #fff;
 }

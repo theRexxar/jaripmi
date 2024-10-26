@@ -16,7 +16,7 @@ ol, ul {
   position: relative;
   margin-top: -80px; // reflect to $header-height (80px)
   padding-top: 4rem;
-  min-height: calc(100vh + 80px - 200px);
+  // min-height: calc(100vh + 80px - 200px);
 
   &> div{
       position: relative;
@@ -43,4 +43,119 @@ ol, ul {
    -webkit-text-fill-color: transparent;
 }
 
+.col-25{
+  width: 20%;
+}
+.item-partner{
+  padding: .5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  // outline: solid 1px red;
+  img{
+    height: 3rem;
+    -webkit-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
+    -moz-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
+    -o-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
+    transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
+    // outline: solid 1px red
+  }
+  a{
+    &:hover{
+      img{
+        transform: translateY(-8px);
+      }
+    }
+  }
+}
 
+.full-card{
+  // height: 240px;
+  overflow: hidden;
+  text-decoration: none;
+  border: none;
+  .full-card-cover{
+    &> .badge{
+      position: absolute;
+      top:0;
+      right:0;
+      z-index: 3;
+    }
+    &>img{
+      width:100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      z-index: 0;
+      // filter: hue-rotate(90deg);
+      -webkit-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
+    -moz-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
+    -o-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
+    transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
+    }
+  }
+  .full-card-body{
+    aspect-ratio: 16/9;
+    position: relative;
+    width: 100%;
+    min-height: 248px;
+    outline: solid 1px red;
+    height: 100%;
+    top:0;
+    left: 0;
+    z-index: 2;
+    background: rgba(black, .3);
+    &>div{
+      position: relative;
+      z-index: 4;
+    }
+
+  }
+
+  .title-country{
+    color: white;
+    position: relative;
+    padding: .5rem 0;
+    margin: 0;
+    &::before, &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 5rem;
+      height: 2px;
+      background-color: $pmi-lemon-300;
+      margin-left: auto;
+      margin-right: auto;
+      left:0;
+      right:0;
+      -webkit-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.35s;
+      -moz-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.35s;
+      -o-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.35s;
+      transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.35s;
+    }
+    &::before{
+      top:0;
+    }
+    &::after{
+      bottom:0;
+    }
+  }
+
+  &:hover{
+    box-shadow: 0px 0px 0px 1px rgba(214, 219, 224, 0.5), 0px 8px 16px -4px rgba(1, 24, 48, 0.35);
+    .full-card-cover{
+        &>img{
+            transform: scale(1.1);
+        }
+    }
+    .title-country{
+      &::before{
+        width: 4rem;
+      }
+      &::after{
+        width: 2.5rem;
+      }
+    }
+  }
+}
+
+@import "custom/footer";

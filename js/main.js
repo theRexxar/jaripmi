@@ -204,3 +204,53 @@ var TxtRotate = function(el, toRotate, period) {
 	document.body.appendChild(css);
   };
   
+
+  // Home Carousel Course
+  var swiper = new Swiper(".courseSwiper", {
+    slidesPerView: 1.5,
+    spaceBetween: 24,
+    pagination: false,
+    navigation: {
+        nextEl: ".swiper-course-next",
+        prevEl: ".swiper-course-prev",
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2.25,
+            spaceBetween: 16,
+        },
+        768: {
+            slidesPerView: 2.75,
+            spaceBetween: 24,
+        },
+        1024: {
+            slidesPerView: 3.75,
+            spaceBetween: 24,
+        },
+    },
+});
+
+  // Home Carousel Article
+  var swiper = new Swiper(".articleSwiper", {
+    slidesPerView: 1.75,
+    spaceBetween: 24,
+    pagination: false,
+    navigation: {
+        nextEl: ".swiper-article-next",
+        prevEl: ".swiper-article-prev",
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2.1,
+            spaceBetween: 16,
+        },
+        768: {
+            slidesPerView: 2.55,
+            spaceBetween: 24,
+        },
+        1024: {
+            slidesPerView: 3.25,
+            spaceBetween: 24,
+        },
+    },
+});

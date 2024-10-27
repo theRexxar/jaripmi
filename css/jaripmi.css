@@ -1360,7 +1360,7 @@ Main components
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 9898;
+    z-index: 1000;
   }
 }
 .has-children li a.lang-active {

@@ -1,0 +1,20 @@
+.tabNavSwiper{
+    .swiper-slide-thumb-active {
+        background-color: $pmi-blue-50;
+    }
+    .tab-nav-icon{
+        width: 6rem;
+    }
+    .swiper-slide {
+        &:hover{
+            background-color: $pmi-blue-100;
+            cursor: pointer;
+        }
+    }
+}
+
+.tabContentSwiper{
+    .swiper-slide-active{
+        background-color: $pmi-blue-50;
+    }
+}

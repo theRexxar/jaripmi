@@ -237,6 +237,10 @@ body {
   color: #0071cb !important;
 }
 
+.text-secondary {
+  color: #454545 !important;
+}
+
 .fs-7 {
   font-size: 0.875rem;
 }
@@ -1547,17 +1551,19 @@ support for no js
   -webkit-text-fill-color: transparent;
 }
 
-.col-25 {
-  width: 20%;
+@media all and (min-width: 992px) {
+  .col-lg-25 {
+    width: 20%;
+  }
 }
-
 .item-partner {
   padding: 0.5rem;
   margin-bottom: 1rem;
   text-align: center;
 }
 .item-partner img {
-  height: 3rem;
+  max-height: 3rem;
+  width: auto;
   -webkit-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
   transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
 }
@@ -1815,6 +1821,21 @@ support for no js
 .article-card:hover .article-card-cover > img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+.tabNavSwiper .swiper-slide-thumb-active {
+  background-color: #f0f8ff;
+}
+.tabNavSwiper .tab-nav-icon {
+  width: 6rem;
+}
+.tabNavSwiper .swiper-slide:hover {
+  background-color: #dfefff;
+  cursor: pointer;
+}
+
+.tabContentSwiper .swiper-slide-active {
+  background-color: #f0f8ff;
 }
 
 .footer-nav li {

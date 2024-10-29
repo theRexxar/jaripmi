@@ -1,32 +1,144 @@
-section
+//- section
+//-     .container.py-4.py-lg-5.px-4.px-md-0
+//-         ul#pills-tab.nav.nav-pills.mb-3.row(role='tablist')
+//-             li.nav-item.col-3(role='presentation')
+//-                 #pills-home-tab.nav-link.d-flex.active(data-bs-toggle='pill' data-bs-target='#pills-home' role='tab' aria-controls='pills-home' aria-selected='true')
+//-                     div 
+//-                         img.tab-nav-icon(src="img/icon-duotone-1.svg", alt="Jari PMI Tahapan Kehidupan")
+//-                     div 
+//-                         h6 Tahapan Kehidupan
+//-                         p Web design partially overlaps web engineering in the broader scope of web development
+
+//-             li.nav-item.col-3(role='presentation')
+//-                 #pills-profile-tab.nav-link(data-bs-toggle='pill' data-bs-target='#pills-profile' type='button' role='tab' aria-controls='pills-profile' aria-selected='false')
+//-                     h6 Mengelola Keuangan untuk Mencapai Tujuan
+//-                     p Web design partially overlaps web engineering in the broader scope of web development
+
+//-             li.nav-item.col-3(role='presentation')
+//-                 #pills-contact-tab.nav-link(data-bs-toggle='pill' data-bs-target='#pills-contact' type='button' role='tab' aria-controls='pills-contact' aria-selected='false')
+//-                     h6 Kebiasaaan Baik Mengatur Uang
+//-                     p Web design partially overlaps web engineering in the broader scope of web development
+
+//-             li.nav-item.col-3(role='presentation')
+//-                 #pills-disabled-tab.nav-link(data-bs-toggle='pill' data-bs-target='#pills-disabled' type='button' role='tab' aria-controls='pills-disabled' aria-selected='false')
+//-                     h6 Sehat Keuangan
+//-                     p Web design partially overlaps web engineering in the broader scope of web development
+
+//-         #pills-tabContent.tab-content
+//-             #pills-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-home-tab' tabindex='0')
+//-                 p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempus viverra augue non efficitur. Donec condimentum lacus ut elit scelerisque, eget faucibus libero rhoncus. Vestibulum vel ligula eu ipsum iaculis sagittis at id est. Sed lacinia malesuada nisi, ut tristique diam consequat non. Aenean non sem varius, pharetra dui sit amet, porttitor purus. Nam ultrices placerat lobortis. In viverra metus turpis, nec tempor tortor blandit vulputate. Donec sollicitudin, elit faucibus ultricies feugiat, turpis leo malesuada sapien, non mattis purus nibh quis mauris. Nunc mollis nulla felis, convallis tempus nibh pellentesque tristique.
+
+//-             #pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='pills-profile-tab' tabindex='0')
+//-                 p Cras egestas libero ligula, pulvinar elementum mauris luctus sit amet. Fusce tempus velit sit amet tortor pulvinar aliquam. Quisque placerat venenatis turpis, eu finibus elit congue sit amet. Donec suscipit ut turpis ut blandit. Morbi id ligula ac elit interdum varius at at ex. Sed efficitur quis elit a fringilla. In quis blandit elit. Aliquam in facilisis libero. Vestibulum dui felis, porta non dolor sed, sagittis hendrerit purus.
+            
+//-             #pills-contact.tab-pane.fade(role='tabpanel' aria-labelledby='pills-contact-tab' tabindex='0')
+//-                 p Ut maximus commodo sem ut ornare. In eleifend ante sem. Suspendisse auctor tincidunt arcu in sagittis. Morbi non leo vel massa iaculis gravida a nec sapien. Aliquam nunc risus, elementum vitae convallis ac, facilisis nec ante. Curabitur risus diam, posuere nec ipsum in, convallis iaculis leo. Etiam arcu augue, consectetur porta felis ut, venenatis hendrerit libero. Praesent tempor imperdiet maximus. Morbi vulputate suscipit mollis. In hac habitasse platea dictumst. Maecenas egestas metus in magna auctor aliquet sollicitudin vitae ligula. Pellentesque accumsan euismod lorem, in faucibus felis suscipit id.
+            
+//-             #pills-disabled.tab-pane.fade(role='tabpanel' aria-labelledby='pills-disabled-tab' tabindex='0')
+//-                 p Suspendisse varius lorem augue, vel congue tortor vehicula et. Sed efficitur ornare sem eget dictum. Nulla placerat velit ut pharetra consectetur. Sed aliquam lacinia rutrum. Etiam tempor elementum turpis, quis feugiat mauris. Curabitur vestibulum lectus at scelerisque maximus. Fusce lacinia diam mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed egestas ante sed ex consequat, vel imperdiet metus pretium. Vestibulum eleifend dapibus arcu sed vulputate.
+
+
+section 
     .container.py-4.py-lg-5.px-4.px-md-0
-        ul#pills-tab.nav.nav-pills.mb-3(role='tablist')
-            li.nav-item(role='presentation')
-                #pills-home-tab.nav-link.active(data-bs-toggle='pill' data-bs-target='#pills-home' role='tab' aria-controls='pills-home' aria-selected='true')
-                    h6 Tahapan Kehidupan
-                    p Web design partially overlaps web engineering in the broader scope of web development
-            li.nav-item(role='presentation')
-                #pills-profile-tab.nav-link(data-bs-toggle='pill' data-bs-target='#pills-profile' type='button' role='tab' aria-controls='pills-profile' aria-selected='false')
-                    h6 Tahapan Kehidupan
-                    p Web design partially overlaps web engineering in the broader scope of web development
-            li.nav-item(role='presentation')
-                #pills-contact-tab.nav-link(data-bs-toggle='pill' data-bs-target='#pills-contact' type='button' role='tab' aria-controls='pills-contact' aria-selected='false')
-                    h6 Tahapan Kehidupan
-                    p Web design partially overlaps web engineering in the broader scope of web development
-            li.nav-item(role='presentation')
-                #pills-disabled-tab.nav-link(data-bs-toggle='pill' data-bs-target='#pills-disabled' type='button' role='tab' aria-controls='pills-disabled' aria-selected='false')
-                    h6 Tahapan Kehidupan
-                    p Web design partially overlaps web engineering in the broader scope of web development
+        .d-flex.align-items-center.justify-content-between
+            div
+                h3 Menata Masa Depan dengan Pengelolaan Keuangan
+            div.d-flex.align-items-center.gap-3
+                //- a.btn.btn-outline-primary(href="#") Selengkapnya
+                .d-flex 
+                    button.btn.swiper-tab-prev
+                        i.bi.bi-chevron-left
+                    button.btn.swiper-tab-next
+                        i.bi.bi-chevron-right
 
-        #pills-tabContent.tab-content
-            #pills-home.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='pills-home-tab' tabindex='0')
-                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tempus viverra augue non efficitur. Donec condimentum lacus ut elit scelerisque, eget faucibus libero rhoncus. Vestibulum vel ligula eu ipsum iaculis sagittis at id est. Sed lacinia malesuada nisi, ut tristique diam consequat non. Aenean non sem varius, pharetra dui sit amet, porttitor purus. Nam ultrices placerat lobortis. In viverra metus turpis, nec tempor tortor blandit vulputate. Donec sollicitudin, elit faucibus ultricies feugiat, turpis leo malesuada sapien, non mattis purus nibh quis mauris. Nunc mollis nulla felis, convallis tempus nibh pellentesque tristique.
+        .swiper.tabNavSwiper.mt-4(style='--swiper-navigation-color: #fff; --swiper-pagination-color: #fff')
+            .swiper-wrapper
+                .swiper-slide.rounded-3
+                    .d-flex.p-3
+                        div
+                            img.tab-nav-icon(src="img/icon-duotone-1.svg", alt="Jari PMI Tahapan Kehidupan")
+                        div.ps-2 
+                            h6 Tahapan Kehidupan
+                            p.fs-7.text-secondary Web design partially overlaps web engineering in the broader scope of web development
+                .swiper-slide.rounded-3
+                    .d-flex.p-3
+                        div 
+                            img.tab-nav-icon(src="img/icon-duotone-2.svg", alt="Jari PMI Tahapan Kehidupan")
+                        div.ps-2 
+                            h6 Mengelola Keuangan untuk Mencapai Tujuan
+                            p.fs-7.text-secondary Web design partially overlaps web engineering in the broader scope of web development
+                .swiper-slide.rounded-3
+                    .d-flex.p-3
+                        div 
+                            img.tab-nav-icon(src="img/icon-duotone-3.svg", alt="Jari PMI Tahapan Kehidupan")
+                        div.ps-2 
+                            h6 Kebiasaaan Baik Mengatur Uang
+                            p.fs-7.text-secondary Web design partially overlaps web engineering in the broader scope of web development
+                .swiper-slide.rounded-3
+                    .d-flex.p-3
+                        div 
+                            img.tab-nav-icon(src="img/icon-duotone-4.svg", alt="Jari PMI Tahapan Kehidupan")
+                        div.ps-2 
+                            h6 Sehat Keuangan
+                            p.fs-7.text-secondary Web design partially overlaps web engineering in the broader scope of web development
+                .swiper-slide.rounded-3
+                    .d-flex.p-3
+                        div 
+                            img.tab-nav-icon(src="img/icon-duotone-5.svg", alt="Jari PMI Tahapan Kehidupan")
+                        div.ps-2 
+                            h6 Prioritas Keuangan
+                            p.fs-7.text-secondary Web design partially overlaps web engineering in the broader scope of web development
+                .swiper-slide.rounded-3
+                    .d-flex.p-3
+                        div 
+                            img.tab-nav-icon(src="img/icon-duotone-6.svg", alt="Jari PMI Tahapan Kehidupan")
+                        div.ps-2 
+                            h6 Tujuh Langkah Mudah Mengatur Uang
+                            p.fs-7.text-secondary Web design partially overlaps web engineering in the broader scope of web development
+                .swiper-slide.rounded-3
+                    .d-flex.p-3
+                        div 
+                            img.tab-nav-icon(src="img/icon-duotone-7.svg", alt="Jari PMI Tahapan Kehidupan")
+                        div.ps-2 
+                            h6 Mempersiapkan Hari Tua
+                            p.fs-7.text-secondary Web design partially overlaps web engineering in the broader scope of web development
 
-            #pills-profile.tab-pane.fade(role='tabpanel' aria-labelledby='pills-profile-tab' tabindex='0')
-                p Cras egestas libero ligula, pulvinar elementum mauris luctus sit amet. Fusce tempus velit sit amet tortor pulvinar aliquam. Quisque placerat venenatis turpis, eu finibus elit congue sit amet. Donec suscipit ut turpis ut blandit. Morbi id ligula ac elit interdum varius at at ex. Sed efficitur quis elit a fringilla. In quis blandit elit. Aliquam in facilisis libero. Vestibulum dui felis, porta non dolor sed, sagittis hendrerit purus.
-            
-            #pills-contact.tab-pane.fade(role='tabpanel' aria-labelledby='pills-contact-tab' tabindex='0')
-                p Ut maximus commodo sem ut ornare. In eleifend ante sem. Suspendisse auctor tincidunt arcu in sagittis. Morbi non leo vel massa iaculis gravida a nec sapien. Aliquam nunc risus, elementum vitae convallis ac, facilisis nec ante. Curabitur risus diam, posuere nec ipsum in, convallis iaculis leo. Etiam arcu augue, consectetur porta felis ut, venenatis hendrerit libero. Praesent tempor imperdiet maximus. Morbi vulputate suscipit mollis. In hac habitasse platea dictumst. Maecenas egestas metus in magna auctor aliquet sollicitudin vitae ligula. Pellentesque accumsan euismod lorem, in faucibus felis suscipit id.
-            
-            #pills-disabled.tab-pane.fade(role='tabpanel' aria-labelledby='pills-disabled-tab' tabindex='0')
-                p Suspendisse varius lorem augue, vel congue tortor vehicula et. Sed efficitur ornare sem eget dictum. Nulla placerat velit ut pharetra consectetur. Sed aliquam lacinia rutrum. Etiam tempor elementum turpis, quis feugiat mauris. Curabitur vestibulum lectus at scelerisque maximus. Fusce lacinia diam mauris. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed egestas ante sed ex consequat, vel imperdiet metus pretium. Vestibulum eleifend dapibus arcu sed vulputate.
+            //- .swiper-button-next
+            //- .swiper-button-prev
+        .swiper.tabContentSwiper.mt-3(thumbsslider='')
+            .swiper-wrapper
+                .swiper-slide
+                    div.p-3.p-lg-4
+                        h5 Tahapan Kehidupan Manusia
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ligula vel pharetra rutrum. Quisque pharetra consequat risus at commodo. Praesent finibus turpis ut luctus dictum. Maecenas luctus sed nunc at pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula a eros porttitor dapibus. Nulla ullamcorper mauris non nisl aliquam, quis vestibulum nisi posuere. Duis ut diam et quam lobortis eleifend. Donec hendrerit metus sit amet pulvinar dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        p Aenean maximus, nisl ut vulputate consequat, ipsum erat tincidunt felis, at pharetra massa dui sed quam. Nulla at ultrices lorem, a venenatis mauris. Morbi dictum lectus lectus, id gravida enim pharetra at. Nullam pellentesque dapibus felis, vehicula aliquam justo condimentum ac. Nullam consequat lectus at semper euismod. Sed augue nunc, vulputate ut ipsum nec, pellentesque porttitor erat. Ut aliquam in massa eu scelerisque. Nam porttitor eleifend velit vel cursus. Donec sed ultrices urna.
+                .swiper-slide
+                    div.p-3.p-lg-4
+                        h5 Mengelola Keuangan untuk Mencapai Tujuan
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ligula vel pharetra rutrum. Quisque pharetra consequat risus at commodo. Praesent finibus turpis ut luctus dictum. Maecenas luctus sed nunc at pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula a eros porttitor dapibus. Nulla ullamcorper mauris non nisl aliquam, quis vestibulum nisi posuere. Duis ut diam et quam lobortis eleifend. Donec hendrerit metus sit amet pulvinar dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        p Aenean maximus, nisl ut vulputate consequat, ipsum erat tincidunt felis, at pharetra massa dui sed quam. Nulla at ultrices lorem, a venenatis mauris. Morbi dictum lectus lectus, id gravida enim pharetra at. Nullam pellentesque dapibus felis, vehicula aliquam justo condimentum ac. Nullam consequat lectus at semper euismod. Sed augue nunc, vulputate ut ipsum nec, pellentesque porttitor erat. Ut aliquam in massa eu scelerisque. Nam porttitor eleifend velit vel cursus. Donec sed ultrices urna.
+                .swiper-slide
+                    div.p-3.p-lg-4
+                        h5 Kebiasaaan Baik Mengatur Uang
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ligula vel pharetra rutrum. Quisque pharetra consequat risus at commodo. Praesent finibus turpis ut luctus dictum. Maecenas luctus sed nunc at pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula a eros porttitor dapibus. Nulla ullamcorper mauris non nisl aliquam, quis vestibulum nisi posuere. Duis ut diam et quam lobortis eleifend. Donec hendrerit metus sit amet pulvinar dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        p Aenean maximus, nisl ut vulputate consequat, ipsum erat tincidunt felis, at pharetra massa dui sed quam. Nulla at ultrices lorem, a venenatis mauris. Morbi dictum lectus lectus, id gravida enim pharetra at. Nullam pellentesque dapibus felis, vehicula aliquam justo condimentum ac. Nullam consequat lectus at semper euismod. Sed augue nunc, vulputate ut ipsum nec, pellentesque porttitor erat. Ut aliquam in massa eu scelerisque. Nam porttitor eleifend velit vel cursus. Donec sed ultrices urna.
+                .swiper-slide
+                    div.p-3.p-lg-4
+                        h5 Sehat Keuangan
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ligula vel pharetra rutrum. Quisque pharetra consequat risus at commodo. Praesent finibus turpis ut luctus dictum. Maecenas luctus sed nunc at pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula a eros porttitor dapibus. Nulla ullamcorper mauris non nisl aliquam, quis vestibulum nisi posuere. Duis ut diam et quam lobortis eleifend. Donec hendrerit metus sit amet pulvinar dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        p Aenean maximus, nisl ut vulputate consequat, ipsum erat tincidunt felis, at pharetra massa dui sed quam. Nulla at ultrices lorem, a venenatis mauris. Morbi dictum lectus lectus, id gravida enim pharetra at. Nullam pellentesque dapibus felis, vehicula aliquam justo condimentum ac. Nullam consequat lectus at semper euismod. Sed augue nunc, vulputate ut ipsum nec, pellentesque porttitor erat. Ut aliquam in massa eu scelerisque. Nam porttitor eleifend velit vel cursus. Donec sed ultrices urna.
+                .swiper-slide
+                    div.p-3.p-lg-4
+                        h5 Prioritas Keuangan
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ligula vel pharetra rutrum. Quisque pharetra consequat risus at commodo. Praesent finibus turpis ut luctus dictum. Maecenas luctus sed nunc at pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula a eros porttitor dapibus. Nulla ullamcorper mauris non nisl aliquam, quis vestibulum nisi posuere. Duis ut diam et quam lobortis eleifend. Donec hendrerit metus sit amet pulvinar dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        p Aenean maximus, nisl ut vulputate consequat, ipsum erat tincidunt felis, at pharetra massa dui sed quam. Nulla at ultrices lorem, a venenatis mauris. Morbi dictum lectus lectus, id gravida enim pharetra at. Nullam pellentesque dapibus felis, vehicula aliquam justo condimentum ac. Nullam consequat lectus at semper euismod. Sed augue nunc, vulputate ut ipsum nec, pellentesque porttitor erat. Ut aliquam in massa eu scelerisque. Nam porttitor eleifend velit vel cursus. Donec sed ultrices urna.
+                .swiper-slide
+                    div.p-3.p-lg-4
+                        h5 Tujuh Langkah Mudah Mengatur Uang
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ligula vel pharetra rutrum. Quisque pharetra consequat risus at commodo. Praesent finibus turpis ut luctus dictum. Maecenas luctus sed nunc at pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula a eros porttitor dapibus. Nulla ullamcorper mauris non nisl aliquam, quis vestibulum nisi posuere. Duis ut diam et quam lobortis eleifend. Donec hendrerit metus sit amet pulvinar dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        p Aenean maximus, nisl ut vulputate consequat, ipsum erat tincidunt felis, at pharetra massa dui sed quam. Nulla at ultrices lorem, a venenatis mauris. Morbi dictum lectus lectus, id gravida enim pharetra at. Nullam pellentesque dapibus felis, vehicula aliquam justo condimentum ac. Nullam consequat lectus at semper euismod. Sed augue nunc, vulputate ut ipsum nec, pellentesque porttitor erat. Ut aliquam in massa eu scelerisque. Nam porttitor eleifend velit vel cursus. Donec sed ultrices urna.
+                .swiper-slide
+                    div.p-3.p-lg-4
+                        h5 Mempersiapkan Hari Tua
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ligula vel pharetra rutrum. Quisque pharetra consequat risus at commodo. Praesent finibus turpis ut luctus dictum. Maecenas luctus sed nunc at pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula a eros porttitor dapibus. Nulla ullamcorper mauris non nisl aliquam, quis vestibulum nisi posuere. Duis ut diam et quam lobortis eleifend. Donec hendrerit metus sit amet pulvinar dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        p Aenean maximus, nisl ut vulputate consequat, ipsum erat tincidunt felis, at pharetra massa dui sed quam. Nulla at ultrices lorem, a venenatis mauris. Morbi dictum lectus lectus, id gravida enim pharetra at. Nullam pellentesque dapibus felis, vehicula aliquam justo condimentum ac. Nullam consequat lectus at semper euismod. Sed augue nunc, vulputate ut ipsum nec, pellentesque porttitor erat. Ut aliquam in massa eu scelerisque. Nam porttitor eleifend velit vel cursus. Donec sed ultrices urna.

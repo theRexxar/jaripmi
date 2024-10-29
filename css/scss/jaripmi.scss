@@ -43,16 +43,21 @@ ol, ul {
    -webkit-text-fill-color: transparent;
 }
 
-.col-25{
-  width: 20%;
+@media all and (min-width: $screen-lg){
+  .col-lg-25{
+    width: 20%;
+    // outline: solid 1px red;
+  }
 }
+
 .item-partner{
   padding: .5rem;
   margin-bottom: 1rem;
   text-align: center;
   // outline: solid 1px red;
   img{
-    height: 3rem;
+    max-height: 3rem;
+    width: auto;
     -webkit-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
     -moz-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
     -o-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
@@ -330,4 +335,5 @@ ol, ul {
 }
 }
 
+@import "custom/swiper";
 @import "custom/footer";

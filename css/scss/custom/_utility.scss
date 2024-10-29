@@ -18,6 +18,9 @@ body{
 .text-primary{
     color: $pmi-blue-600!important;
 }
+.text-secondary{
+    color: $text-secondary!important;
+}
 
 .fs-7{
     font-size: calc(14/16)+rem;

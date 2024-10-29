@@ -254,3 +254,36 @@ var TxtRotate = function(el, toRotate, period) {
         },
     },
 });
+
+// Home Thumbnail Carousel
+var swiper = new Swiper(".tabNavSwiper", {
+	spaceBetween: 24,
+	slidesPerView: 1.5,
+	freeMode: true,
+	watchSlidesProgress: true,
+	navigation: {
+		nextEl: ".swiper-tab-next",
+		prevEl: ".swiper-tab-prev",
+	  },
+	  breakpoints: {
+        640: {
+            slidesPerView: 2.25,
+            spaceBetween: 16,
+        },
+        768: {
+            slidesPerView: 2.75,
+            spaceBetween: 24,
+        },
+        1024: {
+            slidesPerView: 4.5,
+            spaceBetween: 24,
+        },
+    },
+  });
+  var swiper2 = new Swiper(".tabContentSwiper", {
+	spaceBetween: 0,
+	
+	thumbs: {
+	  swiper: swiper,
+	},
+  });

@@ -1,20 +1,39 @@
-.tabNavSwiper{
+.tab-nav-swiper{
     .swiper-slide-thumb-active {
         background-color: $pmi-blue-50;
     }
     .tab-nav-icon{
-        width: 6rem;
+        width: 48px;
+        max-width: none;
     }
     .swiper-slide {
         &:hover{
             background-color: $pmi-blue-100;
             cursor: pointer;
         }
+        &:active{
+            background-color: $pmi-lemon-100;
+        }
     }
 }
 
-.tabContentSwiper{
+.tab-content-swiper{
     .swiper-slide-active{
         background-color: $pmi-blue-50;
+    }
+}
+
+.country-swiper{
+    height: calc(496px + 1.5rem);
+}
+
+.button-swiper{
+    background-color: $pmi-neutral-100;
+    width: 38px;
+    padding-left: 0;
+    padding-right: 0;
+    &.swiper-button-disabled{
+        background-color: $pmi-neutral-100;
+        border: none;
     }
 }

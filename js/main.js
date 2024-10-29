@@ -255,7 +255,27 @@ var TxtRotate = function(el, toRotate, period) {
     },
 });
 
-// Home Thumbnail Carousel
+ // Home Carousel Countries
+ var swiper = new Swiper(".countrySwiper", {
+	slidesPerView: 1.75,
+	grid: {
+		rows: 2,
+	},
+	spaceBetween: 16,
+	pagination: false,
+	breakpoints: {
+		1024: {
+			slidesPerView: 3,
+			spaceBetween: 24,
+			grid: {
+				rows: 2,
+			},
+		}
+	},
+	
+});
+
+// Tab Pengelolaan Keuangan
 var swiper = new Swiper(".tabNavSwiper", {
 	spaceBetween: 24,
 	slidesPerView: 1.5,
@@ -281,6 +301,72 @@ var swiper = new Swiper(".tabNavSwiper", {
     },
   });
   var swiper2 = new Swiper(".tabContentSwiper", {
+	spaceBetween: 0,
+	
+	thumbs: {
+	  swiper: swiper,
+	},
+  });
+
+  // Tab Produk Tabungan
+var swiper = new Swiper(".tabNav2Swiper", {
+	spaceBetween: 24,
+	slidesPerView: 1.5,
+	freeMode: true,
+	watchSlidesProgress: true,
+	navigation: {
+		nextEl: ".swiper-tab2-next",
+		prevEl: ".swiper-tab2-prev",
+	  },
+	  breakpoints: {
+        640: {
+            slidesPerView: 2.25,
+            spaceBetween: 16,
+        },
+        768: {
+            slidesPerView: 2.75,
+            spaceBetween: 24,
+        },
+        1024: {
+            slidesPerView: 4.5,
+            spaceBetween: 24,
+        },
+    },
+  });
+  var swiper2 = new Swiper(".tabContent2Swiper", {
+	spaceBetween: 0,
+	
+	thumbs: {
+	  swiper: swiper,
+	},
+  });
+
+   // Tab Produk Pinjaman
+var swiper = new Swiper(".tabNav3Swiper", {
+	spaceBetween: 24,
+	slidesPerView: 1.5,
+	freeMode: true,
+	watchSlidesProgress: true,
+	navigation: {
+		nextEl: ".swiper-tab3-next",
+		prevEl: ".swiper-tab3-prev",
+	  },
+	  breakpoints: {
+        640: {
+            slidesPerView: 2.25,
+            spaceBetween: 16,
+        },
+        768: {
+            slidesPerView: 2.75,
+            spaceBetween: 24,
+        },
+        1024: {
+            slidesPerView: 4.5,
+            spaceBetween: 24,
+        },
+    },
+  });
+  var swiper2 = new Swiper(".tabContent3Swiper", {
 	spaceBetween: 0,
 	
 	thumbs: {

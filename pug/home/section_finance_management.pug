@@ -4,7 +4,7 @@
 //-             li.nav-item.col-3(role='presentation')
 //-                 #pills-home-tab.nav-link.d-flex.active(data-bs-toggle='pill' data-bs-target='#pills-home' role='tab' aria-controls='pills-home' aria-selected='true')
 //-                     div 
-//-                         img.tab-nav-icon(src="img/icon-duotone-1.svg", alt="Jari PMI Tahapan Kehidupan")
+//-                         img.tab-nav-icon(src=baseURL+"img/icon-duotone-1.svg", alt="Jari PMI Tahapan Kehidupan")
 //-                     div 
 //-                         h6 Tahapan Kehidupan
 //-                         p Web design partially overlaps web engineering in the broader scope of web development
@@ -45,100 +45,100 @@ section
                 h3 Menata Masa Depan dengan Pengelolaan Keuangan
             div.d-flex.align-items-center.gap-3
                 //- a.btn.btn-outline-primary(href="#") Selengkapnya
-                .d-flex 
-                    button.btn.swiper-tab-prev
+                .d-flex.gap-1
+                    button.btn.button-swiper.swiper-tab-prev
                         i.bi.bi-chevron-left
-                    button.btn.swiper-tab-next
+                    button.btn.button-swiper.swiper-tab-next
                         i.bi.bi-chevron-right
 
-        .swiper.tabNavSwiper.mt-4(style='--swiper-navigation-color: #fff; --swiper-pagination-color: #fff')
+        .swiper.tabNavSwiper.tab-nav-swiper.mt-4(style='--swiper-navigation-color: #fff; --swiper-pagination-color: #fff')
             .swiper-wrapper
-                .swiper-slide.rounded-3
+                .swiper-slide.rounded-2
                     .d-flex.p-3
                         div
-                            img.tab-nav-icon(src="img/icon-duotone-1.svg", alt="Jari PMI Tahapan Kehidupan")
+                            img.tab-nav-icon(src=baseURL+"img/icon-duotone-1.svg", alt="Jari PMI Tahapan Kehidupan")
                         div.ps-2 
                             h6 Tahapan Kehidupan
                             p.fs-7.text-secondary Web design partially overlaps web engineering in the broader scope of web development
-                .swiper-slide.rounded-3
+                .swiper-slide.rounded-2
                     .d-flex.p-3
                         div 
-                            img.tab-nav-icon(src="img/icon-duotone-2.svg", alt="Jari PMI Tahapan Kehidupan")
+                            img.tab-nav-icon(src=baseURL+"img/icon-duotone-2.svg", alt="Jari PMI Tahapan Kehidupan")
                         div.ps-2 
                             h6 Mengelola Keuangan untuk Mencapai Tujuan
                             p.fs-7.text-secondary Web design partially overlaps web engineering in the broader scope of web development
-                .swiper-slide.rounded-3
+                .swiper-slide.rounded-2
                     .d-flex.p-3
                         div 
-                            img.tab-nav-icon(src="img/icon-duotone-3.svg", alt="Jari PMI Tahapan Kehidupan")
+                            img.tab-nav-icon(src=baseURL+"img/icon-duotone-3.svg", alt="Jari PMI Tahapan Kehidupan")
                         div.ps-2 
                             h6 Kebiasaaan Baik Mengatur Uang
                             p.fs-7.text-secondary Web design partially overlaps web engineering in the broader scope of web development
-                .swiper-slide.rounded-3
+                .swiper-slide.rounded-2
                     .d-flex.p-3
                         div 
-                            img.tab-nav-icon(src="img/icon-duotone-4.svg", alt="Jari PMI Tahapan Kehidupan")
+                            img.tab-nav-icon(src=baseURL+"img/icon-duotone-4.svg", alt="Jari PMI Tahapan Kehidupan")
                         div.ps-2 
                             h6 Sehat Keuangan
                             p.fs-7.text-secondary Web design partially overlaps web engineering in the broader scope of web development
-                .swiper-slide.rounded-3
+                .swiper-slide.rounded-2
                     .d-flex.p-3
                         div 
-                            img.tab-nav-icon(src="img/icon-duotone-5.svg", alt="Jari PMI Tahapan Kehidupan")
+                            img.tab-nav-icon(src=baseURL+"img/icon-duotone-5.svg", alt="Jari PMI Tahapan Kehidupan")
                         div.ps-2 
                             h6 Prioritas Keuangan
                             p.fs-7.text-secondary Web design partially overlaps web engineering in the broader scope of web development
-                .swiper-slide.rounded-3
+                .swiper-slide.rounded-2
                     .d-flex.p-3
                         div 
-                            img.tab-nav-icon(src="img/icon-duotone-6.svg", alt="Jari PMI Tahapan Kehidupan")
+                            img.tab-nav-icon(src=baseURL+"img/icon-duotone-6.svg", alt="Jari PMI Tahapan Kehidupan")
                         div.ps-2 
                             h6 Tujuh Langkah Mudah Mengatur Uang
                             p.fs-7.text-secondary Web design partially overlaps web engineering in the broader scope of web development
-                .swiper-slide.rounded-3
+                .swiper-slide.rounded-2
                     .d-flex.p-3
                         div 
-                            img.tab-nav-icon(src="img/icon-duotone-7.svg", alt="Jari PMI Tahapan Kehidupan")
+                            img.tab-nav-icon(src=baseURL+"img/icon-duotone-7.svg", alt="Jari PMI Tahapan Kehidupan")
                         div.ps-2 
                             h6 Mempersiapkan Hari Tua
                             p.fs-7.text-secondary Web design partially overlaps web engineering in the broader scope of web development
 
             //- .swiper-button-next
             //- .swiper-button-prev
-        .swiper.tabContentSwiper.mt-3(thumbsslider='')
+        .swiper.tabContentSwiper.tab-content-swiper.mt-3(thumbsslider='')
             .swiper-wrapper
                 .swiper-slide
-                    div.p-3.p-lg-4
+                    .p-3.p-lg-4.rounded-2
                         h5 Tahapan Kehidupan Manusia
                         p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ligula vel pharetra rutrum. Quisque pharetra consequat risus at commodo. Praesent finibus turpis ut luctus dictum. Maecenas luctus sed nunc at pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula a eros porttitor dapibus. Nulla ullamcorper mauris non nisl aliquam, quis vestibulum nisi posuere. Duis ut diam et quam lobortis eleifend. Donec hendrerit metus sit amet pulvinar dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                         p Aenean maximus, nisl ut vulputate consequat, ipsum erat tincidunt felis, at pharetra massa dui sed quam. Nulla at ultrices lorem, a venenatis mauris. Morbi dictum lectus lectus, id gravida enim pharetra at. Nullam pellentesque dapibus felis, vehicula aliquam justo condimentum ac. Nullam consequat lectus at semper euismod. Sed augue nunc, vulputate ut ipsum nec, pellentesque porttitor erat. Ut aliquam in massa eu scelerisque. Nam porttitor eleifend velit vel cursus. Donec sed ultrices urna.
                 .swiper-slide
-                    div.p-3.p-lg-4
+                    .p-3.p-lg-4.rounded-2
                         h5 Mengelola Keuangan untuk Mencapai Tujuan
                         p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ligula vel pharetra rutrum. Quisque pharetra consequat risus at commodo. Praesent finibus turpis ut luctus dictum. Maecenas luctus sed nunc at pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula a eros porttitor dapibus. Nulla ullamcorper mauris non nisl aliquam, quis vestibulum nisi posuere. Duis ut diam et quam lobortis eleifend. Donec hendrerit metus sit amet pulvinar dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                         p Aenean maximus, nisl ut vulputate consequat, ipsum erat tincidunt felis, at pharetra massa dui sed quam. Nulla at ultrices lorem, a venenatis mauris. Morbi dictum lectus lectus, id gravida enim pharetra at. Nullam pellentesque dapibus felis, vehicula aliquam justo condimentum ac. Nullam consequat lectus at semper euismod. Sed augue nunc, vulputate ut ipsum nec, pellentesque porttitor erat. Ut aliquam in massa eu scelerisque. Nam porttitor eleifend velit vel cursus. Donec sed ultrices urna.
                 .swiper-slide
-                    div.p-3.p-lg-4
+                    .p-3.p-lg-4.rounded-2
                         h5 Kebiasaaan Baik Mengatur Uang
                         p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ligula vel pharetra rutrum. Quisque pharetra consequat risus at commodo. Praesent finibus turpis ut luctus dictum. Maecenas luctus sed nunc at pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula a eros porttitor dapibus. Nulla ullamcorper mauris non nisl aliquam, quis vestibulum nisi posuere. Duis ut diam et quam lobortis eleifend. Donec hendrerit metus sit amet pulvinar dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                         p Aenean maximus, nisl ut vulputate consequat, ipsum erat tincidunt felis, at pharetra massa dui sed quam. Nulla at ultrices lorem, a venenatis mauris. Morbi dictum lectus lectus, id gravida enim pharetra at. Nullam pellentesque dapibus felis, vehicula aliquam justo condimentum ac. Nullam consequat lectus at semper euismod. Sed augue nunc, vulputate ut ipsum nec, pellentesque porttitor erat. Ut aliquam in massa eu scelerisque. Nam porttitor eleifend velit vel cursus. Donec sed ultrices urna.
                 .swiper-slide
-                    div.p-3.p-lg-4
+                    .p-3.p-lg-4.rounded-2
                         h5 Sehat Keuangan
                         p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ligula vel pharetra rutrum. Quisque pharetra consequat risus at commodo. Praesent finibus turpis ut luctus dictum. Maecenas luctus sed nunc at pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula a eros porttitor dapibus. Nulla ullamcorper mauris non nisl aliquam, quis vestibulum nisi posuere. Duis ut diam et quam lobortis eleifend. Donec hendrerit metus sit amet pulvinar dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                         p Aenean maximus, nisl ut vulputate consequat, ipsum erat tincidunt felis, at pharetra massa dui sed quam. Nulla at ultrices lorem, a venenatis mauris. Morbi dictum lectus lectus, id gravida enim pharetra at. Nullam pellentesque dapibus felis, vehicula aliquam justo condimentum ac. Nullam consequat lectus at semper euismod. Sed augue nunc, vulputate ut ipsum nec, pellentesque porttitor erat. Ut aliquam in massa eu scelerisque. Nam porttitor eleifend velit vel cursus. Donec sed ultrices urna.
                 .swiper-slide
-                    div.p-3.p-lg-4
+                    .p-3.p-lg-4.rounded-2
                         h5 Prioritas Keuangan
                         p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ligula vel pharetra rutrum. Quisque pharetra consequat risus at commodo. Praesent finibus turpis ut luctus dictum. Maecenas luctus sed nunc at pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula a eros porttitor dapibus. Nulla ullamcorper mauris non nisl aliquam, quis vestibulum nisi posuere. Duis ut diam et quam lobortis eleifend. Donec hendrerit metus sit amet pulvinar dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                         p Aenean maximus, nisl ut vulputate consequat, ipsum erat tincidunt felis, at pharetra massa dui sed quam. Nulla at ultrices lorem, a venenatis mauris. Morbi dictum lectus lectus, id gravida enim pharetra at. Nullam pellentesque dapibus felis, vehicula aliquam justo condimentum ac. Nullam consequat lectus at semper euismod. Sed augue nunc, vulputate ut ipsum nec, pellentesque porttitor erat. Ut aliquam in massa eu scelerisque. Nam porttitor eleifend velit vel cursus. Donec sed ultrices urna.
                 .swiper-slide
-                    div.p-3.p-lg-4
+                    .p-3.p-lg-4.rounded-2
                         h5 Tujuh Langkah Mudah Mengatur Uang
                         p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ligula vel pharetra rutrum. Quisque pharetra consequat risus at commodo. Praesent finibus turpis ut luctus dictum. Maecenas luctus sed nunc at pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula a eros porttitor dapibus. Nulla ullamcorper mauris non nisl aliquam, quis vestibulum nisi posuere. Duis ut diam et quam lobortis eleifend. Donec hendrerit metus sit amet pulvinar dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                         p Aenean maximus, nisl ut vulputate consequat, ipsum erat tincidunt felis, at pharetra massa dui sed quam. Nulla at ultrices lorem, a venenatis mauris. Morbi dictum lectus lectus, id gravida enim pharetra at. Nullam pellentesque dapibus felis, vehicula aliquam justo condimentum ac. Nullam consequat lectus at semper euismod. Sed augue nunc, vulputate ut ipsum nec, pellentesque porttitor erat. Ut aliquam in massa eu scelerisque. Nam porttitor eleifend velit vel cursus. Donec sed ultrices urna.
                 .swiper-slide
-                    div.p-3.p-lg-4
+                    .p-3.p-lg-4.rounded-2
                         h5 Mempersiapkan Hari Tua
                         p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fermentum ligula vel pharetra rutrum. Quisque pharetra consequat risus at commodo. Praesent finibus turpis ut luctus dictum. Maecenas luctus sed nunc at pulvinar. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ligula a eros porttitor dapibus. Nulla ullamcorper mauris non nisl aliquam, quis vestibulum nisi posuere. Duis ut diam et quam lobortis eleifend. Donec hendrerit metus sit amet pulvinar dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                         p Aenean maximus, nisl ut vulputate consequat, ipsum erat tincidunt felis, at pharetra massa dui sed quam. Nulla at ultrices lorem, a venenatis mauris. Morbi dictum lectus lectus, id gravida enim pharetra at. Nullam pellentesque dapibus felis, vehicula aliquam justo condimentum ac. Nullam consequat lectus at semper euismod. Sed augue nunc, vulputate ut ipsum nec, pellentesque porttitor erat. Ut aliquam in massa eu scelerisque. Nam porttitor eleifend velit vel cursus. Donec sed ultrices urna.

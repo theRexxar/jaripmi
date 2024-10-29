@@ -1542,6 +1542,24 @@ support for no js
 .section-hero:before {
   bottom: 0;
 }
+.section-hero .content-hero {
+  position: relative;
+  z-index: 3;
+}
+.section-hero h1 {
+  font-size: var(--font-size-6x);
+}
+
+@media only screen and (min-width: 992px) {
+  .hero-image {
+    float: right;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    position: relative;
+    z-index: 0;
+  }
+}
 .txt-rotate {
   color: #0071cb;
   background: -webkit-gradient(linear, left top, right top, from(#0071cb), color-stop(#007ccf), color-stop(#0087d3), color-stop(#0791d6), color-stop(#1d9cd8), color-stop(#30a6da), color-stop(#41b0dc), to(#52bade));
@@ -1614,6 +1632,7 @@ support for no js
   position: relative;
   padding: 0.5rem 0;
   margin: 0;
+  text-align: center;
 }
 .full-card .title-country::before, .full-card .title-country::after {
   content: "";
@@ -1823,19 +1842,38 @@ support for no js
           transform: scale(1.1);
 }
 
-.tabNavSwiper .swiper-slide-thumb-active {
+.tab-nav-swiper .swiper-slide-thumb-active {
   background-color: #f0f8ff;
 }
-.tabNavSwiper .tab-nav-icon {
-  width: 6rem;
+.tab-nav-swiper .tab-nav-icon {
+  width: 48px;
+  max-width: none;
 }
-.tabNavSwiper .swiper-slide:hover {
+.tab-nav-swiper .swiper-slide:hover {
   background-color: #dfefff;
   cursor: pointer;
 }
+.tab-nav-swiper .swiper-slide:active {
+  background-color: #fff2c5;
+}
 
-.tabContentSwiper .swiper-slide-active {
+.tab-content-swiper .swiper-slide-active {
   background-color: #f0f8ff;
+}
+
+.country-swiper {
+  height: calc(496px + 1.5rem);
+}
+
+.button-swiper {
+  background-color: #e7e7e7;
+  width: 38px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.button-swiper.swiper-button-disabled {
+  background-color: #e7e7e7;
+  border: none;
 }
 
 .footer-nav li {

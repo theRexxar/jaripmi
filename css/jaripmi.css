@@ -1842,6 +1842,13 @@ support for no js
           transform: scale(1.1);
 }
 
+.hero-mask {
+  /* Note that the properties aren't quite the same */
+  -webkit-mask-box-image: url("../img/img-panel-mask2.svg") 20 repeat;
+  mask-border: url("../img/img-panel-mask2.svg") 20 repeat;
+  /* Image, again, from http://www.html5rocks.com/en/tutorials/masking/adobe/ */
+}
+
 .tab-nav-swiper .swiper-slide-thumb-active {
   background-color: #f0f8ff;
 }

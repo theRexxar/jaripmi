@@ -349,5 +349,14 @@ ol, ul {
 }
 }
 
+
+.hero-mask {
+  /* Note that the properties aren't quite the same */
+  -webkit-mask-box-image: url('../img/img-panel-mask2.svg') 20 repeat;
+  mask-border: url('../img/img-panel-mask2.svg') 20 repeat;
+  /* Image, again, from http://www.html5rocks.com/en/tutorials/masking/adobe/ */
+}
+  
+
 @import "custom/swiper";
 @import "custom/footer";

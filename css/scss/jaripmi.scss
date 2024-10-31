@@ -358,5 +358,77 @@ ol, ul {
 }
   
 
+.jari-sidebar-nav{
+  nav{
+    ol {
+      margin: 0;
+      padding:0;
+      li{
+        // outline: solid 1px red;
+        a{
+          text-decoration: none;
+          color: $pmi-blue-600;
+          display: block;
+          padding: 1rem;
+          border-radius: .5rem;
+          &:hover{
+            background-color: $pmi-blue-100;
+          }
+        }
+      }
+    }
+  }
+}
+.jari-sidebar-content{}
+
+
+// Pelatihan
+.custom-search-2 {
+  border-radius: 24px;
+  box-shadow: 0px 8px 16px -4px rgba(1, 24, 48, 0.1),
+    0px 0px 0px 1px rgba(214, 219, 224, 0.2);
+}
+.custom-search-2 .form-control {
+  border-radius: 24px !important;
+  // padding-left: 46px;
+  padding-right: 46px;
+  border: solid 1px transparent;
+}
+
+.custom-search-2 .btn {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  z-index: 21;
+  border: solid 2px transparent;
+  top: 2px;
+  right: 2px;
+  padding: 0;
+  border-radius: 24px 24px 24px 24px !important;
+}
+
+.custom-search-2 .btn:last-child {
+  right: 2px;
+  left: initial;
+}
+
+.custom-search-2 .btn:hover {
+  background: var(--pmi-blue-50);
+  color: var(--pmi-blue-600);
+}
+
+.custom-search-2 .btn.is-active {
+  background: var(--pmi-blue-600);
+  color: var(--white);
+}
+
+.custom-search-2 .btn:active {
+  border-color: var(--pmi-blue-300);
+}
+
+.custom-search-2.search-only .form-control {
+  padding-right: 0.5rem;
+}
+
 @import "custom/swiper";
 @import "custom/footer";

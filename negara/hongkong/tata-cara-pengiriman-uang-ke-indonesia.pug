@@ -1,0 +1,30 @@
+//- start variable
+- var pageActive = ''
+- var baseURL = '../../'
+- var contentDescription = {}
+- ogImageURL = "https://dikaseva.com/static/img/4.1f5ee9b.jpg"
+- contentDescription.title = "Jari PMI"
+- contentDescription.description = "Description"
+
+doctype html
+html(lang="id" page-class="home")
+    include ../../pug/includes/html_head.pug
+    body
+        // Header 
+        include ../../pug/includes/nav_mobile.pug
+
+        // Main content
+        main.site-main-content
+            include ../../pug/negara/hongkong/section_subpage_1.pug
+
+
+        // Footer
+        include ../../pug/includes/footer.pug
+
+        // Header Menu
+        include ../../pug/includes/nav_desktop.pug
+
+        // Modals
+        include ../../pug/includes/modal.pug
+
+    include ../../pug/includes/html_foot.pug

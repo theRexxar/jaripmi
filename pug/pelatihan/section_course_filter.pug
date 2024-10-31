@@ -1,0 +1,41 @@
+
+div.mb-4
+    h6 Filter Pelatihan
+div.mb-4
+    h6.filter-group-sticky.mb-3
+        i.bi.bi-percent.color-success 
+        | Harga
+    #course-price.course-filter.column-3-1
+        .form-check
+            input#filter-price-1.form-check-input.filter-price(type='checkbox' value='0')
+            label.form-check-label.text-capitalize(for='filter-price-1') gratis (Rp0)
+        .form-check
+            input#filter-price-2.form-check-input.filter-price(type='checkbox' value='20000')
+            label.form-check-label.text-capitalize(for='filter-price-2') Rp20.000,-
+        .form-check
+            input#filter-price-3.form-check-input.filter-price(type='checkbox' value='diskon besar')
+            label.form-check-label.text-capitalize(for='filter-price-3') Diskon Besar
+
+div.mb-4
+    h6.filter-group-sticky.mb-3
+        i.bi.bi-stars.text-danger 
+        | Kategori Pelatihan
+    #course-trending.course-filter.column-3-1
+        .form-check
+            input#filter-trending-1.form-check-input.filter-trending(type='checkbox' value='true')
+            label.form-check-label.text-capitalize(for='filter-trending-1') Kategori 1
+        .form-check
+            input#filter-newcourse.form-check-input.filter-newcourse(type='checkbox' value='true')
+            label.form-check-label.text-capitalize(for='filter-newcourse') Kategori 2
+
+div.mb-4
+    h6.filter-group-sticky.mb-3
+        i.bi.bi-person-video2.text-info 
+        | Lembaga Pelatihan
+    #course-trending.course-filter.column-3-1
+        .form-check
+            input#filter-pelatihan-1.form-check-input.filter-method(type='checkbox' value='online self paced learning')
+            label.form-check-label.text-capitalize(for='filter-pelatihan-1') Lembaga 1
+        .form-check
+            input#filter-pelatihan-2.form-check-input.filter-method(type='checkbox' value='online webinar')
+            label.form-check-label.text-capitalize(for='filter-pelatihan-2') Lembaga 2

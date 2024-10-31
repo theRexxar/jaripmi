@@ -134,7 +134,29 @@ $(window).scroll(function() {
 
 
 (function($) {
-    
+    // scroll function
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+
+        // for search trigger at page pelatihan
+        if (scroll >= 214) {
+            $('.search-boxy').addClass("is-fixed");
+        } else {
+            $('.search-boxy').removeClass("is-fixed");
+        }
+
+        // for scroll-top trigger
+        if (scroll >= 400) {
+            $('.scroll-top').addClass("is-show");
+        } else {
+            $('.scroll-top').removeClass("is-show");
+        }
+    });
+
+	// Scroll to top 
+    $(".scroll-top").on("click", function() {
+        $(window).scrollTop(0);
+    });
   
 })(jQuery);
 

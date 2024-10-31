@@ -1849,6 +1849,68 @@ support for no js
   /* Image, again, from http://www.html5rocks.com/en/tutorials/masking/adobe/ */
 }
 
+.jari-sidebar-nav nav ol {
+  margin: 0;
+  padding: 0;
+}
+.jari-sidebar-nav nav ol li a {
+  text-decoration: none;
+  color: #0071cb;
+  display: block;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.jari-sidebar-nav nav ol li a:hover {
+  background-color: #dfefff;
+}
+
+.custom-search-2 {
+  border-radius: 24px;
+  -webkit-box-shadow: 0px 8px 16px -4px rgba(1, 24, 48, 0.1), 0px 0px 0px 1px rgba(214, 219, 224, 0.2);
+          box-shadow: 0px 8px 16px -4px rgba(1, 24, 48, 0.1), 0px 0px 0px 1px rgba(214, 219, 224, 0.2);
+}
+
+.custom-search-2 .form-control {
+  border-radius: 24px !important;
+  padding-right: 46px;
+  border: solid 1px transparent;
+}
+
+.custom-search-2 .btn {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  z-index: 21;
+  border: solid 2px transparent;
+  top: 2px;
+  right: 2px;
+  padding: 0;
+  border-radius: 24px 24px 24px 24px !important;
+}
+
+.custom-search-2 .btn:last-child {
+  right: 2px;
+  left: initial;
+}
+
+.custom-search-2 .btn:hover {
+  background: var(--pmi-blue-50);
+  color: var(--pmi-blue-600);
+}
+
+.custom-search-2 .btn.is-active {
+  background: var(--pmi-blue-600);
+  color: var(--white);
+}
+
+.custom-search-2 .btn:active {
+  border-color: var(--pmi-blue-300);
+}
+
+.custom-search-2.search-only .form-control {
+  padding-right: 0.5rem;
+}
+
 .tab-nav-swiper .swiper-slide-thumb-active {
   background-color: #f0f8ff;
 }
@@ -1920,4 +1982,40 @@ support for no js
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.scroll-top {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: rgba(0, 113, 203, 0.75);
+  color: white;
+  text-align: center;
+  line-height: 32px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 88;
+  border: solid 1px transparent;
+  cursor: pointer;
+  visibility: hidden;
+  padding: 0;
+}
+.scroll-top.is-show {
+  visibility: visible;
+}
+.scroll-top:hover {
+  color: white;
+  background-color: var(--pmi-blue-600);
+}
+.scroll-top:active {
+  background-color: var(--pmi-blue-700);
+  border: solid 1px var(--pmi-blue-800);
+}
+
+@media (min-width: 992px) {
+  .scroll-top {
+    bottom: 24px;
+    right: 24px;
+  }
 }

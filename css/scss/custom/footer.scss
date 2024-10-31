@@ -42,3 +42,42 @@
         background-size: contain;
     }
 }
+
+.scroll-top{
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    // background-color: var(--primary);
+    background-color: rgba($pmi-blue-600, .75);
+    color: white;
+    text-align: center;
+    line-height: 32px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 88;
+    border: solid 1px transparent;
+    cursor: pointer;
+    visibility: hidden;
+    padding: 0;
+    &.is-show{
+        visibility: visible;
+    }
+    &:hover{
+        color: white;
+        background-color: var(--pmi-blue-600);
+    }
+    &:active{
+        background-color: var(--pmi-blue-700);
+        border: solid 1px var(--pmi-blue-800);
+    }
+}
+
+@media (min-width: 992px) { 
+    //
+    .scroll-top{
+        bottom: 24px;
+        right: 24px;
+    }
+
+}

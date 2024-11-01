@@ -1,0 +1,31 @@
+//- start variable
+- var pageActive = ''
+- var baseURL = '../'
+- var contentDescription = {}
+- ogImageURL = "https://dikaseva.com/static/img/4.1f5ee9b.jpg"
+- contentDescription.title = "Jari PMI"
+- contentDescription.description = "Artikel"
+
+doctype html
+html(lang="id")
+    include ../pug/includes/html_head.pug
+    body
+        // Header 
+        include ../pug/includes/nav_mobile.pug
+
+        // Main content
+        main.site-main-content
+            include ../pug/artikel/section_hero.pug
+            include ../pug/artikel/section_article.pug
+            
+
+        // Footer
+        include ../pug/includes/footer.pug
+
+        // Header Menu
+        include ../pug/includes/nav_desktop.pug
+
+        // Modals
+        include ../pug/includes/modal.pug
+
+    include ../pug/includes/html_foot.pug

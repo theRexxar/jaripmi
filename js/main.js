@@ -401,10 +401,6 @@ var swiper = new Swiper(".courseCatSwiper", {
     slidesPerView: 1.75,
     spaceBetween: 24,
     pagination: false,
-    navigation: {
-        nextEl: ".swiper-coursecat-next",
-        prevEl: ".swiper-coursecat-prev",
-    },
     breakpoints: {
         640: {
             slidesPerView: 2.5,
@@ -419,4 +415,11 @@ var swiper = new Swiper(".courseCatSwiper", {
             spaceBetween: 24,
         },
     },
+});
+
+// Article category
+var swiper = new Swiper(".articleCatSwiper", {
+    slidesPerView: "auto",
+    spaceBetween: 0,
+    pagination: false
 });

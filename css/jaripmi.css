@@ -237,6 +237,15 @@ body {
   color: #454545 !important;
 }
 
+.form-check-input:checked {
+  background-color: #0071cb;
+  border-color: #0071cb;
+}
+.form-check-input:focus {
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(0, 113, 203, 0.25);
+          box-shadow: 0 0 0 0.25rem rgba(0, 113, 203, 0.25);
+}
+
 .fs-7 {
   font-size: 0.875rem;
 }
@@ -651,7 +660,8 @@ ul {
   --bs-btn-disabled-border-color: var(--pmi-blue-100);
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
@@ -2072,8 +2082,8 @@ support for no js
   transition: cubic-bezier(0.76, 0.34, 0.23, 0.65) 0.5s !important;
 }
 .article-card .article-card-cover:hover .article-card-body {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(100%, #173F6D), to(rgba(29, 80, 139, 0)));
-  background: linear-gradient(0deg, #173F6D 100%, rgba(29, 80, 139, 0) 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(100%, #173f6d), to(rgba(29, 80, 139, 0)));
+  background: linear-gradient(0deg, #173f6d 100%, rgba(29, 80, 139, 0) 100%);
 }
 .article-card .article-card-body {
   aspect-ratio: 1/1.25;
@@ -2084,8 +2094,8 @@ support for no js
   top: 0;
   left: 0;
   z-index: 2;
-  background: -webkit-gradient(linear, left bottom, left top, from(#173F6D), to(rgba(29, 80, 139, 0)));
-  background: linear-gradient(0deg, #173F6D 0%, rgba(29, 80, 139, 0) 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#0a4070), to(rgba(29, 80, 139, 0)));
+  background: linear-gradient(0deg, #0a4070 0%, rgba(29, 80, 139, 0) 100%);
 }
 .article-card .article-card-body > div {
   position: relative;
@@ -2101,6 +2111,9 @@ support for no js
 .article-card:hover .article-card-cover > img {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+.article-card.article-card-short .article-card-body {
+  aspect-ratio: 1/0.8;
 }
 
 .hero-mask {
@@ -2136,7 +2149,6 @@ support for no js
   padding-right: 46px;
   border: solid 1px transparent;
 }
-
 .custom-search-2 .btn {
   width: 34px;
   height: 34px;
@@ -2146,6 +2158,8 @@ support for no js
   top: 2px;
   right: 2px;
   padding: 0;
+  color: white;
+  background-color: #0071cb;
   border-radius: 24px 24px 24px 24px !important;
 }
 
@@ -2155,21 +2169,25 @@ support for no js
 }
 
 .custom-search-2 .btn:hover {
-  background: var(--pmi-blue-50);
-  color: var(--pmi-blue-600);
+  background: #005499;
 }
 
 .custom-search-2 .btn.is-active {
-  background: var(--pmi-blue-600);
-  color: var(--white);
+  background: #054d87;
+  color: white;
 }
 
 .custom-search-2 .btn:active {
-  border-color: var(--pmi-blue-300);
+  color: #7bc7fe;
 }
 
 .custom-search-2.search-only .form-control {
   padding-right: 0.5rem;
+}
+
+.custom-search-2 .btn-lg {
+  width: 44px;
+  height: 44px;
 }
 
 .btn-course-cat {
@@ -2191,6 +2209,10 @@ support for no js
   left: -1rem;
   top: 0.5rem;
   border-radius: 100%;
+}
+.btn-course-cat:hover {
+  -webkit-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+          box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
 .tab-nav-swiper .swiper-slide-thumb-active {
@@ -2241,6 +2263,10 @@ support for no js
 }
 .courseCatSwiper .swiper-slide:nth-child(5) a {
   background-color: #f4f1ff;
+}
+
+.articleCatSwiper .swiper-slide {
+  width: auto;
 }
 
 .footer-nav li {

@@ -37,3 +37,34 @@
         border: none;
     }
 }
+
+.courseCatSwiper{
+    .swiper-slide{
+        &:nth-child(1){
+            a{
+                background-color: $pmi-blue-50;
+            }
+        }
+        &:nth-child(2){
+            a{
+                background-color: $pmi-cyan-50;
+            }
+        }
+        &:nth-child(3){
+            a{
+                background-color: $pmi-lemon-50;
+            }
+        }
+        &:nth-child(4){
+            a{
+                background-color: $pmi-green-50;
+            }
+        }
+
+        &:nth-child(5){
+            a{
+                background-color: $pmi-indigo-50;
+            }
+        }
+    }
+}

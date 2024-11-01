@@ -395,3 +395,28 @@ var swiper = new Swiper(".tabNav3Swiper", {
 	  swiper: swiper,
 	},
   });
+
+// Course category
+var swiper = new Swiper(".courseCatSwiper", {
+    slidesPerView: 1.75,
+    spaceBetween: 24,
+    pagination: false,
+    navigation: {
+        nextEl: ".swiper-coursecat-next",
+        prevEl: ".swiper-coursecat-prev",
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2.5,
+            spaceBetween: 24,
+        },
+		992: {
+			slidesPerView: 3.5,
+            spaceBetween: 24,
+		},
+        1200: {
+            slidesPerView: 5,
+            spaceBetween: 24,
+        },
+    },
+});

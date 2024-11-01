@@ -11,9 +11,6 @@ body{
 .outline{
       outline: solid 1px red;
 }
-.bg-pmi-blue-50{
-    background-color: $pmi-blue-50;
-}
 
 .text-primary{
     color: $pmi-blue-600!important;
@@ -47,4 +44,208 @@ ul{
     margin:0;
     padding:0;
     list-style-type:none;
+}
+
+.bg-pmi-blue-50{
+    background-color: $pmi-blue-50;
+}
+.bg-pmi-blue-100{
+    background-color: $pmi-blue-100;
+}
+.bg-pmi-blue-200{
+    background-color: $pmi-blue-200;
+}
+.bg-pmi-blue-300{
+    background-color: $pmi-blue-300;
+}
+.bg-pmi-blue-400{
+    background-color: $pmi-blue-400;
+}
+.bg-pmi-blue-500{
+    background-color: $pmi-blue-500;
+}
+.bg-pmi-blue-600{
+    background-color: $pmi-blue-600;
+}
+.bg-pmi-blue-700{
+    background-color: $pmi-blue-700;
+}
+.bg-pmi-blue-800{
+    background-color: $pmi-blue-800;
+}
+.bg-pmi-blue-900{
+    background-color: $pmi-blue-900;
+}
+.bg-pmi-blue-950{
+    background-color: $pmi-blue-950;
+}
+
+.bg-pmi-cyan-50{
+    background-color: $pmi-cyan-50;
+}
+.bg-pmi-cyan-100{
+    background-color: $pmi-cyan-100;
+}
+.bg-pmi-cyan-200{
+    background-color: $pmi-cyan-200;
+}
+.bg-pmi-cyan-300{
+    background-color: $pmi-cyan-300;
+}
+.bg-pmi-cyan-400{
+    background-color: $pmi-cyan-400;
+}
+.bg-pmi-cyan-500{
+    background-color: $pmi-cyan-500;
+}
+.bg-pmi-cyan-600{
+    background-color: $pmi-cyan-600;
+}
+.bg-pmi-cyan-700{
+    background-color: $pmi-cyan-700;
+}
+.bg-pmi-cyan-800{
+    background-color: $pmi-cyan-800;
+}
+.bg-pmi-cyan-900{
+    background-color: $pmi-cyan-900;
+}
+.bg-pmi-cyan-950{
+    background-color: $pmi-cyan-950;
+}
+
+.bg-pmi-lemon-50{
+    background-color: $pmi-lemon-50;
+}
+.bg-pmi-lemon-100{
+    background-color: $pmi-lemon-100;
+}
+.bg-pmi-lemon-200{
+    background-color: $pmi-lemon-200;
+}
+.bg-pmi-lemon-300{
+    background-color: $pmi-lemon-300;
+}
+.bg-pmi-lemon-400{
+    background-color: $pmi-lemon-400;
+}
+.bg-pmi-lemon-500{
+    background-color: $pmi-lemon-500;
+}
+.bg-pmi-lemon-600{
+    background-color: $pmi-lemon-600;
+}
+.bg-pmi-lemon-700{
+    background-color: $pmi-lemon-700;
+}
+.bg-pmi-lemon-800{
+    background-color: $pmi-lemon-800;
+}
+.bg-pmi-lemon-900{
+    background-color: $pmi-lemon-900;
+}
+.bg-pmi-lemon-950{
+    background-color: $pmi-lemon-950;
+}
+
+.bg-pmi-neutral-50{
+    background-color: $pmi-neutral-50;
+}
+.bg-pmi-neutral-100{
+    background-color: $pmi-neutral-100;
+}
+.bg-pmi-neutral-200{
+    background-color: $pmi-neutral-200;
+}
+.bg-pmi-neutral-300{
+    background-color: $pmi-neutral-300;
+}
+.bg-pmi-neutral-400{
+    background-color: $pmi-neutral-400;
+}
+.bg-pmi-neutral-500{
+    background-color: $pmi-neutral-500;
+}
+.bg-pmi-neutral-600{
+    background-color: $pmi-neutral-600;
+}
+.bg-pmi-neutral-700{
+    background-color: $pmi-neutral-700;
+}
+.bg-pmi-neutral-800{
+    background-color: $pmi-neutral-800;
+}
+.bg-pmi-neutral-900{
+    background-color: $pmi-neutral-900;
+}
+.bg-pmi-neutral-950{
+    background-color: $pmi-neutral-950;
+}
+
+.bg-pmi-green-50{
+    background-color: $pmi-green-50;
+}
+.bg-pmi-green-100{
+    background-color: $pmi-green-100;
+}
+.bg-pmi-green-200{
+    background-color: $pmi-green-200;
+}
+.bg-pmi-green-300{
+    background-color: $pmi-green-300;
+}
+.bg-pmi-green-400{
+    background-color: $pmi-green-400;
+}
+.bg-pmi-green-500{
+    background-color: $pmi-green-500;
+}
+.bg-pmi-green-600{
+    background-color: $pmi-green-600;
+}
+.bg-pmi-green-700{
+    background-color: $pmi-green-700;
+}
+.bg-pmi-green-800{
+    background-color: $pmi-green-800;
+}
+.bg-pmi-green-900{
+    background-color: $pmi-green-900;
+}
+.bg-pmi-green-950{
+    background-color: $pmi-green-950;
+}
+
+.bg-pmi-indigo-50{
+    background-color: $pmi-indigo-50;
+}
+.bg-pmi-indigo-100{
+    background-color: $pmi-indigo-100;
+}
+.bg-pmi-indigo-200{
+    background-color: $pmi-indigo-200;
+}
+.bg-pmi-indigo-300{
+    background-color: $pmi-indigo-300;
+}
+.bg-pmi-indigo-400{
+    background-color: $pmi-indigo-400;
+}
+.bg-pmi-indigo-500{
+    background-color: $pmi-indigo-500;
+}
+.bg-pmi-indigo-600{
+    background-color: $pmi-indigo-600;
+}
+.bg-pmi-indigo-700{
+    background-color: $pmi-indigo-700;
+}
+.bg-pmi-indigo-800{
+    background-color: $pmi-indigo-800;
+}
+.bg-pmi-indigo-900{
+    background-color: $pmi-indigo-900;
+}
+.bg-pmi-indigo-950{
+    background-color: $pmi-indigo-950;
 }

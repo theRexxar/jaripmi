@@ -341,7 +341,7 @@ ul {
     top: 0;
     left: 0;
     z-index: 2;
-    background: linear-gradient(0deg, $pmi-blue-900 0%, rgba(29, 80, 139, 0) 100%);
+    background: linear-gradient(0deg, $pmi-neutral-950 0%, rgba(29, 80, 139, 0) 100%);
     & > div {
       position: relative;
       z-index: 4;
@@ -475,6 +475,37 @@ ul {
   &:hover {
     box-shadow: 0 0.125rem 0.25rem rgba(black, 0.075);
   }
+}
+
+.card-link-box{
+  text-decoration: none;
+  color: $text-primary;
+  &:hover{
+    background-color: $pmi-bg-default;
+  }
+}
+
+.pmi-scrollspy-content{
+
+}
+
+.pmi-scrollspy-nav{
+  position: sticky;
+  left:0;
+  top: calc(80px + 1.5rem);
+  ol{
+    li{
+      &.is-active{
+        background-color: $pmi-blue-50;
+        border-radius: .5rem;
+        a{
+          color: $pmi-primary;
+        }
+      }
+    }
+
+  }
+  
 }
 
 @import "custom/swiper";

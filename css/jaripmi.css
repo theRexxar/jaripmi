@@ -2264,6 +2264,11 @@ support for no js
   color: #0071cb;
 }
 
+@media (max-width: 768px) {
+  .breadcrumb-wrapper .breadcrumb-item.active {
+    max-width: calc(100% - 150px) !important;
+  }
+}
 .tab-nav-swiper .swiper-slide-thumb-active {
   background-color: #f0f8ff;
 }

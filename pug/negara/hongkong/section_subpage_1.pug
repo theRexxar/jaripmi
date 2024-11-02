@@ -1,18 +1,31 @@
 // HDetail Page 1
 section
+    .container.pt-4.pt-lg-0.pb-lg-0.px-4.px-md-0
+        .row.d-flex.align-items-center
+            .col-12
+                nav.breadcrumb-wrapper(aria-label="breadcrumb")
+                    ol.breadcrumb.overflow-hidden.fs-7.mb-0
+                        li.breadcrumb-item
+                            a.text-primary(href=baseURL+'/')
+                                | Negara
+                        li.breadcrumb-item
+                            a.text-primary(href=baseURL+'negara/') Hongkong
+
+                        li.breadcrumb-item.active.text-truncate(aria-current='page') Tata Cara Pengiriman Uang ke Indonesia
+section
   .container.py-4.pt-lg-4.pb-lg-4.px-4.px-md-0
     .row.d-flex.align-items-center
-        .col-12
-            ol.breadcrumb.fs-7.overflow-hidden.text-nowrap.mw-100
-                    li.breadcrumb-item
-                        a.text-primary(href=baseURL+'/')
-                            i.bi.bi-house
-                    li.breadcrumb-item
-                        a.text-primary(href=baseURL+'negara/') Semua Negara
-                    li.breadcrumb-item
-                        a.text-primary(href=baseURL+'negara/hongkong/') Hongkong
+        //- .col-12
+        //-     ol.breadcrumb.fs-7.overflow-hidden.text-nowrap.mw-100
+        //-             li.breadcrumb-item
+        //-                 a.text-primary(href=baseURL+'/')
+        //-                     i.bi.bi-house
+        //-             li.breadcrumb-item
+        //-                 a.text-primary(href=baseURL+'negara/') Semua Negara
+        //-             li.breadcrumb-item
+        //-                 a.text-primary(href=baseURL+'negara/hongkong/') Hongkong
 
-                    li.breadcrumb-item.active(aria-current='page') Tata Cara Pengiriman Uang ke Indonesia
+        //-             li.breadcrumb-item.active(aria-current='page') Tata Cara Pengiriman Uang ke Indonesia
         
         .col-12.bg-pmi-neutral-50.rounded-3
             .p-4.text-center

@@ -24,6 +24,11 @@ hr{
   color: $text-secondary !important;
 }
 
+.display-0{
+  font-size: var(--font-size-7x);
+  font-weight: bold;
+}
+
 .form-check-input {
   &:checked {
     background-color: $pmi-primary;

@@ -247,6 +247,7 @@
 }
 
 :root {
+  --font-size-7x: min(20vmin, calc(8rem + 1.2vmax));
   --font-size-6x: min(7.5vmin, calc(2rem + 1.2vmax));
   --font-size-5x: min(6.5vmin, calc(1.1rem + 1.2vmax));
   --font-size-4x: min(4vmin, calc(0.8rem + 1.2vmax));
@@ -297,6 +298,11 @@ hr {
 
 .text-secondary {
   color: #454545 !important;
+}
+
+.display-0 {
+  font-size: var(--font-size-7x);
+  font-weight: bold;
 }
 
 .form-check-input:checked {

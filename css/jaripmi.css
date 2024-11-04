@@ -2256,12 +2256,45 @@ support for no js
   left: 0;
   top: calc(80px + 1.5rem);
 }
+.pmi-scrollspy-nav ol li {
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+.pmi-scrollspy-nav ol li a {
+  color: #242424 !important;
+}
 .pmi-scrollspy-nav ol li.is-active {
   background-color: #f0f8ff;
   border-radius: 0.5rem;
 }
 .pmi-scrollspy-nav ol li.is-active a {
-  color: #0071cb;
+  color: #0071cb !important;
+}
+
+.breadcrumb-wrapper {
+  position: relative;
+  z-index: 21;
+}
+
+.content-article ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.content-article ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+.content-article ul ul,
+.content-article ol ul {
+  list-style-type: circle;
+  list-style-position: inside;
+  margin-left: 15px;
+}
+.content-article ol ol,
+.content-article ul ol {
+  list-style-type: lower-latin;
+  list-style-position: inside;
+  margin-left: 15px;
 }
 
 @media (max-width: 768px) {

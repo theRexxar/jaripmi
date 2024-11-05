@@ -586,6 +586,14 @@ Main components
                 vertical-align: middle;
             }
         }
+        li{
+            a{
+                
+                &:hover{
+                    // background-color: yellow;
+                }
+            }
+        }
     }
     .site-primary-nav .nav-group > li > a {
         /* main navigation buttons style */
@@ -603,11 +611,16 @@ Main components
         transition: color 0.3s, box-shadow 0.3s;
     }
     .site-primary-nav .nav-group > li > a:hover {
-        color: #011148;
+        color: $pmi-primary;
+        box-shadow: inset 0 -4px 0 $pmi-primary;
     }
     .site-primary-nav .nav-group > li > a.selected {
-        color: black;
-        box-shadow: inset 0 -2px 0 black;
+        color: $text-primary;
+        box-shadow: inset 0 -2px 0 $pmi-primary;
+        -webkit-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
+        -moz-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
+        -o-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
+        transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
     }
     .site-primary-nav .go-back,
     .site-primary-nav .see-all {
@@ -727,7 +740,7 @@ Main components
         color: $c-grey-darken-1;
         border-bottom: none;
         font-size: 1.4rem;
-        color: red;
+        color: $text-primary;
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         border-radius: 4px;
@@ -1061,7 +1074,7 @@ Main components
             a {
                 padding: $gutter-m $gutter;
                 height: auto;
-                color: red;
+                color: $text-primary;
                 border-bottom: none;
                 font-size: $header-font-md;
                 margin: 0;
@@ -1236,7 +1249,7 @@ Main components
 
 
 .btn-cta-header {
-    margin: $gutter;
+    margin: 12px $gutter;
 }
 
 @media only screen and (max-width: $header-screen-max-width) {
@@ -1275,8 +1288,8 @@ Main components
     }
     .btn-cta-header {
         color: #fff!important;
-        line-height: 48px!important;
-        height: 48px!important;
+        line-height: 42px!important;
+        height: 42px!important;
         transform: translateY(16px)!important;
         padding: 0 1em!important;
         margin: 0 0 0 $gutter;

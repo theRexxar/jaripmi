@@ -886,6 +886,10 @@ Main components
   height: 50px;
   background: none;
   z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .nav-is-fixed .site-main-header {

@@ -973,7 +973,7 @@ Main components for header layouts
 
 @media only screen and (min-width: 1200px) {
   .site-main-header {
-    height: 80px;
+    height: 70px;
   }
   .site-main-header::after {
     clear: both;
@@ -981,7 +981,7 @@ Main components for header layouts
     display: table;
   }
   .site-main-content {
-    padding-top: 80px;
+    padding-top: 70px;
   }
 }
 .site-logo img {
@@ -1205,8 +1205,8 @@ Main components for header layouts
 .site-primary-nav .site-nav-gallery .site-nav-item,
 .site-primary-nav .site-nav-icons .site-nav-item {
   /* items with picture (or icon) and title */
-  height: 80px;
-  line-height: 80px;
+  height: 70px;
+  line-height: 70px;
 }
 
 .site-primary-nav .site-nav-gallery .site-nav-item h3,
@@ -1276,7 +1276,7 @@ Main components for header layouts
   .site-primary-nav {
     position: static;
     padding: 0;
-    height: 80px;
+    height: 70px;
     width: auto;
     width: 100%;
     overflow: visible;
@@ -1334,9 +1334,10 @@ Main components for header layouts
     /* main navigation buttons style */
     position: relative;
     display: inline-block;
-    height: 80px;
-    line-height: 80px;
-    padding: 0 24px;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 0 !important;
+    margin: 0 1rem 0 1rem;
     color: #242424;
     overflow: visible;
     border-bottom: none;
@@ -1348,13 +1349,13 @@ Main components for header layouts
   }
   .site-primary-nav .nav-group > li > a:hover {
     color: #0071cb;
-    -webkit-box-shadow: inset 0 -4px 0 #0071cb;
-            box-shadow: inset 0 -4px 0 #0071cb;
+    -webkit-box-shadow: inset 0 -3px 0 #0a91ed;
+            box-shadow: inset 0 -3px 0 #0a91ed;
   }
   .site-primary-nav .nav-group > li > a.selected {
     color: #242424;
-    -webkit-box-shadow: inset 0 -2px 0 #0071cb;
-            box-shadow: inset 0 -2px 0 #0071cb;
+    -webkit-box-shadow: inset 0 -3px 0 #0071cb;
+            box-shadow: inset 0 -3px 0 #0071cb;
     -webkit-transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
     transition: cubic-bezier(0.11, 0.65, 0.73, 0.66), 0.5s;
   }
@@ -1817,7 +1818,7 @@ Main components for header layouts
     right: 0;
   }
   .header-container {
-    height: 80px;
+    height: 70px;
   }
 }
 @media all and (min-width: 1200px) {

@@ -57,6 +57,12 @@ header{
     }
 }
 
+.header-gap{
+    background-color: yellow;
+    height: 50px;
+    width: 100%;
+}
+
 /* -------------------------------- 
 
 header
@@ -91,7 +97,9 @@ img {
 Main components 
 
 -------------------------------- */
-
+.site-main-content{
+    padding-top: 50px;
+}
 .site-main-content,
 .site-main-header {
     /* Force Hardware Acceleration in WebKit */

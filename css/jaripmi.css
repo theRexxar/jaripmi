@@ -734,43 +734,6 @@ ul {
   background-color: #290471;
 }
 
-/** content sizing class **/
-.w-10 {
-  max-width: 10%;
-}
-
-.w-20 {
-  max-width: 20%;
-}
-
-.w-30 {
-  max-width: 30%;
-}
-
-.w-40 {
-  max-width: 40%;
-}
-
-.w-50 {
-  max-width: 50%;
-}
-
-.w-60 {
-  max-width: 60%;
-}
-
-.w-70 {
-  max-width: 70%;
-}
-
-.w-80 {
-  max-width: 80%;
-}
-
-.w-90 {
-  max-width: 90%;
-}
-
 .btn {
   border-radius: 99px;
 }
@@ -2523,6 +2486,43 @@ support for no js
 }
 .pmi-accordion .accordion-item .accordion-header .accordion-button.collapsed::after {
   content: "\f64d";
+}
+
+/** content sizing class **/
+.w-10 {
+  max-width: 10%;
+}
+
+.w-20 {
+  max-width: 20%;
+}
+
+.w-30 {
+  max-width: 30%;
+}
+
+.w-40 {
+  max-width: 40%;
+}
+
+.w-50 {
+  max-width: 50%;
+}
+
+.w-60 {
+  max-width: 60%;
+}
+
+.w-70 {
+  max-width: 70%;
+}
+
+.w-80 {
+  max-width: 80%;
+}
+
+.w-90 {
+  max-width: 90%;
 }
 
 @media (max-width: 768px) {

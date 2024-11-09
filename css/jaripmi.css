@@ -734,6 +734,30 @@ ul {
   background-color: #290471;
 }
 
+.custom-rfs-h1 {
+  font-size: calc(2.5rem + 0.6vw);
+}
+
+.custom-rfs-h2 {
+  font-size: calc(2rem + 0.6vw);
+}
+
+.custom-rfs-h3 {
+  font-size: calc(1.75rem + 0.6vw);
+}
+
+.custom-rfs-h4 {
+  font-size: calc(1.5rem + 0.6vw);
+}
+
+.custom-rfs-h5 {
+  font-size: calc(1rem + 0.6vw);
+}
+
+.custom-rfs-h6 {
+  font-size: calc(0.875rem + 0.6vw);
+}
+
 .btn {
   border-radius: 99px;
 }
@@ -1680,6 +1704,7 @@ Main components for header layouts
 .header-container {
   position: relative;
   height: auto;
+  height: 50px;
 }
 
 @media all and (min-width: 1200px) {
@@ -2488,6 +2513,23 @@ support for no js
   content: "\f64d";
 }
 
+.text-clamp-2,
+.text-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.text-clamp-2 {
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.text-clamp-3 {
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
 /** content sizing class **/
 .w-10 {
   max-width: 10%;
@@ -2582,6 +2624,10 @@ support for no js
 
 .articleCatSwiper .swiper-slide {
   width: auto;
+}
+
+.swiper-nav-box {
+  height: 164px;
 }
 
 .footer-nav li {

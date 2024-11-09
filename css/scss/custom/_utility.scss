@@ -269,3 +269,24 @@ ul {
 .bg-pmi-indigo-950 {
   background-color: $pmi-indigo-950;
 }
+
+// Custom Responsive Font Size
+
+.custom-rfs-h1{
+  font-size: calc(2.5rem + 0.6vw);
+}
+.custom-rfs-h2{
+  font-size: calc(2rem + 0.6vw);
+}
+.custom-rfs-h3{
+  font-size: calc(1.75rem + 0.6vw);
+}
+.custom-rfs-h4{
+  font-size: calc(1.5rem + 0.6vw);
+}
+.custom-rfs-h5{
+  font-size: calc(1rem + 0.6vw);
+}
+.custom-rfs-h6{
+  font-size: calc(.875rem + 0.6vw);
+}

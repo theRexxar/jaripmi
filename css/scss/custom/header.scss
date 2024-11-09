@@ -1051,6 +1051,7 @@ Main components for header layouts
     position: relative;
     height: auto;
     // height: $header-height;
+    height: 50px;
 }
 
 @media all and (min-width:$header-screen-min-width) {

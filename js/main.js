@@ -229,8 +229,8 @@ var TxtRotate = function(el, toRotate, period) {
 
   // Home Carousel Course
   var swiper = new Swiper(".courseSwiper", {
-    slidesPerView: 1.5,
-    spaceBetween: 24,
+    slidesPerView: 1.25,
+    spaceBetween: 16,
     pagination: false,
     navigation: {
         nextEl: ".swiper-course-next",
@@ -254,8 +254,8 @@ var TxtRotate = function(el, toRotate, period) {
 
   // Home Carousel Article
   var swiper = new Swiper(".articleSwiper", {
-    slidesPerView: 1.75,
-    spaceBetween: 24,
+    slidesPerView: 1.25,
+    spaceBetween:16,
     pagination: false,
     navigation: {
         nextEl: ".swiper-article-next",
@@ -279,7 +279,7 @@ var TxtRotate = function(el, toRotate, period) {
 
  // Home Carousel Countries
  var swiper = new Swiper(".countrySwiper", {
-	slidesPerView: 1.75,
+	slidesPerView: 1.25,
 	grid: {
 		rows: 2,
 	},
@@ -299,8 +299,8 @@ var TxtRotate = function(el, toRotate, period) {
 
 // Tab Pengelolaan Keuangan
 var swiper = new Swiper(".tabNavSwiper", {
-	spaceBetween: 24,
-	slidesPerView: 1.5,
+	spaceBetween: 0,
+	slidesPerView: 1.2,
 	freeMode: true,
 	watchSlidesProgress: true,
 	navigation: {
@@ -309,16 +309,16 @@ var swiper = new Swiper(".tabNavSwiper", {
 	  },
 	  breakpoints: {
         640: {
-            slidesPerView: 2.25,
-            spaceBetween: 16,
+            slidesPerView: 2.1,
+            spaceBetween: 8,
         },
         768: {
             slidesPerView: 2.75,
-            spaceBetween: 24,
+            spaceBetween: 0,
         },
         1024: {
             slidesPerView: 4.5,
-            spaceBetween: 24,
+            spaceBetween: 0,
         },
     },
   });

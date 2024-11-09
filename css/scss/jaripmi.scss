@@ -522,23 +522,76 @@ ul {
   ul {
     list-style-type: disc;
     list-style-position: inside;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
   }
   ol {
     list-style-type: decimal;
     list-style-position: inside;
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
   }
   ul ul,
   ol ul {
     list-style-type: circle;
     list-style-position: inside;
     margin-left: 15px;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
   }
   ol ol,
   ul ol {
     list-style-type: lower-latin;
     list-style-position: inside;
     margin-left: 15px;
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
   }
+}
+
+ol.ordered-list{
+  display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+ul.unordered-list{
+  display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
 }
 
 .heading-sticky{
@@ -617,6 +670,18 @@ ul {
           line-clamp: 3; 
 }
 
+.bg-dot-pattern{
+  background-image: url('../img/svg-dot-patterns.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.adjust-anchor{
+    position: relative;
+    padding-top: 80px;
+    margin-top: -80px;
+    overflow: hidden;
+}
 
 /** content sizing class **/    
 .w-10 {

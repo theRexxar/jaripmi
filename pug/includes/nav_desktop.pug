@@ -6,14 +6,14 @@ nav.site-nav.w-100.d-flex.justify-content-end
   #site-primary-nav.site-primary-nav.is-fixed
     ul.nav-group
         li
-            a(href=baseURL+'index.html' class={"selected" : pageActive === 'beranda'}) Beranda
+            a(href=baseURL+'index.html' class={"is-active" : pageActive === 'beranda'}) Beranda
         li
-            a(href=baseURL+'informasi-keuangan/' class={"selected" : pageActive === 'informasi-keuangan'}) Informasi Keuangan
+            a(href=baseURL+'informasi-keuangan/' class={"is-active" : pageActive === 'informasi-keuangan'}) Informasi Keuangan
         li
-            a(href=baseURL+'pelatihan/' class={"selected" : pageActive === 'pelatihan'}) Pelatihan
+            a(href=baseURL+'pelatihan/' class={"is-active" : pageActive === 'pelatihan'}) Pelatihan
         
         li.has-children.small-children
-            a(class={"selected" : pageActive === 'negara-tujuan'}) Negara Tujuan
+            a(class={"is-active" : pageActive === 'negara-tujuan'}) Negara Tujuan
             ul.site-secondary-nav.has-see-all.is-hidden
                 li.go-back
                     a(href='#0') Menu
@@ -42,7 +42,7 @@ nav.site-nav.w-100.d-flex.justify-content-end
                     a.site-nav-item(href=baseURL+"negara/hongkong/")
                         | Hongkong
         li
-            a(href=baseURL+"artikel/" class={"selected" : pageActive === 'artikel'}) Artikel
+            a(href=baseURL+"artikel/" class={"is-active" : pageActive === 'artikel'}) Artikel
             
         li
             button.btn.btn-cta-header.btn-primary(type="button" data-bs-toggle="modal" data-bs-target="#layananAduan") 

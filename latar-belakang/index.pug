@@ -1,0 +1,31 @@
+//- start variable
+- var pageActive = ''
+- var baseURL = '../'
+- var contentDescription = {}
+- ogImageURL = baseURL+"img/jaripmi-berdaya.jpg"
+- contentDescription.title = "Latar Belakang & Visi Misi | Jari PMI"
+- contentDescription.description = "Description"
+
+doctype html
+html(lang="id" page-class="home")
+    include ../pug/includes/html_head.pug
+    body
+        // Header 
+        include ../pug/includes/nav_mobile.pug
+
+        // Main content
+        main.site-main-content
+            include ../pug/latar-belakang/section_latar_belakang.pug
+            include ../pug/latar-belakang/section_visi_misi.pug
+
+
+        // Footer
+        include ../pug/includes/footer.pug
+
+        // Header Menu
+        include ../pug/includes/nav_desktop.pug
+
+        // Modals
+        include ../pug/includes/modal.pug
+
+    include ../pug/includes/html_foot.pug

@@ -2590,7 +2590,18 @@ support for no js
 .tab-content-swiper .swiper-slide-active {
   background-color: #f0f8ff;
 }
+.tab-content-swiper .swiper-slide {
+  height: 100%;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
 
+@media (min-width: 992px) {
+  .tab-content-swiper .swiper-slide {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+}
 .country-swiper {
   height: calc(496px + 1.5rem);
 }

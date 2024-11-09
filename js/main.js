@@ -325,6 +325,7 @@ var swiper = new Swiper(".tabNavSwiper", {
   var swiper2 = new Swiper(".tabContentSwiper", {
 	spaceBetween: 0,
 	
+	
 	thumbs: {
 	  swiper: swiper,
 	},
@@ -357,7 +358,13 @@ var swiper = new Swiper(".tabNav2Swiper", {
   });
   var swiper2 = new Swiper(".tabContent2Swiper", {
 	spaceBetween: 0,
-	
+	// direction: "vertical",
+	// freeMode: true,
+    //   scrollbar: {
+    //     el: ".swiper-scrollbar",
+    //   },
+    //   mousewheel: true,
+
 	thumbs: {
 	  swiper: swiper,
 	},

@@ -21,7 +21,22 @@
     .swiper-slide-active{
         background-color: $pmi-blue-50;
     }
+    .swiper-slide{
+        height: 100%;
+        max-height: calc(100vh - 200px);
+        // max-height: 400px;
+        overflow-y: auto;
+    }
 }
+
+@media (min-width: $screen-lg) {
+    .tab-content-swiper{
+        .swiper-slide{
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    }
+  }
 
 .country-swiper{
     height: calc(496px + 1.5rem);

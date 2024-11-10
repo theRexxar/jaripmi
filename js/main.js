@@ -299,7 +299,7 @@ var TxtRotate = function(el, toRotate, period) {
 
 // Tab Pengelolaan Keuangan
 var swiper = new Swiper(".tabNavSwiper", {
-	spaceBetween: 0,
+	spaceBetween: 4,
 	slidesPerView: 1.2,
 	freeMode: true,
 	watchSlidesProgress: true,
@@ -314,17 +314,17 @@ var swiper = new Swiper(".tabNavSwiper", {
         },
         768: {
             slidesPerView: 2.75,
-            spaceBetween: 0,
+            spaceBetween: 16,
         },
         1024: {
             slidesPerView: 4.5,
-            spaceBetween: 0,
+            spaceBetween: 16,
         },
     },
   });
   var swiper2 = new Swiper(".tabContentSwiper", {
 	spaceBetween: 0,
-	
+	autoHeight: true,
 	
 	thumbs: {
 	  swiper: swiper,
@@ -333,7 +333,7 @@ var swiper = new Swiper(".tabNavSwiper", {
 
   // Tab Produk Tabungan
 var swiper = new Swiper(".tabNav2Swiper", {
-	spaceBetween: 24,
+	spaceBetween: 4,
 	slidesPerView: 1.5,
 	freeMode: true,
 	watchSlidesProgress: true,
@@ -344,26 +344,21 @@ var swiper = new Swiper(".tabNav2Swiper", {
 	  breakpoints: {
         640: {
             slidesPerView: 2.25,
-            spaceBetween: 16,
+            spaceBetween: 8,
         },
         768: {
             slidesPerView: 2.75,
-            spaceBetween: 24,
+            spaceBetween: 8,
         },
         1024: {
             slidesPerView: 4.5,
-            spaceBetween: 24,
+            spaceBetween: 16,
         },
     },
   });
   var swiper2 = new Swiper(".tabContent2Swiper", {
 	spaceBetween: 0,
-	// direction: "vertical",
-	// freeMode: true,
-    //   scrollbar: {
-    //     el: ".swiper-scrollbar",
-    //   },
-    //   mousewheel: true,
+	autoHeight: true,
 
 	thumbs: {
 	  swiper: swiper,
@@ -372,7 +367,7 @@ var swiper = new Swiper(".tabNav2Swiper", {
 
    // Tab Produk Pinjaman
 var swiper = new Swiper(".tabNav3Swiper", {
-	spaceBetween: 24,
+	spaceBetween: 4,
 	slidesPerView: 1.5,
 	freeMode: true,
 	watchSlidesProgress: true,
@@ -383,20 +378,21 @@ var swiper = new Swiper(".tabNav3Swiper", {
 	  breakpoints: {
         640: {
             slidesPerView: 2.25,
-            spaceBetween: 16,
+            spaceBetween: 8,
         },
         768: {
             slidesPerView: 2.75,
-            spaceBetween: 24,
+            spaceBetween: 8,
         },
         1024: {
             slidesPerView: 4.5,
-            spaceBetween: 24,
+            spaceBetween: 16,
         },
     },
   });
   var swiper2 = new Swiper(".tabContent3Swiper", {
 	spaceBetween: 0,
+	autoHeight: true,
 	
 	thumbs: {
 	  swiper: swiper,
@@ -406,16 +402,16 @@ var swiper = new Swiper(".tabNav3Swiper", {
 // Course category
 var swiper = new Swiper(".courseCatSwiper", {
     slidesPerView: 1.75,
-    spaceBetween: 24,
+    spaceBetween: 8,
     pagination: false,
     breakpoints: {
         640: {
             slidesPerView: 2.5,
-            spaceBetween: 24,
+            spaceBetween: 8,
         },
 		992: {
 			slidesPerView: 3.5,
-            spaceBetween: 24,
+            spaceBetween: 16,
 		},
         1200: {
             slidesPerView: 5,
@@ -428,7 +424,7 @@ var swiper = new Swiper(".courseCatSwiper", {
 var swiper = new Swiper(".articleCatSwiper", {
     slidesPerView: "auto",
     spaceBetween: 0,
-    pagination: false
+    pagination: false,
 });
 
 

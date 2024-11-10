@@ -1,8 +1,23 @@
 section
   .container.py-4.py-lg-5.px-4.px-md-0
     .row 
-        .col-lg-3 
-            include section_course_filter.pug
+      .col-lg-3 
+        //- Displayed on mobile screen only screen-xs to screen-lg
+        .d-block.d-lg-none
+          .row.justify-content-center
+            .col-12.col-md-8
+              button.btn.btn-outline-primary.w-100.mb-4(data-bs-toggle="modal" data-bs-target="#filterPelatihan")
+                i.bi.bi-filter.me-2
+                | Filter Pelatihan
 
-        .col-lg-9
-            include section_course_content.pug
+        //- Displayed on desktop screen only (min-width = screen-lg)
+        .d-none.d-lg-block
+          div.mb-4
+            h6
+              i.bi.bi-filter.me-2
+              | Filter Pelatihan
+
+          include section_course_filter.pug
+
+      .col-lg-9
+        include section_course_content.pug

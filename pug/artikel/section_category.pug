@@ -1,43 +1,44 @@
+
 <!-- Category with swiper -->
-//- section
-//-     .container.px-4.px-md-0
-//-         .swiper.articleCatSwiper.mt-4
-//-             .swiper-wrapper.pb-3.d-flex.justify-content-center
-//-                 .swiper-slide
-//-                     a.p-2.btn(href="#") 
-//-                         | Semua
+section
+    .container.px-0
+        .swiper.articleCatSwiper.mt-4
+            .swiper-wrapper.d-lg-flex.justify-content-lg-center
+                .swiper-slide.nav.nav-underline
+                    a.py-2.px-3.nav-link(aria-current='page' href=baseURL+'artikel/' class={"active" : ArticleTabActive === 'semua'})
+                        | Semua
 
-//-                 .swiper-slide
-//-                     a.p-2.btn(href="#") 
-//-                         | Kategori 1
+                .swiper-slide.nav.nav-underline
+                    a.py-2.px-3.nav-link(href=baseURL+'artikel/artikel-kategori.html' class={"active" : ArticleTabActive === 'kategori-1'})
+                        | Kategori 1
 
-//-                 .swiper-slide
-//-                     a.p-2.btn(href="#") 
-//-                         | Kategori 2
+                .swiper-slide.nav.nav-underline
+                    a.py-2.px-3.nav-link(href=baseURL+'artikel/artikel-kategori.html')
+                        | Kategori 2
 
-//-                 .swiper-slide
-//-                     a.p-2.btn(href="#") 
-//-                         | Kategori 3
+                .swiper-slide.nav.nav-underline
+                    a.py-2.px-3.nav-link(href=baseURL+'artikel/artikel-kategori.html')
+                        | Kategori 3
 
-//-                 .swiper-slide
-//-                     a.p-2.btn(href="#") 
-//-                         | Kategori 4
+                .swiper-slide.nav.nav-underline
+                    a.py-2.px-3.nav-link(href=baseURL+'artikel/artikel-search-result.html' class={"active" : ArticleTabActive === 'search-result'})
+                        | Cth Hasil Pencarian
 
 
 <!-- Category without swiper -->
-section
-    .container.px-4.px-md-0
-        .d-flex.justify-content-center
-            ul.nav.nav-underline
-                li.nav-item
-                    a.nav-link.active(aria-current='page' href='#') Semua
-                li.nav-item
-                    a.nav-link(href='#') Kategori 1
-                li.nav-item
-                    a.nav-link(href='#') Kategori 2
-                li.nav-item
-                    a.nav-link(href='#') Kategori 3
-                li.nav-item
-                    a.nav-link(href='#') Kategori 4
+//- section
+//-     .container.px-0
+//-         .d-flex.justify-content-center
+//-             ul.nav.nav-underline
+//-                 li.nav-item
+//-                     a.nav-link.active(aria-current='page' href=baseURL+'artikel/artikel_kategori.html') Semua
+//-                 li.nav-item
+//-                     a.nav-link(href=baseURL+'artikel/artikel_kategori.html') Kategori 1
+//-                 li.nav-item
+//-                     a.nav-link(href=baseURL+'artikel/artikel_kategori.html') Kategori 2
+//-                 li.nav-item
+//-                     a.nav-link(href=baseURL+'artikel/artikel_kategori.html') Kategori 3
+//-                 li.nav-item
+//-                     a.nav-link(href=baseURL+'artikel/artikel_kategori.html') Kategori 4
 
 

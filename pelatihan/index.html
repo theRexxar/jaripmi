@@ -70,7 +70,7 @@
           <div class="row d-flex align-items-center justify-content-center">
             <div class="col-md-8 col-lg-6 text-center">
               <h1 class="mb-3">Pelatihan</h1>
-              <div class="input-group custom-search-2 search-only mb-5">
+              <div class="input-group custom-search-2 search-only mb-4 mb-lg-5">
                 <button class="btn btn-outline-light btn-lg" id="button-addon1" type="button"><i class="bi bi-search"></i></button>
                 <input class="form-control form-control-lg" type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Cari pelatihan...">
               </div>
@@ -110,49 +110,58 @@
         <div class="container py-4 py-lg-5 px-4 px-md-0">
           <div class="row"> 
             <div class="col-lg-3"> 
-              <div class="mb-4">
-                <h6>Filter Pelatihan</h6>
-              </div>
-              <div class="mb-4">
-                <h6 class="filter-group-sticky mb-3"><i class="bi bi-percent color-success"> </i>Harga</h6>
-                <div class="course-filter column-3-1" id="course-price">
-                  <div class="form-check">
-                    <input class="form-check-input filter-price" id="filter-price-1" type="checkbox" value="0">
-                    <label class="form-check-label text-capitalize" for="filter-price-1">gratis (Rp0)</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input filter-price" id="filter-price-2" type="checkbox" value="20000">
-                    <label class="form-check-label text-capitalize" for="filter-price-2">Rp20.000,-</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input filter-price" id="filter-price-3" type="checkbox" value="diskon besar">
-                    <label class="form-check-label text-capitalize" for="filter-price-3">Diskon Besar</label>
+              <div class="d-block d-lg-none">
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-8">
+                    <button class="btn btn-outline-primary w-100 mb-4" data-bs-toggle="modal" data-bs-target="#filterPelatihan"><i class="bi bi-filter me-2"></i>Filter Pelatihan</button>
                   </div>
                 </div>
               </div>
-              <div class="mb-4">
-                <h6 class="filter-group-sticky mb-3"><i class="bi bi-stars text-danger"> </i>Kategori Pelatihan</h6>
-                <div class="course-filter column-3-1" id="course-trending">
-                  <div class="form-check">
-                    <input class="form-check-input filter-trending" id="filter-trending-1" type="checkbox" value="true">
-                    <label class="form-check-label text-capitalize" for="filter-trending-1">Kategori 1</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input filter-newcourse" id="filter-newcourse" type="checkbox" value="true">
-                    <label class="form-check-label text-capitalize" for="filter-newcourse">Kategori 2</label>
+              <div class="d-none d-lg-block">
+                <div class="mb-4">
+                  <h6><i class="bi bi-filter me-2"></i>Filter Pelatihan</h6>
+                </div>
+                <div class="mb-4">
+                  <h6 class="filter-group-sticky mb-3"><i class="bi bi-percent color-success"> </i>Harga</h6>
+                  <div class="course-filter column-3-1" id="course-price">
+                    <div class="form-check">
+                      <input class="form-check-input filter-price" id="filter-price-1" type="checkbox" value="0">
+                      <label class="form-check-label text-capitalize" for="filter-price-1">gratis (Rp0)</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input filter-price" id="filter-price-2" type="checkbox" value="20000">
+                      <label class="form-check-label text-capitalize" for="filter-price-2">Rp20.000,-</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input filter-price" id="filter-price-3" type="checkbox" value="diskon besar">
+                      <label class="form-check-label text-capitalize" for="filter-price-3">Diskon Besar</label>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="mb-4">
-                <h6 class="filter-group-sticky mb-3"><i class="bi bi-person-video2 text-info"> </i>Lembaga Pelatihan</h6>
-                <div class="course-filter column-3-1" id="course-trending">
-                  <div class="form-check">
-                    <input class="form-check-input filter-method" id="filter-pelatihan-1" type="checkbox" value="online self paced learning">
-                    <label class="form-check-label text-capitalize" for="filter-pelatihan-1">Lembaga 1</label>
+                <div class="mb-4">
+                  <h6 class="filter-group-sticky mb-3"><i class="bi bi-stars text-danger"> </i>Kategori Pelatihan</h6>
+                  <div class="course-filter column-3-1" id="course-trending">
+                    <div class="form-check">
+                      <input class="form-check-input filter-trending" id="filter-trending-1" type="checkbox" value="true">
+                      <label class="form-check-label text-capitalize" for="filter-trending-1">Kategori 1</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input filter-newcourse" id="filter-newcourse" type="checkbox" value="true">
+                      <label class="form-check-label text-capitalize" for="filter-newcourse">Kategori 2</label>
+                    </div>
                   </div>
-                  <div class="form-check">
-                    <input class="form-check-input filter-method" id="filter-pelatihan-2" type="checkbox" value="online webinar">
-                    <label class="form-check-label text-capitalize" for="filter-pelatihan-2">Lembaga 2</label>
+                </div>
+                <div class="mb-4">
+                  <h6 class="filter-group-sticky mb-3"><i class="bi bi-person-video2 text-info"> </i>Lembaga Pelatihan</h6>
+                  <div class="course-filter column-3-1" id="course-trending">
+                    <div class="form-check">
+                      <input class="form-check-input filter-method" id="filter-pelatihan-1" type="checkbox" value="online self paced learning">
+                      <label class="form-check-label text-capitalize" for="filter-pelatihan-1">Lembaga 1</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input filter-method" id="filter-pelatihan-2" type="checkbox" value="online webinar">
+                      <label class="form-check-label text-capitalize" for="filter-pelatihan-2">Lembaga 2</label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -577,6 +586,67 @@
           </div>
           <div class="modal-footer justify-content-center">
             <button class="btn btn-outline-primary" type="button" data-bs-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal-lg fade" id="filterPelatihan" tabindex="-1" aria-labelledby="layananAduanLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header align-items-start align-items-lg-center">
+            <h4 class="modal-title fs-5">Filter Pelatihan</h4>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="rounded-3 overflow-hidden mt-4 mt-lg-0">
+              <div class="mb-4">
+                <h6 class="filter-group-sticky mb-3"><i class="bi bi-percent color-success"> </i>Harga</h6>
+                <div class="course-filter column-3-1" id="course-price">
+                  <div class="form-check">
+                    <input class="form-check-input filter-price" id="filter-price-1" type="checkbox" value="0">
+                    <label class="form-check-label text-capitalize" for="filter-price-1">gratis (Rp0)</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input filter-price" id="filter-price-2" type="checkbox" value="20000">
+                    <label class="form-check-label text-capitalize" for="filter-price-2">Rp20.000,-</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input filter-price" id="filter-price-3" type="checkbox" value="diskon besar">
+                    <label class="form-check-label text-capitalize" for="filter-price-3">Diskon Besar</label>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <h6 class="filter-group-sticky mb-3"><i class="bi bi-stars text-danger"> </i>Kategori Pelatihan</h6>
+                <div class="course-filter column-3-1" id="course-trending">
+                  <div class="form-check">
+                    <input class="form-check-input filter-trending" id="filter-trending-1" type="checkbox" value="true">
+                    <label class="form-check-label text-capitalize" for="filter-trending-1">Kategori 1</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input filter-newcourse" id="filter-newcourse" type="checkbox" value="true">
+                    <label class="form-check-label text-capitalize" for="filter-newcourse">Kategori 2</label>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-4">
+                <h6 class="filter-group-sticky mb-3"><i class="bi bi-person-video2 text-info"> </i>Lembaga Pelatihan</h6>
+                <div class="course-filter column-3-1" id="course-trending">
+                  <div class="form-check">
+                    <input class="form-check-input filter-method" id="filter-pelatihan-1" type="checkbox" value="online self paced learning">
+                    <label class="form-check-label text-capitalize" for="filter-pelatihan-1">Lembaga 1</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input filter-method" id="filter-pelatihan-2" type="checkbox" value="online webinar">
+                    <label class="form-check-label text-capitalize" for="filter-pelatihan-2">Lembaga 2</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button class="btn btn-outline-primary" type="button" data-bs-dismiss="modal">Tutup</button>
+            <button class="btn btn-primary" type="button" data-bs-dismiss="modal">Tampilkan</button>
           </div>
         </div>
       </div>

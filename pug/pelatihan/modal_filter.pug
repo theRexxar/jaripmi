@@ -1,0 +1,13 @@
+#filterPelatihan.modal.modal-lg.fade(tabindex='-1' aria-labelledby='layananAduanLabel' aria-hidden='true')
+  .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
+    .modal-content
+      .modal-header.align-items-start.align-items-lg-center
+        h4.modal-title.fs-5 Filter Pelatihan
+        button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+      .modal-body
+        .rounded-3.overflow-hidden.mt-4.mt-lg-0
+            include section_course_filter.pug
+
+      .modal-footer.justify-content-center
+        button.btn.btn-outline-primary(type='button' data-bs-dismiss='modal') Tutup
+        button.btn.btn-primary(type='button' data-bs-dismiss='modal') Tampilkan

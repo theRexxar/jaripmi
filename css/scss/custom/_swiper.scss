@@ -7,6 +7,7 @@
         max-width: none;
     }
     .swiper-slide {
+        height: auto;
         &:hover{
             background-color: $pmi-blue-100;
             cursor: pointer;
@@ -22,19 +23,19 @@
         background-color: $pmi-blue-50;
     }
     .swiper-slide{
-        height: 100%;
-        max-height: calc(100vh - 200px);
-        // max-height: 400px;
-        overflow-y: auto;
+        // height: 100%;
+        // max-height: calc(100vh - 200px);
+        // // max-height: 400px;
+        // overflow-y: auto;
     }
 }
 
 @media (min-width: $screen-lg) {
     .tab-content-swiper{
-        .swiper-slide{
-            max-height: 400px;
-            overflow-y: auto;
-        }
+        // .swiper-slide{
+        //     max-height: 400px;
+        //     overflow-y: auto;
+        // }
     }
   }
 
@@ -100,5 +101,5 @@
 }
 
 .swiper-nav-box{
-    height: 164px;
+    // height: 164px;
 }

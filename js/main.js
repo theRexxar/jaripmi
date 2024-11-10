@@ -441,4 +441,12 @@ $(window).bind('scroll', function() {
     navElem.parent().addClass('is-active').siblings().removeClass( 'is-active' );
       }
     })
-}); 
+});
+
+// Scrollspy mobile menu category
+$(document).ready(function(){
+	$(".trigger-menu-category").click(function(){
+		$(".content-menu-category").toggleClass("is-open");
+		e.preventDefault();
+	  });
+  });

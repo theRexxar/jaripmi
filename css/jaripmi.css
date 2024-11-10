@@ -734,32 +734,37 @@ ul {
   background-color: #290471;
 }
 
-.custom-rfs-h1 {
-  font-size: calc(2.5rem + 0.6vw);
+@media (max-width: 992px) {
+  .custom-rfs-h1 {
+    font-size: calc(2rem + 0.6vw);
+  }
+  .custom-rfs-h2 {
+    font-size: calc(1.5rem + 0.6vw);
+  }
+  .custom-rfs-h3 {
+    font-size: calc(1.1rem + 0.6vw);
+  }
+  .custom-rfs-h4 {
+    font-size: calc(1rem + 0.6vw);
+  }
+  .custom-rfs-h5 {
+    font-size: calc(1rem + 0.6vw);
+  }
+  .custom-rfs-h6 {
+    font-size: calc(0.75rem + 0.6vw);
+  }
+  .custom-rfs-h7 {
+    font-size: calc(0.75rem + 0.2vw);
+  }
 }
-
-.custom-rfs-h2 {
-  font-size: calc(2rem + 0.6vw);
+.section-hero h1 .display-4 {
+  font-size: calc(1.1rem + 2.7vw);
+  line-height: 1.2;
 }
-
-.custom-rfs-h3 {
-  font-size: calc(1.75rem + 0.6vw);
-}
-
-.custom-rfs-h4 {
-  font-size: calc(1.5rem + 0.6vw);
-}
-
-.custom-rfs-h5 {
-  font-size: calc(1rem + 0.6vw);
-}
-
-.custom-rfs-h6 {
-  font-size: calc(0.875rem + 0.6vw);
-}
-
-.custom-rfs-h7 {
-  font-size: calc(0.875rem + 0.2vw);
+@media (min-width: 1200px) {
+  .section-hero h1 .display-4 {
+    font-size: 3.5rem;
+  }
 }
 
 .btn {
@@ -2444,14 +2449,9 @@ support for no js
   background-color: #f6f6f6;
 }
 
-.pmi-scrollspy-nav {
-  position: sticky;
-  left: 0;
-  top: calc(80px + 1.5rem);
-}
 .pmi-scrollspy-nav ol li {
   font-size: 0.875rem;
-  font-weight: bold;
+  font-weight: 500;
 }
 .pmi-scrollspy-nav ol li a {
   color: #242424 !important;
@@ -2464,6 +2464,25 @@ support for no js
   color: #0071cb !important;
 }
 
+.content-menu-category {
+  border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+  display: none;
+}
+.content-menu-category.is-open {
+  display: block;
+}
+
+@media all and (min-width: 992px) {
+  .pmi-scrollspy-nav {
+    position: sticky;
+    left: 0;
+    top: calc(70px + 1.5rem);
+  }
+  .content-menu-category {
+    border: none;
+    display: block;
+  }
+}
 .breadcrumb-wrapper {
   position: relative;
   z-index: 21;
@@ -2638,6 +2657,7 @@ ul.unordered-list {
   padding-top: 80px;
   margin-top: -80px;
   overflow: hidden;
+  z-index: -1;
 }
 
 .nav.nav-underline .nav-link {
@@ -2647,6 +2667,15 @@ ul.unordered-list {
   color: #0071cb;
 }
 
+.pmi-image-thumbnail {
+  max-height: 5rem;
+}
+
+@media (min-width: 1200px) {
+  .pmi-image-thumbnail {
+    max-height: none;
+  }
+}
 /** content sizing class **/
 .w-10 {
   max-width: 10%;

@@ -29,7 +29,27 @@ section
                     img.mw-100.my-3(src=baseURL+"img/img-queue-people.svg", alt="")
                     
                     //- Load sample paragraph
-                    include ../../includes/sample_lorem_ipsum.pug
+                    .d-flex.flex-row 
+                        .w-50.px-2
+                            p Memahami konsep utang penting bagi setiap orang, terutama calon pekerja migran yang mungkin dihadapkan pada kebutuhan mendesak saat bekerja di luar negeri. Utang, pada dasarnya, adalah pinjaman yang harus dikembalikan dalam bentuk uang atau benda lainnya. Konsep ini perlu dikenali, namun tidak boleh terlalu "akrab" karena utang bisa menjadi beban finansial jika tidak dikelola dengan baik. Ingatlah, setiap utang adalah tanggung jawab yang harus dilunasi tepat waktu.
+                            p Orang berhutang biasanya karena beberapa alasan. Ada yang terpaksa berhutang untuk memenuhi kebutuhan mendesak, seperti biaya kesehatan atau kebutuhan hidup sehari-hari. Sebagian lainnya mungkin terdorong oleh keinginan yang sulit dikendalikan, seperti membeli rumah atau gadget baru. Beberapa individu juga berhutang karena pendapatan yang terbatas atau untuk modal usaha. Namun, penting untuk tetap bijak dalam berutang dan memastikan kemampuan membayar kembali agar tidak menjadi beban di masa depan.
+                        .vr.mx-2
+                        .w-50.px-2
+                            p 
+                                b Mengenal Konsep Berutang
+                            ol 
+                                li Mari berkenalan dengan konsep berhutang, tapi jangan terlalu akrab.
+                                li Utang merupakan pinjaman yang dilakukan oleh seseorang kepada orang lain baik berupa uang atau pun benda berharga lainnya.
+                                li Ingat, PINJAMAN artinya harus dikembalikan!
+                                li 
+
+                            p 
+                                b Mengapa Kita Ber-Hutang?
+                            ol 
+                                li Kebutuhan mendesak
+                                li Keinginan yang tidak bisa dikendalikan seperti ingin membeli rumah atau gadget baru
+                                li Pendapatan kecil
+                                li Mau memulai bisnis
                     hr
                 
                 section#UtangBaikBuruk.pmi-scrollspy-content.adjust-anchor
@@ -37,7 +57,24 @@ section
                     img.mw-100.my-3(src=baseURL+"img/img-queue-people.svg", alt="")
 
                     //- Load sample paragraph
-                    include ../../includes/sample_lorem_ipsum.pug
+                    .d-flex.flex-row 
+                        .w-50.px-2
+                            p Tidak semua utang itu buruk, ada juga jenis utang yang bisa memberikan manfaat positif. Utang baik adalah utang yang diambil untuk kebutuhan produktif yang dapat menghasilkan nilai lebih di masa depan. Contohnya, utang untuk modal usaha atau investasi pendidikan. Jenis utang ini dianggap baik karena memiliki potensi untuk memberikan pengembalian atau manfaat jangka panjang, seperti meningkatkan penghasilan atau meningkatkan keterampilan.
+                            p Di sisi lain, ada utang buruk yang sebaiknya dihindari. Utang buruk biasanya diambil hanya untuk memenuhi keinginan konsumtif tanpa ada manfaat yang nyata atau jangka panjang. Misalnya, berutang untuk membeli barang-barang yang tidak terlalu dibutuhkan atau untuk gaya hidup mewah. Utang jenis ini cenderung membawa beban keuangan yang tidak menghasilkan keuntungan dan bisa membahayakan kesehatan finansial di masa depan.
+                        .vr.mx-2
+                        .w-50.px-2 
+                            b Utang Baik vs Utang Buruk
+                            ul.mb-2
+                                li Utang Produktif dan Utang Konsumtif
+                                li "Utang itu gak selamanya buruk, ada juga loh utang yang baik!"
+                            p 
+                                b Utang Baik
+                                br 
+                                | Utang yang dilakukan untuk hal yang produktif dan dapat memberikan manfaat di masa yang akan datang.
+                            p 
+                                b Utang Buruk
+                                br 
+                                | Berhutang untuk memuaskan keinginan konsumtif saja, tanpa memikirkan apa manfaat dan dampaknya.
 
                     hr
 
@@ -46,7 +83,55 @@ section
                     img.mw-100.my-3(src=baseURL+"img/img-queue-people.svg", alt="")
 
                     //- Load sample paragraph
-                    include ../../includes/sample_lorem_ipsum.pug
+                    .d-flex.flex-row 
+                        .w-50.px-2
+                            p Mengelola utang dengan bijak adalah langkah penting untuk menjaga kestabilan finansial. Salah satu cara bijak adalah hanya berutang ketika berada dalam kondisi mendesak, seperti kebutuhan kesehatan atau kebutuhan penting lainnya. Hindari godaan untuk mengambil utang demi keinginan konsumtif yang sifatnya sementara, karena ini hanya akan menambah beban keuangan dan menurunkan kualitas hidup kita.
+                            p Selain itu, penting untuk membatasi jumlah utang agar tidak melebihi 30% dari total pendapatan bulanan. Pembatasan ini membantu kita agar tidak terjebak dalam siklus utang yang sulit dilunasi, di mana seseorang bisa terus-menerus berutang untuk menutupi utang sebelumnya. Prinsip ini mengajarkan kita untuk menjaga keseimbangan dalam pengeluaran dan mencegah situasi di mana utang menjadi beban yang terus berlanjut tanpa solusi.
+                        .vr.mx-2
+                        .w-50.px-2 
+                            #accordion-kiat-berhutang.accordion
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-mendesak' aria-expanded='true' aria-controls='collapse-mendesak')
+                                        | Hanya meminjam ketika dalam keadaan MENDESAK
+                                    #collapse-mendesak.accordion-collapse.collapse.show(data-bs-parent='#accordion-kiat-berhutang')
+                                        .accordion-body
+                                            ol 
+                                                li Jika tidak mendesak, tidak perlu berhutang!
+                                                li Jangan tergoda dengan penawaran hutang untuk membeli barang konsumtif.
+                                                li Ingat, berhutang hanya akan membuat hidupmu tidak tenang.
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-batasi' aria-expanded='false' aria-controls='collapse-batasi')
+                                        | Membatasi Jumlah Pinjaman 
+                                    #collapse-batasi.accordion-collapse.collapse(data-bs-parent='#accordion-kiat-berhutang')
+                                        .accordion-body
+                                            span Perlu diingat kembali, ketika berhutang….
+                                            ol 
+                                                li Pastikan jumlah SEMUA HUTANG tidak boleh melebihi 30% DARI PENDAPATAN BULANAN.
+                                                li Tentu saja apabila pinjaman kita melebihi dari 30% pendapatan bulanan, maka akan terjadi kesulitan melunasi hutang-hutang dikarenakan jumlah pinjaman terlalu besar.
+                                                li Bahkan terkadang ada yang sampai melakukan tutup lobang gali lobang terus saja begitu hingga tidak ada ujung nya
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-bayar-kembali' aria-expanded='false' aria-controls='collapse-bayar-kembali')
+                                        | Mampu Membayar Pinjaman Kembali
+                                    #collapse-bayar-kembali.accordion-collapse.collapse(data-bs-parent='#accordion-kiat-berhutang')
+                                        .accordion-body
+                                            ol 
+                                                li Ketika sudah berhutang, pastikan Anda harus menanamkan NIAT untuk membayar nya kembali.
+                                                li Jangan sampai Anda merugikan orang lain yang telah mempercayai dan memberikan uang pinjamannya kepada Anda, kepercayaan yang rusak tidak bisa kembali seperti sedia kala.
+                                                li Pastikan Anda sudah mempersiapkan secara matang bagaimana melakukan pelunasan terhadap utang yang sudah diajukan, apakah dengan di cicil harian atau bulanan. 
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-hindari-pinjol' aria-expanded='false' aria-controls='collapse-hindari-pinjol')
+                                        | Hindari Pinjaman Online Ilegal!!!
+                                    #collapse-hindari-pinjol.accordion-collapse.collapse(data-bs-parent='#accordion-kiat-berhutang')
+                                        .accordion-body
+                                            span Mampu Membayar Pinjaman Kembali
+                                            ol 
+                                                li Dibalik pencairan pinjaman online yang serba cepat, ada jebakan online yang siap memangsa! Hindari Pinjaman Online Ilegal!!!
+                                                li Jangan tertipu dengan segala promosi dari pinjaman online, karena banyak sekali pinjaman online yang menawarkan bunga ringan hanya 0,0001 tapi setelah dihitung hitung pada akhirnya malah bisa mencekik kita.
+                                                li Lalu, jika telat bayar pinjol ilegal, biasanya diteleponin terus tuh sama DC dengan ancaman menyebarkan data pribadi. Serem ga tuh!!!
                     hr
 
                 section#TipsTerlilitHutang.pmi-scrollspy-content.adjust-anchor
@@ -54,7 +139,58 @@ section
                     img.mw-100.my-3(src=baseURL+"img/img-queue-people.svg", alt="")
 
                     //- Load sample paragraph
-                    include ../../includes/sample_lorem_ipsum.pug
+                    .d-flex.flex-row 
+                        .w-50.px-2
+                            p Dalam menghadapi situasi terlilit utang, penting bagi para calon pekerja migran untuk mempertimbangkan berbagai langkah bijak dalam mengelola keuangan. Salah satu cara efektif adalah mencari sumber penghasilan tambahan, seperti membuka usaha kecil-kecilan atau berjualan online. Ini tidak hanya membantu melunasi utang, tetapi juga bisa menjadi tabungan masa depan setelah semua utang lunas. Pendapatan tambahan ini bisa menjadi jalan keluar untuk meringankan beban keuangan sekaligus mempersiapkan masa depan yang lebih baik.
+                            p Selain itu, prioritas pembayaran juga penting, dimulai dengan melunasi utang berbunga tinggi terlebih dahulu. Dengan cara ini, bunga utang tidak akan terus membesar, yang bisa menyulitkan pembayaran di kemudian hari. Jika situasinya semakin mendesak, menjual aset yang tidak mendukung produktivitas kerja atau meminjam dari saudara tanpa bunga juga bisa menjadi pilihan bijak. Namun, meskipun berutang pada saudara, menjaga komitmen untuk membayar tepat waktu adalah bentuk tanggung jawab agar hubungan tetap baik
+                        .vr.mx-2
+                        .w-50.px-2
+                            #accordion-kita-berutang.accordion
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-cari-tambahan' aria-expanded='true' aria-controls='collapse-cari-tambahan')
+                                        | Coba Cari Tambahan Penghasilan!
+                                    #collapse-cari-tambahan.accordion-collapse.collapse.show(data-bs-parent='#accordion-kita-berutang')
+                                        .accordion-body
+                                            ol 
+                                                li Misalnya dengan membuka usaha kecil - kecilan di lingkungan rumah, berjualan online, dll.
+                                                li Intinya kita harus punya niat dan tekad yang kuat untuk mencari tambahan penghasilan untuk membantu melunasi hutang - hutang yang ada bahkan...
+                                                li Jika utangnya sudah lunas, nanti penghasilan tambahannya bisa juga loh ditabungin!
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-lunasi-hutang' aria-expanded='false' aria-controls='collapse-lunasi-hutang')
+                                        | Lunasi Hutang Dari Bunga Yang Terbesar
+                                    #collapse-lunasi-hutang.accordion-collapse.collapse(data-bs-parent='#accordion-kita-berutang')
+                                        .accordion-body
+                                            ol 
+                                                li Jika sudah terlanjur meminjam dengan pinjaman berbunga...
+                                                li Coba buat daftar semua pinjaman dari bunga yang terbesar hingga yang terkecil. Pastikan pinjaman dengan bunga yang paling besar dilunasi terlebih dahulu ya!
+                                                li Karena apabila dibiarkan terus menerus bunganya akan tumbuh subur dan menyusahkan kita untuk melunasi nya
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-jual-aset' aria-expanded='false' aria-controls='collapse-jual-aset')
+                                        | Menjual Aset Yang Ada!
+                                    #collapse-jual-aset.accordion-collapse.collapse(data-bs-parent='#accordion-kita-berutang')
+                                        .accordion-body
+                                            ol 
+                                                li Coba cek! Anda punya aset berharga apa saja?
+                                                li Jika masih punya aset berharga boleh dijual, misalnya emas atau perhiasan supaya bisa tenang dari jeratan hutang.
+                                                li Namun perlu dipastikan kembali, jangan sampai menjual aset berharga yang mendukung produktivitas kerja ya!
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-pinjam-saudara' aria-expanded='false' aria-controls='collapse-pinjam-saudara')
+                                        | Mengajukan Pinjaman Tunai Pada Saudara
+                                    #collapse-pinjam-saudara.accordion-collapse.collapse(data-bs-parent='#accordion-kita-berutang')
+                                        .accordion-body
+                                            ol 
+                                                li Yuk coba ngobrol lagi dengan saudara, apakah mereka sedang memiliki dana berlebih.
+                                                li Biasanya... pinjaman tunai kepada saudara ini adalah pinjaman yang paling aman dan bikin tenang hati karena saudara tidak akan memungut tambahan apapun dari uang yang di pinjamkan nya.
+                                                li PENTING!
+                                                    br 
+                                                    ol 
+                                                        li Meskipun dengan saudara sendiri, catat nominal pinjaman serta sampaikan tenggat waktu kesanggupan kita membayar utang!
+                                                        li Walaupun hutang kepada saudara, tetap harus DIBAYAR
+
                     hr
 
                 section#IdentifikasiPinjol.pmi-scrollspy-content.adjust-anchor
@@ -62,7 +198,128 @@ section
                     img.mw-100.my-3(src=baseURL+"img/img-queue-people.svg", alt="")
 
                     //- Load sample paragraph
-                    include ../../includes/sample_lorem_ipsum.pug
+                    .d-flex.flex-row 
+                        .w-50.px-2
+                            p Dalam menghadapi situasi terlilit utang, penting bagi para calon pekerja migran untuk mempertimbangkan berbagai langkah bijak dalam mengelola keuangan. Salah satu cara efektif adalah mencari sumber penghasilan tambahan, seperti membuka usaha kecil-kecilan atau berjualan online. Ini tidak hanya membantu melunasi utang, tetapi juga bisa menjadi tabungan masa depan setelah semua utang lunas. Pendapatan tambahan ini bisa menjadi jalan keluar untuk meringankan beban keuangan sekaligus mempersiapkan masa depan yang lebih baik.
+                            p Selain itu, prioritas pembayaran juga penting, dimulai dengan melunasi utang berbunga tinggi terlebih dahulu. Dengan cara ini, bunga utang tidak akan terus membesar, yang bisa menyulitkan pembayaran di kemudian hari. Jika situasinya semakin mendesak, menjual aset yang tidak mendukung produktivitas kerja atau meminjam dari saudara tanpa bunga juga bisa menjadi pilihan bijak. Namun, meskipun berutang pada saudara, menjaga komitmen untuk membayar tepat waktu adalah bentuk tanggung jawab agar hubungan tetap baik
+                        .vr.mx-2
+                        .w-50.px-2
+                            #accordion-identifikasi-pinjol.accordion
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-tipu-pinjol' aria-expanded='true' aria-controls='collapse-tipu-pinjol')
+                                        | Selalu Ingat, Berbagai Macam Tipu Daya Pinjol Ilegal
+                                    #collapse-tipu-pinjol.accordion-collapse.collapse.show(data-bs-parent='#accordion-identifikasi-pinjol')
+                                        .accordion-body
+                                            ol 
+                                                li Ada Hadiah, setelah pinjaman dicairkan
+                                                li Identitas perusahaan yang tidak jelas (alamat, pengurus, atau website)
+                                                li Bunga Tinggi dan Jangka Waktu Tidak Jelas
+                                                li Tidak Ada Layanan Pengaduan Pelanggan
+                                                li Meminta Akses pada nomor kontak, galeri foto dan lokasi pada perangkat selular
+                                                li Tata cara penagihan yang tidak benar (ancaman dan pelecehan)
+                                                li Proses persetujuan yang terlampau mudah
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-tips-jeratan' aria-expanded='false' aria-controls='collapse-tips-jeratan')
+                                        | Tips Menghindari Jeratan Pinjol Ilegal
+                                    #collapse-tips-jeratan.accordion-collapse.collapse(data-bs-parent='#accordion-identifikasi-pinjol')
+                                        .accordion-body
+                                            ol 
+                                                li 
+                                                    b Cek Legalitas Perusahaan Pinjol 
+                                                    | - Pastikan perusahaan pinjaman online terdaftar di OJK.
+                                                li 
+                                                    b Jangan Berikan Data Pribadi Secara Sembarangan 
+                                                    | - Hindari memberikan data pribadi jika tidak yakin dengan legalitasnya.
+                                                li 
+                                                    b Hindari Pinjaman yang Mengharuskan Anda Memberikan Akses Kontak, Galeri, dan Lokasi 
+                                                    | - Ini tanda-tanda pinjaman ilegal.
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-ciri-pinjol' aria-expanded='false' aria-controls='collapse-ciri-pinjol')
+                                        | Kenali Ciri-Ciri Pinjol Ilegal
+                                    #collapse-ciri-pinjol.accordion-collapse.collapse(data-bs-parent='#accordion-identifikasi-pinjol')
+                                        .accordion-body
+                                            ol 
+                                                li Tidak memiliki izin dari OJK
+                                                li Tidak memiliki alamat kantor yang jelas
+                                                li Bunga dan denda yang tidak terbatas
+                                                li Meminta akses ke data pribadi seperti kontak dan galeri
+                                                li Proses pencairan dana yang sangat cepat
+                                                li Proses penagihan yang kasar dan penuh ancaman
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-bijak-ambil-pinjaman' aria-expanded='false' aria-controls='collapse-bijak-ambil-pinjaman')
+                                        | Langkah Bijak Sebelum Mengambil Pinjaman
+                                    #collapse-bijak-ambil-pinjaman.accordion-collapse.collapse(data-bs-parent='#accordion-identifikasi-pinjol')
+                                        .accordion-body
+                                            ol 
+                                                li 
+                                                    b Cek Legalitas Perusahaan 
+                                                    | - Pastikan perusahaan pinjaman online yang Anda pilih memiliki izin resmi dari OJK.
+                                                li 
+                                                    b Periksa Suku Bunga dan Biaya Lainnya 
+                                                    | - Pahami bunga dan biaya yang akan dikenakan sebelum meminjam.
+                                                li 
+                                                    b Jangan Mudah Tergoda Penawaran Pinjaman Cepat 
+                                                    | - Pertimbangkan kebutuhan dan kemampuan bayar sebelum meminjam.
+                                                li 
+                                                    b Waspadai Iklan Berlebihan 
+                                                    | - Hindari perusahaan yang menggunakan promosi atau iklan berlebihan untuk menarik minat Anda.
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-pahami-kontrak-pinjam' aria-expanded='false' aria-controls='collapse-pahami-kontrak-pinjam')
+                                        | Pentingnya Memahami Kontrak Pinjaman
+                                    #collapse-pahami-kontrak-pinjam.accordion-collapse.collapse(data-bs-parent='#accordion-identifikasi-pinjol')
+                                        .accordion-body
+                                            ol 
+                                                li Sebelum menandatangani kontrak pinjaman, baca semua syarat dan ketentuan dengan teliti.
+                                                li Pahami semua biaya tambahan, bunga, dan denda yang dapat dikenakan.
+                                                li Jangan menandatangani kontrak jika ada syarat yang tidak jelas atau merugikan Anda.
+                                
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-peran-ojk' aria-expanded='false' aria-controls='collapse-peran-ojk')
+                                        | Peran OJK dalam Pengawasan Pinjaman Online
+                                    #collapse-peran-ojk.accordion-collapse.collapse(data-bs-parent='#accordion-identifikasi-pinjol')
+                                        .accordion-body
+                                            ol 
+                                                li Otoritas Jasa Keuangan (OJK) berperan dalam mengawasi dan memberikan izin kepada perusahaan pinjaman online yang legal.
+                                                li OJK memastikan bahwa perusahaan pinjaman mengikuti aturan yang berlaku dan melindungi hak konsumen.
+                                                li Jika Anda memiliki masalah dengan perusahaan pinjaman, Anda dapat melaporkannya ke OJK.
+                                
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-pilih-pinjaman-aman' aria-expanded='false' aria-controls='collapse-pilih-pinjaman-aman')
+                                        | Tips Memilih Pinjaman Online yang Aman
+                                    #collapse-pilih-pinjaman-aman.accordion-collapse.collapse(data-bs-parent='#accordion-identifikasi-pinjol')
+                                        .accordion-body
+                                            ol 
+                                                li Pastikan Terdaftar di OJK
+                                                li Periksa Kredibilitas dan Reputasi Perusahaan
+                                                li Hindari Pinjaman dengan Syarat Akses Data Pribadi Berlebihan
+                                                li Pahami Bunga dan Biaya yang Dikenakan
+                                
+                                .accordion-item
+                                    h2.accordion-header
+                                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapse-cara-lapor-pinjol' aria-expanded='false' aria-controls='collapse-cara-lapor-pinjol')
+                                        | Cara Melapor Jika Terjebak Pinjol Ilegal
+                                    #collapse-cara-lapor-pinjol.accordion-collapse.collapse(data-bs-parent='#accordion-identifikasi-pinjol')
+                                        .accordion-body
+                                            ol 
+                                                li Hubungi OJK melalui kanal resmi seperti website, call center, atau media sosial untuk melaporkan pinjaman ilegal.
+                                                li Siapkan bukti seperti tangkapan layar, pesan, dan email sebagai dokumen pendukung.
+                                                li Jangan ragu untuk melapor jika mengalami penipuan atau penyalahgunaan data oleh pinjaman ilegal.
+
+
+
+
+                            
+
+
+
+
 
 
 

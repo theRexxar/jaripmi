@@ -2739,6 +2739,10 @@ ul.unordered-list {
 .tab-content-swiper .swiper-slide-active {
   background-color: #f0f8ff;
 }
+.tab-content-swiper .swiper-slide {
+  overflow-y: auto;
+}
+
 .country-swiper {
   height: calc(496px + 1.5rem);
 }

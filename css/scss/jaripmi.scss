@@ -738,6 +738,39 @@ ul.unordered-list {
   }
 }
 
+.bg-techno{
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  &.techno-1{
+    background-image: url('../img/bg-techno-1.svg');
+  }
+  &.techno-2{
+    background-image: url('../img/bg-techno-2.svg');
+  }
+  &.techno-3{
+    background-image: url('../img/bg-techno-3.svg');
+  }
+  &.techno-4{
+    background-image: url('../img/bg-techno-4.svg');
+  }
+  &.techno-5{
+    background-image: url('../img/bg-techno-5.svg');
+  }
+  &.techno-6{
+    background-image: url('../img/bg-techno-6.svg');
+  }
+  &.techno-7{
+    background-image: url('../img/bg-techno-7.svg');
+  }
+}
+
+@media (min-width: $screen-lg){
+  .bg-techno{
+    background-size: 300%;
+  }
+}
+
 
 /** content sizing class **/
 .w-10 {

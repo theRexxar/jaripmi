@@ -272,25 +272,6 @@ ul {
 
 // Custom Responsive Font Size
 
-// .custom-rfs-display-1{
-//   font-size: calc(2.5rem + 0.6vw);
-// }
-// .custom-rfs-display-2{
-//   font-size: calc(2.5rem + 0.6vw);
-// }
-// .custom-rfs-display-3{
-//   font-size: calc(2.5rem + 0.6vw);
-// }
-// .custom-rfs-display-4{
-//   font-size: calc(2.5rem + 0.6vw);
-// }
-// .custom-rfs-display-5{
-//   font-size: calc(2.5rem + 0.6vw);
-// }
-// .custom-rfs-display-6{
-//   font-size: calc(2.5rem + 0.6vw);
-// }
-
 @media (max-width: $screen-lg) {
   .custom-rfs-h1 {
     font-size: calc(2rem + 0.6vw);
@@ -317,12 +298,17 @@ ul {
 
 .section-hero {
   h1 {
-    .display-4 {
+    &.display-4 {
       font-size: calc(1.1rem + 2.7vw);
       line-height: 1.2;
     }
-    @media (min-width: $screen-xl) {
-      .display-4 {
+  }
+}
+
+@media (min-width: $screen-xl) {
+  .section-hero {
+    h1 {
+      &.display-4 {
         font-size: 3.5rem;
       }
     }

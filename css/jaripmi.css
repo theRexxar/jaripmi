@@ -757,16 +757,16 @@ ul {
     font-size: calc(0.75rem + 0.2vw);
   }
 }
-.section-hero h1 .display-4 {
+.section-hero h1.display-4 {
   font-size: calc(1.1rem + 2.7vw);
   line-height: 1.2;
 }
+
 @media (min-width: 1200px) {
-  .section-hero h1 .display-4 {
+  .section-hero h1.display-4 {
     font-size: 3.5rem;
   }
 }
-
 .btn {
   border-radius: 99px;
 }
@@ -2739,6 +2739,10 @@ ul.unordered-list {
 .tab-content-swiper .swiper-slide-active {
   background-color: #f0f8ff;
 }
+.tab-content-swiper .swiper-slide {
+  overflow-y: auto;
+}
+
 .country-swiper {
   height: calc(496px + 1.5rem);
 }

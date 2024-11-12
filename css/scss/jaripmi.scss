@@ -780,6 +780,17 @@ ul.unordered-list {
 }
 
 
+.breadcrumb-custom{
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  li.breadcrumb-item{
+    display: inline-block;
+    white-space: nowrap;
+    vertical-align: top;
+  }
+}
+
 /** content sizing class **/
 .w-10 {
   max-width: 10%;

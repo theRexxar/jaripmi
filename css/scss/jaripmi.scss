@@ -763,6 +763,12 @@ ul.unordered-list {
   &.techno-7{
     background-image: url('../img/bg-techno-7.svg');
   }
+  &.bg-size-cover{
+    background-size: cover;
+  }
+  &.bg-size-contain{
+    background-size: contain;
+  }
 }
 
 @media (min-width: $screen-lg){

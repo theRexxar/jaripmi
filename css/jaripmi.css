@@ -2702,6 +2702,12 @@ ul.unordered-list {
 .bg-techno.techno-7 {
   background-image: url("../img/bg-techno-7.svg");
 }
+.bg-techno.bg-size-cover {
+  background-size: cover;
+}
+.bg-techno.bg-size-contain {
+  background-size: contain;
+}
 
 @media (min-width: 992px) {
   .bg-techno {

@@ -2449,6 +2449,10 @@ support for no js
   background-color: #f6f6f6;
 }
 
+.pmi-scrollspy-nav {
+  position: relative;
+  z-index: 1;
+}
 .pmi-scrollspy-nav ol li {
   font-size: 0.875rem;
   font-weight: 500;
@@ -2657,7 +2661,7 @@ ul.unordered-list {
   padding-top: 80px;
   margin-top: -80px;
   overflow: hidden;
-  z-index: -1;
+  z-index: 0;
 }
 
 .nav.nav-underline .nav-link {

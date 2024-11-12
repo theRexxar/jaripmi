@@ -505,6 +505,8 @@ ul {
 }
 
 .pmi-scrollspy-nav {
+  position: relative;
+  z-index: 1;
   // position: sticky;
   // left: 0;
   // top: calc(70px + 1.5rem);
@@ -716,7 +718,7 @@ ul.unordered-list {
   padding-top: 80px;
   margin-top: -80px;
   overflow: hidden;
-  z-index: -1;
+  z-index: 0;
 }
 
 .nav.nav-underline {

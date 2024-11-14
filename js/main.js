@@ -1,3 +1,17 @@
+// function jquery datatable
+function dataRemitance(target, country) {
+	$(target).DataTable( {
+		ajax: '/js/data/remittance/' + country + '.json',
+        columns: [
+			{ data: 'remittance_institutions', width: '20%' },
+			{ data: 'website', width: '20%'  },
+			{ data: 'tutorial', width: '20%'  },
+			{ data: 'remittance_cost', width: '10%'  },
+			{ data: 'platform', width: '10%'  }
+		]
+	})
+}
+
 jQuery(document).ready(function($){
 	//if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
 	var MqL = 1170;
@@ -115,6 +129,8 @@ jQuery(document).ready(function($){
 			navigation.insertAfter('.site-main-content');
 		}
 	}
+
+	dataRemitance('#remitansi-list','taiwan');
 });
 
 

@@ -1,0 +1,72 @@
+[
+    {
+      "remittance_institutions": "Wise ",
+      "website": "https://wise.com/my/send-money/ ",
+      "tutorial": "https://www.youtube.com/watch?v=ubjsIlSWenw  ",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate ",
+      "platform": "Mobile app "
+    },
+    {
+      "remittance_institutions": "Skrill ",
+      "website": "https://www.skrill.com/ ",
+      "tutorial": "https://www.skrill.com/en/how-to-send-money/ ",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate (Bank Transfer most likely zero fees) ",
+      "platform": "Mobile app "
+    },
+    {
+      "remittance_institutions": "Moneygram ",
+      "website": "https://www.moneygram.com/ ",
+      "tutorial": "https://youtu.be/kpl86r7ybd4?si=jcdmulj507VeQNO3 ",
+      "remittance_cost": "USD 2.00",
+      "platform": "Mobile app dan kantor cabang "
+    },
+    {
+      "remittance_institutions": "Valyou ",
+      "website": "https://mtradeasia.com/main/valyou/ ",
+      "tutorial": "https://mtradeasia.com/main/wp-content/themes/mtrade/valyou/src/docs/valyou-guide-customer.pdf ",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate   ",
+      "platform": "Mobile app "
+    },
+    {
+      "remittance_institutions": "Instarem ",
+      "website": "https://www.instarem.com/ ",
+      "tutorial": "https://youtu.be/ck1rQ6CgzUo?si=WiyeBrmPvGjztmsU ",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate  ",
+      "platform": "Mobile app "
+    },
+    {
+      "remittance_institutions": "AmBank Remitance ",
+      "website": "https://www.ambank.com.my/ ",
+      "tutorial": "https://www.ambank.com.my/online-banking/faq/transaction/transfers/transfer-overseas-(eremittance) ",
+      "remittance_cost": "RM 10",
+      "platform": "Mobile App "
+    },
+    {
+      "remittance_institutions": "Ria Money Transfer ",
+      "website": "https://www.riamoneytransfer.com/  ",
+      "tutorial": "https://youtu.be/KbLssziCKvQ?si=Y7fggPLdWcA4QDr_ (non official) ",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate  ",
+      "platform": "Website, mobile app, dan kantor cabang "
+    },
+    {
+      "remittance_institutions": "Eremit Malaysia ",
+      "website": "https://eremit.com.my/ ",
+      "tutorial": "https://www.eremit.sg/faq/ (in FAQ)",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate  ",
+      "platform": "Mobile app "
+    },
+    {
+      "remittance_institutions": "Touch ’n Go (e-wallet) ",
+      "website": "https://www.touchngo.com.my/tngdr/goremit/ ",
+      "tutorial": "https://youtu.be/YZ79entAO_Y?si=Mg9IWyLlhg9Xse7r ",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate  ",
+      "platform": "Mobile app "
+    },
+    {
+      "remittance_institutions": "Speed Send by CIMB ",
+      "website": "https://www.cimb.com.my/en/personal/day-to-day-banking/remittance/speedsend.html ",
+      "tutorial": "https://www.cimb.com.my/en/personal/day-to-day-banking/remittance/speedsend.html ",
+      "remittance_cost": "RM10 (flat fee) ",
+      "platform": "Mobile app "
+    }
+   ]

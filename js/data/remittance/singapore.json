@@ -1,0 +1,72 @@
+[
+    {
+      "remittance_institutions": "Wise",
+      "website": "https://wise.com/sg/send-money/ ",
+      "tutorial": "https://www.youtube.com/watch?v=ubjsIlSWenw ",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "Skrill",
+      "website": "https://www.skrill.com/ ",
+      "tutorial": "https://www.skrill.com/en/how-to-send-money/ ",
+      "remittance_cost": "Pricing based on amount, payment method (Bank Transfer most likely zero fees), and exc rate",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "Remitly",
+      "website": "https://www.remitly.com/ ",
+      "tutorial": "https://youtu.be/D6soJMP9wB8?si=4aDks6nrEJM6VjsG ",
+      "remittance_cost": "$4.99",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "SingX",
+      "website": "https://www.singx.co/ ",
+      "tutorial": "https://youtu.be/2KW53FUvHUQ?si=2rhn-4K0h8Df2jsC ",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate ",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "Instarem",
+      "website": "https://www.instarem.com/ ",
+      "tutorial": "https://youtu.be/ck1rQ6CgzUo?si=WiyeBrmPvGjztmsU ",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate ",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "Moneygram",
+      "website": "https://www.moneygram.com/ ",
+      "tutorial": "https://youtu.be/kpl86r7ybd4?si=jcdmulj507VeQNO3 ",
+      "remittance_cost": "SGD 3.00",
+      "platform": "Mobile app dan kantor cabang"
+    },
+    {
+      "remittance_institutions": "Ria Money Transfer",
+      "website": "https://www.riamoneytransfer.com/ ",
+      "tutorial": "https://youtu.be/KbLssziCKvQ?si=Y7fggPLdWcA4QDr_ (non official)",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate ",
+      "platform": "Website, mobile app, dan kantor cabang"
+    },
+    {
+      "remittance_institutions": "DBS Remit/POSB",
+      "website": "https://www.dbs.com.sg/personal/deposits/pay-with-ease/international-transfers ",
+      "tutorial": "https://www.posb.com.sg/iwov-resources/pdf/deposits/remit-and-bank-digitally-V6_Malay_MS.pdf ",
+      "remittance_cost": "0 (Tbc)",
+      "platform": "Mobile App"
+    },
+    {
+      "remittance_institutions": "Eremit Singapore",
+      "website": "https://www.eremit.sg/ ",
+      "tutorial": "https://www.eremit.sg/faq/ (in FAQ)",
+      "remittance_cost": "Start SGD 4.5",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "Standard Chartered Remittance",
+      "website": "https://www.sc.com/sg/bank-with-us/remittance/ ",
+      "tutorial": "https://www.sc.com/sg/bank-with-us/remittance/ ",
+      "remittance_cost": "0 (Tbc)",
+      "platform": "Mobile app"
+    }
+   ]

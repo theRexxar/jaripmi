@@ -1,0 +1,67 @@
+
+{ "data": [
+    {
+      "remittance_institutions": "IndoGo",
+      "website": "https://indogoremit.com/ ",
+      "tutorial": "https://youtu.be/lYzL4THiCz4 ",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate (destination country)",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "Indomoney",
+      "website": "https://id.eui.money/ ",
+      "tutorial": "https://www.eui.money/indomoney/ ",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate (destination country)",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "Welldone company (Qpay)",
+      "website": "",
+      "tutorial": "https://www.youtube.com/watch?v=T0kW7AJ1Dyg ",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate (destination country)",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "May-Good (MGTT App)",
+      "website": "",
+      "tutorial": "https://www.youtube.com/watch?v=vKsc4s8Q3go ",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate (destination country)",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "XE Money",
+      "website": "https://www.xe.com/ ",
+      "tutorial": "",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate (destination country)",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "E.Sun Bank",
+      "website": "https://www.esunbank.com/en/personal/deposit/foreign-service/remittance-tips ",
+      "tutorial": "https://www.esunbank.com/en/personal/deposit/foreign-service/remittance-tips ",
+      "remittance_cost": "",
+      "platform": ""
+    },
+    {
+      "remittance_institutions": "Pay2Home",
+      "website": "https://www.pay2home.com/ ",
+      "tutorial": "https://www.pay2home.com/sendmoney ",
+      "remittance_cost": "Pricing based on amount, payment method, and exc rate (destination country)",
+      "platform": "Mobile app, MTM, atau Kantor Cabang"
+    },
+    {
+      "remittance_institutions": "Remit Kilat",
+      "website": "https://remitkilat.com.tw/ ",
+      "tutorial": "https://youtu.be/ilq88TCFwfk?si=oWff7p3Quez4_CVK ",
+      "remittance_cost": "N/A",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "Index",
+      "website": "https://www.eec-index.com.tw/ ",
+      "tutorial": "https://www.youtube.com/watch?v=H351bGpi-CU&t=57s ",
+      "remittance_cost": "Biaya Penjemputan uang",
+      "platform": ""
+    }
+   ]
+}

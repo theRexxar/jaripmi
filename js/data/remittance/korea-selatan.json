@@ -1,0 +1,72 @@
+[
+    {
+      "remittance_institutions": "E9Pay",
+      "website": "https://www.e9pay.co.kr/ ",
+      "tutorial": "https://youtu.be/iNUhAYXlZNQ?si=8MmnX4Adc23UAK0G atau pdf ",
+      "remittance_cost": "KRW 5000",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "Wirebarley",
+      "website": "https://www.wirebarley.com/ ",
+      "tutorial": "",
+      "remittance_cost": "KRW0-KRW 5000",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "Coinshot",
+      "website": "https://coinshot.org/ ",
+      "tutorial": "https://youtu.be/wLgWlmz4-Eo?si=tBZaKmFzkJjqxilz ",
+      "remittance_cost": "KRW 5000",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "JRF Remittance",
+      "website": "https://www.jpremit.co.kr/ ",
+      "tutorial": "https://www.jpremit.co.kr/ ",
+      "remittance_cost": "KRW4500-KRW7500",
+      "platform": "Mobile app dan  Kantor Cabang "
+    },
+    {
+      "remittance_institutions": "Sentbe",
+      "website": "https://www.sentbe.com/ ",
+      "tutorial": "",
+      "remittance_cost": "KRW 5000",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "Cross",
+      "website": "https://crossenf.com/ ",
+      "tutorial": "https://crossenf.com/howtouse/ ",
+      "remittance_cost": "KRW 5000",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "SBI Cosemoney",
+      "website": "https://www.sbicosmoney.com/ ",
+      "tutorial": "https://youtu.be/pRlt-iWUpJ4?si=xZsBRBWSRfE9wBX3 ",
+      "remittance_cost": "KRW 5000",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "Globall Money Express",
+      "website": "https://www.gmeremit.com/ ",
+      "tutorial": "",
+      "remittance_cost": "KRW 5000",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "Utransfer Remittance",
+      "website": "https://www.utransfer.com/ ",
+      "tutorial": "",
+      "remittance_cost": "KRW 5000",
+      "platform": "Mobile app"
+    },
+    {
+      "remittance_institutions": "Gmoney Trans",
+      "website": "https://gmoneytrans.com/ ",
+      "tutorial": "https://www.youtube.com/watch?v=ejgueaqjtSI ",
+      "remittance_cost": "KRW 2500",
+      "platform": "Mobile App"
+    }
+   ]

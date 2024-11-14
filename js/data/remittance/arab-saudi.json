@@ -1,0 +1,37 @@
+[
+    {
+      "remittance_institutions": "Tahweel Al-Rajhi (Al-Rajhi Bank)",
+      "website": "https://www.tahweelalrajhi.com.sa/ ",
+      "tutorial": "https://www.youtube.com/watch?v=W9eOigBgMbk (non official)",
+      "remittance_cost": "tbc",
+      "platform": "Mobile App"
+    },
+    {
+      "remittance_institutions": "STC Pay ",
+      "website": "https://stcpay.com.sa/international-transfer/ ",
+      "tutorial": "https://stcpay.com.sa/international-transfer/ ",
+      "remittance_cost": "SAR15",
+      "platform": "Mobile App"
+    },
+    {
+      "remittance_institutions": "Saudi National Bank (SNB)",
+      "website": "https://www.alahli.com/ ",
+      "tutorial": "",
+      "remittance_cost": "Pricing based on amount (Start from SAR20)",
+      "platform": "Mobile App"
+    },
+    {
+      "remittance_institutions": "Enjaz App (Bank Albilad)",
+      "website": "https://www.bankalbilad.com/ ",
+      "tutorial": "",
+      "remittance_cost": "SAR5 (tbc)",
+      "platform": "Mobile App"
+    },
+    {
+      "remittance_institutions": "Alinma App",
+      "website": "https://www.alinma.com/ ",
+      "tutorial": "https://youtu.be/3skj400rJiM ",
+      "remittance_cost": "Fee is subject to VAT",
+      "platform": "Mobile app and website"
+    }
+   ]

@@ -213,7 +213,7 @@ $pmi-bg-default: $pmi-neutral-50;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #242424; // --pmi-neutral-950: #242424 ;
-  --bs-primary-rgb: 0, 113, 203;  // --pmi-blue-700
+  --bs-primary-rgb: 0, 113, 203;  // --pmi-blue-600
   --bs-secondary-rgb: 121, 201, 231; // --pmi-cyan-300: #79c9e7 ;
   --bs-success-rgb: 49, 139, 0;  // --pmi-green-700: #318b00 ;
   --bs-info-rgb: 121, 201, 231; // --pmi-cyan-300: #79c9e7 ;
@@ -428,8 +428,8 @@ $pmi-bg-default: $pmi-neutral-50;
   text-decoration-color: RGBA(var(--bs-primary-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-primary:hover, .link-primary:focus {
-  color: RGBA(10, 88, 202, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(10, 88, 202, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(0, 84, 153, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(0, 84, 153, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-secondary {
@@ -437,7 +437,7 @@ $pmi-bg-default: $pmi-neutral-50;
   text-decoration-color: RGBA(var(--bs-secondary-rgb), var(--bs-link-underline-opacity, 1)) !important;
 }
 .link-secondary:hover, .link-secondary:focus {
-  color: RGBA(86, 94, 100, var(--bs-link-opacity, 1)) !important;
+  color: RGBA(86, 94, 100, var(--bs-link-opacity, 1)) !important; // pmi-blue-700
   text-decoration-color: RGBA(86, 94, 100, var(--bs-link-underline-opacity, 1)) !important;
 }
 

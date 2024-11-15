@@ -317,8 +317,8 @@
 }
 
 .link-primary:hover, .link-primary:focus {
-  color: RGBA(10, 88, 202, var(--bs-link-opacity, 1)) !important;
-  text-decoration-color: RGBA(10, 88, 202, var(--bs-link-underline-opacity, 1)) !important;
+  color: RGBA(0, 84, 153, var(--bs-link-opacity, 1)) !important;
+  text-decoration-color: RGBA(0, 84, 153, var(--bs-link-underline-opacity, 1)) !important;
 }
 
 .link-secondary {
@@ -399,10 +399,15 @@ body {
   font-style: normal;
 }
 
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 600;
+}
+
 hr {
-  border-top: 1.5px dashed #d1d1d1;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  border-top: 2px dashed var(--pmi-neutral-500);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .text-secondary {

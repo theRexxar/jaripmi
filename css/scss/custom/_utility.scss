@@ -58,6 +58,10 @@ hr {
   font-size: calc(11 / 16) + rem;
 }
 
+.badge{
+  font-weight: 400;
+}
+
 ::selection {
   background: $pmi-blue-700;
   /* Safari */

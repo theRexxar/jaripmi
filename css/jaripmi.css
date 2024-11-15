@@ -451,6 +451,10 @@ hr {
   font-size: 0.6875rem;
 }
 
+.badge {
+  font-weight: 400;
+}
+
 ::-moz-selection {
   background: #005499;
   /* Safari */

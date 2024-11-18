@@ -1,42 +1,47 @@
 // function jquery datatable
-function dataRemitance(target, country) {
-	$(target).DataTable( {
-		ajax: '/js/data/remittance/' + country + '.json',
-		responsive: true,
-        columns: [
-			{ 
-				width: '10px',
-				className: 'w-20',
-				data: 'remittance_institutions',
-			},
-			{ 
-				width: '10px',
-				className: 'w-20 text-wrap',
-				data: 'website', 
-				"render": function ( data, type, row, meta ) {
-            		return data !== "" &&  data.includes('http') ? '<a href="'+ data +'" target="_blank" class="text-wrap w-20">'+ data +'</a>' : data;
+function dataRemitance(target) {
+	if ($(target)) {
+		var country = $(target).data('country');
+		console.log(country);
+		
+		$(target).DataTable({
+			ajax: '/js/data/remittance/' + country + '.json',
+			responsive: true,
+			columns: [
+				{ 
+					width: '10px',
+					className: 'w-20',
+					data: 'remittance_institutions',
+				},
+				{ 
+					width: '10px',
+					className: 'w-20 text-wrap',
+					data: 'website', 
+					"render": function ( data, type, row, meta ) {
+						return data !== "" &&  data.includes('http') ? '<a href="'+ data +'" target="_blank" class="text-wrap w-20">'+ data +'</a>' : data;
+					}
+				  },
+				{ 
+					data: 'tutorial', 
+					width: '10px',
+					className: 'w-20 text-wrap',
+					"render": function ( data, type, row, meta ) {
+						return data !== "" &&  data.includes('http') ? '<a href="'+ data +'" target="_blank" class="text-wrap w-20">'+ data +'</a>' : data;
+					}
+				},
+				{ 
+					data: 'remittance_cost',
+					width: '10px',
+					className: 'w-20'
+				 },
+				{ 
+					data: 'platform',
+					width: '10px',
+					className: 'w-20'
 				}
-			  },
-			{ 
-				data: 'tutorial', 
-				width: '10px',
-				className: 'w-20 text-wrap',
-				"render": function ( data, type, row, meta ) {
-            		return data !== "" &&  data.includes('http') ? '<a href="'+ data +'" target="_blank" class="text-wrap w-20">'+ data +'</a>' : data;
-				}
-			},
-			{ 
-				data: 'remittance_cost',
-				width: '10px',
-				className: 'w-20'
-			 },
-			{ 
-				data: 'platform',
-				width: '10px',
-				className: 'w-20'
-			}
-		]
-	})
+			]
+		})
+	}
 }
 
 jQuery(document).ready(function($){
@@ -156,8 +161,8 @@ jQuery(document).ready(function($){
 			navigation.insertAfter('.site-main-content');
 		}
 	}
-	
-	dataRemitance('#remitansi-list','hongkong');
+
+	dataRemitance('#remitansi-list');
 });
 
 

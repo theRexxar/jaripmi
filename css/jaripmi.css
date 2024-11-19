@@ -2767,7 +2767,6 @@ ul.unordered-list {
   vertical-align: top;
 }
 
-/* CUSTOM SEARCH # global styles */
 .skeleton-box {
   display: inline-block;
   height: 1em;
@@ -2802,6 +2801,7 @@ ul.unordered-list {
   }
 }
 
+/* CUSTOM SEARCH # global styles */
 /** content sizing class **/
 .w-10 {
   max-width: 10%;

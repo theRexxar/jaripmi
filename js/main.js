@@ -1,3 +1,11 @@
+// general variable 
+const MqL = 1170;
+const loadItem = 12;
+var currentPage = 1;
+const queryParams = new URLSearchParams(window.location.search);
+const tkn = '6c013a98cfcd42a222a5517e46f066414f6371cf47e92c04966f33ac70c3fb51a892135a0fd3c918ac3f59c70c3df38513a321392f45847e3c9ec217648582a48e41eed5f93836d87d6d9f32ebc689d99971bff71af373dc05e99b9528916d92e4178983fbc6b36312cf5fd3bd09eeab7e474da4bc0c533274baae0c1bfba13d';
+const apiURL = 'https://cms.jaripmi.info';
+
 // function jquery datatable
 function dataRemitance(target) {
 	if ($(target)) {
@@ -44,9 +52,195 @@ function dataRemitance(target) {
 	}
 }
 
+// Navigation functions
+function closeNav() {
+	$('.site-nav-trigger').removeClass('nav-is-visible');
+	$('.site-main-header').removeClass('nav-is-visible');
+	$('.site-primary-nav').removeClass('nav-is-visible');
+	$('.has-children ul').addClass('is-hidden');
+	$('.has-children a').removeClass('selected');
+	$('.moves-out').removeClass('moves-out');
+	$('.site-main-content').removeClass('nav-is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+		$('body').removeClass('overflow-hidden');
+	});
+}
+
+function checkWindowWidth() {
+	//check window width (scrollbar included)
+	var e = window, 
+		a = 'inner';
+	if (!('innerWidth' in window )) {
+		a = 'client';
+		e = document.documentElement || document.body;
+	}
+	if ( e[ a+'Width' ] >= MqL ) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function moveNavigation(){
+	var navigation = $('.site-nav');
+	  var desktop = checkWindowWidth();
+	if ( desktop ) {
+		navigation.detach();
+		navigation.insertBefore('.site-header-buttons');
+	} else {
+		navigation.detach();
+		navigation.insertAfter('.site-main-content');
+	}
+}
+
+function courseLoaderInit(){
+	var appendTarget = $('#course-lists');
+// 	var loadMoreTarget = $('#load-more');
+// 	var applyFilter = $('#btn-apply-filter');
+// 	var formSeaerch = $('#form-search');
+// 	var buttonSearch = $('#button-search');
+// 	var loadItem = 12;
+// 	var currentPage = 1;
+// 	var filterTopic = !_.isEmpty(queryParams.get('topic')) ? ((queryParams.get('topic').toLowerCase()).replace(/-|%20/gi, ' ')).split(',') : '';
+// 	var filterPrice = !_.isEmpty(queryParams.get('price')) ? ((queryParams.get('price').toLowerCase()).replace(/-|%20/gi, ' ')).split(',') : '';
+// 	var filterLP = !_.isEmpty(queryParams.get('lp')) ? ((queryParams.get('lp').toLowerCase()).replace(/-|%20/gi, ' ')).split(',') : '';
+// 	var keyword = !_.isEmpty(queryParams.get('keyword')) ? (queryParams.get('keyword')).replace(/-|%20/gi, ' ') : '';
+// 	var filterNewCourse = !_.isEmpty(queryParams.get('new_course')) ? (queryParams.get('new_course')).replace(/-|%20/gi, ' ').split(',') : '';
+// 	var filterTrending = !_.isEmpty(queryParams.get('trending')) ? (queryParams.get('trending')).replace(/-|%20/gi, ' ').split(',') : '';
+// 	var filterMethod = !_.isEmpty(queryParams.get('method')) ? (queryParams.get('method')).replace(/-|%20/gi, ' ').split(',') : '';
+// 	if (!_.isEmpty(filterPrice) || !_.isEmpty(filterPrice) || !_.isEmpty(filterLP)) {
+// 		$('#button-addon1').attr('class', 'btn btn-primary')
+// 	}
+	
+	if (appendTarget.length) {
+		$.ajax({
+			method: "GET",
+			url: apiURL + '/api/courses?sort[0][createdAt]=desc',
+			headers: {"Authorization": "Bearer " + tkn},
+			dataType: 'json'
+		  }).done(function(data) {
+			console.log(data);
+		  })
+// 	// 	$.getJSON(courseListURL, function(courses){
+// 	// 		// get query param by 
+// 	// 		// remove ketika sudah bener complain-complain LP
+// 	// 		// var data = _.shuffle(_.filter(courses, course => !_.contains(['Course-Net Indonesia', 'LPK GETI INCUBATOR', 'First English', 'QuBisa', 'BISA AI Academy'], course.lp_name)));
+// 	// 		var data = _.shuffle(courses);
+
+// 	// 		$('.quick-filter').addClass('btn-outline-light').removeClass('btn-primary');
+
+// 	// 		if (!_.isEmpty(filterPrice)) {
+// 	// 			// data = _.filter(data, function(list) { return this.keys.indexOf(list.course_after_discount) > -1; }, {"keys" : filterPrice})
+// 	// 			if (filterPrice.length == 3) {
+// 	// 				data = data
+// 	// 				$('.quick-filter').addClass('btn-outline-light').removeClass('btn-primary');
+// 	// 				$('.quick-filter[price="diskon besar"], .quick-filter[price="0"], .quick-filter[price="20000"]').addClass('btn-primary').removeClass('btn-outline-light');
+// 	// 			} else if (_.contains(filterPrice, 'diskon besar') && _.contains(filterPrice, '20000')) {
+// 	// 				data = _.filter(data, function(list) { return list.course_after_discount !== "0"});
+// 	// 				$('.quick-filter').addClass('btn-outline-light').removeClass('btn-primary');
+// 	// 				$('.quick-filter[price="20000"], .quick-filter[price="diskon besar"]').addClass('btn-primary').removeClass('btn-outline-light');
+// 	// 			} else if (_.contains(filterPrice, 'diskon besar') && _.contains(filterPrice, '0')) {
+// 	// 				filterPrice = _.contains(filterPrice, '0') ? filterPrice.concat("") : filterPrice;
+// 	// 				data = _.filter(data, function(list) { return list.course_after_discount !== "20000"})
+// 	// 				$('.quick-filter').addClass('btn-outline-light').removeClass('btn-primary');
+// 	// 				$('.quick-filter[price="0"], .quick-filter[price="diskon besar"]').addClass('btn-primary').removeClass('btn-outline-light');
+// 	// 			} else if (_.contains(filterPrice, 'diskon besar')) {
+// 	// 				data = _.filter(data, function(list) { return list.course_after_discount !== "20000" && list.course_after_discount !== "0"})
+// 	// 				$('.quick-filter').addClass('btn-outline-light').removeClass('btn-primary');
+// 	// 				$('.quick-filter[price="diskon besar"]').addClass('btn-primary').removeClass('btn-outline-light');
+// 	// 			} else {
+// 	// 				data = _.filter(data, function(list) { return this.keys.indexOf(list.course_after_discount) > -1; }, {"keys" : filterPrice})
+// 	// 				_.each(filterPrice, function(val, i) {
+// 	// 					$('.quick-filter[price='+ val +']').addClass('btn-primary').removeClass('btn-outline-light');
+// 	// 				})
+// 	// 			}
+// 	// 		} 
+// 	// 		if (!_.isEmpty(filterTopic)) {
+// 	// 			data = _.filter(data, function(list) { return this.keys.indexOf(list.course_category.toLowerCase()) > -1; }, {"keys" : filterTopic})
+// 	// 		}  
+// 	// 		if (!_.isEmpty(filterLP)) {
+// 	// 			data = _.filter(data, function(list) { return this.keys.indexOf(list.lp_name.toLowerCase()) > -1; }, {"keys" : filterLP})
+// 	// 		}
+// 	// 		if (!_.isEmpty(filterNewCourse)) {
+// 	// 			data = _.filter(data, function(list) { return this.keys.indexOf(list.new_course.toLowerCase()) > -1; }, {"keys" : filterNewCourse});
+// 	// 			$('.quick-filter.new_course').addClass('btn-primary').removeClass('btn-outline-light');
+// 	// 		} else {
+// 	// 			$('.quick-filter.new_course').addClass('btn-outline-light').removeClass('btn-primary');
+// 	// 		}
+			
+// 	// 		if (!_.isEmpty(filterTrending)) {
+// 	// 			data = _.filter(data, function(list) { return list.total >= 50 });
+// 	// 			$('.quick-filter.trending').addClass('btn-primary').removeClass('btn-outline-light');
+// 	// 		} else {
+// 	// 			$('.quick-filter.trending').addClass('btn-outline-light').removeClass('btn-primary');
+// 	// 		}
+
+// 	// 		if (!_.isEmpty(filterMethod)) {
+// 	// 			data = _.filter(data, function(list) { return this.keys.indexOf((list.course_type.toLowerCase()).replace(/-|%20/gi, ' ')) > -1; }, {"keys" : filterMethod});
+// 	// 		}
+
+// 	// 		var dataKeyword = keyword !== null ? _.filter(data, function(list) { return list.course_title.toLowerCase().indexOf(keyword.toLowerCase()) !== -1; }) : data;
+
+			
+// 	// 		// var dataKeyword = keyword !== null ? _.filter(data, function(list) { return list.course_title.toLowerCase().indexOf(keyword.toLowerCase()) !== -1; }) : dataFilter;
+// 	// 		if (keyword !== null) {
+// 	// 			$('#filter-keyword').val(keyword);
+// 	// 		}
+			
+// 	// 		var dataLength = dataKeyword.length;
+// 	// 		var paging = Math.ceil(dataLength/loadItem);
+// 	// 		var start = 0;
+// 	// 		var end = loadItem;
+// 	// 		$(window).scrollTop(0);
+
+// 	// 		setTimeout(function() {
+// 	// 			// remove existing content
+// 	// 			appendTarget.html('');
+// 	// 			// counting the data
+// 	// 			$('#course-counter div').html('Ditemukan <b>' + dataLength + '</b> pelatihan');
+				
+// 	// 			// loop the content and add to the course list
+// 	// 			if (!_.isEmpty(dataKeyword)) {
+// 	// 				$.each(dataKeyword.slice(start, end), function(i, list) {
+// 	// 					templateCourse(appendTarget, list, null, true);
+// 	// 				})
+// 	// 			} else {
+// 	// 				appendTarget.html(emptyState);
+// 	// 			}
+
+// 	// 			// loadmore more button show / hide
+// 	// 			checkLoadMore(loadMoreTarget, paging, currentPage);
+// 	// 			btnLoadMore(loadMoreTarget, loadItem, start, end, dataKeyword, appendTarget, currentPage, paging);
+				
+// 	// 			// load option
+// 	// 			optionList(data, filterLP, filterPrice, filterTopic, filterNewCourse, filterTrending, filterMethod);
+
+// 	// 			// trigger reset filter
+// 	// 			resetFilter('#btn-reset-filter', 'input.form-check-input');
+				
+// 	// 			// reset button function to enable or disabled
+// 	// 			filterWatcher(".form-check-input", "#btn-reset-filter");
+				
+// 	// 			// filter implementation
+// 	// 			filterCourse(applyFilter, courses, start, end);
+// 	// 			filterKeyword(formSeaerch, buttonSearch, courses, start, end);
+// 	// 			quickFilter('.quick-filter')
+
+// 	// 			// invoke function push event GA
+// 	// 			// pushEvents('.see-detail-course');
+// 	// 			// pushEvents('.apply-course');
+
+
+// 	// 		}, 1500)
+// 	// 	}).fail(function(){
+// 	// 		console.log("An error has occurred.");
+// 	// 	});
+	}
+}
+
+
+// running script
 jQuery(document).ready(function($){
 	//if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
-	var MqL = 1170;
 	//move nav element position according to window width
 	moveNavigation();
 	$(window).on('resize', function(){
@@ -123,46 +317,16 @@ jQuery(document).ready(function($){
 		$(this).parent('ul').addClass('is-hidden').parent('.has-children').parent('ul').removeClass('moves-out');
 	});
 
-	function closeNav() {
-		$('.site-nav-trigger').removeClass('nav-is-visible');
-		$('.site-main-header').removeClass('nav-is-visible');
-		$('.site-primary-nav').removeClass('nav-is-visible');
-		$('.has-children ul').addClass('is-hidden');
-		$('.has-children a').removeClass('selected');
-		$('.moves-out').removeClass('moves-out');
-		$('.site-main-content').removeClass('nav-is-visible').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-			$('body').removeClass('overflow-hidden');
-		});
-	}
+	$(".trigger-menu-category").click(function(e){
+		$(".content-menu-category").toggleClass("is-open");
+		e.preventDefault();
+	});
 
-	function checkWindowWidth() {
-		//check window width (scrollbar included)
-		var e = window, 
-            a = 'inner';
-        if (!('innerWidth' in window )) {
-            a = 'client';
-            e = document.documentElement || document.body;
-        }
-        if ( e[ a+'Width' ] >= MqL ) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	function moveNavigation(){
-		var navigation = $('.site-nav');
-  		var desktop = checkWindowWidth();
-        if ( desktop ) {
-			navigation.detach();
-			navigation.insertBefore('.site-header-buttons');
-		} else {
-			navigation.detach();
-			navigation.insertAfter('.site-main-content');
-		}
-	}
-
+	// list data tempat remitansi
 	dataRemitance('#remitansi-list');
+
+	// load course list
+	courseLoaderInit();
 });
 
 
@@ -301,7 +465,7 @@ var TxtRotate = function(el, toRotate, period) {
 });
 
   // Home Carousel Article
-  var swiper = new Swiper(".articleSwiper", {
+var swiper = new Swiper(".articleSwiper", {
     slidesPerView: 1.25,
     spaceBetween:16,
     pagination: false,
@@ -490,11 +654,3 @@ $(window).bind('scroll', function() {
       }
     })
 });
-
-// Scrollspy mobile menu category
-$(document).ready(function(){
-	$(".trigger-menu-category").click(function(){
-		$(".content-menu-category").toggleClass("is-open");
-		e.preventDefault();
-	  });
-  });

@@ -86,6 +86,7 @@ $gutter-m: 8px;
 $pmi-primary: $pmi-blue-600;
 $text-primary:$pmi-neutral-950;
 $text-secondary:$pmi-neutral-800;
+$text-tertiary: $pmi-lemon-600;
 $text-disabled:$pmi-neutral-300;
 $text-muted:$pmi-neutral-200;
 
@@ -102,6 +103,7 @@ $pmi-bg-default: $pmi-neutral-50;
 
     --text-default: #242424;// $pmi-neutral-950: #242424 ;
     --border-default: #d1d1d1;// $pmi-neutral-200: #d1d1d1 ;
+    --text-disabled: #888888; //$pmi-neutral-400: #888888 ;
 
     /*pmi blue*/
     --pmi-blue-50: #f0f8ff;

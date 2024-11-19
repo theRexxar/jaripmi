@@ -1,0 +1,73 @@
+//- start variable
+- var pageActive = ''
+- var baseURL = '../'
+- var contentDescription = {}
+- ogImageURL = baseURL+"img/jaripmi-berdaya.jpg"
+- contentDescription.title = "Jari PMI"
+- contentDescription.description = "Artikel Detail"
+
+doctype html
+html(lang="id")
+    include ../pug/includes/html_head.pug
+    body
+        // Header 
+        include ../pug/includes/nav_mobile.pug
+
+        // Main content
+        main.site-main-content
+            //- Skeleton breadcrumbs
+            section
+                .container.pt-md-5.pt-5.px-4.px-md-0
+                    nav(aria-label="breadcrumb")
+                        ol.breadcrumb 
+                            li.breadcrumb-item 
+                                span.skeleton-box.rounded-pill(style="width:20px")
+                            li.breadcrumb-item 
+                                span.skeleton-box.rounded-pill(style="width:128px")
+                            li.breadcrumb-item.active
+                                span.skeleton-box.rounded-pill(style="width:128px")
+
+            section 
+                .container.pt-4.pt-lg-5.px-4.px-md-0
+                    .row.d-flex.justify-content-center 
+                        .col-lg-8 
+                            .h1.skeleton-box.rounded-pill(style="width:90%")
+                            .h1.skeleton-box.rounded-pill(style="width:35%")
+
+                            .d-flex 
+                                span.skeleton-box.rounded-pill.me-3(style="width:128px")
+                                span.skeleton-box.rounded-pill.me-3(style="width:110px")
+                                span.skeleton-box.rounded-pill.me-3(style="width:100px")
+
+                            div.my-4
+                                .skeleton-box.rounded.w-100(style="min-height:380px; aspect-ratio: 4/3;")
+                                figcaption.fs-8.mt-2.skeleton-box.rounded.w-25
+
+            article.content-article
+                .container.pb-4.pb-lg-5.px-4.px-md-0
+                    .row.d-flex.justify-content-center 
+                        .col-lg-8
+                            p.skeleton-box.rounded-pill(style="width:90%")
+                            p.skeleton-box.rounded-pill(style="width:80%")
+                            p.skeleton-box.rounded-pill(style="width:70%")
+                            p.skeleton-box.rounded-pill(style="width:50%")
+                            p.skeleton-box.rounded-pill(style="width:80%")
+                            p.skeleton-box.rounded-pill(style="width:60%")
+                            p.skeleton-box.rounded-pill(style="width:80%")
+                            p.skeleton-box.rounded-pill(style="width:70%")
+                            p.skeleton-box.rounded-pill(style="width:50%")
+                            p.skeleton-box.rounded-pill(style="width:80%")
+
+            include ../pug/home/section_article.pug
+            
+
+        // Footer
+        include ../pug/includes/footer.pug
+
+        // Header Menu
+        include ../pug/includes/nav_desktop.pug
+
+        // Modals
+        include ../pug/includes/modal.pug
+
+    include ../pug/includes/html_foot.pug

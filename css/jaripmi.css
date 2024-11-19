@@ -2,6 +2,7 @@
   --white: #ffffff;
   --text-default: #242424;
   --border-default: #d1d1d1;
+  --text-disabled: #888888;
   /*pmi blue*/
   --pmi-blue-50: #f0f8ff;
   --pmi-blue-100: #dfefff ;
@@ -414,6 +415,10 @@ hr {
   color: #454545;
 }
 
+.text-tertiary {
+  color: #e27000;
+}
+
 .outline {
   outline: solid 1px red;
 }
@@ -741,6 +746,11 @@ ul {
 
 .bg-pmi-indigo-950 {
   background-color: #290471;
+}
+
+.text-bg-ghost-success {
+  background-color: var(--pmi-green-100);
+  color: var(--pmi-green-800);
 }
 
 @media (max-width: 992px) {
@@ -2291,6 +2301,15 @@ support for no js
   margin-left: 0.25rem;
 }
 
+.card-company-link {
+  border: solid 1px transparent;
+  border-radius: 0.25rem;
+  padding: 0 0.25rem;
+}
+.card-company-link:hover {
+  border: solid 1px var(--border-default);
+}
+
 .color-tertiary {
   color: #e27000;
 }
@@ -2306,7 +2325,7 @@ support for no js
   right: 0;
   z-index: 3;
 }
-.article-card .article-card-cover > img {
+.article-card .article-card-cover > img, .article-card .article-card-cover.img-top {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -2673,6 +2692,16 @@ ul.unordered-list {
   z-index: 0;
 }
 
+.course-price {
+  font-size: 1rem;
+}
+
+.course-real-price span:first-child {
+  font-size: 0.75rem;
+  color: var(--text-disabled);
+  text-decoration: line-through;
+}
+
 .nav.nav-underline .nav-link {
   color: #242424;
 }
@@ -2739,40 +2768,6 @@ ul.unordered-list {
 }
 
 /* CUSTOM SEARCH # global styles */
-.skeleton-box {
-  display: inline-block;
-  height: 1em;
-  position: relative;
-  overflow: hidden;
-  background-color: #DDDBDD;
-}
-.skeleton-box::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(255, 255, 255, 0)), color-stop(20%, rgba(255, 255, 255, 0.2)), color-stop(60%, rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0)));
-  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0));
-  -webkit-animation: shimmer 2s infinite;
-          animation: shimmer 2s infinite;
-  content: "";
-}
-@-webkit-keyframes shimmer {
-  100% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
-}
-@keyframes shimmer {
-  100% {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
-}
-
 /** content sizing class **/
 .w-10 {
   max-width: 10%;

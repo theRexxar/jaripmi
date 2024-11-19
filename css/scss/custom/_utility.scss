@@ -20,7 +20,9 @@ hr {
 .text-secondary {
   color: $text-secondary;
 }
-
+.text-tertiary{
+  color: $text-tertiary;
+}
 //used for debugging layout
 .outline {
   outline: solid 1px red;
@@ -281,6 +283,11 @@ ul {
 }
 .bg-pmi-indigo-950 {
   background-color: $pmi-indigo-950;
+}
+
+.text-bg-ghost-success{
+  background-color: var(--pmi-green-100);
+  color: var(--pmi-green-800);
 }
 
 // Custom Responsive Font Size

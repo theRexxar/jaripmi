@@ -22,8 +22,8 @@
     <meta name="msapplication-TileImage" content="../img/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link rel="icon" href="../img/favicon.ico">
-    <title>Jari PMI</title>
-    <meta name="description" content="Pelatihan">
+    <title>Pelatihan ABC | Jari PMI</title>
+    <meta name="description" content="Detail Pelatihan">
     <link rel="canonical" href="https://jaripmi.info">
     <link rel="alternate" hreflang="id" href="https://jaripmi.info">
     <meta property="og:image" content="../img/jaripmi-berdaya.jpg">
@@ -31,13 +31,13 @@
     <meta property="og:image:height" content="627">
     <meta property="og:locale" content="id_ID">
     <meta meta property="og:type" content="website">
-    <meta property="og:description" content="Pelatihan">
+    <meta property="og:description" content="Detail Pelatihan">
     <meta property="og:site_name" content="Prakerja">
     <meta property="og:url" content="../img/jaripmi-berdaya.jpg">
     <meta name="twitter:card" content="../img/jaripmi-berdaya.jpg">
     <meta name="twitter:site" content="">
-    <meta name="twitter:title" content="Jari PMI">
-    <meta name="twitter:description" content="Pelatihan">
+    <meta name="twitter:title" content="Pelatihan ABC | Jari PMI">
+    <meta name="twitter:description" content="Detail Pelatihan">
     <meta name="twitter:image" content="../img/jaripmi-berdaya.jpg">
     <meta name="twitter:image:width" content="1200">
     <meta name="twitter:image:height" content="630">
@@ -65,199 +65,73 @@
     <!-- end header-->
     <!-- Main content-->
     <main class="site-main-content">
-      <!-- Hero Starts-->
-      <section class="section-hero bg-pmi-blue-50">
-        <div class="container py-3 py-lg-4 px-4 px-md-0">
-          <div class="row d-flex align-items-center justify-content-center search-boxy">
-            <div class="col-md-8 col-lg-6 text-center">
-              <h1 class="mb-3">Pelatihan</h1>
-              <div class="input-group custom-search-2 search-only mb-4 mb-lg-5">
-                <button class="btn btn-outline-light btn-lg" id="button-addon1" type="button"><i class="bi bi-search"></i></button>
-                <input class="form-control form-control-lg" type="text" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Cari pelatihan...">
-              </div>
-            </div>
-          </div>
-          <div class="row d-flex align-items-center justify-content-center">
-            <div class="col-md-10">
-              <div class="row">
-                <div class="col-md-4"> 
-                  <div class="d-flex fs-8 align-items-center"><i class="bi bi-check2-circle fs-5 text-success"></i><span class="ms-2">Pelatihan terbatas disediakan secara online</span></div>
-                </div>
-                <div class="col-md-4"> 
-                  <div class="d-flex fs-8 align-items-center"><i class="bi bi-check2-circle fs-5 text-success"></i><span class="ms-2">Harga pelatihan terdiri atas pelatihan gratis, murah, dan diskon besar</span></div>
-                </div>
-                <div class="col-md-4"> 
-                  <div class="d-flex fs-8 align-items-center"><i class="bi bi-check2-circle fs-5 text-success"></i><span class="ms-2">Ketersediaan pelatihan disesuaikan dengan jadwal yang ditentukan</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="border-bottom"> 
-        <div class="container px-4 px-md-0">
-          <div class="swiper courseCatSwiper mt-4">
-            <div class="swiper-wrapper pb-3">
-              <div class="swiper-slide"><a class="p-2 rounded btn-course-cat" href="#"> <i class="bi bi-translate me-2 fs-5 text-gradient-1"></i><span class="fs-7">Bahasa Asing</span></a></div>
-              <div class="swiper-slide"><a class="p-2 rounded btn-course-cat" href="#"> <i class="bi bi-shop me-2 fs-5 text-gradient-1"></i><span class="fs-7">UMKM</span></a></div>
-              <div class="swiper-slide"><a class="p-2 rounded btn-course-cat" href="#"> <i class="bi bi-wallet me-2 fs-5 text-gradient-1"></i><span class="fs-7">Pengelolaan Uang</span></a></div>
-              <div class="swiper-slide"><a class="p-2 rounded btn-course-cat" href="#"> <i class="bi bi-bar-chart-line me-2 fs-5 text-gradient-1"></i><span class="fs-7">Investasi</span></a></div>
-              <div class="swiper-slide"><a class="p-2 rounded btn-course-cat" href="#"> <i class="bi bi-cash-coin me-2 fs-5 text-gradient-1"></i><span class="fs-7">Permodalan</span></a></div>
-            </div>
-          </div>
-        </div>
-      </section>
       <section>
-        <div class="container py-3 py-lg-4 px-4 px-md-0">
-          <div class="row"> 
-            <div class="col-lg-3"> 
-              <div class="d-block d-lg-none">
-                <div class="row justify-content-center">
-                  <div class="col-12 col-md-8">
-                    <button class="btn btn-outline-primary w-100 mb-4" data-bs-toggle="modal" data-bs-target="#filterPelatihan"><i class="bi bi-filter me-2"></i>Filter Pelatihan</button>
-                  </div>
-                </div>
-              </div>
-              <div class="d-none d-lg-block">
-                <div class="mb-4">
-                  <h6><i class="bi bi-filter me-2"></i>Filter Pelatihan</h6>
-                </div>
-                <div class="mb-4">
-                  <h6 class="filter-group-sticky mb-3"><i class="bi bi-percent color-success"> </i>Harga</h6>
-                  <div class="course-filter column-3-1" id="course-price">
-                    <div class="form-check">
-                      <input class="form-check-input filter-price" id="filter-price-1" type="checkbox" value="0">
-                      <label class="form-check-label text-capitalize" for="filter-price-1">gratis (Rp0)</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input filter-price" id="filter-price-2" type="checkbox" value="20000">
-                      <label class="form-check-label text-capitalize" for="filter-price-2">Rp20.000,-</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input filter-price" id="filter-price-3" type="checkbox" value="diskon besar">
-                      <label class="form-check-label text-capitalize" for="filter-price-3">Diskon Besar</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <h6 class="filter-group-sticky mb-3"><i class="bi bi-stars text-danger"> </i>Kategori Pelatihan</h6>
-                  <div class="course-filter column-3-1" id="course-trending">
-                    <div class="form-check">
-                      <input class="form-check-input filter-trending" id="filter-trending-1" type="checkbox" value="true">
-                      <label class="form-check-label text-capitalize" for="filter-trending-1">Kategori 1</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input filter-newcourse" id="filter-newcourse" type="checkbox" value="true">
-                      <label class="form-check-label text-capitalize" for="filter-newcourse">Kategori 2</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <h6 class="filter-group-sticky mb-3"><i class="bi bi-person-video2 text-info"> </i>Lembaga Pelatihan</h6>
-                  <div class="course-filter column-3-1" id="course-trending">
-                    <div class="form-check">
-                      <input class="form-check-input filter-method" id="filter-pelatihan-1" type="checkbox" value="online self paced learning">
-                      <label class="form-check-label text-capitalize" for="filter-pelatihan-1">Lembaga 1</label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input filter-method" id="filter-pelatihan-2" type="checkbox" value="online webinar">
-                      <label class="form-check-label text-capitalize" for="filter-pelatihan-2">Lembaga 2</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div class="container pt-md-5 pt-5 px-4 px-md-0">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb"> 
+              <li class="breadcrumb-item"> <span class="skeleton-box rounded-pill" style="width:20px"></span></li>
+              <li class="breadcrumb-item"> <span class="skeleton-box rounded-pill" style="width:128px"></span></li>
+              <li class="breadcrumb-item active"><span class="skeleton-box rounded-pill" style="width:128px"></span></li>
+            </ol>
+          </nav>
+        </div>
+      </section>
+      <section class="section-detail-course">
+        <div class="container py-5 px-4 px-md-0">
+          <div class="row flex-row-reverse">
+            <div class="col-12 col-md-4 col-lg-4">
+              <div class="skeleton-box w-100 rounded mb-3" style="min-height: 30vh;"></div>
+              <div class="mb-3"><span class="skeleton-box rounded-pill" style="width:128px"></span></div>
+              <div class="mb-3"><span class="skeleton-box rounded-pill" style="width:40%;height:32px;"></span></div>
+              <div class="mb-3"><span class="skeleton-box rounded" style="width:70%;height:48px;"></span></div>
+              <div class="mb-3"><span class="skeleton-box rounded-pill" style="width:60%"></span></div>
             </div>
-            <div class="col-lg-9">
-              <div>
-                <div class="row mb-3">
-                  <div class="d-flex justify-content-between align-items-center fs-7"><span>Ditemukan <b>289 </b>pelatihan</span>
-                    <div class="d-flex align-items-center">
-                      <div class="me-1">Urutkan: </div>
-                      <select class="form-select" aria-label="Default select example">
-                        <option selected="">Terbaru</option>
-                        <option value="1">Terlama</option>
-                        <option value="2">Harga Tertinggi</option>
-                        <option value="3">Harga Terendah</option>
-                      </select>
-                    </div>
-                  </div>
+            <div class="col-12 col-md-8 col-lg-8 pe-xl-4">
+              <div class="mb-2"> <span class="skeleton-box rounded" style="width:100%; height:40px;"></span></div>
+              <div class="mb2"> <span class="skeleton-box rounded" style="width:70%; height:40px;"></span></div>
+              <div class="mt-3"> <span class="skeleton-box rounded me-2" style="width:32px;height:32px;"></span><span class="skeleton-box rounded" style="width:40%; height:32px;"></span></div>
+              <div class="row mt-5 mb-4"> 
+                <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex"> <span class="skeleton-box rounded-pill me-2" style="width:18px;height:18px;"></span>
+                  <div class="w-100"> <span class="skeleton-box rounded-pill mb-2" style="width:50%;height:18px;"></span><span class="skeleton-box rounded-pill" style="width:70%;height:18px;"></span></div>
                 </div>
-                <div class="row" id="course-lists">
-                  <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <!-- example for course card-->
-                    <!-- skeleton card-->
-                    <div class="card course-card"><a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html" title="Melintasi Batas: Ekspresi Kreativitas Tanpa Batas">
-                        <div class="card-cover"><span class="skeleton-box" style="width:100%; height: 100%;"></span>
-                          <div class="card-cover-overlay">
-                            <div class="d-flex justify-content-between align-middle">
-                              <div class="align-self-center">
-                                <div class="card-company"><span class="skeleton-box rounded me-2" style="width:50px;height: 32px;"></span><span class="course-lp-name"> <span class="skeleton-box rounded-pill" style="width:50px;"></span></span></div>
-                              </div>
-                              <div class="align-self-center"><span class="skeleton-box rounded-pill" style="width:100px"></span></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card-body">
-                          <h6 class="mb-1 course-title text-capitalize" title="Melintasi Batas: Ekspresi Kreativitas Tanpa Batas"> <span class="skeleton-box rounded-pill" style="width:100%"></span></h6>
-                          <div class="d-flex my-2"><span class="skeleton-box" style="width:100%;"></span></div>
-                          <div>
-                            <div class="course-real-price mb-1"><span class="me-2"> <span class="skeleton-box" style="width:100%;"></span></span></div>
-                            <div class="course-price card-price mb-1 color-tertiary"> <span class="skeleton-box" style="width:100%;"></span></div>
-                          </div>
-                        </div></a></div>
-                  </div>
-                  <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <!-- example for course card-->
-                    <!-- skeleton card-->
-                    <div class="card course-card"><a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html" title="Melintasi Batas: Ekspresi Kreativitas Tanpa Batas">
-                        <div class="card-cover"><span class="skeleton-box" style="width:100%; height: 100%;"></span>
-                          <div class="card-cover-overlay">
-                            <div class="d-flex justify-content-between align-middle">
-                              <div class="align-self-center">
-                                <div class="card-company"><span class="skeleton-box rounded me-2" style="width:50px;height: 32px;"></span><span class="course-lp-name"> <span class="skeleton-box rounded-pill" style="width:50px;"></span></span></div>
-                              </div>
-                              <div class="align-self-center"><span class="skeleton-box rounded-pill" style="width:100px"></span></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card-body">
-                          <h6 class="mb-1 course-title text-capitalize" title="Melintasi Batas: Ekspresi Kreativitas Tanpa Batas"> <span class="skeleton-box rounded-pill" style="width:100%"></span></h6>
-                          <div class="d-flex my-2"><span class="skeleton-box" style="width:100%;"></span></div>
-                          <div>
-                            <div class="course-real-price mb-1"><span class="me-2"> <span class="skeleton-box" style="width:100%;"></span></span></div>
-                            <div class="course-price card-price mb-1 color-tertiary"> <span class="skeleton-box" style="width:100%;"></span></div>
-                          </div>
-                        </div></a></div>
-                  </div>
-                  <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <!-- example for course card-->
-                    <!-- skeleton card-->
-                    <div class="card course-card"><a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html" title="Melintasi Batas: Ekspresi Kreativitas Tanpa Batas">
-                        <div class="card-cover"><span class="skeleton-box" style="width:100%; height: 100%;"></span>
-                          <div class="card-cover-overlay">
-                            <div class="d-flex justify-content-between align-middle">
-                              <div class="align-self-center">
-                                <div class="card-company"><span class="skeleton-box rounded me-2" style="width:50px;height: 32px;"></span><span class="course-lp-name"> <span class="skeleton-box rounded-pill" style="width:50px;"></span></span></div>
-                              </div>
-                              <div class="align-self-center"><span class="skeleton-box rounded-pill" style="width:100px"></span></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card-body">
-                          <h6 class="mb-1 course-title text-capitalize" title="Melintasi Batas: Ekspresi Kreativitas Tanpa Batas"> <span class="skeleton-box rounded-pill" style="width:100%"></span></h6>
-                          <div class="d-flex my-2"><span class="skeleton-box" style="width:100%;"></span></div>
-                          <div>
-                            <div class="course-real-price mb-1"><span class="me-2"> <span class="skeleton-box" style="width:100%;"></span></span></div>
-                            <div class="course-price card-price mb-1 color-tertiary"> <span class="skeleton-box" style="width:100%;"></span></div>
-                          </div>
-                        </div></a></div>
-                  </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex"> <span class="skeleton-box rounded-pill me-2" style="width:18px;height:18px;"></span>
+                  <div class="w-100"> <span class="skeleton-box rounded-pill mb-2" style="width:50%;height:18px;"></span><span class="skeleton-box rounded-pill" style="width:70%;height:18px;"></span></div>
                 </div>
-                <div class="text-center">
-                  <button class="btn btn-outline-primary">
-                     Muat Lebih Banyak</button>
+                <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex"> <span class="skeleton-box rounded-pill me-2" style="width:18px;height:18px;"></span>
+                  <div class="w-100"> <span class="skeleton-box rounded-pill mb-2" style="width:50%;height:18px;"></span><span class="skeleton-box rounded-pill" style="width:70%;height:18px;"></span></div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex"> <span class="skeleton-box rounded-pill me-2" style="width:18px;height:18px;"></span>
+                  <div class="w-100"> <span class="skeleton-box rounded-pill mb-2" style="width:50%;height:18px;"></span><span class="skeleton-box rounded-pill" style="width:70%;height:18px;"></span></div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex"> <span class="skeleton-box rounded-pill me-2" style="width:18px;height:18px;"></span>
+                  <div class="w-100"> <span class="skeleton-box rounded-pill mb-2" style="width:50%;height:18px;"></span><span class="skeleton-box rounded-pill" style="width:70%;height:18px;"></span></div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex"> <span class="skeleton-box rounded-pill me-2" style="width:18px;height:18px;"></span>
+                  <div class="w-100"> <span class="skeleton-box rounded-pill mb-2" style="width:50%;height:18px;"></span><span class="skeleton-box rounded-pill" style="width:70%;height:18px;"></span></div>
                 </div>
               </div>
+              <hr>
+              <article>
+                <section class="py-3">
+                  <div class="mb-3"> <span class="skeleton-box rounded" style="width:40%; height:32px;"></span></div>
+                  <div class="mt-2"> <span class="skeleton-box rounded" style="width:100%; height:18px;"></span></div>
+                  <div class="mt-2"> <span class="skeleton-box rounded" style="width:90%; height:18px;"></span></div>
+                  <div class="mt-2"> <span class="skeleton-box rounded" style="width:100%; height:18px;"></span></div>
+                  <div class="mt-2"> <span class="skeleton-box rounded" style="width:50%; height:18px;"></span></div>
+                  <div class="mt-4"> <span class="skeleton-box rounded" style="width:100%; height:18px;"></span></div>
+                  <div class="mt-2"> <span class="skeleton-box rounded" style="width:90%; height:18px;"></span></div>
+                  <div class="mt-2"> <span class="skeleton-box rounded" style="width:100%; height:18px;"></span></div>
+                  <div class="mt-2"> <span class="skeleton-box rounded" style="width:50%; height:18px;"></span></div>
+                </section>
+                <section class="py-3">
+                  <div class="mb-3"> <span class="skeleton-box rounded" style="width:40%; height:32px;"></span></div>
+                  <div class="mt-2"> <span class="skeleton-box rounded" style="width:90%; height:18px;"></span></div>
+                  <div class="mt-2"> <span class="skeleton-box rounded" style="width:80%; height:18px;"></span></div>
+                  <div class="mt-2"> <span class="skeleton-box rounded" style="width:70%; height:18px;"></span></div>
+                  <div class="mt-2"> <span class="skeleton-box rounded" style="width:50%; height:18px;"></span></div>
+                </section>
+              </article>
+              <hr>
             </div>
           </div>
         </div>
@@ -346,7 +220,7 @@
         <ul class="nav-group">
           <li><a href="../index.html">Beranda</a></li>
           <li><a href="../informasi-keuangan/">Informasi Keuangan</a></li>
-          <li><a class="is-active" href="../pelatihan/">Pelatihan</a></li>
+          <li><a href="../pelatihan/">Pelatihan</a></li>
           <li class="has-children small-children"><a>Negara Tujuan</a>
             <ul class="site-secondary-nav has-see-all is-hidden">
               <li class="go-back"><a href="#0">Menu</a></li>

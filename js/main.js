@@ -221,7 +221,7 @@ jQuery(document).ready(function($){
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
 
-		// add class on header on scroll
+		// add class on header on scrollg
 		if (scroll > 100) {
 			$(".site-main-header").addClass("scroll-active");
 		}

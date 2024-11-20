@@ -216,25 +216,18 @@ jQuery(document).ready(function($){
 });
 
 
-$(window).scroll(function() {     
-    var scroll = $(window).scrollTop();
-    if (scroll > 100) {
-        $(".site-main-header").addClass("scroll-active");
-    }
-    else {
-        $(".site-main-header").removeClass("scroll-active");
-    }
-});
-
-
-//function accordion
-
-
-
 (function($) {
     // scroll function
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
+
+		// add class on header on scroll
+		if (scroll > 100) {
+			$(".site-main-header").addClass("scroll-active");
+		}
+		else {
+			$(".site-main-header").removeClass("scroll-active");
+		}
 
         // for search trigger at page pelatihan
         if (scroll >= 214) {

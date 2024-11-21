@@ -1,0 +1,30 @@
+//- start variable
+- var pageActive = 'negara-tujuan';
+- var baseURL = '../../'
+- var contentDescription = {}
+- ogImageURL = baseURL+"img/jaripmi-berdaya.jpg"
+- contentDescription.title = "Budaya dan Kebiasaan Masyarakat Hong Kong - Jari PMI"
+- contentDescription.description = "Pelajari budaya masyarakat Hong Kong. Kenali tradisi dan kebiasaan lokal untuk memudahkan adaptasi Anda selama bekerja."
+
+doctype html
+html(lang="id" page-class="home")
+    include ../../pug/includes/html_head.pug
+    body
+        // Header 
+        include ../../pug/includes/nav_mobile.pug
+
+        // Main content
+        main.site-main-content
+            include ../../pug/negara/hongkong/budaya-masyarakat.pug
+
+
+        // Footer
+        include ../../pug/includes/footer.pug
+
+        // Header Menu
+        include ../../pug/includes/nav_desktop.pug
+
+        // Modals
+        include ../../pug/includes/modal.pug
+
+    include ../../pug/includes/html_foot.pug

@@ -1,0 +1,30 @@
+//- start variable
+- var pageActive = 'negara-tujuan';
+- var baseURL = '../../'
+- var contentDescription = {}
+- ogImageURL = baseURL+"img/jaripmi-berdaya.jpg"
+- contentDescription.title = "Pengiriman Uang Dari Malaysia - Jari PMI"
+- contentDescription.description = "Tata Cara Pengiriman Uang Ke Indonesia Dari Negara Malaysia"
+
+doctype html
+html(lang="id" page-class="home")
+    include ../../pug/includes/html_head.pug
+    body
+        // Header 
+        include ../../pug/includes/nav_mobile.pug
+
+        // Main content
+        main.site-main-content
+            include ../../pug/negara/malaysia/adminstrasi-dokumen.pug
+
+
+        // Footer
+        include ../../pug/includes/footer.pug
+
+        // Header Menu
+        include ../../pug/includes/nav_desktop.pug
+
+        // Modals
+        include ../../pug/includes/modal.pug
+
+    include ../../pug/includes/html_foot.pug

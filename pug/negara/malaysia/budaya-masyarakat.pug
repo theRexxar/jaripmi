@@ -1,0 +1,234 @@
+// HDetail Page 1
+section
+    .container.py-4.pt-lg-4.pb-lg-4.px-4.px-md-0
+        .row.d-flex.align-items-center
+            .col-12
+                nav.breadcrumb-wrapper(aria-label="breadcrumb")
+                    ol.breadcrumb.overflow-hidden.fs-7.mb-0.breadcrumb-custom
+                        li.breadcrumb-item
+                            a.text-primary(href=baseURL+'negara/')
+                                | Negara Tujuan
+                        li.breadcrumb-item
+                            a.text-primary(href=baseURL+'negara/hongkong/') Hongkong
+
+                        li.breadcrumb-item.active.text-truncate(aria-current='page') Budaya Masyarakat
+section
+  .container.py-4.pt-lg-4.pb-lg-4.px-4.px-md-0
+    .row.d-flex.align-items-center
+        
+        .col-12.bg-pmi-neutral-50.rounded-3
+            .p-4.text-center
+                a.fs-8.d-block.d-lg-none(href=baseURL+"negara/hongkong/") 
+                    i.bi.bi-arrow-left.me-2
+                    | Kembali
+                h1.h2 Budaya Masyarakat
+                h6.mb-0.text-secondary Hongkong
+
+section 
+    .container.pb-4.pb-lg-5.px-4.px-md-0
+        .row
+            aside.jari-sidebar-nav.col-lg-3.mb-4
+                nav.pmi-scrollspy-nav 
+                    btn.btn.d-block.d-lg-none.btn-outline-primary.trigger-menu-category
+                        i.bi.bi-list.me-2
+                        | Menu Kategori
+                    ol.content-menu-category.rounded
+                        li 
+                            a(href="#informasi-bebas-visa") Selayang Pandang
+                        li 
+                            a(href="#layananKependudukan") Hari Libur Nasional
+
+            article.jari-sidebar-content.col-lg-9.content-article
+                section#informasi-bebas-visa.pmi-scrollspy-content.adjust-anchor
+                    h4 Informasi Bebas Visa
+                    img.mw-100.my-3(src=baseURL+"img/img-queue-people.svg", alt="")
+                    
+                    .row 
+                        .col-lg-12.col-md-12.col-sm-12 
+                            ol 
+                                li 
+                                    b Paspor Biasa/Reguler:
+                                    br 
+                                    | Bebas Visa (30 hari) Sejak tanggal 19 Maret 2020 bebas visa tidak berlaku. Hanya WNA/WNI residen Hong Kong yang dapat masuk ke Hong Kong dengan persyaratan tertentu.
+                                li 
+                                    b Paspor Diplomatik:
+                                    br 
+                                    | Bebas Visa (30 hari) Sejak tanggal 19 Maret 2020 bebas visa tidak berlaku. Hanya WNA/WNI residen Hong Kong yang dapat masuk ke Hong Kong dengan persyaratan tertentu.
+                                li 
+                                    b Paspor Dinas:
+                                    br 
+                                    | Bebas Visa (30 hari) Sejak tanggal 19 Maret 2020 bebas visa tidak berlaku. Hanya WNA/WNI residen Hong Kong yang dapat masuk ke Hong Kong dengan persyaratan tertentu.
+                hr
+                section#layananKependudukan.pmi-scrollspy-content.adjust-anchor
+                    h4 Layanan administrasi kependudukan
+                    img.mw-100.my-3(src=baseURL+"img/img-queue-people.svg", alt="")
+                    
+                    .row 
+                        .col-lg-12.col-md-12.col-sm-12 
+                            p 
+                                | Mulai 8 Mei 2024 KJRI Hong Kong akan membuka layanan pencatatan Kependudukan Catatan Sipil (Dukcapil) dan Identitas Kependudukan Digital (IKD).
+                                br 
+                                | Pelayanan ditujukan bagi WNI yan​g belum pernah memiliki NIK (Nomor Identitas Kependudukan). WNI yang telah memiliki NIK sudah tidak perlu melakukan pencatatan di layanan tersebut.
+                                br
+                                | Pelayanan ini juga ditujukan untuk memperkenalkan aplikasi Identitas Kependudukan Digital bagi Masyarakat.
+                            p
+                                b Pelayanan:
+                                br 
+                                | Hari     : setiap hari Rabu
+                                br 
+                                | Jam     : 09.30 – 12.30 HKT
+                                br 
+                                | Kuota  : 15 orang
+                            p
+                                | Pendaftaran:
+                                br
+                                | Hari     : setiap hari Kamis s.d. Sabtu
+                                br 
+                                | Link     : <a href="https://bit.ly/admindukKJRIHK" title="form Pendaftaran">https://bit.ly/admindukKJRIHK</a>
+                            p 
+                                | Untuk informasi lebih lanjut dapat menghubungi hotline KJRI Hong Kong di nomor: <a href="tel:+85252422240" alt="Layanan Informasi KJRI Hongkong">+852 5242 2240</a>. 
+                            br 
+                            p 
+                                b Informasi Bebas Visa:
+
+                            ol 
+                                li Paspor Biasa/Reguler: Bebas Visa (30 hari) Sejak tanggal 19 Maret 2020 bebas visa tidak berlaku. Hanya WNA/WNI residen Hong Kong yang dapat masuk ke Hong Kong dengan persyaratan tertentu.
+                                li Paspor Diplomatik: Bebas Visa (30 hari) Sejak tanggal 19 Maret 2020 bebas visa tidak berlaku. Hanya WNA/WNI residen Hong Kong yang dapat masuk ke Hong Kong dengan persyaratan tertentu.
+                                li Paspor Dinas: Bebas Visa (30 hari) Sejak tanggal 19 Maret 2020 bebas visa tidak berlaku. Hanya WNA/WNI residen Hong Kong yang dapat masuk ke Hong Kong dengan persyaratan tertentu."
+
+                            p 
+                                a.link-primary.link-underline-opacity-0(href="https://www.kemlu.go.id/hongkong/pelayanan-perwakilan/layanan-konsuler/layanan-administrasi-kependudukan") 
+                                    i * Sumber Layanan Administrasi Kependudukan (Kementrian Luar Negeri)
+                    
+                    hr
+                
+                section#e-paspor.pmi-scrollspy-content.adjust-anchor
+                    h4 Tutorial Booking E-Layanan Paspor
+                    //- img.mw-100.my-3(src=baseURL+"img/img-queue-people.svg", alt="")
+
+                    //- Load sample paragraph
+                    .row 
+                        .col-lg-12.col-md-12.col-sm-12 
+                            p Berikut tutorial yang bisa kamu ikuti untuk membuat Paspor Via Aplikasi E-Layanan Paspor KJRI Hongkong
+                        .col-lg-4.col-md-4.col-sm-4
+                            figure
+                                img.mw-100.figure-img.img-thumbnail(src=baseURL+"img/negara/hongkong/e-paspor/1-tutorial-booking-paspor.jpg", alt="Tutorial Booking Online Paspor Via Aplikasi E-Layanan Paspor KJRI Hongkong")
+                                figcaption.figure-caption Tutorial Booking Online Paspor Via Aplikasi E-Layanan Paspor KJRI Hongkong                                
+                        .col-lg-4.col-md-4.col-sm-4 
+                            figure
+                                img.mw-100.figure-img.img-thumbnail(src=baseURL+"img/negara/hongkong/e-paspor/2-registrasi-masuk.jpg", alt="Registrasi Akun / Masuk Akun")
+                                figcaption.figure-caption Registrasi Akun / Masuk Akun
+                        .col-lg-4.col-md-4.col-sm-4 
+                            figure
+                                img.mw-100.figure-img.img-thumbnail(src=baseURL+"img/negara/hongkong/e-paspor/3-booking-online.jpg", alt="Pilih Menu Booking Online - Untuk Membuat Booking")
+                                figcaption.figure-caption "Pilih Menu Booking Online - Untuk Membuat Booking
+                        .col-lg-4.col-md-4.col-sm-4 
+                            figure
+                                img.mw-100.figure-img.img-thumbnail(src=baseURL+"img/negara/hongkong/e-paspor/4-pilih-lokasi-pelayanan.jpg", alt="Pilih Lokasi Pelayanan")
+                                figcaption.figure-caption Pilih Lokasi pelayanan sesuai dengan lokasi terdekat, masa berlaku paspor dan pilih tanggal kedatangan
+                        .col-lg-4.col-md-4.col-sm-4 
+                            figure
+                                img.mw-100.figure-img.img-thumbnail(src=baseURL+"img/negara/hongkong/e-paspor/5-tanggal-booking.jpg", alt="Perhatikan tanggal booking")
+                                figcaption.figure-caption Perhatikan tanggal ketersediaan untuk pengajuan tanggal pelayanan (warna hijau artinya tersedia, warna abu-abu artinya tidak tersedia), dan simpan untuk melanjutkan pengajuan.
+                        .col-lg-4.col-md-4.col-sm-4 
+                            figure
+                                img.mw-100.figure-img.img-thumbnail(src=baseURL+"img/negara/hongkong/e-paspor/6-qr-booking.jpg", alt="Simpan Kode QR / Kode Booking")
+                                figcaption.figure-caption Setelah menyimpan bookingan, Kamu akan mendaptkan kode QR/QR Code. Screenshoot atau simpan untuk ditunjukkan kepada petugas pelayanan.
+                        .col-lg-12.col-md-12.col-sm-12
+                            a.link-primary.link-underline-opacity-0(href="https://www.kemlu.go.id/hongkong/pelayanan-perwakilan/layanan-imigrasi/tutorial-booking-e-layanan-paspor" target="_blank" alt="Sumber Layanan Administrasi Kependudukan (Kementrian Luar Negeri)")
+                                i * Tutorial Booking E-Layanan Paspor (Kementrian Luar Negeri)
+                            
+                    hr
+
+                section#skck.pmi-scrollspy-content.adjust-anchor
+                    h4 Pengurusan SKCK
+                    img.mw-100.my-3(src=baseURL+"img/img-queue-people.svg", alt="")
+
+                    .row 
+                        .col-lg-12.col-md-12.col-sm-12.content-article
+                            p Pengurusan SKCK (Surat Keterangan Catatan Kepolisian) dari Polri.
+                            p Untuk pengurusan SKCK silahkan melengkapi dan scan data berikut. Kemudian kirim ke email polri@cgrihk.com
+                            ol 
+                                li 
+                                    b WNI (Warga Negara Indonesia) 
+                                    ol 
+                                        li Fotokopi Paspor
+                                        li Fotokopi akte lahir atau surat kenal lahir atau ijasah atau surat nikah
+                                        li Fotokopi Kartu Keluarga (KK)
+                                        li Dokumen Sidik Jari dan rumus sidik jari
+                                        li Fotokopi kartu indentitas lain bagi yang belum memenuhi syarat untuk mendapatkan KTP
+                                        li Pas foto berwarna ukuran 4 x 6 sebanyak 6 (enam) lembar dengan latar belakang merah, foto berpakaian sopan dan berkerah, Foto tidak menggunakan aksesoris wajah, tampak muka, dan bagi pemohon yang mengenakan jilbab, pas foto harus tampak muka secara utuh
+                                li 
+                                    b WNA (Warga Negara Asing)
+                                    ol 
+                                        li Surat permohonan dari sponsor, perusahaan, atau lembaga yang memperkejakan, menggunakan, atau yang bertanggung jawab pada WNA.
+                                        li Fotokopi KTP dan Surat Nikah Apabila Sponsor dari Suami/Istri warga Negara Indonesia (WNI)
+                                        li Fotokopi Paspor.
+                                        li Fotokopi kartu ijin Tinggal Terbatas (KITAS) atau kartu ijin tinggal tetap (KITAP)
+                                        li Fotokopi IMTA dari KEMANAKER RI
+                                        li Fotokopi Surat Tanda Melapor (STM) dari kepolisian
+                                        li Dokumen Sidik Jari dan rumus sidik jari.
+                                        li Pas foto berwarna ukuran 4 x 6 sebanyak 6 (enam) lembar dengan latar belakang kuning, foto berpakaian sopan dan berkerah, Foto tidak menggunakan aksesoris wajah, tampak muka, dan bagi pemohon yang mengenakan jilbab, pas foto harus tampak muka secara utuh.​
+                            a.link-primary.link-underline-opacity-0(href="https://www.kemlu.go.id/hongkong/pelayanan-perwakilan/layanan-kepolisian/pengurusan-skck" target="_blank" alt="Pengurusan SKCK")
+                                i * Pengurusan SKCK (Kementrian Luar Negeri)
+                    hr
+
+                section#layanan-konsuler.pmi-scrollspy-content.adjust-anchor
+                    h4 Layanan kekonsuleran (Pencatatan Keterangan Kelahiran, Pelayanan Penerjemah Dokumen) 
+                    img.mw-100.my-3(src=baseURL+"img/img-queue-people.svg", alt="")
+
+                    //- Load sample paragraph
+                    .row 
+                        .col-lg-12.col-md-12.col-sm-12.content-article
+                            p 
+                                | Untuk peraturan bea cukai dan karantina, Anda dapat membuka website <a href="www.customs.gov.hk" alt="Untuk peraturan bea cukai dan karantina" target="_blank">www.customs.gov.hk</a> . 
+                                | Jika Anda sudah di Hong Kong dan memiliki pertanyaan tentang hal hal terkait visa, hubungi Departemen Imigrasi SAR Hong Kong di Gloucester Road 7, Wanchai, Hong Kong, (tel: <a href="tel:85228246111)" alt="Nomor Layanan Kekonsuleran Hongkong">(852) 2824 6111)</a> atau online at <a href="www.Immd.gov.hk" alt="pertanyaan hal hal terkait visa" target="_blank">www.Immd.gov.hk</a>.
+                            p Layanan pencatatan dan permohonan surat keterangan kelahiran anak di Hong Kong/Makau
+                            
+                            ol 
+                                li 
+                                    b Persyaratan
+                                    ol 
+                                        li Akta Lahir Anak, dari pemerintah setempat (asli). Untuk Makau agar yang sudah diterjemahkan dalam Bahasa Inggris **
+                                        li Paspor, Suami dan Istri (Asli) **
+                                        li KTP/HK ID Card/Macau ID, Suami dan Istri (yang tidak hadir bisa fotokopi)
+                                        li Akta Nikah (Asli) **
+                                        li Foto anak, 1 lembar ukuran 4x5 cm (white background)
+                                        li Kontrak kerja (apabila PMI)
+                                        li Mengisi formulir pendaftaran di KJRI Hong Kong 
+                                            a(href="https://kemlu.go.id/files/childmenu/additional_file/1473-files-statis-pages-perwakilan-Hongkong-href-contains-pdf-0-shared.pdf" target="_blank" alt="Formulir Pendaftaran​") Formulir Pendaftaran​
+                                    span Keterangan ** hanya untuk diperlihatkan
+                                li 
+                                    b Catatan
+                                    ol 
+                                        li apabila ybs tidak menikah, harus mengisi surat keterangan tidak menikah
+                                        li Proses 3 (tiga) hari kerja dan tidak dipungut biaya (gratis).
+                            p Dokumen disampaikan ke Bagian Konsuler KJRI Hong Konng, Lantai 4, Loket 4 pada hari Senin-Jumat pukul 09.30-12.30 dan 14.30-16.30.
+                            p 
+                                a.btn.btn-outline-primary(href="https://kemlu.go.id/files/childmenu/additional_file/1473-files-statis-pages-perwakilan-Hongkong-href-contains-pdf-0-shared.pdf" alt="1473-files-statis-pages-perwakilan-Hongkong-href-contains-pdf-0-shared.pdf" target="_blank") 1473-files-statis-pages-perwakilan-Hongkong-href-contains-pdf-0-shared.pdf
+                            p 
+                                a.link-primary.link-underline-opacity-0(href="https://www.kemlu.go.id/hongkong/pelayanan-perwakilan/layanan-konsuler/layanan-pencatatan-keterangan-kelahiran" target="_blank" alt="Layanan Pencatatan Keterangan Kelahiran")
+                                    i * Layanan Pencatatan Keterangan Kelahiran (Kementrian Luar Negeri)
+                    hr
+
+                section#tarif-layanan.pmi-scrollspy-content.adjust-anchor
+                    h4 Jenis dan Tarif Biaya Pelayanan Keimigrasian Terbaru
+                    img.mw-100.my-3(src=baseURL+"img/img-queue-people.svg", alt="")
+                    .row 
+                        .col-lg-12.col-md-12.col-sm-12.content-article
+                            p KEPUTUSAN KEPALA PERWAKILAN REPUBLIK INDONESIA
+                                br
+                                | NOMOR: 046/IV/2022 TAHUN 2022
+                                br
+                                | Tentang
+                                br
+                                | Perubahan Jenis Dan Tarif Atas Penerimaan Negara Bukan Pajak (Kekonsuleran Dan  Pelayanan Jasa Hukum/Kewarganegaraan Serta  Keimigrasian) Yang Berlaku Pada Konsulat Jenderal Republik Indonesia Di Hong Kong Sar Dan Macao Sar​
+                            p 
+                                a.btn.btn-outline-primary(href="https://kemlu.go.id/files/childmenu/additional_file/200-files-statis-pages-perwakilan-Hongkong-href-contains-pdf-0-shared.pdf" alt="200-files-statis-pages-perwakilan-Hongkong-href-contains-pdf-0-shared.pdf" target="_blank") 200-files-statis-pages-perwakilan-Hongkong-href-contains-pdf-0-shared.pdf
+                            p 
+                                a.link-primary.link-underline-opacity-0(href="https://www.kemlu.go.id/hongkong/pelayanan-perwakilan/layanan-konsuler/tarif-konsuler-dan-imigrasi-kjri-hong-kong-tahun-2022" target="_blank" alt="Tarif Konsuler Dan Imigrasi Kjri Hong Kong Tahun 2022")
+                                    i * Tarif Konsuler Dan Imigrasi Kjri Hong Kong Tahun 2022 (Kementrian Luar Negeri)
+                    //- Load sample paragraph
+                    //- include ../../includes/sample_lorem_ipsum.pug
+
+

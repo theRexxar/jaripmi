@@ -1,0 +1,29 @@
+//- start variable
+- var pageActive = 'negara-tujuan';
+- var baseURL = '../../'
+- var contentDescription = {}
+- ogImageURL = baseURL+"img/jaripmi-berdaya.jpg"
+- contentDescription.title = "Komunitas Indonesia di Singapura untuk Pekerja Migran - Jari PMI"
+- contentDescription.description = "Bergabung dengan komunitas Indonesia di Singapura. Temukan dukungan dan koneksi sosial selama bekerja di luar negeri."
+
+doctype html
+html(lang="id" page-class="home")
+    include ../../pug/includes/html_head.pug
+    body
+        // Header 
+        include ../../pug/includes/nav_mobile.pug
+
+        // Main content
+        main.site-main-content
+            include ../../pug/negara/singapura/komunitas-masyarakat-indonesia.pug
+
+        // Footer
+        include ../../pug/includes/footer.pug
+
+        // Header Menu
+        include ../../pug/includes/nav_desktop.pug
+
+        // Modals
+        include ../../pug/includes/modal.pug
+
+    include ../../pug/includes/html_foot.pug

@@ -17,12 +17,10 @@ function dataRemitance(target) {
 			responsive: true,
 			columns: [
 				{ 
-					width: '10px',
 					className: 'w-20',
 					data: 'remittance_institutions',
 				},
 				{ 
-					width: '10px',
 					className: 'w-20 text-wrap',
 					data: 'website', 
 					"render": function ( data, type, row, meta ) {
@@ -31,7 +29,6 @@ function dataRemitance(target) {
 				  },
 				{ 
 					data: 'tutorial', 
-					width: '10px',
 					className: 'w-20 text-wrap',
 					"render": function ( data, type, row, meta ) {
 						return data !== "" &&  data.includes('http') ? '<a href="'+ data +'" target="_blank" class="text-wrap w-20">'+ data +'</a>' : data;
@@ -39,12 +36,10 @@ function dataRemitance(target) {
 				},
 				{ 
 					data: 'remittance_cost',
-					width: '10px',
 					className: 'w-20'
 				 },
 				{ 
 					data: 'platform',
-					width: '10px',
 					className: 'w-20'
 				}
 			]

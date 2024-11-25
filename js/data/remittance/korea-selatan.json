@@ -1,4 +1,4 @@
-[
+{ "data": [
     {
       "remittance_institutions": "E9Pay",
       "website": "https://www.e9pay.co.kr/ ",
@@ -69,4 +69,5 @@
       "remittance_cost": "KRW 2500",
       "platform": "Mobile App"
     }
-   ]
+  ]
+}

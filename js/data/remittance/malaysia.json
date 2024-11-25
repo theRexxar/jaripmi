@@ -1,4 +1,4 @@
-[
+{ "data": [
     {
       "remittance_institutions": "Wise ",
       "website": "https://wise.com/my/send-money/ ",
@@ -69,4 +69,5 @@
       "remittance_cost": "RM10 (flat fee) ",
       "platform": "Mobile app "
     }
-   ]
+  ]
+}

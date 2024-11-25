@@ -1,4 +1,4 @@
-[
+{ "data": [
     {
       "remittance_institutions": "Wise",
       "website": "https://wise.com/sg/send-money/ ",
@@ -70,3 +70,4 @@
       "platform": "Mobile app"
     }
    ]
+}

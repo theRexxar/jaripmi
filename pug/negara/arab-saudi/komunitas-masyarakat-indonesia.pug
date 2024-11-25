@@ -1,0 +1,52 @@
+// HDetail Page 1
+section
+    .container.py-4.pt-lg-4.pb-lg-4.px-4.px-md-0
+        .row.d-flex.align-items-center
+            .col-12
+                nav.breadcrumb-wrapper(aria-label="breadcrumb")
+                    ol.breadcrumb.overflow-hidden.fs-7.mb-0.breadcrumb-custom
+                        li.breadcrumb-item
+                            a.text-primary(href=baseURL+'negara/')
+                                | Negara Tujuan
+                        li.breadcrumb-item
+                            a.text-primary(href=baseURL+'negara/arab-saudi/') Arab Saudi
+
+                        li.breadcrumb-item.active.text-truncate(aria-current='page') Komunitas Masyarakat Indonesia
+section
+  .container.py-4.pt-lg-4.pb-lg-4.px-4.px-md-0
+    .row.d-flex.align-items-center
+        
+        .col-12.bg-pmi-neutral-50.rounded-3
+            .p-4.text-center
+                a.fs-8.d-block.d-lg-none(href=baseURL+"negara/arab-saudi/") 
+                    i.bi.bi-arrow-left.me-2
+                    | Kembali
+                h1.h2 Komunitas Masyarakat Indonesia
+                h6.mb-0.text-secondary Arab Saudi
+
+section 
+    .container.pb-4.pb-lg-5.px-4.px-md-0
+        .row
+            aside.jari-sidebar-nav.col-lg-3.mb-4
+                nav.pmi-scrollspy-nav 
+                    btn.btn.d-block.d-lg-none.btn-outline-primary.trigger-menu-category
+                        i.bi.bi-list.me-2
+                        | Menu Kategori
+                    ol.content-menu-category.rounded
+                        li 
+                            a(href="#komunitas-masyarakat-indonesia") Komunitas Indonesia Di Arab Saudi 
+
+            article.jari-sidebar-content.col-lg-9
+                section#komunitas-masyarakat-indonesia.pmi-scrollspy-content.adjust-anchor
+                    h4 Komunitas Masyarakat Indonesia
+                    img.mw-100.my-3(src=baseURL+"img/img-queue-people.svg", alt="")
+                    
+                    .row 
+                        .col-lg-12.col-md-12.col-sm-12.content-article 
+
+                            
+                            //- p 
+                                a.link-primary.link-underline-opacity-0(href="https://www.kemlu.go.id/hongkong/pelayanan-perwakilan/layanan-konsuler/kontrak-mandiri" target="_blank" alt="Perpanjangan Kontrak Kerja (Kementrian Luar Negeri)")
+                                    i * Perpanjangan Kontrak Kerja Mandiri (Kementrian Luar Negeri)
+                                
+                    hr

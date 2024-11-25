@@ -1,0 +1,62 @@
+// HDetail Page 1
+section
+    .container.py-4.pt-lg-4.pb-lg-4.px-4.px-md-0
+        .row.d-flex.align-items-center
+            .col-12
+                nav.breadcrumb-wrapper(aria-label="breadcrumb")
+                    ol.breadcrumb.overflow-hidden.fs-7.mb-0.breadcrumb-custom
+                        li.breadcrumb-item
+                            a.text-primary(href=baseURL+'negara/')
+                                | Negara Tujuan
+                        li.breadcrumb-item
+                            a.text-primary(href=baseURL+'negara/singapura/') Singapura
+
+                        li.breadcrumb-item.active.text-truncate(aria-current='page') Kepulangan Ke Indonesia
+section
+  .container.py-4.pt-lg-4.pb-lg-4.px-4.px-md-0
+    .row.d-flex.align-items-center
+        
+        .col-12.bg-pmi-neutral-50.rounded-3
+            .p-4.text-center
+                a.fs-8.d-block.d-lg-none(href=baseURL+"negara/singapura/") 
+                    i.bi.bi-arrow-left.me-2
+                    | Kembali
+                h1.h2 Kepulangan Ke Indonesia
+                h6.mb-0.text-secondary Singapura
+
+section 
+    .container.pb-4.pb-lg-5.px-4.px-md-0
+        .row
+            aside.jari-sidebar-nav.col-lg-3.mb-4
+                nav.pmi-scrollspy-nav 
+                    btn.btn.d-block.d-lg-none.btn-outline-primary.trigger-menu-category
+                        i.bi.bi-list.me-2
+                        | Menu Kategori
+                    ol.content-menu-category.rounded
+                        li 
+                            a(href="#pengiriman-barang-ke-indo") Pengiriman Barang Ke Indonesia
+                        li 
+                            a(href="#ketentuan-barang-pengiriman-pmi") Ketentuan Barang Pengiriman PMI
+
+            article.jari-sidebar-content.col-lg-9.content-article
+                section#pengiriman-barang-ke-indo.pmi-scrollspy-content.adjust-anchor
+                    h4 Pengiriman Barang Ke Indonesia
+                    img.mw-100.my-3(src=baseURL+"img/img-queue-people.svg", alt="")
+                    
+                    .row 
+                        .col-lg-12.col-md-12.col-sm-12 
+                            
+                hr
+                section#ketentuan-barang-pengiriman-pmi.pmi-scrollspy-content.adjust-anchor
+                    h4 Ketentuan Barang Pengiriman PMI
+                    img.mw-100.my-3(src=baseURL+"img/img-queue-people.svg", alt="")
+                    
+                    .row 
+                        .col-lg-12.col-md-12.col-sm-12 
+                           
+                            //- p 
+                                a.link-primary.link-underline-opacity-0(href="https://www.kemlu.go.id/hongkong/pelayanan-perwakilan/layanan-konsuler/layanan-administrasi-kependudukan") 
+                                    i * Sumber Layanan Administrasi Kependudukan (Kementrian Luar Negeri)
+                    
+                    hr
+                

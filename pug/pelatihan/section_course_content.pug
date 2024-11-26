@@ -1,29 +1,29 @@
 div
     .row.mb-3
         .d-flex.justify-content-between.align-items-center.fs-7
-            span
+            span#count-pelatihan
                 | Ditemukan 
                 b 289 
                 | pelatihan
             
             div.d-flex.align-items-center
                 .me-1 Urutkan: 
-                select.form-select(aria-label='Default select example')
-                    option(selected='') Terbaru
+                select#sort-pelatihan.form-select(aria-label='Default select example')
+                    option(value='0' selected) Terbaru
                     option(value='1') Terlama
                     option(value='2') Harga Tertinggi
                     option(value='3') Harga Terendah
 
-    #course-lists.row
+    #list-pelatihan.row
         .col-12.col-md-6.col-lg-4.mb-4
-            include sample_card_course.pug
-        .col-12.col-md-6.col-lg-4.mb-4
-            include sample_card_course.pug
-        .col-12.col-md-6.col-lg-4.mb-4
-            include sample_card_course.pug
+        //-     include sample_card_course.pug
+        //- .col-12.col-md-6.col-lg-4.mb-4
+        //-     include sample_card_course.pug
+        //- .col-12.col-md-6.col-lg-4.mb-4
+        //-     include sample_card_course.pug
     
     div.text-center
-        button.btn.btn-outline-primary 
+        button#load-more-pelatihan.btn.btn-outline-primary 
             | Muat Lebih Banyak
         //- nav(aria-label='Page navigation example')
         //- ul.pagination

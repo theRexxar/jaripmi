@@ -174,7 +174,7 @@ const callApiCourse = async (filter, sort, page) => {
         const params = [];
         
         if (filter?.byTitle) {
-            params.push(`filters[name][$contains]=${encodeURIComponent(filter.byTitle)}`);
+            params.push(`filters[name][$containsi]=${encodeURIComponent(filter.byTitle)}`);
         }
 
         if (filter?.byPrice?.length) {

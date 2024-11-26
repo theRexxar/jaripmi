@@ -107,13 +107,14 @@ const setupEventListeners = () => {
     // Search input handler with debouncing
     const searchInput = document.getElementById("search-input");
     if (searchInput) {
-        searchInput.addEventListener('input', debounce((e) => {
-            state.filterByTitle = e.target.value;
-        }, 500));
+        searchInput.addEventListener('input',function() {
+            state.filterByTitle = searchInput.value;
+        });
     }
 
     searchInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
+            console.log(state.filterByTitle)
             callFilter(undefined, undefined);
         }
     });

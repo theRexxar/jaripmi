@@ -10,7 +10,6 @@ const apiURL = 'https://cms.jaripmi.info';
 function dataRemitance(target) {
 	if ($(target)) {
 		var country = $(target).data('country');
-		console.log(country);
 		
 		$(target).DataTable({
 			ajax: '/js/data/remittance/' + country + '.json',
@@ -112,10 +111,134 @@ function courseLoaderInit(){
 			url: apiURL + '/api/courses?sort[0][createdAt]=desc',
 			headers: {"Authorization": "Bearer " + tkn},
 			dataType: 'json'
-		  }).done(function(data) {
-			console.log(data);
-		  })
+		}).done(function(data) {
+		console.log(data);
+		})
 	}
+}
+
+function renderArticleCard (data) {
+	return `<div class="swiper-slide">
+			<div class="card article-card rounded-3">
+				<a class="text-decoration-none" href="artikel/artikel-detail.html?title=${data.title.replace(/\s+/gi, '-').toLowerCase()}id=${data.id}">
+					<div class="article-card-cover"><img class="card-img-top" loading="lazy" src="${data.image[0].formats.medium.url}" alt="BP2MI Kukuhkan 70 Kawan PMI Kalimantan Barat"
+						/></div>
+					<div class="article-card-body d-flex flex-column text-start p-3 justify-content-end">
+						<div>
+							<div class="mb-2"><span class="badge text-bg-info fw-normal">${data.article_tags[0].name}</span></div>
+							<h5 class="mb-2 text-white text-clamp-2" title="BP2MI Kukuhkan 70 Kawan PMI Kalimantan Barat)">${data.title}</h5>
+							<p class="m-0 fs-8 text-white text-clamp-3 text-truncate">${data.description.replace(/<[^>]*>?/gm, '').slice(0, 150)}...</p>
+							<div class="d-flex gap-3 fs-9 text-white mt-2"><span><i class="bi bi-stopwatch"> </i>${readingTime(data.description)} Menit Baca</span><span> <i class="bi bi-clock"> </i>${new Date(data.publishedAt).toLocaleDateString('id-ID', {year: 'numeric',month: 'long',day: 'numeric'}) }</span></div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	`;
+}
+
+// reading time estimations
+function readingTime(wording) {
+	const text = wording;
+	const wpm = 225;
+	const words = text.trim().split(/\s+/).length;
+	const time = Math.ceil(words / wpm);
+	return time;
+}
+
+// function to load article for the new article
+function homeLoadArticle() {
+	var appendTarget = $('#artikel-home-container');
+
+	if (appendTarget) {
+		$.ajax({
+			method: "GET",
+			url: apiURL + '/api/articles?populate[0]=meta_seo&populate[1]=image&populate[2]=article_tags&sort[0][createdAt]=desc&pagination[pageSize]=6', 
+			headers: {"Authorization": "Bearer " + tkn},
+			dataType: 'json'
+		}).done(function(data) {
+			var articles = data.data
+			// condition for article is empty
+			if (!_.isEmpty(articles)) {
+				appendTarget.find('.swiper-wrapper').html('');
+				_.each(articles, (article) => appendTarget.find('.swiper-wrapper').append(renderArticleCard(article)))
+				
+				// Home Carousel Article
+				new Swiper(".articleSwiper", {
+					slidesPerView: 1.25,
+					spaceBetween:16,
+					pagination: false,
+					navigation: {
+						nextEl: ".swiper-article-next",
+						prevEl: ".swiper-article-prev",
+					},
+					breakpoints: {
+						640: {
+							slidesPerView: 2.1,
+							spaceBetween: 16,
+						},
+						768: {
+							slidesPerView: 2.55,
+							spaceBetween: 24,
+						},
+						1024: {
+							slidesPerView: 3.25,
+							spaceBetween: 24,
+						},
+					},
+				});
+			} else {
+				appendTarget.html('').append('<div class="alert alert-info" role="alert"><div class="d-flex"><div class="pe-3"><i class="bi bi-info-circle-fill fs-4"></i></div><div><h6 class="alert-heading">Artikel terbaru tidak ditemukan</h6><p>Jelajahi Artikel lain yang menarik untuk kamu.</p></div></div></div>');
+			}
+		})
+	}
+}
+
+function detailArticle() {
+	var appendTarget = $('#artikel-detail-container');
+	var IDArticle = !_.isEmpty(queryParams.get('')) ? queryParams.get('') : '1234';
+
+	$.ajax({
+		method: "GET",
+		url: apiURL + '/api/articles?populate[0]=meta_seo&populate[1]=image&populate[2]=article_tags&sort[0][createdAt]=desc&pagination[pageSize]=6', 
+		headers: {"Authorization": "Bearer " + tkn},
+		dataType: 'json'
+	}).done(function(data) {
+		var articles = data.data
+		// condition for article is empty
+		if (!_.isEmpty(articles)) {
+			appendTarget.find('.swiper-wrapper').html('');
+			_.each(articles, (article) => appendTarget.find('.swiper-wrapper').append(renderArticleCard(article)))
+			
+			// Home Carousel Article
+			new Swiper(".articleSwiper", {
+				slidesPerView: 1.25,
+				spaceBetween:16,
+				pagination: false,
+				navigation: {
+					nextEl: ".swiper-article-next",
+					prevEl: ".swiper-article-prev",
+				},
+				breakpoints: {
+					640: {
+						slidesPerView: 2.1,
+						spaceBetween: 16,
+					},
+					768: {
+						slidesPerView: 2.55,
+						spaceBetween: 24,
+					},
+					1024: {
+						slidesPerView: 3.25,
+						spaceBetween: 24,
+					},
+				},
+			});
+		} else {
+			appendTarget.html('').append('<div class="alert alert-info" role="alert"><div class="d-flex"><div class="pe-3"><i class="bi bi-info-circle-fill fs-4"></i></div><div><h6 class="alert-heading">Artikel terbaru tidak ditemukan</h6><p>Jelajahi Artikel lain yang menarik untuk kamu.</p></div></div></div>');
+		}
+	})
+	
 }
 
 
@@ -208,6 +331,9 @@ jQuery(document).ready(function($){
 
 	// load course list
 	courseLoaderInit();
+
+	// load article on home 
+	homeLoadArticle();
 });
 
 
@@ -338,30 +464,6 @@ var TxtRotate = function(el, toRotate, period) {
     },
 });
 
-  // Home Carousel Article
-var swiper = new Swiper(".articleSwiper", {
-    slidesPerView: 1.25,
-    spaceBetween:16,
-    pagination: false,
-    navigation: {
-        nextEl: ".swiper-article-next",
-        prevEl: ".swiper-article-prev",
-    },
-    breakpoints: {
-        640: {
-            slidesPerView: 2.1,
-            spaceBetween: 16,
-        },
-        768: {
-            slidesPerView: 2.55,
-            spaceBetween: 24,
-        },
-        1024: {
-            slidesPerView: 3.25,
-            spaceBetween: 24,
-        },
-    },
-});
 
  // Home Carousel Countries
  var swiper = new Swiper(".countrySwiper", {

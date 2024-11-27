@@ -3,33 +3,32 @@ section.section-detail-course
         .row.flex-row-reverse
             // thumbnail & cta
             .col-12.col-lg-4
-                img.w-100.rounded(src="https://static-asset-cdn.prakerja.go.id/skill_week/thumbnail/isw-p0797_30.jpg" alt="")
+                img#detail-course-image.w-100.rounded(src="https://static-asset-cdn.prakerja.go.id/skill_week/thumbnail/isw-p0797_30.jpg" alt="")
                 .mt-3.d-flex.justify-content-between
                     div
                         .course-real-price.mb-1
-                            span.me-1 Rp 100.000
-                            span.badge.text-bg-success 100%
-                        .course-price.card-price.mb-1.fs-4 Gratis
+                            span#detail-course-price.me-1 Rp 100.000
+                            span#detail-course-discount.badge.text-bg-success 100%
+                        #detail-course-final-price.course-price.card-price.mb-1.fs-4 -
                     div
                         button.btn.btn-light.share-button(type='button' title='Bagikan halaman ini')
                             i.bi.bi-share-fill &nbsp;&nbsp;
                             | Bagikan
-
-                div.course-cta.px-3.px-lg-0
-                    button.my-3.btn.btn-primary.btn-lg.w-100(data-bs-toggle="modal" data-bs-target="#getCourseNotLoginModal")
-                        | Dapatkan Voucher Pelatihan 
-                p.text-secondary
-                    b.fs-7 103
-                    | &nbsp; peserta mengambil pelatihan ini
+                //- div.course-cta.px-3.px-lg-0
+                //-     button.my-3.btn.btn-primary.btn-lg.w-100(data-bs-toggle="modal" data-bs-target="#getCourseNotLoginModal")
+                //-         | Dapatkan Voucher Pelatihan 
+                //- p.text-secondary
+                //-     b.fs-7 103
+                //-     | &nbsp; peserta mengambil pelatihan ini
 
 
             // detail course content
-            .col-12.col-lg-8.pe-xl-4
-                h1.mb-3 Melakukan Digital Marketing Dengan Target Market Untuk Menjadi Spesialis Pemasaran
+            .col-12.col-lg-8.pe-xl-4(name='detail-course-title')
+                h1#detail-course-title.mb-3(name='detail-course-title') -
 
                 a.card-company-link.d-inline-flex.p-2.text-decoration-none.border(href="#")
-                    img.me-1.card-logo(src="https://static-asset-cdn.prakerja.go.id/skill_week/logo/mojadipro_10.jpg" alt="MojadiPro")
-                    span.lp-name.fs-7.text-secondary MojadiPro
+                    img#detail-course-logo.me-1.card-logo(src="https://static-asset-cdn.prakerja.go.id/skill_week/logo/mojadipro_10.jpg" alt="MojadiPro")
+                    span#detail-course-logo-name.lp-name.fs-7.text-secondary -
 
                 .row.mt-5.mb-4 
 
@@ -42,19 +41,19 @@ section.section-detail-course
                     //-             img.me-2.card-logo(src=baseURL+"img/logo-rk.svg")
                     //-             span.fs-7.pds-truncate Thunderbird School Of Global Management, Arizona State University
 
-                    .col-12.col-md-6.col-lg-4.mb-4.d-flex 
-                        i.bi.bi-person-badge
-                        div.ps-2 
-                            h6.fs-7.mb-2
-                                | Instruktur
-                            p.fs-7 Yunita
+                    //- .col-12.col-md-6.col-lg-4.mb-4.d-flex 
+                    //-     i.bi.bi-person-badge
+                    //-     div.ps-2 
+                    //-         h6.fs-7.mb-2
+                    //-             | Instruktur
+                    //-         p.fs-7 Yunita
 
-                    .col-12.col-md-6.col-lg-4.mb-4.d-flex 
-                        i.bi.bi-clock 
-                        div.ps-2 
-                            h6.fs-7.mb-2
-                                | Durasi Pelatihan
-                            p.fs-7 697 Menit
+                    //- .col-12.col-md-6.col-lg-4.mb-4.d-flex 
+                    //-     i.bi.bi-clock 
+                    //-     div.ps-2 
+                    //-         h6.fs-7.mb-2
+                    //-             | Durasi Pelatihan
+                    //-         p.fs-7 697 Menit
 
                     .col-12.col-md-6.col-lg-4.mb-4.d-flex 
                         i.bi.bi-person-video 
@@ -68,25 +67,25 @@ section.section-detail-course
                         div.ps-2 
                             h6.fs-7.mb-2
                                 | Kategori
-                            p.fs-7 Penjualan dan Pemasaran
+                            p#detail-course-subcategory.fs-7 -
 
 
-                    .col-12.col-md-6.col-lg-4.mb-4.d-flex 
-                        i.bi.bi-ticket-detailed 
-                        div.ps-2 
-                            h6.fs-7.mb-2
-                                | Kuota Pelatihan
-                            p.fs-7 
-                                | 1.000
-                                i &nbsp;(Selama masih tersedia)
+                    //- .col-12.col-md-6.col-lg-4.mb-4.d-flex 
+                    //-     i.bi.bi-ticket-detailed 
+                    //-     div.ps-2 
+                    //-         h6.fs-7.mb-2
+                    //-             | Kuota Pelatihan
+                    //-         p.fs-7 
+                    //-             | 1.000
+                    //-             i &nbsp;(Selama masih tersedia)
 
                     .col-12.col-md-6.col-lg-4.mb-4.d-flex 
                         i.bi.bi-link-45deg
                         div.ps-2.overflow-hidden
                             h6.fs-7.mb-2
                                 | Link Pelatihan
-                            a.fs-7.d-flex.align-items-center(href="#") 
-                                span.text-truncate https://www.karier.mu/program/melakukan-digital-marketing-dengan-iklan-sosial-media-untuk-menjadi-spesialis-pemasaran
+                            a#detail-course-link-src.fs-7.d-flex.align-items-center(href="#") 
+                                span#detail-course-link.text-truncate -
                                 i.bi.bi-arrow-up-right-square-fill
 
                 hr
@@ -94,44 +93,7 @@ section.section-detail-course
                 article
                     section.py-3
                         h4.mb-4 Deskripsi Pelatihan 
-                        article#description
-                            p 
-                                | Pelatihan Online Melakukan Digital Marketing Dengan Iklan Sosial Media Untuk Menjadi Spesialis Pemasaran dibuat sesuai rujukan Okupasi ( KBJI 2431.03 ) Spesialis Pemasaran. 
-                            p
-
-                                | Pada Kelas ini sangat relevan untuk pemula / tingkat dasar yang memiliki peranan sangat penting bagi seorang Spesialis Pemasaran. Namun, masih banyak orang yang belum mengetahui cara  mempromosikan barang dan jasa melalui internet dengan Digital Marketing menggunakan iklan sosial media. 
-                            p
-
-                                | Digital Marketing adalah  suatu aktivitas promosi, baik untuk mempromosikan sebuah brand, produk maupun jasa menggunakan media digital. Dalam pelatihan ini akan dibahas teori digital marketing dan praktek mempromosikan barang dan jasa melalui internet dan iklan sosial media. Diawali dengan meriset target market dan produk, Memahami channel marketing yang tepat untuk menunjang keberhasilan pemasaran produk , Membuat konten marketing, Membuat Copywriting, Memahami cara mendatangkan traffic ke channel marketing dan Membuat iklan promosi sosial media secara mandiri dan professional.
-                            p
-
-                                | Dengan demikian, anda akan lebih mudah dan cepat untuk mempromosikan barang dengan digital marketing. Setelah menyelesaikan pelatihan ini anda akan mempunyai kompetensi yang relevan dengan jenis pekerjaan dibidang spesialis pemasaran, digital marketing , tenaga pemasaran dan periklanan. 
-                            p
-
-                                | Pelatihan online ini menggunakan metode Self-Paced Learning yakni ceramah, demonstrasi + demo praktek, membaca handout/ebook, Pre/Post-test, Kuis Formatif, Uji Praktik Mandiri (study kasus), Sesi Konsultasi dengan Fasilitator dan Diskusi.
-
-                    section.py-3#CaraRedeemVoucher
-                        h4.mb-4 Cara Redeem Voucher
-                        article#how-to-redeem
-                            p Tata Cara Redeem Voucher:
-
-                            ol 
-                                li.mb-2  Langkah 1 : Log in ke karier.mu
-                                li.mb-2  Langkah 2 : Masuk ke "https://www.karier.mu/program/melakukan-digital-marketing-dengan-iklan-sosial-media-untuk-menjadi-spesialis-pemasaran"
-                                li.mb-2  Langkah 3 : Klik "Lanjut Pembayaran"
-                                li.mb-2  Langkah 4 : Masukkan kode voucher pada kolom yang tersedia 
-                                li.mb-2  Langkah 5 : Klik "Gunakan" dan Klik "Lanjutkan"
-                                li.mb-2  Langkah 6 : Klik “Belajar Sekarang” dan program yang dibeli dapat dilihat juga pada menu “Programmu”
-
-                    section.py-3#ContactCenterLP
-                        h4.mb-4 Contact Center
-                        article#how-to-redeem
-                            h6 Nomor Telepon 
-                            ul 
-                                li 
-                                    a.btn.btn-sm.btn-secondary(href="tel:#") 0867 6162 727
-
-
+                        article#detail-course-description
                     hr
 
 

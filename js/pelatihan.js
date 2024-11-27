@@ -1,3 +1,5 @@
+import { API_CONFIG, formatedString } from "./config-dist.js";
+
 // String format utility function
 const formatString = (string, ...args) => string.replace(/{(\d+)}/g, (match, number) => 
     typeof args[number] !== "undefined" ? args[number] : match
@@ -17,26 +19,9 @@ const state = {
     sortSetting: {
         by: "createdAt",
         method: "desc"
-    }
-};
-
-// API configuration
-const API_CONFIG = {
-    baseUrl: "https://cms.jaripmi.info/api",
-    token: "6c013a98cfcd42a222a5517e46f066414f6371cf47e92c04966f33ac70c3fb51a892135a0fd3c918ac3f59c70c3df38513a321392f45847e3c9ec217648582a48e41eed5f93836d87d6d9f32ebc689d99971bff71af373dc05e99b9528916d92e4178983fbc6b36312cf5fd3bd09eeab7e474da4bc0c533274baae0c1bfba13d"
-};
-
-// Debounce function for search input
-const debounce = (func, wait) => {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
+    },
+    dataSubCategory: [],
+    dataLearningPlatform: [],
 };
 
 // UI Update Functions
@@ -50,44 +35,57 @@ const updatePelatihanCount = (total) => {
 const updatePelatihanList = (courses) => {
     const listElement = document.getElementById("list-pelatihan");
     if (!listElement) return;
+    
+    const courseHTML = courses.map(course => {
+        let price = course.price;
+        let discount = course.price_final;
+        const discountPercentage = 100 -Math.floor((discount / price) * 100);
+        let final_price;
 
-    const courseHTML = courses.map(course => `
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
-            <div class="card course-card">
-                <a class="text-decoration-none to-detail-course" href="/pelatihan/detail.html?title=${encodeURIComponent(course.name)}&id=${course.id}" title="${course.name}">
-                    <div class="card-cover">
-                        <img class="card-img-top" src="${course.image[0].url}" alt="${course.name}">
-                        <div class="card-cover-overlay">
-                            <div class="d-flex justify-content-between align-middle">
-                                <div class="align-self-center">
-                                    <div class="card-company">
-                                        <img class="me-1 card-logo" src="${course.learning_platform.image[0].url}" alt="${course.learning_platform.name}">
-                                        <span class="course-lp-name">${course.learning_platform.name}</span>
+        if (discount == 0) {
+            final_price = "Gratis";
+        } else {
+            final_price = discount;
+        }
+
+        return `
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card course-card">
+                    <a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html?title=${formatedString(course.name)}-${course.documentId}" title="${course.name}">
+                        <div class="card-cover">
+                            <img class="card-img-top" src="${course.image[0].url}" alt="${course.name}">
+                            <div class="card-cover-overlay">
+                                <div class="d-flex justify-content-between align-middle">
+                                    <div class="align-self-center">
+                                        <div class="card-company">
+                                            <img class="me-1 card-logo" src="${course.learning_platform.image[0].url}" alt="${course.learning_platform.name}">
+                                            <span class="course-lp-name">${course.learning_platform.name}</span>
+                                        </div>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <span class="badge rounded-pill text-capitalize text-bg-warning">Self-Paced Learning</span>
                                     </div>
                                 </div>
-                                <div class="align-self-center">
-                                    <span class="badge rounded-pill text-capitalize text-bg-warning">Self-Paced Learning</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="mb-1 course-title text-capitalize" title="${course.meta_seo[0]?.meta_title}">${course.name}</h6>
+                            <div class="d-flex my-2">
+                                <span class="badge text-bg-light text-capitalize badge-ellipsis" title="${course.sub_category.name}">${course.sub_category.name}</span>
+                            </div>
+                            <div>
+                                <div class="course-real-price mb-1">
+                                    <span class="me-2">Rp <b>${price}</b></span>
+                                    <span class="badge text-bg-success">${discountPercentage}%</span>
                                 </div>
+                                <div class="course-price card-price mb-1 color-tertiary">Rp <b>${final_price}</b></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        <h6 class="mb-1 course-title text-capitalize" title="${course.name}">${course.name}</h6>
-                        <div class="d-flex my-2">
-                            <span class="badge text-bg-light text-capitalize badge-ellipsis" title="${course.sub_category.name}">${course.sub_category.name}</span>
-                        </div>
-                        <div>
-                            <div class="course-real-price mb-1">
-                                <span class="me-2">Rp <b>${course.price}</b></span>
-                                <span class="badge text-bg-success">60%</span>
-                            </div>
-                            <div class="course-price card-price mb-1 color-tertiary">Rp <b>${course.price_final}</b></div>
-                        </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
-        </div>
-    `).join('');
+        `
+    }).join('');
 
     if (state.curPage === 1) {
         listElement.innerHTML = courseHTML;
@@ -114,7 +112,6 @@ const setupEventListeners = () => {
 
     searchInput.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
-            console.log(state.filterByTitle)
             callFilter(undefined, undefined);
         }
     });
@@ -144,6 +141,37 @@ const setupEventListeners = () => {
             };
             state.sortSetting = sortOptions[sortSelect.value] || sortOptions["0"];
             callFilter(state.sortSetting, undefined);
+        });
+    }
+
+    // Modal show event handler
+    // const filterModal = document.getElementById("filterPelatihan");
+    // if (filterModal) {
+    //     filterModal.addEventListener('show.bs.modal', (event) => {
+    //         callApiSubCategory();
+    //         callApiLearningPlatform();
+    //         // Add your modal show logic here
+    //         console.log('Filter modal is being shown');
+    //     });
+    // }
+
+    // Button Filter handler
+    const filterButton = document.getElementById("show-filter-pelatihan");
+    if (filterButton) {
+        filterButton.addEventListener('click', () => {
+            const sub_category = document.querySelectorAll(`div[name=sub-category-by-name]`);
+            sub_category.forEach(element => {
+               if (!element.hasChildNodes()) {
+                callApiSubCategory(element);
+               }
+            });
+
+            const learning_platform = document.querySelectorAll(`div[name=learning-platform-by-name]`);
+            learning_platform.forEach(element => {
+               if (!element.hasChildNodes()) {
+                callApiLearningPlatform(element);
+               }
+            });
         });
     }
 };
@@ -222,28 +250,41 @@ const callApiCourse = async (filter, sort, page) => {
     }
 };
 
-const callApiSubCategory = async () => {
+const callApiSubCategory = async (node) => {
     try {
-        const response = await fetch(
-            `${API_CONFIG.baseUrl}/sub-categories?populate[0]=category&filters[category][name][$eq]=pelatihan`,
-            {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${API_CONFIG.token}`
+
+        if (state.dataSubCategory.length === 0) {
+            const response = await fetch(
+                `${API_CONFIG.baseUrl}/sub-categories?populate[0]=category&filters[category][name][$eq]=pelatihan`,
+                {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${API_CONFIG.token}`
+                    }
                 }
+            );
+            const result = await response.json();
+            state.dataSubCategory = result.data;
+        }
+
+        if (!node) { 
+            const subCategory = document.getElementById("sub-category");
+            if (subCategory) {
+                node = subCategory
             }
-        );
-        const result = await response.json();
-        const subCategory = document.getElementById("sub-category");
-        if (subCategory) {
-            result.data.forEach(data => {
+        } 
+        
+        if (node) {
+            state.dataSubCategory.forEach(data => {
                 const newSubCategory = document.createElement("div");
                 newSubCategory.className = "form-check";
+                newSubCategory.id = formatedString(data.name);
                 newSubCategory.innerHTML = `
-                    <input class="form-check-input filter-sub-category" id="filter-sub-category-${data.name}" type="checkbox" value="${data.name}" name="sub_category">
-                    <label class="form-check-label text-capitalize" for="filter-sub-category-${data.name}">${data.name}</label>
+                    <input class="form-check-input filter-sub-category" id="filter-sub-category-${formatedString(data.name)}" type="checkbox" value="${data.name}" name="sub_category">
+                    <label class="form-check-label text-capitalize" for="filter-sub-category-${formatedString(data.name)}">${data.name}</label>
                 `;
-                subCategory.appendChild(newSubCategory);
+                newSubCategory.style.display = "block"; // Ensure visibility, if needed
+                node.appendChild(newSubCategory);
             });
             setupCheckboxListeners('sub_category', 'sub_category');
         }
@@ -252,28 +293,40 @@ const callApiSubCategory = async () => {
     }
 };
 
-const callApiLearningPlatform = async () => {
+const callApiLearningPlatform = async (node) => {
     try {
-        const response = await fetch(
-            `${API_CONFIG.baseUrl}/learning-platforms`,
-            {
-                method: 'GET',
-                headers: {
-                    'Authorization': `Bearer ${API_CONFIG.token}`
+        if (state.dataLearningPlatform.length === 0) { 
+            const response = await fetch(
+                `${API_CONFIG.baseUrl}/learning-platforms`,
+                {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${API_CONFIG.token}`
+                    }
                 }
+            );
+            const result = await response.json();
+            state.dataLearningPlatform = result.data;
+        }
+       
+        if (!node) { 
+            const learningPlatform = document.getElementById("course-trending");
+            if (learningPlatform) {
+                node = learningPlatform
             }
-        );
-        const result = await response.json();
-        const learningPlatform = document.getElementById("course-trending");
-        if (learningPlatform) {
-            result.data.forEach(data => {
+        }
+        
+
+        if (node) {
+            state.dataLearningPlatform.forEach(data => {
                 const newLearningPlatform = document.createElement("div");
                 newLearningPlatform.className = "form-check";
+                newLearningPlatform.id = formatedString(data.name);
                 newLearningPlatform.innerHTML = `
-                    <input class="form-check-input filter-learning-platform" id="filter-learning-platform-${data.name}" type="checkbox" value="${data.name}" name="learning_platform">
-                    <label class="form-check-label text-capitalize" for="filter-learning-platform-${data.name}">${data.name}</label>
+                    <input class="form-check-input filter-learning-platform" id="filter-learning-platform-${formatedString(data.name)}" type="checkbox" value="${data.name}" name="learning_platform">
+                    <label class="form-check-label text-capitalize" for="filter-learning-platform-${formatedString(data.name)}">${data.name}</label>
                 `;
-                learningPlatform.appendChild(newLearningPlatform);
+                node.appendChild(newLearningPlatform);
             });
             setupCheckboxListeners('learning_platform', 'learning_platform');
         }
@@ -344,6 +397,6 @@ if (typeof module !== 'undefined' && module.exports) {
         callApiSubCategory,
         callApiLearningPlatform,
         init,
-        callFilter
+        callFilter,
     };
 }

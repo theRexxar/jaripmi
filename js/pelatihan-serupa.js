@@ -57,12 +57,12 @@ const init = async (filter, sort, page, excludeId) => {
 
         const courseHTML = result.data.map(course => 
             {
-                if (course.documentId == excludeId) {
+                if (course?.documentId == excludeId) {
                     return; 
                 }
 
-                let price = course.price;
-                let discount = course.price_final;
+                let price = course?.price || 0;
+                let discount = course?.price_final || 0;
                 const discountPercentage = 100 -Math.floor((discount / price) * 100);
                 let final_price;
 
@@ -74,22 +74,22 @@ const init = async (filter, sort, page, excludeId) => {
 
                 return `
                     <div class="swiper-slide">
-                        <div class="card course-card"><a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html?title=${formatedString(course.name)}-${course.documentId}" title="${course.name}">
-                            <div class="card-cover"><img class="card-img-top" src="${course.image[0].url}" alt="${course.name}">
+                        <div class="card course-card"><a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html?title=${formatedString(course?.name)}-${course?.documentId}" title="${course?.name}">
+                            <div class="card-cover"><img class="card-img-top" src="${course?.image[0].url}" alt="${course?.name}">
                             <div class="card-cover-overlay">
                                 <div class="d-flex justify-content-between align-middle">
                                 <div class="align-self-center">
-                                    <div class="card-company"><img class="me-1 card-logo" src="${course.learning_platform.image[0].url}" alt="${course.learning_platform.name}"><span class="course-lp-name">${course.learning_platform.name}</span></div>
+                                    <div class="card-company"><img class="me-1 card-logo" src="${course?.learning_platform?.image[0]?.url}" alt="${course?.learning_platform?.name}"><span class="course-lp-name">${course?.learning_platform?.name}</span></div>
                                 </div>
                                 <div class="align-self-center"><span class="badge rounded-pill text-capitalize text-bg-warning">Self Paced Learning</span></div>
                                 </div>
                             </div>
                             </div>
                             <div class="card-body">
-                            <h6 class="mb-1 course-title text-capitalize" title="${course.meta_seo[0]?.meta_title}">${course.meta_seo[0]?.meta_title}</h6>
-                            <div class="d-flex my-2"><span class="badge text-bg-light text-capitalize badge-ellipsis" title="${course.sub_category.name}">${course.sub_category.name}</span></div>
+                            <h6 class="mb-1 course-title text-capitalize" title="${course?.meta_seo[0]?.meta_title}">${course?.meta_seo[0]?.meta_title}</h6>
+                            <div class="d-flex my-2"><span class="badge text-bg-light text-capitalize badge-ellipsis" title="${course?.sub_category.name}">${course?.sub_category?.name}</span></div>
                             <div>
-                                <div class="course-real-price mb-1"><span class="me-2">Rp ${course.price}</span><span class="badge text-bg-success">${discountPercentage}%</span></div>
+                                <div class="course-real-price mb-1"><span class="me-2">Rp ${course?.price}</span><span class="badge text-bg-success">${discountPercentage}%</span></div>
                                 <div class="course-price card-price mb-1 color-tertiary">Rp ${final_price}</div>
                             </div>
                             </div></a></div>

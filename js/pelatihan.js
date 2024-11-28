@@ -37,8 +37,8 @@ const updatePelatihanList = (courses) => {
     if (!listElement) return;
     
     const courseHTML = courses.map(course => {
-        let price = course.price;
-        let discount = course.price_final;
+        let price = (course.price) ? course.price : 0;
+        let discount = (course.price_final) ? course.price_final : 0;
         const discountPercentage = 100 -Math.floor((discount / price) * 100);
         let final_price;
 
@@ -51,15 +51,15 @@ const updatePelatihanList = (courses) => {
         return `
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="card course-card">
-                    <a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html?title=${formatedString(course.name)}-${course.documentId}" title="${course.name}">
+                    <a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html?title=${formatedString(course?.name)}-${course?.documentId}" title="${course?.name}">
                         <div class="card-cover">
-                            <img class="card-img-top" src="${course.image[0].url}" alt="${course.name}">
+                            <img class="card-img-top" src="${course?.image[0].url}" alt="${course?.name}">
                             <div class="card-cover-overlay">
                                 <div class="d-flex justify-content-between align-middle">
                                     <div class="align-self-center">
                                         <div class="card-company">
-                                            <img class="me-1 card-logo" src="${course.learning_platform.image[0].url}" alt="${course.learning_platform.name}">
-                                            <span class="course-lp-name">${course.learning_platform.name}</span>
+                                            <img class="me-1 card-logo" src="${course?.learning_platform?.image[0]?.url}" alt="${course?.learning_platform?.name}">
+                                            <span class="course-lp-name">${course?.learning_platform?.name}</span>
                                         </div>
                                     </div>
                                     <div class="align-self-center">
@@ -69,9 +69,9 @@ const updatePelatihanList = (courses) => {
                             </div>
                         </div>
                         <div class="card-body">
-                            <h6 class="mb-1 course-title text-capitalize" title="${course.meta_seo[0]?.meta_title}">${course.name}</h6>
+                            <h6 class="mb-1 course-title text-capitalize" title="${course?.meta_seo[0]?.meta_title}">${course?.name}</h6>
                             <div class="d-flex my-2">
-                                <span class="badge text-bg-light text-capitalize badge-ellipsis" title="${course.sub_category.name}">${course.sub_category.name}</span>
+                                <span class="badge text-bg-light text-capitalize badge-ellipsis" title="${course?.sub_category?.name}">${course?.sub_category?.name}</span>
                             </div>
                             <div>
                                 <div class="course-real-price mb-1">
@@ -292,7 +292,7 @@ const callApiSubCategory = async (node) => {
         console.error("Failed to fetch sub categories:", error);
     }
 };
-
+// call api learning platform
 const callApiLearningPlatform = async (node) => {
     try {
         if (state.dataLearningPlatform.length === 0) { 

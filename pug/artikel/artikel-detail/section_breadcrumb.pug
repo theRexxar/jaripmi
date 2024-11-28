@@ -3,11 +3,17 @@ section
         .row.d-flex.align-items-center
             .col-12
                 nav.breadcrumb-wrapper(aria-label="breadcrumb")
-                    ol.breadcrumb.overflow-hidden.fs-7.mb-0.breadcrumb-custom
-                        li.breadcrumb-item
-                            a.text-primary(href=baseURL+'/')
-                                | Artikel
-                        li.breadcrumb-item
-                            a.text-primary(href=baseURL+'negara/') Inspirasi
+                    ol#article-breadcrumb-detail.breadcrumb.overflow-hidden.fs-7.mb-0.breadcrumb-custom
+                        li.breadcrumb-item 
+                            span.skeleton-box.rounded-pill(style="width:20px")
+                        li.breadcrumb-item 
+                            span.skeleton-box.rounded-pill(style="width:128px")
+                        li.breadcrumb-item.active
+                            span.skeleton-box.rounded-pill(style="width:128px")
+                        //- li.breadcrumb-item
+                        //-     a.text-primary(href=baseURL+'/')
+                        //-         | Artikel
+                        //- li.breadcrumb-item
+                        //-     a.text-primary(href=baseURL+'negara/') Inspirasi
 
-                        li.breadcrumb-item.active.text-truncate(aria-current='page') BP2MI Kukuhkan 70 Kawan PMI Kalimantan Barat
+                        //- li.breadcrumb-item.active.text-truncate(aria-current='page') BP2MI Kukuhkan 70 Kawan PMI Kalimantan Barat

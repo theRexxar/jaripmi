@@ -3,6 +3,7 @@ const MqL = 1170;
 const loadItem = 12;
 var currentPage = 1;
 const queryParams = new URLSearchParams(window.location.search);
+const ROOT_PATH = window.location.origin;
 const tkn = '6c013a98cfcd42a222a5517e46f066414f6371cf47e92c04966f33ac70c3fb51a892135a0fd3c918ac3f59c70c3df38513a321392f45847e3c9ec217648582a48e41eed5f93836d87d6d9f32ebc689d99971bff71af373dc05e99b9528916d92e4178983fbc6b36312cf5fd3bd09eeab7e474da4bc0c533274baae0c1bfba13d';
 const apiURL = 'https://cms.jaripmi.info';
 
@@ -117,24 +118,12 @@ function courseLoaderInit(){
 	}
 }
 
-function renderArticleCard (data) {
-	return `<div class="swiper-slide">
-			<div class="card article-card rounded-3">
-				<a class="text-decoration-none" href="artikel/artikel-detail.html?title=${data.title.replace(/\s+/gi, '-').toLowerCase()}id=${data.id}">
-					<div class="article-card-cover"><img class="card-img-top" loading="lazy" src="${data.image[0].formats.medium.url}" alt="BP2MI Kukuhkan 70 Kawan PMI Kalimantan Barat"
-						/></div>
-					<div class="article-card-body d-flex flex-column text-start p-3 justify-content-end">
-						<div>
-							<div class="mb-2"><span class="badge text-bg-info fw-normal">${data.article_tags[0].name}</span></div>
-							<h5 class="mb-2 text-white text-clamp-2" title="BP2MI Kukuhkan 70 Kawan PMI Kalimantan Barat)">${data.title}</h5>
-							<p class="m-0 fs-8 text-white text-clamp-3 text-truncate">${data.description.replace(/<[^>]*>?/gm, '').slice(0, 150)}...</p>
-							<div class="d-flex gap-3 fs-9 text-white mt-2"><span><i class="bi bi-stopwatch"> </i>${readingTime(data.description)} Menit Baca</span><span> <i class="bi bi-clock"> </i>${new Date(data.publishedAt).toLocaleDateString('id-ID', {year: 'numeric',month: 'long',day: 'numeric'}) }</span></div>
-						</div>
-					</div>
-				</a>
-			</div>
-		</div>
-	`;
+function convertTime (time) {
+	return new Date(time).toLocaleDateString('id-ID', {year: 'numeric',month: 'long',day: 'numeric'})
+}
+
+function getShortContent (content) {
+	return content.replace(/<[^>]*>?/gm, '').slice(0, 150) + '...'
 }
 
 // reading time estimations
@@ -144,6 +133,52 @@ function readingTime(wording) {
 	const words = text.trim().split(/\s+/).length;
 	const time = Math.ceil(words / wpm);
 	return time;
+}
+
+function renderArticleCard (data) {
+	return `<div class="swiper-slide">
+			<div class="card article-card rounded-3">
+				<a class="text-decoration-none" href="${ROOT_PATH}/artikel/artikel-detail.html?title=${data.title.replace(/\s+/gi, '-').toLowerCase()}&id=${data.documentId}">
+					<div class="article-card-cover"><img class="card-img-top" loading="lazy" src="${data.image[0].formats.medium.url}" alt="${data.title}"
+						/></div>
+					<div class="article-card-body d-flex flex-column text-start p-3 justify-content-end">
+						<div>
+							<div class="mb-2"><span class="badge text-bg-info fw-normal">${data.article_tags[0].name}</span></div>
+							<h5 class="mb-2 text-white text-clamp-2" title="${data.title}">${data.title}</h5>
+							<p class="m-0 fs-8 text-white text-clamp-3 text-truncate">${getShortContent(data.description)}</p>
+							<div class="d-flex gap-3 fs-9 text-white mt-2"><span><i class="bi bi-stopwatch"> </i>${readingTime(data.description)} Menit Baca</span><span> <i class="bi bi-clock"> </i>${convertTime(data.publishedAt)}</span></div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	`;
+}
+
+function headerArticle (data) {
+	return `<div class="row d-flex justify-content-center">
+			<div class="col-lg-8">
+				<h1>${data.title}</h1>
+				<div class="d-flex"> <span class="badge text-bg-info me-3"> ${data.article_tags[0].name} </span><span class="text-secondary fs-7 me-3"><i class="bi bi-stopwatch me-1"></i>${readingTime(data.description)} Menit Baca</span><span class="text-secondary fs-7 me-3"><i class="bi bi-clock me-1"></i>${convertTime(data.publishedAt)}</span></div>
+				<div class="my-4"><img class="mw-100 rounded" src="${data.image[0].formats.large.url}" alt="" />
+					<figcaption class="fs-8 mt-2">${data.image[0].alternativeText}</figcaption>
+			</div>
+		</div>
+	</div>`;
+}
+
+function slugArticle (data) {
+	return `<li class="breadcrumb-item"><a class="text-primary" href="${ROOT_PATH}/artikel/">Artikel</a></li>
+		<li class="breadcrumb-item"><a class="text-primary text-capitalize" href="${ROOT_PATH}/artikel/?category=${data.article_tags[0].name}">${data.article_tags[0].name}</a></li>
+	<li class="breadcrumb-item active text-truncate" aria-current="page">${data.title}</li>`;
+}
+
+function contentArticle (data) {
+	return 	`<div class="container pb-4 pb-lg-5 px-4 px-md-0">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">${data.description.replace(/style=\"/gi,'styles=\"')}</div>
+    </div>
+</div>`
 }
 
 // function to load article for the new article
@@ -194,51 +229,57 @@ function homeLoadArticle() {
 	}
 }
 
+// load detail article
 function detailArticle() {
-	var appendTarget = $('#artikel-detail-container');
-	var IDArticle = !_.isEmpty(queryParams.get('')) ? queryParams.get('') : '1234';
+	var appendHeader = $('#artikel-header-container');
+	var appendContent = $('#artikel-detail-container');
+	var breadCrumb = $('#article-breadcrumb-detail');
 
-	$.ajax({
-		method: "GET",
-		url: apiURL + '/api/articles?populate[0]=meta_seo&populate[1]=image&populate[2]=article_tags&sort[0][createdAt]=desc&pagination[pageSize]=6', 
-		headers: {"Authorization": "Bearer " + tkn},
-		dataType: 'json'
-	}).done(function(data) {
-		var articles = data.data
-		// condition for article is empty
-		if (!_.isEmpty(articles)) {
-			appendTarget.find('.swiper-wrapper').html('');
-			_.each(articles, (article) => appendTarget.find('.swiper-wrapper').append(renderArticleCard(article)))
-			
-			// Home Carousel Article
-			new Swiper(".articleSwiper", {
-				slidesPerView: 1.25,
-				spaceBetween:16,
-				pagination: false,
-				navigation: {
-					nextEl: ".swiper-article-next",
-					prevEl: ".swiper-article-prev",
-				},
-				breakpoints: {
-					640: {
-						slidesPerView: 2.1,
-						spaceBetween: 16,
+	var IDArticle = !_.isEmpty(queryParams.get('id')) ? queryParams.get('id') : '1234';
+	console.log(IDArticle);
+	if (appendHeader) {
+		$.ajax({
+			method: "GET",
+			url: apiURL + `/api/articles/${IDArticle}?populate=*`, 
+			headers: {"Authorization": "Bearer " + tkn},
+			dataType: 'json'
+		}).done(function(data) {
+			var articles = data.data
+			// condition for article is empty
+			if (!_.isEmpty(articles)) {
+				breadCrumb.html('').append(slugArticle(articles));
+				appendHeader.html('').append(headerArticle(articles));
+				appendContent.html('').append(contentArticle(articles));
+				
+				// Home Carousel Article
+				new Swiper(".articleSwiper", {
+					slidesPerView: 1.25,
+					spaceBetween:16,
+					pagination: false,
+					navigation: {
+						nextEl: ".swiper-article-next",
+						prevEl: ".swiper-article-prev",
 					},
-					768: {
-						slidesPerView: 2.55,
-						spaceBetween: 24,
+					breakpoints: {
+						640: {
+							slidesPerView: 2.1,
+							spaceBetween: 16,
+						},
+						768: {
+							slidesPerView: 2.55,
+							spaceBetween: 24,
+						},
+						1024: {
+							slidesPerView: 3.25,
+							spaceBetween: 24,
+						},
 					},
-					1024: {
-						slidesPerView: 3.25,
-						spaceBetween: 24,
-					},
-				},
-			});
-		} else {
-			appendTarget.html('').append('<div class="alert alert-info" role="alert"><div class="d-flex"><div class="pe-3"><i class="bi bi-info-circle-fill fs-4"></i></div><div><h6 class="alert-heading">Artikel terbaru tidak ditemukan</h6><p>Jelajahi Artikel lain yang menarik untuk kamu.</p></div></div></div>');
-		}
-	})
-	
+				});
+			} else {
+				appendTarget.html('').append('<div class="alert alert-info" role="alert"><div class="d-flex"><div class="pe-3"><i class="bi bi-info-circle-fill fs-4"></i></div><div><h6 class="alert-heading">Artikel terbaru tidak ditemukan</h6><p>Jelajahi Artikel lain yang menarik untuk kamu.</p></div></div></div>');
+			}
+		})
+	}
 }
 
 
@@ -334,6 +375,9 @@ jQuery(document).ready(function($){
 
 	// load article on home 
 	homeLoadArticle();
+
+	// load article details
+	detailArticle();
 });
 
 

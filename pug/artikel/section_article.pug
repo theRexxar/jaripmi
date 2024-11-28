@@ -2,11 +2,11 @@ section
     .container.py-3.py-lg-4.px-4.px-md-0
         .row.mb-3
             .d-flex.justify-content-between.align-items-center.fs-7
-                span
-                    | Ditemukan 
-                    b 1.231 
-                    | artikel #{contentDescription.ArticleCategory} 
-                    b.text-decoration-underline #{contentDescription.ArticleKeyword}
+                span.skeleton-box.w-25.rounded(style="height:20px")
+                    //- | Ditemukan 
+                    //- b 1.231 
+                    //- | artikel #{contentDescription.ArticleCategory} 
+                    //- b.text-decoration-underline #{contentDescription.ArticleKeyword}
                 
                 div.d-flex.align-items-center
                     .me-1 Urutkan: 
@@ -16,27 +16,33 @@ section
 
         .row
             .col-12.col-md-6.col-lg-4.mb-4
-                include sample_article_card.pug
+                include sample_article_card_skeleton.pug
             .col-12.col-md-6.col-lg-4.mb-4
                 include sample_article_card_skeleton.pug
             .col-12.col-md-6.col-lg-4.mb-4
-                include sample_article_card.pug
+                include sample_article_card_skeleton.pug
+            .col-12.col-md-6.col-lg-4.mb-4
+                include sample_article_card_skeleton.pug
+            .col-12.col-md-6.col-lg-4.mb-4
+                include sample_article_card_skeleton.pug
+            .col-12.col-md-6.col-lg-4.mb-4
+                include sample_article_card_skeleton.pug
 
-            .col-12.col-md-6.col-lg-4.mb-4
-                include sample_article_card.pug
-            .col-12.col-md-6.col-lg-4.mb-4
-                include sample_article_card.pug
-            .col-12.col-md-6.col-lg-4.mb-4
-                include sample_article_card.pug
+            //- .col-12.col-md-6.col-lg-4.mb-4
+            //-     include sample_article_card.pug
+            //- .col-12.col-md-6.col-lg-4.mb-4
+            //-     include sample_article_card.pug
+            //- .col-12.col-md-6.col-lg-4.mb-4
+            //-     include sample_article_card.pug
 
-            .col-12.col-md-6.col-lg-4.mb-4
-                include sample_article_card.pug
-            .col-12.col-md-6.col-lg-4.mb-4
-                include sample_article_card.pug
-            .col-12.col-md-6.col-lg-4.mb-4
-                include sample_article_card.pug
+            //- .col-12.col-md-6.col-lg-4.mb-4
+            //-     include sample_article_card.pug
+            //- .col-12.col-md-6.col-lg-4.mb-4
+            //-     include sample_article_card.pug
+            //- .col-12.col-md-6.col-lg-4.mb-4
+            //-     include sample_article_card.pug
 
-        .row 
+        //- .row 
             .col-12.d-flex.justify-content-center
                 nav(aria-label='Page navigation example')
                     ul.pagination

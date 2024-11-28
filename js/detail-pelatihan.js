@@ -9,7 +9,7 @@ const state = {
 const callApiDetail = async (id) => {
     try {
         const response = await fetch(
-            `${API_CONFIG.baseUrl}/courses/${id}?populate[0]=learning_platform.image&populate[1]=sub_category&populate[2]=image&populate[3]=course_tags`,
+            `${API_CONFIG.baseUrl}/courses/${id}?populate[0]=learning_platform.image&populate[1]=course_category&populate[2]=image&populate[3]=course_tags`,
             {
                 method: 'GET',
                 headers: {

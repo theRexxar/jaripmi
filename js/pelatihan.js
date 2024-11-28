@@ -222,14 +222,14 @@ const callApiCourse = async (filter, sort, page) => {
 
         if (filter?.sub_category?.length) {
             filter.sub_category.forEach((category, i) => {
-                params.push(`filters[$or][${i}][sub_category][name][$eq]=${encodeURIComponent(category)}`);
+                params.push(`filters[$or][${i}][course_category][name][$eq]=${encodeURIComponent(category)}`);
             });
         }
 
         return params.join('&');
     };
 
-    const uri = `${API_CONFIG.baseUrl}/courses?populate[0]=meta_seo&populate[1]=image&populate[2]=learning_platform.image&populate[3]=sub_category&sort[0][${defaultParams.sortBy}]=${defaultParams.sortMethod}&pagination[page]=${defaultParams.pageCurr}&pagination[pageSize]=${defaultParams.pageSize}&${buildFilterParams()}`;
+    const uri = `${API_CONFIG.baseUrl}/courses?populate[0]=meta_seo&populate[1]=image&populate[2]=learning_platform.image&populate[3]=course_category&sort[0][${defaultParams.sortBy}]=${defaultParams.sortMethod}&pagination[page]=${defaultParams.pageCurr}&pagination[pageSize]=${defaultParams.pageSize}&${buildFilterParams()}`;
 
     try {
         const response = await fetch(uri, {
@@ -255,7 +255,7 @@ const callApiSubCategory = async (node) => {
 
         if (state.dataSubCategory.length === 0) {
             const response = await fetch(
-                `${API_CONFIG.baseUrl}/sub-categories?populate[0]=category&filters[category][name][$eq]=pelatihan`,
+                `${API_CONFIG.baseUrl}/sub-categories`,
                 {
                     method: 'GET',
                     headers: {

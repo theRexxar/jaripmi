@@ -14,33 +14,13 @@ nav.site-nav.w-100.d-flex.justify-content-end
         
         li.has-children.small-children
             a(class={"is-active" : pageActive === 'negara-tujuan'}) Negara Tujuan
-            ul.site-secondary-nav.has-see-all.is-hidden
+            ul#list-country-header.site-secondary-nav.has-see-all.is-hidden
                 li.go-back
                     a(href='#0') Menu
                 li.see-all
                     a.anchor.arrow-move(href=baseURL+'negara/')
                         | Selengkapnya
                         i.icon-angle-right
-                li
-                    a.site-nav-item(href=baseURL+"negara/korea-selatan/")
-                        | Korea Selatan
-                li
-                    a.site-nav-item(href=baseURL+"negara/arab-saudi/")
-                        | Arab Saudi
-                li
-                    a.site-nav-item(href=baseURL+"negara/malaysia/")
-                        | Malaysia
-                li
-                    a.site-nav-item(href=baseURL+"negara/taiwan/")
-                        | Taiwan
-                
-                li
-                    a.site-nav-item(href=baseURL+"negara/singapura/")
-                        | Singapura
-
-                li
-                    a.site-nav-item(href=baseURL+"negara/hongkong/")
-                        | Hongkong
         li
             a(href=baseURL+"artikel/" class={"is-active" : pageActive === 'artikel'}) Artikel
             

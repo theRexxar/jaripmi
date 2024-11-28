@@ -27,7 +27,7 @@ const callApiSimiliar = async (filter, sort, page, excludeId) => {
         return params.join('&');
     };
 
-    const uri = `${API_CONFIG.baseUrl}/courses?populate[0]=meta_seo&populate[1]=image&populate[2]=learning_platform.image&populate[3]=sub_category&filters[documentId][$ne]=${excludeId}populate[4]=meta_seo&sort[0][${defaultParams.sortBy}]=${defaultParams.sortMethod}&pagination[page]=${defaultParams.pageCurr}&pagination[pageSize]=${defaultParams.pageSize}&${buildFilterParams()}`;
+    const uri = `${API_CONFIG.baseUrl}/courses?populate[0]=meta_seo&populate[1]=image&populate[2]=learning_platform.image&populate[3]=course_category&filters[documentId][$ne]=${excludeId}populate[4]=meta_seo&sort[0][${defaultParams.sortBy}]=${defaultParams.sortMethod}&pagination[page]=${defaultParams.pageCurr}&pagination[pageSize]=${defaultParams.pageSize}&${buildFilterParams()}`;
     try {
         const response = await fetch(uri, {
             method: 'GET',

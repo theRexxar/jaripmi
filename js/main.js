@@ -139,8 +139,7 @@ function renderArticleCard (data) {
 	return `<div class="swiper-slide">
 			<div class="card article-card rounded-3">
 				<a class="text-decoration-none" href="${ROOT_PATH}/artikel/artikel-detail.html?title=${data.title.replace(/\s+/gi, '-').toLowerCase()}&id=${data.documentId}">
-					<div class="article-card-cover"><img class="card-img-top" loading="lazy" src="${data.image[0].formats.medium.url}" alt="${data.title}"
-						/></div>
+					<div class="article-card-cover"><img class="card-img-top" loading="lazy" src="${data.image[0].formats.medium.url}" alt="${data.title}"/></div>
 					<div class="article-card-body d-flex flex-column text-start p-3 justify-content-end">
 						<div>
 							<div class="mb-2"><span class="badge text-bg-info fw-normal">${data.article_tags[0].name}</span></div>
@@ -155,12 +154,31 @@ function renderArticleCard (data) {
 	`;
 }
 
+function renderArticleList (data) {
+	return `<div class="col-12 col-md-6 col-lg-4 mb-4">
+		<div class="card article-card article-card-short rounded-3">
+			<a class="text-decoration-none" href="${ROOT_PATH}/artikel/artikel-detail.html?title=${data.title.replace(/\s+/gi, '-').toLowerCase()}&id=${data.documentId}">
+				<div class="article-card-cover"><img class="card-img-top" loading="lazy" src="${data.image[0].formats.medium.url}" alt="${data.title}"/></div>
+				<div class="article-card-body d-flex flex-column text-start p-3 justify-content-end">
+					<div>
+						<div class="mb-2"><span class="badge text-bg-info fw-normal">${data.article_tags[0].name}</span></div>
+						<h5 class="mb-2 text-white text-clamp-2" title="${data.title}">${data.title}</h5>
+						<p class="m-0 fs-8 text-white text-clamp-3">${getShortContent(data.description)}</p>
+						<div class="d-flex gap-3 fs-9 text-white mt-2"><span><i class="bi bi-stopwatch"> </i>${readingTime(data.description)} Menit Baca</span><span> <i class="bi bi-clock"> </i>${convertTime(data.publishedAt)}</span></div>
+					</div>
+				</div>
+			</a>
+		</div>	
+	</div>
+`;
+}
+
 function headerArticle (data) {
 	return `<div class="row d-flex justify-content-center">
 			<div class="col-lg-8">
 				<h1>${data.title}</h1>
 				<div class="d-flex"> <span class="badge text-bg-info me-3"> ${data.article_tags[0].name} </span><span class="text-secondary fs-7 me-3"><i class="bi bi-stopwatch me-1"></i>${readingTime(data.description)} Menit Baca</span><span class="text-secondary fs-7 me-3"><i class="bi bi-clock me-1"></i>${convertTime(data.publishedAt)}</span></div>
-				<div class="my-4"><img class="mw-100 rounded" src="${data.image[0].formats.large.url}" alt="" />
+				<div class="my-4"><img class="mw-100 rounded" src="${data.image[0].formats.large.url}" alt="${data.title}" />
 					<figcaption class="fs-8 mt-2">${data.image[0].alternativeText}</figcaption>
 			</div>
 		</div>
@@ -229,15 +247,35 @@ function homeLoadArticle() {
 	}
 }
 
+// function to load article lists
+function articleLoaderInit() {
+	var appendTarget = $('#article-lists');
+
+	if (appendTarget.length) {
+		$.ajax({
+			method: "GET",
+			url: apiURL + '/api/articles?populate[0]=meta_seo&populate[1]=image&populate[2]=article_tags&sort[0][createdAt]=desc',
+			headers: {"Authorization": "Bearer " + tkn},
+			dataType: 'json'
+		}).done(function(data) {
+			var articles = data.data
+			// condition for article is empty
+			if (!_.isEmpty(articles)) {
+				appendTarget.html('');
+				_.each(articles, (article) => appendTarget.append(renderArticleList(article)))
+			}
+		})
+	}
+}
+
 // load detail article
 function detailArticle() {
 	var appendHeader = $('#artikel-header-container');
 	var appendContent = $('#artikel-detail-container');
 	var breadCrumb = $('#article-breadcrumb-detail');
-
-	var IDArticle = !_.isEmpty(queryParams.get('id')) ? queryParams.get('id') : '1234';
-	console.log(IDArticle);
+	
 	if (appendHeader) {
+		var IDArticle = !_.isEmpty(queryParams.get('id')) ? queryParams.get('id') : '1234';
 		$.ajax({
 			method: "GET",
 			url: apiURL + `/api/articles/${IDArticle}?populate=*`, 
@@ -371,10 +409,13 @@ jQuery(document).ready(function($){
 	dataRemitance('#remitansi-list');
 
 	// load course list
-	courseLoaderInit();
+	// courseLoaderInit();
 
 	// load article on home 
 	homeLoadArticle();
+
+	// load article lists
+	articleLoaderInit();
 
 	// load article details
 	detailArticle();

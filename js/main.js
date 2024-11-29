@@ -199,6 +199,10 @@ function contentArticle (data) {
 </div>`
 }
 
+function templateCategoryArticle (data) {
+	return `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link" href="${ROOT_PATH}/artikel/index.html?category=${data.slug.replace(/\s+/gi, '-').toLowerCase()}">${data.name}</a></div>`
+}
+
 // function to load article for the new article
 function homeLoadArticle() {
 	var appendTarget = $('#artikel-home-container');
@@ -250,8 +254,11 @@ function homeLoadArticle() {
 // function to load article lists
 function articleLoaderInit() {
 	var appendTarget = $('#article-lists');
+	var categoryTarget = $('#article-categori-container');
 
 	if (appendTarget.length) {
+		var catArticle = !_.isEmpty(queryParams.get('category')) ? queryParams.get('category') : 'all';
+		
 		$.ajax({
 			method: "GET",
 			url: apiURL + '/api/articles?populate[0]=meta_seo&populate[1]=image&populate[2]=article_tags&sort[0][createdAt]=desc',
@@ -264,6 +271,21 @@ function articleLoaderInit() {
 				appendTarget.html('');
 				_.each(articles, (article) => appendTarget.append(renderArticleList(article)))
 			}
+
+			$.ajax({
+				method: "GET",
+				url: apiURL + '/api/categories?sort[0][createdAt]=desc',
+				headers: {"Authorization": "Bearer " + tkn},
+				dataType: 'json'
+			}).done(function(data) {
+				var categories = data.data
+				// condition for article is empty
+				if (!_.isEmpty(categories)) {
+					console.log(categories)
+					categoryTarget.html('').append(`<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link active" href="${ROOT_PATH}/artikel/index.html?category=all">Semua</a></div>`)
+					_.each(categories, (category) => categoryTarget.append(templateCategoryArticle(category)))
+				}
+			})
 		})
 	}
 }
@@ -274,7 +296,8 @@ function detailArticle() {
 	var appendContent = $('#artikel-detail-container');
 	var breadCrumb = $('#article-breadcrumb-detail');
 	
-	if (appendHeader) {
+	if (appendHeader.length) {
+		console.log('masuk sini')
 		var IDArticle = !_.isEmpty(queryParams.get('id')) ? queryParams.get('id') : '1234';
 		$.ajax({
 			method: "GET",

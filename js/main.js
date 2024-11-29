@@ -229,6 +229,45 @@ function renderEmptyArticle () {
     </div>`
 }
 
+function renderCourse (data) {
+
+	let price = (data.price) ? data.price : 0;
+	let discount = (data.price_final) ? data.price_final : 0;
+	const discountPercentage = 100 -Math.floor((discount / price) * 100);
+	let final_price;
+
+	if (discount == 0) {
+		final_price = "Gratis";
+	} else {
+		final_price = `Rp ${Number(discount).toLocaleString('id')}`;
+	}
+
+	return `<div class="swiper-slide">
+		<div class="card course-card">
+			<a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html?title=${data.slug}-${data.documentId}" title="${data.name}">
+				<div class="card-cover"><img class="card-img-top" src="${data.image[0].formats.thumbnail.url}" alt="${data.name}" />
+					<div class="card-cover-overlay">
+						<div class="d-flex justify-content-between align-middle">
+							<div class="align-self-center">
+								<div class="card-company"><img class="me-1 card-logo" src="${data.learning_platform.image[0].formats.thumbnail.url}" alt="${data.learning_platform.name}" /><span class="course-lp-name">${data.learning_platform.name}</span></div>
+							</div>
+							<div class="align-self-center"><span class="badge rounded-pill text-capitalize text-bg-warning"> Self-Paced Learning</span></div>
+						</div>
+					</div>
+				</div>
+				<div class="card-body">
+					<h6 class="mb-1 course-title text-capitalize" title="${data.name}">${data.name}</h6>
+					<div class="d-flex my-2"><span class="badge text-bg-light text-capitalize badge-ellipsis" title="${data.course_category.name}">${data.course_category.name}</span></div>
+					<div>
+						<div class="course-real-price mb-1"><span class="me-2">Rp ${Number(price).toLocaleString('id')}</span><span class="badge text-bg-success">${discountPercentage}%</span></div> 
+						<div class="course-price card-price mb-1 color-tertiary">${final_price}</div>  
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>`;
+}
+
 function templateCategoryArticle (data,catArticle) {
 	if (data.slug == catArticle) {
 		return `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link active" href="${ROOT_PATH}/artikel/index.html?category=${data.slug.replace(/\s+/gi, '-').toLowerCase()}">${data.name}</a></div>`;
@@ -399,7 +438,6 @@ function detailArticle() {
 	var breadCrumb = $('#article-breadcrumb-detail');
 	
 	if (appendHeader.length) {
-		console.log('masuk sini')
 		var IDArticle = !_.isEmpty(queryParams.get('id')) ? queryParams.get('id') : '1234';
 		$.ajax({
 			method: "GET",
@@ -442,6 +480,53 @@ function detailArticle() {
 				appendTarget.html('').append('<div class="alert alert-info" role="alert"><div class="d-flex"><div class="pe-3"><i class="bi bi-info-circle-fill fs-4"></i></div><div><h6 class="alert-heading">Artikel terbaru tidak ditemukan</h6><p>Jelajahi Artikel lain yang menarik untuk kamu.</p></div></div></div>');
 			}
 		})
+	}
+}
+
+function homeLoadCourse() {
+	var appendTarget = $('#course-home-list');
+	if (appendTarget.length) {
+		$.ajax({
+			method: "GET",
+			url: apiURL + '/api/courses?populate[0]=meta_seo&populate[1]=image&populate[2]=learning_platform.image&populate[3]=course_category&populate[4]=course_tags&sort[0][createdAt]=desc&pagination[pageSize]=6', 
+			headers: {"Authorization": "Bearer " + tkn},
+			dataType: 'json'
+		}).done(function(data) {
+			var courses = data.data
+			// condition for courses is empty
+			if (!_.isEmpty(courses)) {
+				appendTarget.html('');
+				_.each(courses, (course) => appendTarget.append(renderCourse(course)))
+				
+			} else {
+				appendTarget.html('').append('<div class="alert alert-info" role="alert"><div class="d-flex"><div class="pe-3"><i class="bi bi-info-circle-fill fs-4"></i></div><div><h6 class="alert-heading">Artikel terbaru tidak ditemukan</h6><p>Jelajahi Artikel lain yang menarik untuk kamu.</p></div></div></div>');
+			}
+		})
+
+		// Home Carousel Course
+		var swiper = new Swiper(".courseSwiper", {
+			slidesPerView: 1.25,
+			spaceBetween: 16,
+			pagination: false,
+			navigation: {
+				nextEl: ".swiper-course-next",
+				prevEl: ".swiper-course-prev",
+			},
+			breakpoints: {
+				640: {
+					slidesPerView: 2.25,
+					spaceBetween: 16,
+				},
+				768: {
+					slidesPerView: 2.75,
+					spaceBetween: 24,
+				},
+				1024: {
+					slidesPerView: 3.75,
+					spaceBetween: 24,
+				},
+			},
+		});
 	}
 }
 
@@ -538,6 +623,9 @@ jQuery(document).ready(function($){
 
 	// load article on home 
 	homeLoadArticle();
+
+	// load courses on home
+	homeLoadCourse();
 
 	// load article lists
 	articleLoaderInit();
@@ -649,32 +737,6 @@ var TxtRotate = function(el, toRotate, period) {
 
 	init();
   });
-  
-
-  // Home Carousel Course
-  var swiper = new Swiper(".courseSwiper", {
-    slidesPerView: 1.25,
-    spaceBetween: 16,
-    pagination: false,
-    navigation: {
-        nextEl: ".swiper-course-next",
-        prevEl: ".swiper-course-prev",
-    },
-    breakpoints: {
-        640: {
-            slidesPerView: 2.25,
-            spaceBetween: 16,
-        },
-        768: {
-            slidesPerView: 2.75,
-            spaceBetween: 24,
-        },
-        1024: {
-            slidesPerView: 3.75,
-            spaceBetween: 24,
-        },
-    },
-});
 
 
  // Home Carousel Countries

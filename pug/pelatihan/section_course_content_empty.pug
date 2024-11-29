@@ -1,0 +1,35 @@
+div
+    .row.mb-3
+        .d-flex.justify-content-between.align-items-center.fs-7
+            span#count-pelatihan
+                | Ditemukan 
+                b - 
+                | pelatihan
+            
+            div.d-flex.align-items-center
+                .me-1 Urutkan: 
+                select#sort-pelatihan.form-select(aria-label='Default select example')
+                    option(value='0' selected) Terbaru
+                    option(value='1') Terlama
+                    option(value='2') Harga Tertinggi
+                    option(value='3') Harga Terendah
+
+    // Kondisi ketika course empty
+    .row
+        div.text-center
+            .border.rounded.p-4
+                img.mw-100(src=baseURL+"img/img-course-empty.svg", alt="")
+                .mt-4
+                    h5 Pelatihan Belum Tersedia
+                    p.fs-7 
+                        | Cek secara berkala atau kirim email ke 
+                        a(href="mailto:admin@jaripmi.info") admin@jaripmi.info
+    
+    //- div.text-center
+    //-     button#load-more-pelatihan.btn.btn-outline-primary 
+    //-         | Muat Lebih Banyak
+
+                            
+
+        
+        

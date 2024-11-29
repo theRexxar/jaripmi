@@ -44,6 +44,17 @@ section
                 section#pengiriman-uang.pmi-scrollspy-content.adjust-anchor
                     h4 Pengiriman Uang
                     img.mw-100.my-3(src=baseURL+"img/img-illustration-16.svg", alt="")
+
+                    // Kondisi ketika content empty
+                    .row
+                        div.text-center
+                            .border.rounded.p-4
+                                img.mw-100(src=baseURL+"img/img-content-empty.svg", alt="")
+                                .mt-4
+                                    h5 Konten Belum Tersedia
+                                    p.fs-7 
+                                        | Cek secara berkala atau kirim email ke 
+                                        a(href="mailto:admin@jaripmi.info") admin@jaripmi.info
                     
                     .row 
                         .col-lg-12.col-md-12.col-sm-12.content-article 

@@ -199,15 +199,22 @@ function contentArticle (data) {
 </div>`
 }
 
-function templateCategoryArticle (data) {
+function templateCategoryArticle (data,catArticle) {
+	if (data.slug == catArticle) {
+		return `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link active" href="${ROOT_PATH}/artikel/index.html?category=${data.slug.replace(/\s+/gi, '-').toLowerCase()}">${data.name}</a></div>`;
+	}
 	return `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link" href="${ROOT_PATH}/artikel/index.html?category=${data.slug.replace(/\s+/gi, '-').toLowerCase()}">${data.name}</a></div>`
+}
+
+function totalArticleTemplate (data) {
+	return `<span>Ditemukan <b>${data.pagination.total} </b>artikel pada kategori <b class="text-decoration-underline text-capitalize">${data.category.replace(/-|%20/gi, ' ')}</b></span>`
 }
 
 // function to load article for the new article
 function homeLoadArticle() {
 	var appendTarget = $('#artikel-home-container');
 
-	if (appendTarget) {
+	if (appendTarget.length) {
 		$.ajax({
 			method: "GET",
 			url: apiURL + '/api/articles?populate[0]=meta_seo&populate[1]=image&populate[2]=article_tags&sort[0][createdAt]=desc&pagination[pageSize]=6', 
@@ -255,22 +262,30 @@ function homeLoadArticle() {
 function articleLoaderInit() {
 	var appendTarget = $('#article-lists');
 	var categoryTarget = $('#article-categori-container');
+	var totalArticles = $('#artikel-counter');
 
 	if (appendTarget.length) {
-		var catArticle = !_.isEmpty(queryParams.get('category')) ? queryParams.get('category') : 'all';
-		
+		var catArticle = !_.isEmpty(queryParams.get('category')) ? queryParams.get('category') : 'Semua';
+		var queryFilters = catArticle !== 'Semua' || catArticle == '' ? `&filters[article_category][slug][$eq]=${catArticle}` : '';
+		console.log(catArticle,queryFilters);
+		var sortArticle =  !_.isEmpty(queryParams.get('sort')) ? queryParams.get('sort') : 'desc';
+		var catAllHtml = catArticle == 'Semua' || _.isNull(catArticle) ? `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link active" href="${ROOT_PATH}/artikel/index.html?category=all">Semua</a></div>` : `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link" href="${ROOT_PATH}/artikel/index.html?category=all">Semua</a></div>`
 		$.ajax({
 			method: "GET",
-			url: apiURL + '/api/articles?populate[0]=meta_seo&populate[1]=image&populate[2]=article_tags&sort[0][createdAt]=desc',
+			url: apiURL + `/api/articles?populate[0]=meta_seo&populate[1]=image&populate[2]=article_tags&populate[3]=article_category&sort[0][createdAt]=${sortArticle}${queryFilters}`,
 			headers: {"Authorization": "Bearer " + tkn},
 			dataType: 'json'
 		}).done(function(data) {
-			var articles = data.data
+			var articles = data.data;
+			console.log(articles);
+			var metaArticles = _.extend(data.meta, {category : catArticle});
 			// condition for article is empty
 			if (!_.isEmpty(articles)) {
 				appendTarget.html('');
-				_.each(articles, (article) => appendTarget.append(renderArticleList(article)))
+				_.each(articles, (article) => appendTarget.append(renderArticleList(article)));
 			}
+			// render total article
+			totalArticles.removeClass('.skeleton-box .w-25 .rounded').removeAttr('style').append(totalArticleTemplate(metaArticles))
 
 			$.ajax({
 				method: "GET",
@@ -281,9 +296,8 @@ function articleLoaderInit() {
 				var categories = data.data
 				// condition for article is empty
 				if (!_.isEmpty(categories)) {
-					console.log(categories)
-					categoryTarget.html('').append(`<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link active" href="${ROOT_PATH}/artikel/index.html?category=all">Semua</a></div>`)
-					_.each(categories, (category) => categoryTarget.append(templateCategoryArticle(category)))
+					categoryTarget.html('').append(catAllHtml);
+					_.each(categories, (category) => categoryTarget.append(templateCategoryArticle(category, catArticle)))
 				}
 			})
 		})

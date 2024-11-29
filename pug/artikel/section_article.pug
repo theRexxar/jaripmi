@@ -2,7 +2,7 @@ section
     .container.py-3.py-lg-4.px-4.px-md-0
         .row.mb-3
             .d-flex.justify-content-between.align-items-center.fs-7
-                span.skeleton-box.w-25.rounded(style="height:20px")
+                span#artikel-counter.skeleton-box.w-25.rounded(style="height:20px")
                     //- | Ditemukan 
                     //- b 1.231 
                     //- | artikel #{contentDescription.ArticleCategory} 
@@ -10,7 +10,7 @@ section
                 
                 div.d-flex.align-items-center
                     .me-1 Urutkan: 
-                    select.form-select(aria-label='Default select example')
+                    select#artikel-sort.form-select(aria-label='Urutkan Artikel')
                         option(selected='') Terbaru
                         option(value='1') Terlama
 

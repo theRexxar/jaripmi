@@ -13,10 +13,50 @@ const formatedString = (str) => {
     return newStr
 }
 
+const getQueryParams = () => {
+    var queryStr = window.location.search; // will give you ?sndReq=234
+
+    var paramPairs = queryStr.substr(1).split('&');
+    var params = {};
+    for (var i = 0; i < paramPairs.length; i++) {
+        var parts = paramPairs[i].split('=');
+        params[parts[0]] = parts[1];
+    }
+
+    return params;
+}
+
+// Assign event listener to value
+const assignValueToNode = (id, value, type) => {
+    const node = document.getElementById(id);
+
+    if (type == "image" && node) {
+        node.src = value;
+        return;
+    }
+    if (type == "txt-h1" && node) {
+        node.textContent = value;
+        return;
+    }
+    if (type == "html" && node) {
+        node.innerHTML = value;
+        return;
+    }
+
+    if (type == "link" && node) {
+        node.href = value;
+        return;
+    }
+
+    node.innerText = value
+}
+
 // If we're in a test environment, export the functions
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         API_CONFIG,
         formatedString,
+        getQueryParams,
+        assignValueToNode,
     };
 }

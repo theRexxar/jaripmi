@@ -51,6 +51,7 @@ const callApiCountry = async (sort, page) => {
 };
 
 const init = () => {
+    console.log("init");
     if (state.onloadProgress) return;
     state.onloadProgress = true;
     const data = callApiCountry();
@@ -64,22 +65,36 @@ const init = () => {
 }
 
 const updateCountryList = (data) => {
-    const countryList = document.getElementById("list-country-header");
+    const countryList = document.getElementById("list-country-page");
     if (!countryList) return;
-    countryList.innerHTML = `<li class="see-all"><a class="anchor arrow-move" href="negara/">Selengkapnya<i class="icon-angle-right"></i></a></li>`;
+    countryList.innerHTML = ``;
     
     data.forEach((country) => {
-        const countryItem = document.createElement("li");
+        const countryItem = document.createElement("div");
+        countryItem.className = "col-md-6 col-lg-4 mt-4";
         countryItem.innerHTML = `
-            <a class="site-nav-item" href="negara/${formatedString(country.name)}">${country.name}</a>
+              <div class="card full-card rounded-3"><a class="text-decoration-none" href="detail?name=${formatedString(country.name)}&id=${country.documentId}">
+                  <div class="full-card-cover"><img class="card-img-top" loading="lazy" src="${country.image?.url}" alt="${country.name}"></div>
+                  <div class="full-card-body d-flex p-3 align-items-center justify-content-center">
+                    <h3 class="title-country">${country.name}</h3>
+                  </div></a></div>
         `;
         countryList.appendChild(countryItem);
     });
 }
 
-module.exports = {
-    state,
-    updateCountryList,
-    init,
-    callApiCountry,
-};
+// Initialize on window load
+window.addEventListener('load', () => {
+    if (state.onloadProgress) return;
+    init();
+});
+
+// If we're in a test environment, export the functions
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        state,
+        updateCountryList,
+        init,
+        callApiCountry,
+    };
+}

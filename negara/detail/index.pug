@@ -1,0 +1,33 @@
+//- start variable
+- var pageActive = ''
+- var baseURL = '../../'
+- var contentDescription = {}
+- ogImageURL = baseURL+"img/jaripmi-berdaya.jpg"
+- contentDescription.title = "Negara Tujuan Arab Saudi - Jari PMI"
+- contentDescription.description = "Temukan informasi terkait Adminstrasi dan dokumen, regulasi / ketentuan berlaku, tata cara pengiriman uang ke Indonesia, Lokasi Perwakilan Indonesia, dll untuk Negara Arab Saudi."
+
+doctype html
+html(lang="id" page-class="home")
+    include ../../pug/includes/html_head.pug
+    body
+        // Header 
+        include ../../pug/includes/nav_mobile.pug
+
+        // Main content
+        main.site-main-content
+            include ./section_breadcrumb.pug
+            include ./section_hero.pug
+            include ./section_content.pug
+
+
+        // Footer
+        include ../../pug/includes/footer.pug
+
+        // Header Menu
+        include ../../pug/includes/nav_desktop.pug
+
+        // Modals
+        include ../../pug/includes/modal.pug
+
+    include ../../pug/includes/html_foot.pug
+    script(src=baseURL+'js/country-detail-dist.js')

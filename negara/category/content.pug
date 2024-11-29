@@ -1,0 +1,56 @@
+// HDetail Page 1
+section
+    .container.py-4.pt-lg-4.pb-lg-4.px-4.px-md-0
+        .row.d-flex.align-items-center
+            .col-12
+                nav.breadcrumb-wrapper(aria-label="breadcrumb")
+                    ol.breadcrumb.overflow-hidden.fs-7.mb-0.breadcrumb-custom
+                        li.breadcrumb-item
+                            a.text-primary(href=baseURL+'negara/')
+                                | Negara Tujuan
+                        li.breadcrumb-item
+                            a#country-name-link.text-primary(href="#") -
+
+                        li#country-category-name.breadcrumb-item.active.text-truncate(aria-current='page') -
+section
+  .container.py-4.pt-lg-4.pb-lg-4.px-4.px-md-0
+    .row.d-flex.align-items-center
+        
+        .col-12.bg-pmi-neutral-50.rounded-3
+            .p-4.text-center
+                a#link-back.fs-8.d-block.d-lg-none(href="#") 
+                    i.bi.bi-arrow-left.me-2
+                    | Kembali
+                h1#country-category-name-title.h2 -
+                h6#country-category-name-subtitle.mb-0.text-secondary -
+
+section 
+    .container.pb-4.pb-lg-5.px-4.px-md-0
+        .row
+            aside.jari-sidebar-nav.col-lg-3.mb-4
+                nav.pmi-scrollspy-nav 
+                    btn.btn.d-block.d-lg-none.btn-outline-primary.trigger-menu-category
+                        i.bi.bi-list.me-2
+                        | Menu Kategori
+                    ol#country-category-list-name.content-menu-category.rounded
+                        li 
+                            a(href="#informasi-bebas-visa") Informasi Bebas Visa
+                        li 
+                            a(href="#layananKependudukan") Layanan administrasi kependudukan
+                        
+                        li 
+                            a(href="#e-paspor") Tutorial Booking E-Layanan Paspor
+
+                        li 
+                            a(href="#skck") Pengurusan SKCK
+
+                        li 
+                            a(href="#layanan-konsuler") Layanan kekonsuleran (Pencatatan Keterangan Kelahiran, Pelayanan Penerjemah Dokumen) 
+
+                        li 
+                            a(href="#tarif-layanan") Jenis dan Tarif Biaya Pelayanan Keimigrasian Terbaru
+
+            article#country-category-content.jari-sidebar-content.col-lg-9.content-article
+                
+
+

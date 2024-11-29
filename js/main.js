@@ -135,6 +135,25 @@ function readingTime(wording) {
 	return time;
 }
 
+function skeletonCardArticle () {
+	return `<div class="col-12 col-md-6 col-lg-4 mb-4">
+			<div class="card article-card article-card-short rounded-3">
+    			<div>
+        			<div class="article-card-cover">
+            		<div class="card-img-top"></div>
+        		</div>
+				<div class="article-card-body d-flex flex-column text-start p-3 justify-content-end">
+					<div>
+						<div class="mb-2"><span class="skeleton-box w-25 rounded" style="height:20px"></span></div>
+						<h5 class="mb-2 text-white text-clamp-2"><span class="skeleton-box w-100 rounded" style="height:20px"></span><span class="skeleton-box w-75 rounded" style="height:20px"></span></h5>
+						<p class="m-0 fs-8 text-white text-clamp-3"><span class="skeleton-box w-75 rounded" style="height:14px"></span><span class="skeleton-box w-50 rounded" style="height:14px"></span></p>
+						<div class="d-flex gap-3 fs-9 text-white mt-2"><span class="skeleton-box w-25 rounded" style="height:14px"></span><span class="skeleton-box w-25 rounded" style="height:14px"></span></div>
+					</div>
+				</div>
+    		</div>
+		</div>`
+}
+
 function renderArticleCard (data) {
 	return `<div class="swiper-slide">
 			<div class="card article-card rounded-3">
@@ -221,15 +240,57 @@ function totalArticleTemplate (data) {
 	return `<span>Ditemukan <b>${data.pagination.total} </b>artikel pada kategori <b class="text-decoration-underline text-capitalize">${data.category.replace(/-|%20/gi, ' ')}</b></span>`
 }
 
-function searchKeyword (query) {
+function searchKeyword (query,sortArticle,catArticle,totalArticles,appendTarget) {
 	
 	var inputSearch = $('#search-article-input');
 	var buttonSearch = $('#search-article-button');
-	console.log(inputSearch);
-	console.log(query);
+	
 	if (!_.isNull(query)) {
 		inputSearch.val(query);
 	}
+
+	inputSearch.on('keypress', function(e) {
+		if ( e.which == 13 ) {
+			e.preventDefault();
+			buttonSearch.trigger('click');
+		}
+	})
+
+	buttonSearch.on('click', function(e) {
+		var newQueryFilter = inputSearch.val();
+		if(!_.isEmpty(inputSearch.val()) ) {
+			var queryFilters = catArticle !== 'semua' || catArticle == '' ? `&filters[article_category][slug][$eq]=${catArticle}` : '';
+			queryFilters = !_.isEmpty(query) ? queryFilters + `&filters[slug][$contains]=${newQueryFilter.replace(/-|%20/gi, '-').toLowerCase()}` : queryFilters;
+			
+			window.history.replaceState(null, null, `/artikel?&q=${newQueryFilter.replace(/\s+/gi, '-').toLowerCase()}&category=${catArticle}`)
+
+			$.ajax({
+				method: "GET",
+				url: apiURL + `/api/articles?populate[0]=meta_seo&populate[1]=image&populate[2]=article_tags&populate[3]=article_category&sort[0][createdAt]=${sortArticle}${queryFilters}`,
+				headers: {"Authorization": "Bearer " + tkn},
+				dataType: 'json',
+				beforeSend : function() {
+					appendTarget.html('');
+					for (i=1; i<=3; i++) {
+						appendTarget.append(skeletonCardArticle());
+					}
+					
+				}
+			}).done(function(data) {
+				var articles = data.data;
+				var metaArticles = _.extend(data.meta, {category : catArticle});
+				// condition for article is empty
+				if (!_.isEmpty(articles)) {
+					appendTarget.html('');
+					_.each(articles, (article) => appendTarget.append(renderArticleList(article)));
+				} else {
+					appendTarget.html('').append(renderEmptyArticle());
+				}
+				// render total article
+				totalArticles.removeClass('skeleton-box w-25 rounded').removeAttr('style').html('').append(totalArticleTemplate(metaArticles));
+			});
+		}
+	})
 }
 
 // function to load article for the new article
@@ -300,7 +361,6 @@ function articleLoaderInit() {
 			dataType: 'json'
 		}).done(function(data) {
 			var articles = data.data;
-			console.log(articles);
 			var metaArticles = _.extend(data.meta, {category : catArticle});
 			// condition for article is empty
 			if (!_.isEmpty(articles)) {
@@ -310,10 +370,10 @@ function articleLoaderInit() {
 				appendTarget.html('').append(renderEmptyArticle());
 			}
 			// render total article
-			totalArticles.removeClass('.skeleton-box .w-25 .rounded').removeAttr('style').append(totalArticleTemplate(metaArticles));
+			totalArticles.removeClass('skeleton-box w-25 rounded').removeAttr('style').append(totalArticleTemplate(metaArticles));
 
 			// render trigger function for input search
-			searchKeyword(query);
+			searchKeyword(query,sortArticle,catArticle,totalArticles,appendTarget);
 
 			$.ajax({
 				method: "GET",
@@ -797,7 +857,6 @@ const callApiCountry = async (sort, page) => {
     // check local storage
     const countries = localStorage.getItem("countries");
     if (countries) {
-        console.log("using local storage");
         return JSON.parse(countries);
     }
 
@@ -852,7 +911,6 @@ const updateCountryList = (data) => {
     countryList.innerHTML = `<li class="see-all"><a class="anchor arrow-move" href="negara/">Selengkapnya<i class="icon-angle-right"></i></a></li>`;
     
     data.forEach((country) => {
-		console.log(country);
         const countryItem = document.createElement("li");
         countryItem.innerHTML = `
             <a class="site-nav-item" href="${ROOT_PATH}/negara/${formatedString(country.name.replace(/\s+/gi, '-').toLowerCase())}">${country.name}</a>

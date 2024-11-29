@@ -199,6 +199,17 @@ function contentArticle (data) {
 </div>`
 }
 
+function renderEmptyArticle () {
+	return `<div class="text-center">
+        <div class="border rounded p-4"><img class="mw-100" src="${ROOT_PATH}/img/img-article-empty.svg" alt="" />
+            <div class="mt-4">
+                <h5>Artikel Belum Tersedia</h5>
+                <p class="fs-7"> Cek secara berkala atau kirim email ke <a href="mailto:admin@jaripmi.info">admin@jaripmi.info</a></p>
+            </div>
+        </div>
+    </div>`
+}
+
 function templateCategoryArticle (data,catArticle) {
 	if (data.slug == catArticle) {
 		return `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link active" href="${ROOT_PATH}/artikel/index.html?category=${data.slug.replace(/\s+/gi, '-').toLowerCase()}">${data.name}</a></div>`;
@@ -208,6 +219,17 @@ function templateCategoryArticle (data,catArticle) {
 
 function totalArticleTemplate (data) {
 	return `<span>Ditemukan <b>${data.pagination.total} </b>artikel pada kategori <b class="text-decoration-underline text-capitalize">${data.category.replace(/-|%20/gi, ' ')}</b></span>`
+}
+
+function searchKeyword (query) {
+	
+	var inputSearch = $('#search-article-input');
+	var buttonSearch = $('#search-article-button');
+	console.log(inputSearch);
+	console.log(query);
+	if (!_.isNull(query)) {
+		inputSearch.val(query);
+	}
 }
 
 // function to load article for the new article
@@ -265,11 +287,12 @@ function articleLoaderInit() {
 	var totalArticles = $('#artikel-counter');
 
 	if (appendTarget.length) {
-		var catArticle = !_.isEmpty(queryParams.get('category')) ? queryParams.get('category') : 'Semua';
-		var queryFilters = catArticle !== 'Semua' || catArticle == '' ? `&filters[article_category][slug][$eq]=${catArticle}` : '';
-		console.log(catArticle,queryFilters);
+		var catArticle = !_.isEmpty(queryParams.get('category')) ? queryParams.get('category') : 'semua';
+		var query = !_.isEmpty(queryParams.get('q')) ? queryParams.get('q') : '';
+		var queryFilters = catArticle !== 'semua' || catArticle == '' ? `&filters[article_category][slug][$eq]=${catArticle}` : '';
+		queryFilters = !_.isEmpty(query) ? queryFilters + `&filters[slug][$contains]=${query.replace(/-|%20/gi, '-').toLowerCase()}` : queryFilters;
 		var sortArticle =  !_.isEmpty(queryParams.get('sort')) ? queryParams.get('sort') : 'desc';
-		var catAllHtml = catArticle == 'Semua' || _.isNull(catArticle) ? `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link active" href="${ROOT_PATH}/artikel/index.html?category=all">Semua</a></div>` : `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link" href="${ROOT_PATH}/artikel/index.html?category=all">Semua</a></div>`
+		var catAllHtml = catArticle == 'semua' || _.isNull(catArticle) ? `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link active" href="${ROOT_PATH}/artikel/index.html?category=semua">Semua</a></div>` : `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link" href="${ROOT_PATH}/artikel/index.html?category=semua">Semua</a></div>`
 		$.ajax({
 			method: "GET",
 			url: apiURL + `/api/articles?populate[0]=meta_seo&populate[1]=image&populate[2]=article_tags&populate[3]=article_category&sort[0][createdAt]=${sortArticle}${queryFilters}`,
@@ -283,9 +306,14 @@ function articleLoaderInit() {
 			if (!_.isEmpty(articles)) {
 				appendTarget.html('');
 				_.each(articles, (article) => appendTarget.append(renderArticleList(article)));
+			} else {
+				appendTarget.html('').append(renderEmptyArticle());
 			}
 			// render total article
-			totalArticles.removeClass('.skeleton-box .w-25 .rounded').removeAttr('style').append(totalArticleTemplate(metaArticles))
+			totalArticles.removeClass('.skeleton-box .w-25 .rounded').removeAttr('style').append(totalArticleTemplate(metaArticles));
+
+			// render trigger function for input search
+			searchKeyword(query);
 
 			$.ajax({
 				method: "GET",
@@ -780,7 +808,7 @@ const callApiCountry = async (sort, page) => {
         pageSize: page?.size || 10
     };
 
-    const uri = `${apiURL}/countries?populate[0]=flag&populate[1]=image&sort[0][${defaultParams.sortBy}]=${defaultParams.sortMethod}&pagination[page]=${defaultParams.pageCurr}&pagination[pageSize]=${defaultParams.pageSize}`;
+    const uri = `${apiURL}/api/countries?populate[0]=flag&populate[1]=image&sort[0][${defaultParams.sortBy}]=${defaultParams.sortMethod}&pagination[page]=${defaultParams.pageCurr}&pagination[pageSize]=${defaultParams.pageSize}`;
     try {
         const response = await fetch(uri, {
             method: 'GET',
@@ -824,9 +852,10 @@ const updateCountryList = (data) => {
     countryList.innerHTML = `<li class="see-all"><a class="anchor arrow-move" href="negara/">Selengkapnya<i class="icon-angle-right"></i></a></li>`;
     
     data.forEach((country) => {
+		console.log(country);
         const countryItem = document.createElement("li");
         countryItem.innerHTML = `
-            <a class="site-nav-item" href="negara/${formatedString(country.name)}">${country.name}</a>
+            <a class="site-nav-item" href="${ROOT_PATH}/negara/${formatedString(country.name.replace(/\s+/gi, '-').toLowerCase())}">${country.name}</a>
         `;
         countryList.appendChild(countryItem);
     });

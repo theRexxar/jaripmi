@@ -1,4 +1,5 @@
 import { API_CONFIG, assignValueToNode, formatedString, getQueryParams } from "./config-dist";
+import { initCountryHeader } from "./country-lib.js";
 
 // State management
 const state = {
@@ -21,12 +22,10 @@ const callApiCountryCategoryDetail = async (id) => {
         const result = await response.json();
         state.dataCountryCategory = result.data;
 
-        console.log(state.dataCountryCategory);
         // set country data
         assignValueToNode("country-category-name", result.data?.name, "txt");
         const nodeLink = document.getElementById("country-name-link");	
         if (nodeLink) {
-            console.log("node")
             nodeLink.href = `../detail?name=${state.dataCountryCategory.country?.name}&id=${state.dataCountryCategory.country.documentId}`;	
             nodeLink.innerText = state.dataCountryCategory.country?.name;
         }
@@ -35,6 +34,7 @@ const callApiCountryCategoryDetail = async (id) => {
         assignValueToNode("country-category-name-subtitle", result.data?.country?.name, "txt-h1"); 
         assignValueToNode("link-back", `../detail?name=${state.dataCountryCategory.country?.name}&id=${state.dataCountryCategory.country.documentId}`, "link"); 
         await callApiCountryCategoryContentDetail(result.data.id);
+        initCountryHeader();
 
     } catch (error) {
         console.error("Failed to fetch data from api:", error);
@@ -55,7 +55,6 @@ const callApiCountryCategoryContentDetail = async (id) => {
         const result = await response.json();
         state.dataCountryCategoryContent = result.data;
 
-        console.log(state.dataCountryCategoryContent);
         const country_category_list_name = document.getElementById("country-category-list-name");
         if (!country_category_list_name) {
             return;

@@ -1,5 +1,6 @@
 import { API_CONFIG, getQueryParams, assignValueToNode } from "./config-dist.js";
 import { init } from "./pelatihan-serupa-dist.js";
+import { initCountryHeader } from "./country-lib.js";
 
 // State management
 const state = {
@@ -64,7 +65,7 @@ window.addEventListener('load', () => {
 
         let val = paramPairs[paramPairs.length-1]
         callApiDetail(val);
-
+        initCountryHeader();
     }
     
 });

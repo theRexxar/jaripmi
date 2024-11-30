@@ -1,4 +1,5 @@
 import { API_CONFIG, formatedString } from "./config-dist.js";
+import { initCountryHeader } from "./country-lib.js";
 
 // String format utility function
 const formatString = (string, ...args) => string.replace(/{(\d+)}/g, (match, number) => 
@@ -347,7 +348,8 @@ const init = async (filter, sort, page) => {
             state.isInit = true;
             await Promise.all([
                 callApiSubCategory(),
-                callApiLearningPlatform()
+                callApiLearningPlatform(),
+                initCountryHeader(),
             ]);
             setupEventListeners();
             setupCheckboxListeners('price', 'price');

@@ -1,4 +1,5 @@
 import { API_CONFIG, assignValueToNode, formatedString, getQueryParams } from "./config-dist";
+import { initCountryHeader } from "./country-lib.js";
 
 // State management
 const state = {
@@ -21,7 +22,6 @@ const callApiCountryDetail = async (id) => {
         const result = await response.json();
         state.dataCountry = result.data;
 
-        console.log(state.dataCountry);
         // set country data
         assignValueToNode("coutry-name-breadcrumb", result.data?.name, "txt");
         assignValueToNode("country-name-h1", result.data?.name, "txt-h1"); 
@@ -30,6 +30,7 @@ const callApiCountryDetail = async (id) => {
         assignValueToNode("country-img", result.data?.image?.url, "image");
 
         callApiCountryCategory(result.data.id, result.data.name);
+        initCountryHeader();
 
     } catch (error) {
         console.error("Failed to fetch data from api:", error);

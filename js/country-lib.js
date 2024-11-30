@@ -1,14 +1,5 @@
 import { API_CONFIG, formatedString } from "./config-dist";
 
-// State management
-const state = {
-    onloadProgress: false,
-    sortSetting: {
-        by: "name",
-        method: "asc"
-    },
-};
-
 // API Calls
 const callApiCountry = async (sort, page) => {
     // check local storage
@@ -49,7 +40,7 @@ const callApiCountry = async (sort, page) => {
     }
 };
 
-const init = () => {
+const initCountryHeader = () => {
     if (state.onloadProgress) return;
     state.onloadProgress = true;
     const data = callApiCountry();
@@ -63,47 +54,19 @@ const init = () => {
 }
 
 const updateCountryList = (data) => {
-    const countryList = document.getElementById("list-country-page");
+    const countryList = document.getElementById("list-country-header");
+
     if (!countryList) return;
-    countryList.innerHTML = ``;
-    
-    const countryListHeader = document.getElementById("list-country-header");
-    if (!countryListHeader) return;
-    countryListHeader.innerHTML = `<li class="see-all"><a class="anchor arrow-move" href="/negara/">Selengkapnya<i class="icon-angle-right"></i></a></li>`;
-
+    countryList.innerHTML = `<li class="see-all"><a class="anchor arrow-move" href="/negara/">Selengkapnya<i class="icon-angle-right"></i></a></li>`;
+	
     data.forEach((country) => {
-        const countryItem = document.createElement("div");
-        countryItem.className = "col-md-6 col-lg-4 mt-4";
+        const countryItem = document.createElement("li");
         countryItem.innerHTML = `
-              <div class="card full-card rounded-3"><a class="text-decoration-none" href="detail?name=${formatedString(country.name)}&id=${country.documentId}">
-                  <div class="full-card-cover"><img class="card-img-top" loading="lazy" src="${country.image?.url}" alt="${country.name}"></div>
-                  <div class="full-card-body d-flex p-3 align-items-center justify-content-center">
-                    <h3 class="title-country">${country.name}</h3>
-                  </div></a></div>
-        `;
-        countryList.appendChild(countryItem);
-
-        // header
-        const countryItemHeader = document.createElement("li");
-        countryItemHeader.innerHTML = `
             <a class="site-nav-item" href="/negara/detail?name=${formatedString(country.name)}&id=${country.documentId}">${country.name}</a>
         `;
-        countryListHeader.appendChild(countryItemHeader);
+        countryList.appendChild(countryItem);
+		
     });
 }
 
-// Initialize on window load
-window.addEventListener('load', () => {
-    if (state.onloadProgress) return;
-    init();
-});
-
-// If we're in a test environment, export the functions
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        state,
-        updateCountryList,
-        init,
-        callApiCountry,
-    };
-}
+export { callApiCountry, updateCountryList, initCountryHeader };

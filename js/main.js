@@ -113,7 +113,7 @@ function courseLoaderInit(){
 			headers: {"Authorization": "Bearer " + tkn},
 			dataType: 'json'
 		}).done(function(data) {
-		console.log(data);
+
 		})
 	}
 }
@@ -969,16 +969,40 @@ const init = () => {
 
 const updateCountryList = (data) => {
     const countryList = document.getElementById("list-country-header");
+
     if (!countryList) return;
-    countryList.innerHTML = `<li class="see-all"><a class="anchor arrow-move" href="negara/">Selengkapnya<i class="icon-angle-right"></i></a></li>`;
-    
+    countryList.innerHTML = `<li class="see-all"><a class="anchor arrow-move" href="/negara/">Selengkapnya<i class="icon-angle-right"></i></a></li>`;
+	
+	const countryEdge = document.getElementById("list-of-coutry");
+	if (!countryEdge) return;
+	countryEdge.innerHTML = ``;
+
+	htmlBuilder = "";  
+	let counter = 1; 
     data.forEach((country) => {
         const countryItem = document.createElement("li");
         countryItem.innerHTML = `
-            <a class="site-nav-item" href="${ROOT_PATH}/negara/${formatedString(country.name.replace(/\s+/gi, '-').toLowerCase())}">${country.name}</a>
+            <a class="site-nav-item" href="negara/detail?name=${formatedString(country.name)}&id=${country.documentId}">${country.name}</a>
         `;
         countryList.appendChild(countryItem);
+
+		addingClass = "";
+		if (counter ==1) {
+			addingClass = "swiper-slide-active";
+		}
+
+		htmlBuilder += `
+			<div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 6" style="height: calc(50% - 8px); width: 572.8px; margin-right: 16px;"> 
+                <div class="card full-card rounded-3"><a class="text-decoration-none" href="negara/detail?name=${formatedString(country.name)}&id=${country.documentId}">
+                    <div class="full-card-cover"><img class="card-img-top" loading="lazy" src="${country.image?.url}" alt="${country.name}"></div>
+                    <div class="full-card-body d-flex p-3 align-items-center justify-content-center">
+                      <h3 class="title-country">${country.name}</h3>
+                    </div></a></div>
+              </div>
+		`
     });
+
+	countryEdge.innerHTML = htmlBuilder;
 }
 
 // Format title to SEO format

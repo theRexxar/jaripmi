@@ -3,7 +3,7 @@ section.section-detail-course
         .row.flex-row-reverse
             // thumbnail & cta
             .col-12.col-lg-4
-                img#detail-course-image.w-100.rounded(src="https://static-asset-cdn.prakerja.go.id/skill_week/thumbnail/isw-p0797_30.jpg" alt="")
+                img#detail-course-image.w-100.rounded(src=baseURL+"img/course-placeholder.webp" alt="")
                 .mt-3.d-flex.justify-content-between
                     div
                         .course-real-price.mb-1
@@ -27,7 +27,7 @@ section.section-detail-course
                 h1#detail-course-title.mb-3(name='detail-course-title') -
 
                 a.card-company-link.d-inline-flex.p-2.text-decoration-none.border(href="#")
-                    img#detail-course-logo.me-1.card-logo(src="https://static-asset-cdn.prakerja.go.id/skill_week/logo/mojadipro_10.jpg" alt="MojadiPro")
+                    img#detail-course-logo.me-1.card-logo(src=baseURL+"img/logo-course-placeholder.webp" alt="")
                     span#detail-course-logo-name.lp-name.fs-7.text-secondary -
 
                 .row.mt-5.mb-4 
@@ -90,7 +90,7 @@ section.section-detail-course
 
                 hr
 
-                article
+                article.content-article
                     section.py-3
                         h4.mb-4 Deskripsi Pelatihan 
                         article#detail-course-description

@@ -118,6 +118,24 @@ function courseLoaderInit(){
 	}
 }
 
+function removeHTMLTags(htmlString) {
+    // Create a new DOMParser instance
+    const parser = new DOMParser();
+    // Parse the HTML string
+    const doc = parser.parseFromString(htmlString, 'text/html');
+    // Extract text content
+    const textContent = doc.body.textContent || "";
+    // Trim whitespace
+    return textContent.trim();
+}
+
+function metaRender(data) {
+	console.log(data)
+	$('title').html(data.title);
+	$('meta[name="twitter:title"]').attr('content',data.title);
+	$('meta[name="description"], meta[name="twitter:description"]').attr('content',data.description.slice(0, 160));
+}
+
 function convertTime (time) {
 	return new Date(time).toLocaleDateString('id-ID', {year: 'numeric',month: 'long',day: 'numeric'})
 }
@@ -161,7 +179,7 @@ function renderArticleCard (data) {
 					<div class="article-card-cover"><img class="card-img-top" loading="lazy" src="${data.image[0].formats.medium.url}" alt="${data.title}"/></div>
 					<div class="article-card-body d-flex flex-column text-start p-3 justify-content-end">
 						<div>
-							<div class="mb-2"><span class="badge text-bg-info fw-normal">${data.article_tags[0].name}</span></div>
+							<div class="mb-2"><span class="badge text-bg-info fw-normal">${data.article_category.name}</span></div>
 							<h5 class="mb-2 text-white text-clamp-2" title="${data.title}">${data.title}</h5>
 							<p class="m-0 fs-8 text-white text-clamp-3 text-truncate">${getShortContent(data.description)}</p>
 							<div class="d-flex gap-3 fs-9 text-white mt-2"><span><i class="bi bi-stopwatch"> </i>${readingTime(data.description)} Menit Baca</span><span> <i class="bi bi-clock"> </i>${convertTime(data.publishedAt)}</span></div>
@@ -180,7 +198,7 @@ function renderArticleList (data) {
 				<div class="article-card-cover"><img class="card-img-top" loading="lazy" src="${data.image[0].formats.medium.url}" alt="${data.title}"/></div>
 				<div class="article-card-body d-flex flex-column text-start p-3 justify-content-end">
 					<div>
-						<div class="mb-2"><span class="badge text-bg-info fw-normal">${data.article_tags[0].name}</span></div>
+						<div class="mb-2"><span class="badge text-bg-info fw-normal">${data.article_category.name}</span></div>
 						<h5 class="mb-2 text-white text-clamp-2" title="${data.title}">${data.title}</h5>
 						<p class="m-0 fs-8 text-white text-clamp-3">${getShortContent(data.description)}</p>
 						<div class="d-flex gap-3 fs-9 text-white mt-2"><span><i class="bi bi-stopwatch"> </i>${readingTime(data.description)} Menit Baca</span><span> <i class="bi bi-clock"> </i>${convertTime(data.publishedAt)}</span></div>
@@ -196,7 +214,7 @@ function headerArticle (data) {
 	return `<div class="row d-flex justify-content-center">
 			<div class="col-lg-8">
 				<h1>${data.title}</h1>
-				<div class="d-flex"> <span class="badge text-bg-info me-3"> ${data.article_tags[0].name} </span><span class="text-secondary fs-7 me-3"><i class="bi bi-stopwatch me-1"></i>${readingTime(data.description)} Menit Baca</span><span class="text-secondary fs-7 me-3"><i class="bi bi-clock me-1"></i>${convertTime(data.publishedAt)}</span></div>
+				<div class="d-flex"> <span class="badge text-bg-info me-3"> ${data.article_category.name} </span><span class="text-secondary fs-7 me-3"><i class="bi bi-stopwatch me-1"></i>${readingTime(data.description)} Menit Baca</span><span class="text-secondary fs-7 me-3"><i class="bi bi-clock me-1"></i>${convertTime(data.publishedAt)}</span></div>
 				<div class="my-4"><img class="mw-100 rounded" src="${data.image[0].formats.large.url}" alt="${data.title}" />
 					<figcaption class="fs-8 mt-2">${data.image[0].alternativeText}</figcaption>
 			</div>
@@ -206,7 +224,7 @@ function headerArticle (data) {
 
 function slugArticle (data) {
 	return `<li class="breadcrumb-item"><a class="text-primary" href="${ROOT_PATH}/artikel/">Artikel</a></li>
-		<li class="breadcrumb-item"><a class="text-primary text-capitalize" href="${ROOT_PATH}/artikel/?category=${data.article_tags[0].name}">${data.article_tags[0].name}</a></li>
+		<li class="breadcrumb-item"><a class="text-primary text-capitalize" href="${ROOT_PATH}/artikel/?category=${data.article_category.name}">${data.article_category.name}</a></li>
 	<li class="breadcrumb-item active text-truncate" aria-current="page">${data.title}</li>`;
 }
 
@@ -230,7 +248,6 @@ function renderEmptyArticle () {
 }
 
 function renderCourse (data) {
-
 	let price = (data.price) ? data.price : 0;
 	let discount = (data.price_final) ? data.price_final : 0;
 	const discountPercentage = 100 -Math.floor((discount / price) * 100);
@@ -241,7 +258,6 @@ function renderCourse (data) {
 	} else {
 		final_price = `Rp ${Number(discount).toLocaleString('id')}`;
 	}
-	console.log(data);
 	return `<div class="swiper-slide">
 		<div class="card course-card">
 			<a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html?title=${data.slug}-${data.documentId}" title="${data.name}">
@@ -270,9 +286,9 @@ function renderCourse (data) {
 
 function templateCategoryArticle (data,catArticle) {
 	if (data.slug == catArticle) {
-		return `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link active" href="${ROOT_PATH}/artikel/index.html?category=${data.slug.replace(/\s+/gi, '-').toLowerCase()}">${data.name}</a></div>`;
+		return `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link active" href="${ROOT_PATH}/artikel/?category=${data.slug.replace(/\s+/gi, '-').toLowerCase()}">${data.name}</a></div>`;
 	}
-	return `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link" href="${ROOT_PATH}/artikel/index.html?category=${data.slug.replace(/\s+/gi, '-').toLowerCase()}">${data.name}</a></div>`
+	return `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link" href="${ROOT_PATH}/artikel/?category=${data.slug.replace(/\s+/gi, '-').toLowerCase()}">${data.name}</a></div>`
 }
 
 function totalArticleTemplate (data) {
@@ -297,11 +313,13 @@ function searchKeyword (query,sortArticle,catArticle,totalArticles,appendTarget)
 
 	buttonSearch.on('click', function(e) {
 		var newQueryFilter = inputSearch.val();
+		console.log(newQueryFilter)
+
 		if(!_.isEmpty(inputSearch.val()) ) {
 			var queryFilters = catArticle !== 'semua' || catArticle == '' ? `&filters[article_category][slug][$eq]=${catArticle}` : '';
-			queryFilters = !_.isEmpty(query) ? queryFilters + `&filters[slug][$contains]=${newQueryFilter.replace(/-|%20/gi, '-').toLowerCase()}` : queryFilters;
-			
+			queryFilters = !_.isEmpty(newQueryFilter) ? queryFilters + `&filters[slug][$contains]=${newQueryFilter.replace(/-|%20/gi, '-').toLowerCase()}` : queryFilters;
 			window.history.replaceState(null, null, `/artikel?&q=${newQueryFilter.replace(/\s+/gi, '-').toLowerCase()}&category=${catArticle}`)
+			console.log(queryFilters);
 
 			$.ajax({
 				method: "GET",
@@ -391,7 +409,7 @@ function articleLoaderInit() {
 		var queryFilters = catArticle !== 'semua' || catArticle == '' ? `&filters[article_category][slug][$eq]=${catArticle}` : '';
 		queryFilters = !_.isEmpty(query) ? queryFilters + `&filters[slug][$contains]=${query.replace(/-|%20/gi, '-').toLowerCase()}` : queryFilters;
 		var sortArticle =  !_.isEmpty(queryParams.get('sort')) ? queryParams.get('sort') : 'desc';
-		var catAllHtml = catArticle == 'semua' || _.isNull(catArticle) ? `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link active" href="${ROOT_PATH}/artikel/index.html?category=semua">Semua</a></div>` : `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link" href="${ROOT_PATH}/artikel/index.html?category=semua">Semua</a></div>`
+		var catAllHtml = catArticle == 'semua' || _.isNull(catArticle) ? `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link active" href="${ROOT_PATH}/artikel/?category=semua">Semua</a></div>` : `<div class="swiper-slide nav nav-underline"><a class="py-2 px-3 nav-link" href="${ROOT_PATH}/artikel/?category=semua">Semua</a></div>`
 		$.ajax({
 			method: "GET",
 			url: apiURL + `/api/articles?populate[0]=meta_seo&populate[1]=image&populate[2]=article_tags&populate[3]=article_category&sort[0][createdAt]=${sortArticle}${queryFilters}`,
@@ -444,12 +462,17 @@ function detailArticle() {
 			headers: {"Authorization": "Bearer " + tkn},
 			dataType: 'json'
 		}).done(function(data) {
-			var articles = data.data
+			var articles = data.data;
+			var metaTag = {
+				title : articles.title,
+				description: removeHTMLTags(articles.description)
+			}
 			// condition for article is empty
 			if (!_.isEmpty(articles)) {
 				breadCrumb.html('').append(slugArticle(articles));
 				appendHeader.html('').append(headerArticle(articles));
 				appendContent.html('').append(contentArticle(articles));
+				metaRender(metaTag);
 				
 				// Home Carousel Article
 				new Swiper(".articleSwiper", {

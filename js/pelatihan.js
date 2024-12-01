@@ -48,7 +48,7 @@ const updatePelatihanList = (courses) => {
         } else {
             final_price = discount;
         }
-        console.log(course);
+        
         return `
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="card course-card">

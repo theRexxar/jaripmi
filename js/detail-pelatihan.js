@@ -1,4 +1,4 @@
-import { API_CONFIG, getQueryParams, assignValueToNode } from "./config-dist.js";
+import { API_CONFIG, getQueryParams, assignValueToNode, formatCurrency, isNumeric } from "./config-dist.js";
 import { init } from "./pelatihan-serupa-dist.js";
 import { initCountryHeader } from "./country-lib.js";
 
@@ -22,7 +22,7 @@ const callApiDetail = async (id) => {
         // assign value to params
         assignValueToNode("course-name-breadcrumb", result?.data?.name);
         assignValueToNode("detail-course-image", result?.data?.image[0]?.url, "image");
-        assignValueToNode("detail-course-price", result?.data?.price, "txt");
+        assignValueToNode("detail-course-price", formatCurrency(result?.data?.price), "txt");
         let price = result?.data?.price;
         let discount = result?.data?.price_final;
         const discountPercentage = 100 - Math.floor((discount / price) * 100);
@@ -35,11 +35,11 @@ const callApiDetail = async (id) => {
         }
 
         assignValueToNode("detail-course-discount", discountPercentage+"%", "txt");
-        assignValueToNode("detail-course-final-price", final_price, "txt");
+        assignValueToNode("detail-course-final-price", (isNumeric(final_price)) ? formatCurrency(final_price) : final_price, "txt");
         assignValueToNode("detail-course-title", result?.data?.name, "txt-h1");
         assignValueToNode("detail-course-logo", result?.data?.learning_platform?.image[0]?.url, "image");
         assignValueToNode("detail-course-logo-name", result?.data?.learning_platform?.name, "txt");
-        assignValueToNode("detail-course-subcategory", result?.data?.sub_category?.name, "txt");
+        assignValueToNode("detail-course-subcategory", result?.data?.course_category?.name, "txt");
         assignValueToNode("detail-course-link", result?.data?.link, "txt");
         assignValueToNode("detail-course-description", result?.data?.description, "html");
         assignValueToNode("detail-course-link-src", result?.data?.link, "link");

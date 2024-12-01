@@ -51,6 +51,13 @@ const assignValueToNode = (id, value, type) => {
     node.innerText = value
 }
 
+// Format Currency
+const formatCurrency = (value) => String(new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(value));
+
+const isNumeric = (value) => {
+    return !isNaN(value) && !isNaN(parseFloat(value));
+}
+
 // If we're in a test environment, export the functions
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
@@ -58,5 +65,7 @@ if (typeof module !== 'undefined' && module.exports) {
         formatedString,
         getQueryParams,
         assignValueToNode,
+        formatCurrency,
+        isNumeric,
     };
 }

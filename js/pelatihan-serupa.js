@@ -1,4 +1,4 @@
-import { API_CONFIG, formatedString } from "./config-dist";
+import { API_CONFIG, formatedString, formatCurrency, isNumeric } from "./config-dist";
 
 // State management
 const state = {
@@ -87,11 +87,11 @@ const init = async (filter, sort, page, excludeId) => {
                         </div>
                         </div>
                         <div class="card-body">
-                        <h6 class="mb-1 course-title text-capitalize" title="${course?.meta_seo[0]?.meta_title}">${course?.meta_seo[0]?.meta_title}</h6>
-                        <div class="d-flex my-2"><span class="badge text-bg-light text-capitalize badge-ellipsis" title="${course?.course_category.name}">${course?.course_category?.name}</span></div>
+                        <h6 class="mb-1 course-title text-capitalize" title="${course?.name}">${course?.name}</h6>
+                        <div class="d-flex my-2"><span class="badge text-bg-light text-capitalize badge-ellipsis" title="${course?.course_category?.name}">${course?.course_category?.name}</span></div>
                         <div>
-                            <div class="course-real-price mb-1"><span class="me-2">Rp ${course?.price}</span><span class="badge text-bg-success">${discountPercentage}%</span></div>
-                            <div class="course-price card-price mb-1 color-tertiary">Rp ${final_price}</div>
+                            <div class="course-real-price mb-1"><span class="me-2">${formatCurrency(course?.price)}</span><span class="badge text-bg-success">${discountPercentage}%</span></div>
+                            <div class="course-price card-price mb-1 color-tertiary">${(isNumeric(final_price)) ? formatCurrency(final_price) : final_price}</div>
                         </div>
                         </div></a></div>
                 </div>

@@ -1,4 +1,4 @@
-import { API_CONFIG, formatedString } from "./config-dist.js";
+import { API_CONFIG, formatedString, formatCurrency, isNumeric } from "./config-dist.js";
 import { initCountryHeader } from "./country-lib.js";
 
 // String format utility function
@@ -76,10 +76,10 @@ const updatePelatihanList = (courses) => {
                             </div>
                             <div>
                                 <div class="course-real-price mb-1">
-                                    <span class="me-2">Rp <b>${price}</b></span>
+                                    <span class="me-2"><b>${formatCurrency(price)}</b></span>
                                     <span class="badge text-bg-success">${discountPercentage}%</span>
                                 </div>
-                                <div class="course-price card-price mb-1 color-tertiary">Rp <b>${final_price}</b></div>
+                                <div class="course-price card-price mb-1 color-tertiary"><b>${(isNumeric(final_price)) ? formatCurrency(final_price) : final_price}</b></div>
                             </div>
                         </div>
                     </a>

@@ -9,9 +9,11 @@ section.section-detail-course
                     .mt-3.d-flex.justify-content-between
                         div
                             .course-real-price.mb-1
-                                span#detail-course-price.me-1 Rp 100.000
+                                span#detail-course-price.me-1
+                                    span.skeleton-box.rounded-2(style="height: 14px; width:72px")
                                 span#detail-course-discount.badge.text-bg-success 100%
-                            #detail-course-final-price.course-price.card-price.mb-1.fs-4 -
+                            #detail-course-final-price.course-price.card-price.mb-1.fs-4
+                                span.skeleton-box.rounded-2(style="height: 18px; width:72px")
                         div
                             button.btn.btn-light.share-button(type='button' title='Bagikan halaman ini')
                                 i.bi.bi-share-fill &nbsp;&nbsp;
@@ -26,11 +28,14 @@ section.section-detail-course
 
             // detail course content
             .col-12.col-lg-8.pe-xl-4(name='detail-course-title')
-                h1#detail-course-title.mb-3(name='detail-course-title') -
+                h1#detail-course-title.mb-3(name='detail-course-title') 
+                    span.skeleton-box.rounded-2(style="height: 32px; width:100%")
+                    span.skeleton-box.rounded-2(style="height: 32px; width:70%")
 
                 a.card-company-link.d-inline-flex.p-2.text-decoration-none.border(href="#")
                     img#detail-course-logo.me-1.card-logo(src=baseURL+"img/logo-course-placeholder.webp" alt="")
-                    span#detail-course-logo-name.lp-name.fs-7.text-secondary -
+                    span#detail-course-logo-name.lp-name.fs-7.text-secondary 
+                        span.skeleton-box.rounded-2(style="height: 16px; width:128px")
 
                 .row.mt-5.mb-4 
 
@@ -69,7 +74,8 @@ section.section-detail-course
                         div.ps-2 
                             h6.fs-7.mb-2
                                 | Kategori
-                            p#detail-course-subcategory.fs-7 -
+                            p#detail-course-subcategory.fs-7
+                                span.skeleton-box.rounded-2(style="height: 14px; width:86px")
 
 
                     //- .col-12.col-md-6.col-lg-4.mb-4.d-flex 
@@ -87,7 +93,8 @@ section.section-detail-course
                             h6.fs-7.mb-2
                                 | Link Pelatihan
                             a#detail-course-link-src.fs-7.d-flex.align-items-center(href="#") 
-                                span#detail-course-link.text-truncate -
+                                span#detail-course-link.text-truncate.me-2
+                                    span.skeleton-box.rounded-2(style="height: 14px; width:128px")
                                 i.bi.bi-arrow-up-right-square-fill
 
                 hr
@@ -96,6 +103,22 @@ section.section-detail-course
                     section.py-3
                         h4.mb-4 Deskripsi Pelatihan 
                         article#detail-course-description
+                            span.skeleton-box.rounded-2(style="height: 16px; width:90%")
+                            span.skeleton-box.rounded-2(style="height: 16px; width:100%")
+                            span.skeleton-box.rounded-2(style="height: 16px; width:70%")
+                            span.skeleton-box.rounded-2(style="height: 16px; width:80%")
+                            br
+                            br
+                            span.skeleton-box.rounded-2(style="height: 16px; width:90%")
+                            span.skeleton-box.rounded-2(style="height: 16px; width:100%")
+                            span.skeleton-box.rounded-2(style="height: 16px; width:70%")
+                            span.skeleton-box.rounded-2(style="height: 16px; width:80%")
+                            br
+                            br
+                            span.skeleton-box.rounded-2(style="height: 16px; width:90%")
+                            span.skeleton-box.rounded-2(style="height: 16px; width:100%")
+                            span.skeleton-box.rounded-2(style="height: 16px; width:70%")
+                            span.skeleton-box.rounded-2(style="height: 16px; width:80%")
                     hr
 
 

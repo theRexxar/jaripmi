@@ -925,7 +925,7 @@ const callApiCountry = async (sort, page) => {
        // save to local storage
         localStorage.setItem("countries", JSON.stringify(result.data));
 
-        return result;
+        return result.data;
     } catch (error) {
         console.error("API call failed:", error);
         throw error;

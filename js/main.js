@@ -241,7 +241,7 @@ function renderCourse (data) {
 	} else {
 		final_price = `Rp ${Number(discount).toLocaleString('id')}`;
 	}
-
+	console.log(data);
 	return `<div class="swiper-slide">
 		<div class="card course-card">
 			<a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html?title=${data.slug}-${data.documentId}" title="${data.name}">
@@ -249,7 +249,7 @@ function renderCourse (data) {
 					<div class="card-cover-overlay">
 						<div class="d-flex justify-content-between align-middle">
 							<div class="align-self-center">
-								<div class="card-company"><img class="me-1 card-logo" src="${data.learning_platform.image[0].formats.thumbnail.url}" alt="${data.learning_platform.name}" /><span class="course-lp-name">${data.learning_platform.name}</span></div>
+								<div class="card-company"><img class="me-1 card-logo" src="${data.learning_platform.image[0].url}" alt="${data.learning_platform.name}" /><span class="course-lp-name">${data.learning_platform.name}</span></div>
 							</div>
 							<div class="align-self-center"><span class="badge rounded-pill text-capitalize text-bg-warning"> Self-Paced Learning</span></div>
 						</div>
@@ -348,35 +348,34 @@ function homeLoadArticle() {
 			if (!_.isEmpty(articles)) {
 				appendTarget.find('.swiper-wrapper').html('');
 				_.each(articles, (article) => appendTarget.find('.swiper-wrapper').append(renderArticleCard(article)))
-				
-				// Home Carousel Article
-				new Swiper(".articleSwiper", {
-					slidesPerView: 1.25,
-					spaceBetween:16,
-					pagination: false,
-					navigation: {
-						nextEl: ".swiper-article-next",
-						prevEl: ".swiper-article-prev",
-					},
-					breakpoints: {
-						640: {
-							slidesPerView: 2.1,
-							spaceBetween: 16,
-						},
-						768: {
-							slidesPerView: 2.55,
-							spaceBetween: 24,
-						},
-						1024: {
-							slidesPerView: 3.25,
-							spaceBetween: 24,
-						},
-					},
-				});
 			} else {
 				appendTarget.html('').append('<div class="alert alert-info" role="alert"><div class="d-flex"><div class="pe-3"><i class="bi bi-info-circle-fill fs-4"></i></div><div><h6 class="alert-heading">Artikel terbaru tidak ditemukan</h6><p>Jelajahi Artikel lain yang menarik untuk kamu.</p></div></div></div>');
 			}
-		})
+		});
+		// Home Carousel Article
+		new Swiper(".articleSwiper", {
+			slidesPerView: 1.25,
+			spaceBetween:16,
+			pagination: false,
+			navigation: {
+				nextEl: ".swiper-article-next",
+				prevEl: ".swiper-article-prev",
+			},
+			breakpoints: {
+				640: {
+					slidesPerView: 2.1,
+					spaceBetween: 16,
+				},
+				768: {
+					slidesPerView: 2.55,
+					spaceBetween: 24,
+				},
+				1024: {
+					slidesPerView: 3.25,
+					spaceBetween: 24,
+				},
+			},
+		});
 	}
 }
 

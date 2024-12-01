@@ -737,27 +737,6 @@ var TxtRotate = function(el, toRotate, period) {
 	init();
   });
 
-
- // Home Carousel Countries
- var swiper = new Swiper(".countrySwiper", {
-	slidesPerView: 1.25,
-	grid: {
-		rows: 2,
-	},
-	spaceBetween: 16,
-	pagination: false,
-	breakpoints: {
-		1024: {
-			slidesPerView: 3,
-			spaceBetween: 24,
-			grid: {
-				rows: 2,
-			},
-		}
-	},
-	
-});
-
 // Tab Pengelolaan Keuangan
 var swiper = new Swiper(".tabNavSwiper", {
 	spaceBetween: 4,
@@ -972,9 +951,9 @@ const updateCountryList = (data) => {
     if (!countryList) return;
     countryList.innerHTML = `<li class="see-all"><a class="anchor arrow-move" href="/negara/">Selengkapnya<i class="icon-angle-right"></i></a></li>`;
 	
-	const countryEdge = document.getElementById("list-of-coutry");
+	const countryEdge = $("#list-of-coutry");
 	if (!countryEdge) return;
-	countryEdge.innerHTML = ``;
+	countryEdge.html('');
 
 	htmlBuilder = "";  
 	let counter = 1; 
@@ -990,18 +969,40 @@ const updateCountryList = (data) => {
 			addingClass = "swiper-slide-active";
 		}
 
-		htmlBuilder += `
-			<div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 6" style="height: calc(50% - 8px); width: 572.8px; margin-right: 16px;"> 
-                <div class="card full-card rounded-3"><a class="text-decoration-none" href="negara/detail?name=${formatedString(country.name)}&id=${country.documentId}">
-                    <div class="full-card-cover"><img class="card-img-top" loading="lazy" src="${country.image?.url}" alt="${country.name}"></div>
-                    <div class="full-card-body d-flex p-3 align-items-center justify-content-center">
-                      <h3 class="title-country">${country.name}</h3>
-                    </div></a></div>
-              </div>
+		htmlBuilder = `
+			<div class="swiper-slide">
+				<div class="card full-card rounded-3">
+					<a class="text-decoration-none" href="negara/detail?name=${formatedString(country.name)}&id=${country.documentId}">
+						<div class="full-card-cover"><img class="card-img-top" loading="lazy" src="${country.image?.url}" alt="${country.name}" /></div>
+						<div class="full-card-body d-flex p-3 align-items-center justify-content-center">
+							<h3 class="title-country">${country.name}</h3>
+						</div>
+					</a>
+				</div>
+			</div>
 		`
+		countryEdge.append(htmlBuilder);
     });
 
-	countryEdge.innerHTML = htmlBuilder;
+	// Home Carousel Countries
+	var swiper = new Swiper(".countrySwiper", {
+		slidesPerView: 1.25,
+		grid: {
+			rows: 2,
+		},
+		spaceBetween: 16,
+		pagination: false,
+		breakpoints: {
+			1024: {
+				slidesPerView: 3,
+				spaceBetween: 24,
+				grid: {
+					rows: 2,
+				},
+			}
+		},
+		
+	});
 }
 
 // Format title to SEO format

@@ -2310,6 +2310,25 @@ support for no js
   border: solid 1px var(--border-default);
 }
 
+.course-cover-sticky {
+  position: sticky;
+  top: 70px;
+  z-index: 28;
+}
+
+.course-cover {
+  background-color: var(--pmi-neutral-50);
+  aspect-ratio: 16/9;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.course-cover img {
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: none;
+}
+
 .color-tertiary {
   color: #e27000;
 }

@@ -48,7 +48,7 @@ const updatePelatihanList = (courses) => {
         } else {
             final_price = discount;
         }
-
+        console.log(course);
         return `
             <div class="col-12 col-md-6 col-lg-4 mb-4">
                 <div class="card course-card">
@@ -72,7 +72,7 @@ const updatePelatihanList = (courses) => {
                         <div class="card-body">
                             <h6 class="mb-1 course-title text-capitalize" title="${course?.meta_seo[0]?.meta_title}">${course?.name}</h6>
                             <div class="d-flex my-2">
-                                <span class="badge text-bg-light text-capitalize badge-ellipsis" title="${course?.sub_category?.name}">${course?.sub_category?.name}</span>
+                                <span class="badge text-bg-light text-capitalize badge-ellipsis" title="${course?.course_category?.name}">${course?.course_category?.name}</span><span class="badge text-bg-light text-capitalize badge-ellipsis" title="${course?.course_tags[0]?.name}">${course?.course_tags[0]?.name}</span>
                             </div>
                             <div>
                                 <div class="course-real-price mb-1">
@@ -230,7 +230,7 @@ const callApiCourse = async (filter, sort, page) => {
         return params.join('&');
     };
 
-    const uri = `${API_CONFIG.baseUrl}/courses?populate[0]=meta_seo&populate[1]=image&populate[2]=learning_platform.image&populate[3]=course_category&sort[0][${defaultParams.sortBy}]=${defaultParams.sortMethod}&pagination[page]=${defaultParams.pageCurr}&pagination[pageSize]=${defaultParams.pageSize}&${buildFilterParams()}`;
+    const uri = `${API_CONFIG.baseUrl}/courses?populate[0]=meta_seo&populate[1]=image&populate[2]=learning_platform.image&populate[3]=course_category&populate[4]=course_tags&sort[0][${defaultParams.sortBy}]=${defaultParams.sortMethod}&pagination[page]=${defaultParams.pageCurr}&pagination[pageSize]=${defaultParams.pageSize}&${buildFilterParams()}`;
 
     try {
         const response = await fetch(uri, {

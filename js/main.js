@@ -357,7 +357,7 @@ function homeLoadArticle() {
 	if (appendTarget.length) {
 		$.ajax({
 			method: "GET",
-			url: apiURL + '/api/articles?populate[0]=meta_seo&populate[1]=image&populate[2]=article_tags&sort[0][createdAt]=desc&pagination[pageSize]=6', 
+			url: apiURL + '/api/articles?populate[0]=meta_seo&populate[1]=image&populate[2]=article_tags&populate[3]=article_category&sort[0][createdAt]=desc&pagination[pageSize]=6', 
 			headers: {"Authorization": "Bearer " + tkn},
 			dataType: 'json'
 		}).done(function(data) {

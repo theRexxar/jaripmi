@@ -43,6 +43,7 @@ const callApiDetail = async (id) => {
         assignValueToNode("detail-course-link", result?.data?.link, "txt");
         assignValueToNode("detail-course-description", result?.data?.description, "html");
         assignValueToNode("detail-course-link-src", result?.data?.link, "link");
+        assignValueToNode("get-voucher-btn", result?.data?.link, "link");
         let dataTag = [];
         result?.data?.course_tags?.forEach(data => {
             dataTag.push(data.name);

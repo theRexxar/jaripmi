@@ -129,8 +129,7 @@ function removeHTMLTags(htmlString) {
     return textContent.trim();
 }
 
-function metaRender(data) {
-	console.log(data)
+const metaRender = function(data) {
 	$('title').html(data.title);
 	$('meta[name="twitter:title"]').attr('content',data.title);
 	$('meta[name="description"], meta[name="twitter:description"]').attr('content',data.description.slice(0, 160));
@@ -969,10 +968,11 @@ const init = () => {
 }
 
 const updateCountryList = (data) => {
-    const countryList = document.getElementById("list-country-header");
+    const countryList = $("#list-country-header");
+	const countryFooter = $('#list-country-footer');
 
     if (!countryList) return;
-    countryList.innerHTML = `<li class="see-all"><a class="anchor arrow-move" href="/negara/">Selengkapnya<i class="icon-angle-right"></i></a></li>`;
+    countryList.append(`<li class="see-all"><a class="anchor arrow-move" href="/negara/">Selengkapnya<i class="icon-angle-right"></i></a></li>`);
 	
 	const countryEdge = $("#list-of-coutry");
 	if (!countryEdge) return;
@@ -981,11 +981,11 @@ const updateCountryList = (data) => {
 	htmlBuilder = "";  
 	let counter = 1; 
     data.forEach((country) => {
-        const countryItem = document.createElement("li");
-        countryItem.innerHTML = `
-            <a class="site-nav-item" href="negara/detail?name=${formatedString(country.name)}&id=${country.documentId}">${country.name}</a>
+        const countryItem = `
+            <li><a class="site-nav-item" href="${ROOT_PATH}/negara/detail?name=${formatedString(country.name)}&id=${country.documentId}">${country.name}</a></li>
         `;
-        countryList.appendChild(countryItem);
+		countryFooter.append(countryItem);
+        countryList.append(countryItem);
 
 		addingClass = "";
 		if (counter ==1) {

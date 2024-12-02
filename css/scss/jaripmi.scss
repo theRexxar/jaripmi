@@ -914,6 +914,9 @@ ul.unordered-list {
   max-width: 90%;
 }
 
+.dt-paging {
+}
+
 @media (max-width: $screen-md) {
   .breadcrumb-wrapper .breadcrumb-item.active {
     max-width: calc(100% - 150px) !important;

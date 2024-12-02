@@ -1036,3 +1036,13 @@ const formatedString = (str) => {
 
     return newStr
 }
+
+// If we're in a test environment, export the functions
+if (typeof module !== 'undefined' && module.exports) {
+	module.exports = {
+		dataRemitance,
+		removeHTMLTags,
+		metaRender,
+		convertTime
+	};
+}

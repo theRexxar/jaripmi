@@ -13,12 +13,12 @@ section.section-hero
 
         .col-md-7.mt-3.mt-md-0.content-hero
             .d-flex.mb-4
-                img#country-flag.me-3.border(src="", alt="" height="64")
+                img#country-flag.me-3.border(loading="lazy" src=baseURL+"img/course-placeholder.webp" alt="Negara Tujuan PMI" height="64")
                 h1#country-name-h1.display-4.font-weight-bold.mb-3
-                    | -
+                    span.skeleton-box.rounded-pill(style="width:30%")
 
             .col-lg-10
                 p#country-desc.text-secondary
-                   -
+                   span.skeleton-box.rounded-pill(style="width:60%")
         .col-md-5.p-0
             img#country-img.mw-100.hero-mask(loading="lazy" src=baseURL+"img/course-placeholder.webp" alt="Negara Tujuan PMI")

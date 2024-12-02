@@ -1,4 +1,4 @@
-import { API_CONFIG, formatedString } from "./config-dist";
+import { API_CONFIG, formatedString } from "./config";
 
 // API Calls
 const callApiCountry = async (sort, page) => {

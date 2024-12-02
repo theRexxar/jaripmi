@@ -1,4 +1,4 @@
-import { API_CONFIG, assignValueToNode, formatedString, getQueryParams } from "./config-dist";
+import { API_CONFIG, assignValueToNode, formatedString, getQueryParams } from "./config";
 import { initCountryHeader } from "./country-lib.js";
 
 // State management

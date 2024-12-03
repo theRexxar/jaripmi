@@ -638,7 +638,7 @@ jQuery(document).ready(function($){
 	});
 
 	// list data tempat remitansi
-	dataRemitance('#remitansi-list');
+	// dataRemitance('#remitansi-list');
 
 	// load course list
 	// courseLoaderInit();

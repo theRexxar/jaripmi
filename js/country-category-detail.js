@@ -113,7 +113,7 @@ window.addEventListener('load', () => {
     }
 });
 
- const dataRemitance = (target) => {
+const dataRemitance = (target) => {
 	if ($(target)) {
 		var country = $(target).data('country');
 		

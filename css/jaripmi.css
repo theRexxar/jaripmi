@@ -2858,6 +2858,10 @@ ul.unordered-list {
   max-width: 90%;
 }
 
+.pagination {
+  list-style-type: none;
+}
+
 @media (max-width: 768px) {
   .breadcrumb-wrapper .breadcrumb-item.active {
     max-width: calc(100% - 150px) !important;

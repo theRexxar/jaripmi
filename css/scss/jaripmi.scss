@@ -914,7 +914,8 @@ ul.unordered-list {
   max-width: 90%;
 }
 
-.dt-paging {
+.pagination {
+  list-style-type: none;
 }
 
 @media (max-width: $screen-md) {

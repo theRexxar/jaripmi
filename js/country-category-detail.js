@@ -1,6 +1,6 @@
 import { API_CONFIG, assignValueToNode, formatedString, getQueryParams } from "./config";
 import { initCountryHeader } from "./country-lib.js";
-
+import { dataRemitance } from "./main";
 // State management
 const state = {
     onloadProgress: false,
@@ -86,6 +86,8 @@ const callApiCountryCategoryContentDetail = async (id) => {
             `;
             country_category_content.appendChild(contentDetail);
         });
+
+        dataRemitance('#remitansi-list');
 
     } catch (error) {
         console.error("Failed to fetch data from api:", error);

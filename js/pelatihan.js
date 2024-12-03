@@ -1,4 +1,4 @@
-import { API_CONFIG, formatedString, formatCurrency, isNumeric } from "./config-dist.js";
+import { API_CONFIG, formatedString, formatCurrency, isNumeric } from "./config.js";
 import { initCountryHeader } from "./country-lib.js";
 
 // String format utility function

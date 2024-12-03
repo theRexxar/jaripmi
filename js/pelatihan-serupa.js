@@ -110,6 +110,26 @@ const init = async (filter, sort, page, excludeId) => {
        
         listElement.innerHTML = courseHTML;
 
+        new Swiper(".courseCatSwiper", {
+            slidesPerView: 1.75,
+            spaceBetween: 8,
+            pagination: false,
+            breakpoints: {
+                640: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 8,
+                },
+                992: {
+                    slidesPerView: 3.5,
+                    spaceBetween: 16,
+                },
+                1200: {
+                    slidesPerView: 5,
+                    spaceBetween: 24,
+                },
+            },
+        });
+
     } catch (error) {
         console.error("Failed to initialize:", error);
     }

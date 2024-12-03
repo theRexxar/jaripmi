@@ -1,12 +1,52 @@
 import { API_CONFIG, assignValueToNode, formatedString, getQueryParams } from "./config";
 import { initCountryHeader } from "./country-lib.js";
-import { dataRemitance } from "./main";
+
 // State management
 const state = {
     onloadProgress: false,
     dataCountryCategory: {},
     dataCountryCategoryContent: [],
 };
+
+// function jquery datatable
+const dataRemitance = (target) => {
+	if ($(target)) {
+		var country = $(target).data('country');
+		
+		$(target).DataTable({
+			ajax: '/js/data/remittance/' + country + '.json',
+			responsive: true,
+			columns: [
+				{ 
+					className: 'w-20',
+					data: 'remittance_institutions',
+				},
+				{ 
+					className: 'w-20 text-wrap',
+					data: 'website', 
+					"render": function ( data, type, row, meta ) {
+						return data !== "" &&  data.includes('http') ? '<a href="'+ data +'" target="_blank" class="text-wrap w-20">'+ data +'</a>' : data;
+					}
+				  },
+				{ 
+					data: 'tutorial', 
+					className: 'w-20 text-wrap',
+					"render": function ( data, type, row, meta ) {
+						return data !== "" &&  data.includes('http') ? '<a href="'+ data +'" target="_blank" class="text-wrap w-20">'+ data +'</a>' : data;
+					}
+				},
+				{ 
+					data: 'remittance_cost',
+					className: 'w-20'
+				 },
+				{ 
+					data: 'platform',
+					className: 'w-20'
+				}
+			]
+		})
+	}
+}
 
 const callApiCountryCategoryDetail = async (id) => {
     try {

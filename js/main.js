@@ -257,10 +257,11 @@ function renderCourse (data) {
 	} else {
 		final_price = `Rp ${Number(discount).toLocaleString('id')}`;
 	}
+	console.log(data)
 	return `<div class="swiper-slide">
 		<div class="card course-card">
 			<a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html?title=${data.slug}-${data.documentId}" title="${data.name}">
-				<div class="card-cover"><img class="card-img-top" src="${data.image[0].formats.thumbnail.url}" alt="${data.name}" />
+				<div class="card-cover"><img class="card-img-top" src="${(data.image[0]?.formats?.thumbnail?.url) ? data.image[0]?.formats?.thumbnail?.url: data.image[0]?.url}" alt="${data.name}" />
 					<div class="card-cover-overlay">
 						<div class="d-flex justify-content-between align-middle">
 							<div class="align-self-center">

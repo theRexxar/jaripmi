@@ -126,7 +126,7 @@ const setupEventListeners = () => {
                 return;
             }
             state.curPage += 1;
-            callFilter(undefined, { size: 3, curr: state.curPage });
+            callFilter(undefined, { size: 9, curr: state.curPage });
         });
     }
 
@@ -196,7 +196,7 @@ const callApiCourse = async (filter, sort, page) => {
         sortBy: sort?.by || state.sortSetting.by,
         sortMethod: sort?.method || state.sortSetting.method,
         pageCurr: page?.curr || 1,
-        pageSize: page?.size || 3
+        pageSize: page?.size || 9
     };
 
     const buildFilterParams = () => {
@@ -383,7 +383,7 @@ const callFilter = (sort, page) => {
 window.addEventListener('load', () => {
     if (state.onloadProgress) return;
     state.onloadProgress = true;
-    init(state.filter, state.sortSetting, { size: 3, curr: 1 });
+    init(state.filter, state.sortSetting, { size: 9, curr: 1 });
 });
 
 // If we're in a test environment, export the functions

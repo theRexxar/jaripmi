@@ -1,4 +1,4 @@
-import { API_CONFIG, formatedString, formatCurrency, isNumeric } from "./config-dist";
+import { API_CONFIG, formatedString, formatCurrency, isNumeric } from "./config.js";
 
 // State management
 const state = {
@@ -75,7 +75,7 @@ const init = async (filter, sort, page, excludeId) => {
 
             courseHTML += `
                 <div class="swiper-slide">
-                    <div class="card course-card"><a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html?title=${formatedString(course?.name)}-${course?.documentId}" title="${course?.name}">
+                    <div class="card course-card"><a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html?title=${formatedString(course?.name)}-${course?.documentId}" title="${course?.name}" target="_blank">
                         <div class="card-cover"><img class="card-img-top" src="${course?.image[0].url}" alt="${course?.name}">
                         <div class="card-cover-overlay">
                             <div class="d-flex justify-content-between align-middle">
@@ -110,9 +110,13 @@ const init = async (filter, sort, page, excludeId) => {
        
         listElement.innerHTML = courseHTML;
 
-        new Swiper(".courseCatSwiper", {
+        new Swiper(".similarSwipers", {
             slidesPerView: 1.75,
             spaceBetween: 8,
+            navigation: {
+				nextEl: ".swiper-course-next",
+				prevEl: ".swiper-course-prev",
+			},
             pagination: false,
             breakpoints: {
                 640: {

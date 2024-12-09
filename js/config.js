@@ -58,6 +58,17 @@ const isNumeric = (value) => {
     return !isNaN(value) && !isNaN(parseFloat(value));
 }
 
+const removeHTMLTags = (htmlString) => {
+    // Create a new DOMParser instance
+    const parser = new DOMParser();
+    // Parse the HTML string
+    const doc = parser.parseFromString(htmlString, 'text/html');
+    // Extract text content
+    const textContent = doc.body.textContent || "";
+    // Trim whitespace
+    return textContent.trim();
+}
+
 // If we're in a test environment, export the functions
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
@@ -67,5 +78,6 @@ if (typeof module !== 'undefined' && module.exports) {
         assignValueToNode,
         formatCurrency,
         isNumeric,
+        removeHTMLTags
     };
 }

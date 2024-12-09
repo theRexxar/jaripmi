@@ -1,5 +1,5 @@
-import { API_CONFIG, getQueryParams, assignValueToNode, formatCurrency, isNumeric } from "./config-dist.js";
-import { init } from "./pelatihan-serupa-dist.js";
+import { API_CONFIG, getQueryParams, assignValueToNode, formatCurrency, isNumeric, removeHTMLTags } from "./config.js";
+import { init } from "./pelatihan-serupa.js";
 import { initCountryHeader } from "./country-lib.js";
 
 // State management
@@ -50,6 +50,10 @@ const callApiDetail = async (id) => {
         });
 
         init(dataTag, undefined, undefined, result.data.documentId);
+
+        $('title').html(`${result?.data?.name} - Pelatihan Jari PMI`);
+        $('meta[name="twitter:title"]').attr('content',`${result?.data?.name} - Pelatihan Jari PMI`);
+        $('meta[name="description"], meta[name="twitter:description"]').attr('content',removeHTMLTags(result?.data?.description).slice(0, 160));
     } catch (error) {
         console.error("Failed to fetch data from api:", error);
     }

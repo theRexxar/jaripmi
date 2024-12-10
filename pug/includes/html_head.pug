@@ -59,6 +59,15 @@ head
     link(rel="stylesheet" as="style" href=baseURL+"css/jaripmi.css")
     link(rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css")
 
+    // running google tag manager
+    // Google tag (gtag.js)
+    script(async='' src='https://www.googletagmanager.com/gtag/js?id=G-D0GGEHZ1BX')
+    script.
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-D0GGEHZ1BX');
+
 
 
     //- link(rel="stylesheet" href=baseURL+"css/bootstrap.css")

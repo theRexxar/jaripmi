@@ -257,7 +257,6 @@ function renderCourse (data) {
 	} else {
 		final_price = `Rp ${Number(discount).toLocaleString('id')}`;
 	}
-	console.log(data)
 	return `<div class="swiper-slide">
 		<div class="card course-card">
 			<a class="text-decoration-none to-detail-course" href="/pelatihan/detail-pelatihan.html?title=${data.slug}-${data.documentId}" title="${data.name}" target="_blank">
@@ -313,13 +312,11 @@ function searchKeyword (query,sortArticle,catArticle,totalArticles,appendTarget)
 
 	buttonSearch.on('click', function(e) {
 		var newQueryFilter = inputSearch.val();
-		console.log(newQueryFilter)
 
 		if(!_.isEmpty(inputSearch.val()) ) {
 			var queryFilters = catArticle !== 'semua' || catArticle == '' ? `&filters[article_category][slug][$eq]=${catArticle}` : '';
 			queryFilters = !_.isEmpty(newQueryFilter) ? queryFilters + `&filters[slug][$contains]=${newQueryFilter.replace(/-|%20/gi, '-').toLowerCase()}` : queryFilters;
 			window.history.replaceState(null, null, `/artikel?&q=${newQueryFilter.replace(/\s+/gi, '-').toLowerCase()}&category=${catArticle}`)
-			console.log(queryFilters);
 
 			$.ajax({
 				method: "GET",

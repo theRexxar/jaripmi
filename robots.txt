@@ -1,8 +1,5 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
-Disallow: /v4/*
-Disallow: /v3/*
-Disallow: /v2/*
 
 Sitemap: https://jaripmi.info/sitemap.xml

@@ -72,7 +72,7 @@ const updatePelatihanList = (courses) => {
                         <div class="card-body">
                             <h6 class="mb-1 course-title text-capitalize" title="${course?.meta_seo[0]?.meta_title}">${course?.name}</h6>
                             <div class="d-flex my-2">
-                                <span class="badge text-bg-light text-capitalize badge-ellipsis" title="${course?.course_category?.name}">${course?.course_category?.name}</span><span class="badge text-bg-light text-capitalize badge-ellipsis" title="${course?.course_tags[0]?.name}">${course?.course_tags[0]?.name}</span>
+                                <span class="badge text-bg-light text-capitalize badge-ellipsis" title="${course?.course_category?.name}">${course?.course_category?.name}</span>
                             </div>
                             <div>
                                 <div class="course-real-price mb-1">

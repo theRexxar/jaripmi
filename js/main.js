@@ -974,10 +974,13 @@ const updateCountryList = (data) => {
 	
 	const countryEdge = $("#list-of-coutry");
 	if (!countryEdge) return;
+	// remove preloader
 	countryEdge.html('');
+	countryFooter.html('');
 
 	htmlBuilder = "";  
 	let counter = 1; 
+
     data.forEach((country) => {
         const countryItem = `
             <li><a class="site-nav-item" href="${ROOT_PATH}/negara/detail?name=${formatedString(country.name)}&id=${country.documentId}">${country.name}</a></li>

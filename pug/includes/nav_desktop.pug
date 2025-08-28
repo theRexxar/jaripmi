@@ -10,14 +10,16 @@ nav.site-nav.w-100.d-flex.justify-content-end
         li.has-children.small-children
             a(href='#0') Informasi Keuangan
             ul.site-secondary-nav.has-see-all.is-hidden.pb-3
+                li.go-back
+                    a(href='#0') Menu
                 li
                     a(href=baseURL+'informasi-keuangan/' class={"is-active" : pageActive === 'informasi-keuangan'}) Edukasi Keuangan
                 li
                     a(href=baseURL+'informasi-keuangan/qris-cross-border.html' class={"is-active" : pageActive === 'qris-cross-border'}) QRIS Cross Border
                 li
-                    a(href=baseURL+'informasi-keuangan/pengaduan-bi.html' class={"is-active" : pageActive === 'pengaduan-bi'}) Pengaduan BI
+                    a(href=baseURL+'informasi-keuangan/pengaduan-bi.html' class={"is-active" : pageActive === 'pengaduan-bi'}) Portal Pengaduan BI
                 li
-                    a(href=baseURL+'informasi-keuangan/kampanye-peka.html' class={"is-active" : pageActive === 'kampanye-peka'}) Kampanye PEKA
+                    a(href=baseURL+'informasi-keuangan/peduli-kenali-laporkan.html' class={"is-active" : pageActive === 'peka'}) Peduli Kenali Adukan (PEKA)
         li
             a(href=baseURL+'pelatihan/' class={"is-active" : pageActive === 'pelatihan'}) Pelatihan
         

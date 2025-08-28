@@ -996,7 +996,7 @@ Main components for header layouts
     display: table;
   }
   .site-main-content {
-    padding-top: 70px;
+    padding-top: 60px;
   }
 }
 .site-logo img {
@@ -2040,7 +2040,7 @@ support for no js
 .section-hero {
   position: relative;
   margin-top: -80px;
-  padding-top: 4rem;
+  padding-top: 5rem;
 }
 .section-hero > div {
   position: relative;
@@ -2866,6 +2866,16 @@ ul.unordered-list {
   .breadcrumb-wrapper .breadcrumb-item.active {
     max-width: calc(100% - 150px) !important;
   }
+
+  .full-card .full-card-body {
+    /* min-height: 130px; */
+    min-height: auto;
+    height: 100px;
+  }
+
+  .country-swiper {
+    height: calc(200px + 1.5rem) !important;
+  }
 }
 .tab-nav-swiper .swiper-slide-thumb-active {
   background-color: #f0f8ff;
@@ -2955,7 +2965,7 @@ ul.unordered-list {
   width: 100%;
 }
 .contact-box .contact-box-header {
-  background-color: #dfefff;
+  background-color: var(--pmi-cyan-950);
   background-image: url("../img/bg-contact.svg");
   background-position: center bottom;
   background-repeat: no-repeat;

@@ -1,0 +1,41 @@
+//- start variable
+- var pageActive = 'peduli-kenali-laporkan'
+- var baseURL = '../'
+- var contentDescription = {}
+- ogImageURL = baseURL+"img/jaripmi-berdaya.jpg"
+- contentDescription.title = "Pengaduan BI - Jari PMI"
+- contentDescription.description = "Pengaduan BI adalah layanan yang disediakan oleh Bank Indonesia untuk menangani pengaduan dan masukan dari masyarakat terkait layanan perbankan dan sistem pembayaran. Dengan layanan ini, masyarakat dapat menyampaikan pengaduan secara mudah dan cepat melalui berbagai saluran yang disediakan."
+
+doctype html
+html(lang="id" page-class="peduli-kenali-laporkan")
+    include ../pug/includes/html_head.pug
+    body
+        // Header 
+        include ../pug/includes/nav_mobile.pug
+
+        // Main content
+        main.site-main-content
+            include ../pug/peka/section_hero.pug
+            //- include ../pug/peka/section_content.pug
+            include ../pug/peka/section_panduan.pug
+            include ../pug/peka/section_produk_jasa.pug
+            include ../pug/informasi-keuangan/section_transaksi_aman.pug
+            include ../pug/informasi-keuangan/section_cegah_penipuan.pug
+            include ../pug/peka/section_video.pug
+            section 
+            .container.py-3.py-lg-4.px-4.px-md-0
+                .d-flex.align-items-center.justify-content-center.text-center
+                    div.text-center
+                        a.btn.btn-primary.btn-lg(href="https://www.bi.go.id/id/Pelindungan-Konsumen/Panduan-Dasar/Default.aspx" target="_blank" title="Peduli Kenali Laporkan") Cek Selengkapnya
+
+        // Footer
+        include ../pug/includes/footer.pug
+
+        // Header Menu
+        include ../pug/includes/nav_desktop.pug
+
+        // Modals
+        include ../pug/includes/modal.pug
+
+    include ../pug/includes/html_foot.pug
+    script(src=baseURL+'js/keuangan-dist.js')

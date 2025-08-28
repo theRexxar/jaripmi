@@ -168,17 +168,22 @@
       </section>
     </main>
     <!-- Footer-->
+    <div class="d-block d-sm-none">
+      <div class="mb-0 alert alert-warning alert-dismissible fade show fixed-bottom rounded-0 border-0" role="alert"><strong class="me-2"><i class="bi bi-headset me-2"></i><span style="font-size: 0.75rem;">Portal Layanan BI</span></strong><a class="btn btn-outline-secondary rounded-1 text-dark" href="/informasi-keuangan/pengaduan-bi.html" title="Portal layanan Bank BI" style="font-size: 0.75rem;">Pelajari Selengkapnya</a>
+        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close" style="font-size: 0.75rem;"></button>
+      </div>
+    </div>
     <footer class="border-top">
       <div class="container py-3 py-lg-4 px-4 px-md-0">
         <div class="contact-box rounded-3 overflow-hidden mt-4 mt-lg-0 mb-lg-5 mb-4">
-          <div class="contact-box-header p-4 text-center">
-            <h5 class="m-0">Layanan Aduan</h5>
+          <div class="contact-box-header p-4 text-center mb-4">
+            <h5 class="m-0 text-white">Layanan Aduan</h5>
           </div>
-          <div class="accordion" id="accordionHeader">
+          <div class="accordion" id="accordionFooter">
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne"></h2>
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Layanan Pengaduan Bank Indonesia</button>
-              <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionHeader">
+              <h2 class="accordion-header" id="footerOne"></h2>
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneFooter" aria-expanded="true" aria-controls="collapseOneFooter">Layanan Pengaduan Bank Indonesia</button>
+              <div class="accordion-collapse collapse show" id="collapseOneFooter" aria-labelledby="footerOne" data-bs-parent="#accordionFooter">
                 <div class="accordion-body">
                   <div class="row d-flex align-items-center">
                     <div class="col-2"><img class="mw-100" src="../img/logo-bank-indonesia.png" alt="Kementerian Pelindungan Pekerja Migran Indonesia / Badan Pelindungan Pekerja Migran Indonesia" style="max-height:4rem"></div>
@@ -189,20 +194,20 @@
                   <div class="fs-7 mt-2">
                     <ul> 
                       <li class="pt-2">Call Center (Dalam Dan Luar Negeri) - bicara 131 : <a class="text-primary" href="tel:+1500131">1500131</a></li>
-                      <li class="pt-2">Portal Pengaduan : <a class="text-primary" href="https://bicara131.bi.go.id/SignIn?returlUrl=%2F">bicara131.bi.go.id</a></li>
                       <li class="pt-2">Email <a class="text-primary" href="mailto:bicara@bi.go.id">bicara@bi.go.id</a></li>
+                      <li class="pt-2">Portal Pengaduan : <a class="text-primary" href="https://bicara131.bi.go.id/SignIn?returlUrl=%2F">bicara131.bi.go.id</a><a class="btn btn-sm btn-secondary ms-sm-2 my-2" href="/informasi-keuangan/pengaduan-bi.html">Pelajari Selengkapnya</a></li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo"></h2>
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <h2 class="accordion-header" id="footerTwo"></h2>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoFooter" aria-expanded="false" aria-controls="collapseTwoFooter">
                 Kementerian Pelindungan Pekerja Migran Indonesia / Badan Pelindungan Pekerja Migran Indonesia
                 
               </button>
-              <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionHeader">
+              <div class="accordion-collapse collapse" id="collapseTwoFooter" aria-labelledby="footerTwo" data-bs-parent="#accordionFooter">
                 <div class="accordion-body">
                   <div class="row d-flex align-items-center">
                     <div class="col-2"><img class="mw-100" src="../img/LogoKPPMIBP2MI.webp" alt="Kementerian Pelindungan Pekerja Migran Indonesia / Badan Pelindungan Pekerja Migran Indonesia" style="max-height:4rem"></div>
@@ -226,9 +231,9 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree"></h2>
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Layanan Lapor Diri yang dilayani oleh Kementrian Luar Negeri</button>
-              <div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionHeader">
+              <h2 class="accordion-header" id="footerThree"></h2>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreeFooter" aria-expanded="false" aria-controls="collapseThreeFooter">Layanan Lapor Diri yang dilayani oleh Kementrian Luar Negeri</button>
+              <div class="accordion-collapse collapse" id="collapseThreeFooter" aria-labelledby="footerThree" data-bs-parent="#accordionFooter">
                 <div class="accordion-body">
                   <div class="row d-flex align-items-center">
                     <div class="col-2"><img class="mw-100" src="../img/logo-kemenlu.png" alt="BP2MI (Badan Perlindungan Pekerja Migran Indonesia)" style="max-height:4rem"></div>
@@ -312,10 +317,11 @@
           <li><a href="../">Beranda</a></li>
           <li class="has-children small-children"><a href="#0">Informasi Keuangan</a>
             <ul class="site-secondary-nav has-see-all is-hidden pb-3">
+              <li class="go-back"><a href="#0">Menu</a></li>
               <li><a href="../informasi-keuangan/">Edukasi Keuangan</a></li>
               <li><a href="../informasi-keuangan/qris-cross-border.html">QRIS Cross Border</a></li>
-              <li><a href="../informasi-keuangan/pengaduan-bi.html">Pengaduan BI</a></li>
-              <li><a href="../informasi-keuangan/kampanye-peka.html">Kampanye PEKA</a></li>
+              <li><a href="../informasi-keuangan/pengaduan-bi.html">Portal Pengaduan BI</a></li>
+              <li><a href="../informasi-keuangan/peduli-kenali-laporkan.html">Peduli Kenali Adukan (PEKA)</a></li>
             </ul>
           </li>
           <li><a href="../pelatihan/">Pelatihan</a></li>
@@ -342,9 +348,9 @@
             <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <div class="contact-box rounded-3 overflow-hidden mt-4 mt-lg-0 mb-lg-0">
-              <div class="contact-box-header p-4 text-center">
-                <h5 class="m-0">Layanan Aduan</h5>
+            <div class="contact-box overflow-hidden mt-4 mt-lg-0 mb-lg-0">
+              <div class="contact-box-header p-4 text-center rounded-3 mb-3">
+                <h5 class="m-0 text-white">Layanan Aduan</h5>
               </div>
               <div class="row"> 
                 <div class="accordion" id="accordionHeader">

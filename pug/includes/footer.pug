@@ -1,16 +1,23 @@
 - var year = new Date().getFullYear()
+.d-block.d-sm-none
+    div.mb-0.alert.alert-warning.alert-dismissible.fade.show.fixed-bottom.rounded-0.border-0(role="alert")
+        strong.me-2
+            i.bi.bi-headset.me-2
+            span(style="font-size: 0.75rem;") Portal Layanan BI
+        a.btn.btn-outline-secondary.rounded-1.text-dark(href="/informasi-keuangan/pengaduan-bi.html" title="Portal layanan Bank BI" style="font-size: 0.75rem;") Pelajari Selengkapnya
+        button(type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="font-size: 0.75rem;")
 footer.border-top
     .container.py-3.py-lg-4.px-4.px-md-0
         .contact-box.rounded-3.overflow-hidden.mt-4.mt-lg-0.mb-lg-5.mb-4
-            .contact-box-header.p-4.text-center
-                h5.m-0 Layanan Aduan
-            .accordion#accordionHeader
+            .contact-box-header.p-4.text-center.mb-4
+                h5.m-0.text-white Layanan Aduan
+            .accordion#accordionFooter
                 .accordion-item
-                    h2.accordion-header#headingOne
-                    button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne')
+                    h2.accordion-header#footerOne
+                    button.accordion-button(type='button' data-bs-toggle='collapse' data-bs-target='#collapseOneFooter' aria-expanded='true' aria-controls='collapseOneFooter')
                         //- img.img-thumbnail(src=baseURL+"img/logo-bank-indonesia.png" alt="Kementerian Pelindungan Pekerja Migran Indonesia / Badan Pelindungan Pekerja Migran Indonesia" style="max-height:4rem")
                         | Layanan Pengaduan Bank Indonesia
-                    #collapseOne.accordion-collapse.collapse.show(aria-labelledby='headingOne' data-bs-parent='#accordionHeader')
+                    #collapseOneFooter.accordion-collapse.collapse.show(aria-labelledby='footerOne' data-bs-parent='#accordionFooter')
                         .accordion-body
                             .row.d-flex.align-items-center
                                 .col-2
@@ -23,21 +30,19 @@ footer.border-top
                                     li.pt-2
                                         | Call Center (Dalam Dan Luar Negeri) - bicara 131 : 
                                         a.text-primary(href="tel:+1500131") 1500131
-
-                                    li.pt-2
-                                        | Portal Pengaduan : 
-                                        a.text-primary(href="https://bicara131.bi.go.id/SignIn?returlUrl=%2F") bicara131.bi.go.id
-
                                     li.pt-2
                                         | Email 
                                         a.text-primary(href="mailto:bicara@bi.go.id") bicara@bi.go.id
-
+                                    li.pt-2
+                                        | Portal Pengaduan : 
+                                        a.text-primary(href="https://bicara131.bi.go.id/SignIn?returlUrl=%2F") bicara131.bi.go.id
+                                        a.btn.btn-sm.btn-secondary.ms-sm-2.my-2(href="/informasi-keuangan/pengaduan-bi.html") Pelajari Selengkapnya
                 .accordion-item
-                    h2.accordion-header#headingTwo
-                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo').
+                    h2.accordion-header#footerTwo
+                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseTwoFooter' aria-expanded='false' aria-controls='collapseTwoFooter').
                         Kementerian Pelindungan Pekerja Migran Indonesia / Badan Pelindungan Pekerja Migran Indonesia
                         
-                    #collapseTwo.accordion-collapse.collapse(aria-labelledby='headingTwo' data-bs-parent='#accordionHeader')
+                    #collapseTwoFooter.accordion-collapse.collapse(aria-labelledby='footerTwo' data-bs-parent='#accordionFooter')
                         .accordion-body
                             .row.d-flex.align-items-center
                                 .col-2
@@ -82,11 +87,11 @@ footer.border-top
                                         i.bi.bi-tiktok
 
                 .accordion-item
-                    h2.accordion-header#headingThree
-                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseThree' aria-expanded='false' aria-controls='collapseThree')
+                    h2.accordion-header#footerThree
+                    button.accordion-button.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#collapseThreeFooter' aria-expanded='false' aria-controls='collapseThreeFooter')
                         | Layanan Lapor Diri yang dilayani oleh Kementrian Luar Negeri
                         
-                    #collapseThree.accordion-collapse.collapse(aria-labelledby='headingThree' data-bs-parent='#accordionHeader')
+                    #collapseThreeFooter.accordion-collapse.collapse(aria-labelledby='footerThree' data-bs-parent='#accordionFooter')
                         .accordion-body
                             .row.d-flex.align-items-center
                                 .col-2

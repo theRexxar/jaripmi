@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id" page-class="pengaduan-bi">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
+    <link rel="canonical" href="https://jaripmi.info">
+    <link rel="alternate" hreflang="id" href="https://jaripmi.info">
+    <!-- favicon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+    <link rel="manifest" href="../img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" href="../img/favicon.ico">
+    <title>Pengaduan BI - Jari PMI</title>
+    <meta name="description" content="Pengaduan BI adalah layanan yang disediakan oleh Bank Indonesia untuk menangani pengaduan dan masukan dari masyarakat terkait layanan perbankan dan sistem pembayaran. Dengan layanan ini, masyarakat dapat menyampaikan pengaduan secara mudah dan cepat melalui berbagai saluran yang disediakan.">
+    <link rel="canonical" href="https://jaripmi.info">
+    <link rel="alternate" hreflang="id" href="https://jaripmi.info">
+    <meta property="og:image" content="../img/jaripmi-berdaya.jpg">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="627">
+    <meta property="og:locale" content="id_ID">
+    <meta meta property="og:type" content="website">
+    <meta property="og:description" content="Pengaduan BI adalah layanan yang disediakan oleh Bank Indonesia untuk menangani pengaduan dan masukan dari masyarakat terkait layanan perbankan dan sistem pembayaran. Dengan layanan ini, masyarakat dapat menyampaikan pengaduan secara mudah dan cepat melalui berbagai saluran yang disediakan.">
+    <meta property="og:site_name" content="Prakerja">
+    <meta property="og:url" content="../img/jaripmi-berdaya.jpg">
+    <meta name="twitter:card" content="../img/jaripmi-berdaya.jpg">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="Pengaduan BI - Jari PMI">
+    <meta name="twitter:description" content="Pengaduan BI adalah layanan yang disediakan oleh Bank Indonesia untuk menangani pengaduan dan masukan dari masyarakat terkait layanan perbankan dan sistem pembayaran. Dengan layanan ini, masyarakat dapat menyampaikan pengaduan secara mudah dan cepat melalui berbagai saluran yang disediakan.">
+    <meta name="twitter:image" content="../img/jaripmi-berdaya.jpg">
+    <meta name="twitter:image:width" content="1200">
+    <meta name="twitter:image:height" content="630">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://analytics.google.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.datatables.net">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;amp;display=swap">
+    <link rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" crossorigin>
+    <link rel="stylesheet" as="style" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.bootstrap5.css">
+    <link rel="stylesheet" href="../css/jaripmi.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- running google tag manager-->
+    <!-- Google tag (gtag.js)-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-D0GGEHZ1BX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-D0GGEHZ1BX');
+    </script><!-- Paste this right before your closing </head> tag -->
+    <script type="text/javascript">
+      (function (f, b) { if (!b.__SV) { var e, g, i, h; window.mixpanel = b; b._i = []; b.init = function (e, f, c) { function g(a, d) { var b = d.split("."); 2 == b.length && ((a = a[b[0]]), (d = b[1])); a[d] = function () { a.push([d].concat(Array.prototype.slice.call(arguments, 0))); }; } var a = b; "undefined" !== typeof c ? (a = b[c] = []) : (c = "mixpanel"); a.people = a.people || []; a.toString = function (a) { var d = "mixpanel"; "mixpanel" !== c && (d += "." + c); a || (d += " (stub)"); return d; }; a.people.toString = function () { return a.toString(1) + ".people (stub)"; }; i = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split( " "); for (h = 0; h < i.length; h++) g(a, i[h]); var j = "set set_once union unset remove delete".split(" "); a.get_group = function () { function b(c) { d[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); a.push([e, call2]); }; } for ( var d = {}, e = ["get_group"].concat( Array.prototype.slice.call(arguments, 0)), c = 0; c < j.length; c++) b(j[c]); return d; }; b._i.push([e, f, c]); }; b.__SV = 1.2; e = f.createElement("script"); e.type = "text/javascript"; e.async = !0; e.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ? MIXPANEL_CUSTOM_LIB_URL : "file:" === f.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"; g = f.getElementsByTagName("script")[0]; g.parentNode.insertBefore(e, g); } })(document, window.mixpanel || []);
+      // Near entry of your product, init Mixpanel
+      mixpanel.init("546fea434e83321b2336955ee73516d9", {
+          debug: false,
+          track_pageview: true,
+          persistence: "localStorage",
+      });
+      
+      
+      
+    </script>
+  </head>
+  <body>
+    <!-- Header -->
+    <!-- start header-->
+    <header class="site-main-header">
+      <div class="header-container container d-flex align-items-center px-4 px-md-0"><a class="site-logo" href="..//"><img src="../img/logo-pmi.svg" alt="Jari PMI"></a>
+        <ul class="site-header-buttons">
+          <li><a class="site-nav-trigger" href="#site-primary-nav">Menu<span></span></a></li>
+        </ul>
+      </div>
+    </header>
+    <!-- end header-->
+    <!-- Main content-->
+    <main class="site-main-content">
+      <!-- Hero Informasi Keuangan-->
+      <section class="section-hero">
+        <div class="container py-3 py-lg-4 px-4 px-md-0">
+          <div class="row d-flex align-items-center flex-row-reverse">
+            <div class="col-md-5 p-0"><img class="hero-image" src="../img/kirim-uang-ke-indonesia.svg" alt="Portal Pengaduan Bank Indonesia"></div>
+            <div class="col-md-7 mt-3 mt-md-0 content-hero">
+              <h1 class="display-4 font-weight-bold mb-3">Portal Pengaduan Bank Indonesia</h1>
+              <div class="col-lg-10">
+                <p class="text-secondary">
+                   Pengaduan BI adalah layanan yang disediakan oleh Bank Indonesia untuk menangani pengaduan dan masukan dari masyarakat terkait layanan perbankan dan sistem pembayaran. Dengan layanan ini, masyarakat dapat menyampaikan pengaduan secara mudah dan cepat melalui berbagai saluran yang disediakan.</p>
+                <p class="text-secondary">
+                   Kamu bisa mengikuti panduan dibawah ini untuk menyampaikan pengaduanmu ke Bank Indonesia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section> 
+        <div class="container pb-4 pb-lg-5 px-4 px-md-0">
+          <div class="row">
+            <aside class="jari-sidebar-nav col-lg-3 mb-4">
+              <nav class="pmi-scrollspy-nav"> 
+                <btn class="btn d-block d-lg-none btn-outline-primary trigger-menu-category"><i class="bi bi-list me-2"></i>Menu Kategori</btn>
+                <ol class="content-menu-category rounded">
+                  <li><a href="#petunjuk-penggunaan">Pengantar Petunjuk Penggunaan</a></li>
+                  <li><a href="#aduan-melalui-bicara">Aduan Melalui bicara131.bi.go.id</a></li>
+                  <li><a href="#aduan-melalui-bi">Aduan Melalui Portal BI.go.id</a></li>
+                </ol>
+              </nav>
+            </aside>
+            <article class="jari-sidebar-content col-lg-9 content-article" id="country-category-content">
+              <section class="pmi-scrollspy-content adjust-anchor" id="petunjuk-penggunaan">
+                <h4>Pengantar Pengaduan Kepada Bank Indonesia</h4>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 content-article">Portal Pengaduan Bank Indonesia merupakan layanan daring yang disediakan untuk memudahkan masyarakat dalam menyampaikan pengaduan terkait layanan keuangan, perbankan, maupun sistem pembayaran. Melalui portal ini, pengguna dapat mengajukan pengaduan secara cepat, mudah, dan transparan, serta memantau perkembangan penanganan pengaduan yang telah disampaikan. Portal ini juga menyediakan informasi dan panduan lengkap agar proses pengaduan dapat dilakukan dengan benar dan efektif.
+                    <ol>
+                      <li class="mb-2"> <strong>Alternatif 1 : <a href="#aduan-melalui-bicara">Aduan Melalui bicara131.bi.go.id</a></strong></li>
+                      <li class="mb-2"> <strong>Alternatif 2 : <a href="#aduan-melalui-bi">Aduan Melalui Portal BI.go.id</a></strong></li>
+                    </ol>
+                  </div>
+                </div>
+                <hr>
+              </section>
+              <section class="pmi-scrollspy-content adjust-anchor" id="aduan-melalui-bicara">
+                <h4>Aduan Melalui Bicara.go.id</h4>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 content-article">
+                    <p>Kamu bisa melakukan pengaduan konsumen terkait kendala yang kamu alami sebagai nasabah / pengguna dari penyedia jasa pembayaran (PJP) melalui langkah-langkah mudah berikut ini.</p>
+                    <ol class="list-group list-group-flush">
+                      <li class="mb-3">
+                        <p class="mb-1">Akses website portal aduan melalui <a target="_blank" class="text-link" href="https://bicara131.bi.go.id">https://bicara131.bi.go.id</a></p><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-1.jpg" alt="website bicara131.bi.go.id">
+                      </li>
+                      <li class="mb-3">
+                        <p class="mb-1">Pilih menu 'Daftar' pada bagian menu atas</p><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-daftar.jpg" alt="daftar bicara131.bi.go.id">
+                      </li>
+                      <li class="mb-3"> 
+                        <p class="mb-1">Lengkapi formulir pendaftaran dengan data yang valid dan benar</p><img class="img-thumbnail img-fluid w-50 mb-3" src="../img/info-keuangan/portal-aduan-bi/step-form-daftar.jpg" alt="lengkapi formulir pendaftaran">
+                        <p class="mb-1">Setelah formulir pendaftaran lengkap, klik tombol 'Daftar', kamu akan diarahkan ke halaman konfirmasi email jika berhasil mendaftar di portal aduan.</p><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-sukses-form.jpg" alt="sukses formulir pendaftaran">
+                      </li>
+                      <li class="mb-3">
+                        <p class="mb-1">Verifikasi email Kamu melalui email yang dikirimkan pada email terdaftar</p><img class="img-thumbnail img-fluid mb-3" src="../img/info-keuangan/portal-aduan-bi/step-email-verifikasi.jpg" alt="email berhasil terverifikasi">
+                        <p class="mb-1">Klik link pada email, setelah verifikasi email berhasil, kamu dapat masuk ke portal aduan menggunakan akun yang telah didaftarkan.</p><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-email-terverifikasi.jpg" alt="sukses formulir pendaftaran">
+                      </li>
+                      <li class="mb-3">
+                        <p class="mb-1">Masuk / Login ke akun Kamu melalui <a target="_blank" class="text-link" href="https://bicara131.bi.go.id">https://bicara131.bi.go.id</a></p><img class="img-thumbnail img-fluid w-50" src="../img/info-keuangan/portal-aduan-bi/step-login.jpg" alt="Login">
+                      </li>
+                      <li class="mb-3">
+                        <p class="mb-1">Buat pengaduan baru, dengan mengikuti langkah berikut:</p><img class="img-thumbnail img-fluid w-50" src="../img/info-keuangan/portal-aduan-bi/step-buat-aduan.png" alt="Buat Pengaduan">
+                        <ul class="mb-1">
+                          <li>Step 1: klik menu ‘Bantuan’</li>
+                          <li>Step 2: pilih ‘Kasus Saya’<br><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-kasus-saya.jpg" alt="Kasus Saya"></li>
+                          <li>Step 3: selanjutnya klik ‘Buat Tiket Perlindungan Konsumen’<br><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-buat-tiket.png" alt="Ketikkan Judul"></li>
+                          <li>Step 4: Ketikkan judul, dianjurkan mengikuti format yang sudah disediakan<br><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-aduan-baru.jpg" alt="Aduan Baru"></li>
+                          <li>Step 5: Isi form yang disediakan sesuai dengan kebutuhan<br><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-isi-form-aduan.jpg" alt="Isi Form Pengaduan"></li>
+                          <li>Step 6: upload file yang berkaitan dengan pengadu<br><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-upload-dokumen.jpg" alt="Upload File"></li>
+                          <li>Step 7: File bisa diupload bersamaan dengan syarat yang sudah tercantum pada portal dengan cara klik ‘browse’ dan gunakan multiple select dengan menahan tombol ‘Shift’ + klik ke dokumen-dokumen yang ingin ditambahkan</li>
+                          <li>Step 8: klik ‘Submit’<br><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-submit-aduan.jpg" alt="Submit"></li>
+                          <li>Step 9: tiket akan terlihat di daftar<br><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-daftar-aduan.jpg" alt="Tiket Terdaftar"></li>
+                        </ul>
+                      </li>
+                      <li class="mb-3">
+                        <p class="mb-1">Cek daftar kasus pengaduan yang telah dibuat</p><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-kasus-saya.jpg" alt="Daftar Kasus">
+                        <ul>
+                          <li>Step 1: klik menu ‘Bantuan’</li>
+                          <li>Step 2: pilih ‘Kasus Saya’</li>
+                          <li>Step 3: pilih case perlindungan konsumen yang diinginkan</li>
+                        </ul>
+                      </li>
+                      <li class="mb-3">
+                        <p class="mb-1">Kamu bisa melakukan konsultansi untuk kasus yang sudah kamu buat</p><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-kasus-saya.jpg" alt="Daftar Kasus">
+                        <ul>
+                          <li>Step 1: Konsumen dan penyelenggara bisa saling merespon case tersebut / melakukan pertukaran pendapat dengan cara klik ‘Add Comment’<br><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-add-comment.jpg" alt="Tambah Komentar"></li>
+                          <li>Step 2: Konsumen dan penyelenggara bisa melakukan pertukaran dokumen dengan klik ‘Add Comment’<br><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-masukan-komentar.jpg" alt="Masukkan Komentar"></li>
+                          <li>Step 3: Konsumen akan memutuskan hasil dari case perlindungan tersebut<br><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-unggah-dokumen.jpg" alt="Upload File"></li>
+                          <li>Step 4: Jika sudah Puas, konsumen bisa memilih ‘Selesai’. Apabila konsumen belum puas dengan hasil pertukaran pendapat, konsumen dapat memilik opsi ‘Permohonan Fasilitasi’<br><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-complete-comment.jpg" alt="lengkapi konsultasi"></li>
+                        </ul>
+                      </li>
+                      <li class="mb-3">
+                        <p class="mb-1">Kamu bisa mengajukan untuk `Permohonan Fasilitasi` terkait aduan Kamu</p>
+                        <ul>
+                          <li>Step 1: Jika konsumen memilih opsi ‘Permohonan Fasilitasi’ maka stakeholder harus mengisi field ‘Alasan Tidak Sepakat’<br><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-permohonan-fasilitasi.jpg" alt="Tambah permohonan"></li>
+                          <li>Step 2: ‘Klik Submit’</li>
+                          <li>Step 3: Konsumen menerima email notifikasi berisikan waktu dan tempat fasilitasi<br><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/step-complete-fasilitasi.jpg" alt="Upload File"></li>
+                        </ul>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+                <hr>
+              </section>
+              <section class="pmi-scrollspy-content adjust-anchor" id="aduan-melalui-bi">
+                <h4>Aduan Melalui Portal bi.go.id</h4>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sm-12 content-article">
+                    <p>Kamu bisa melakukan pengaduan konsumen terkait kendala yang kamu alami sebagai nasabah / pengguna dari penyedia jasa pembayaran (PJP) melalui langkah-langkah mudah berikut ini.</p>
+                    <ol class="list-group list-group-flush">
+                      <li class="mb-3">
+                        <p class="mb-1">Akses website portal aduan melalui <a target="_blank" class="text-link" href="https://bi.go.id">https://bi.go.id</a></p><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/portal-bi.jpg" alt="website bi.go.id">
+                      </li>
+                      <li class="mb-3">
+                        <p class="mb-1">Pilih menu ‘Layanan’</p><img class="img-thumbnail img-fluid" src="../img/info-keuangan/portal-aduan-bi/layanan-konsumen.jpg" alt="menu layanan konsumen">
+                      </li>
+                      <li class="mb-3"> 
+                        <p class="mb-1">Pilih sub menu ‘Pengaduan Konsumen’</p><img class="img-thumbnail img-fluid w-50 mb-3" src="../img/info-keuangan/portal-aduan-bi/daftar-layanan.jpg" alt="daftar layanan">
+                      </li>
+                      <li class="mb-3"> 
+                        <p class="mb-1">kamu bisa melakukan pelaporan dengan pilihan lain seperti : 
+                          <ul> 
+                            <li>Telepon: Contact Center Bank Indonesia (BI Bicara) Telp <a href="tel:131">131</a> dan <a href="tel:1500131">1500131</a> (dari luar negeri)</li>
+                            <li>Email: Surat Elektronik atau E-mail ke <a href="mailto:bicara@bi.go.id">bicara@bi.go.id</a></li>
+                            <li>Surat Tertulis kepada:<br>Kantor Perwakilan Bank Indonesia (KPw BI) yang terdekat dengan domisili Konsumen. <br>Untuk Konsumen di wilayah Jakarta, Bogor, Depok dan Bekasi dapat menyampaikan kepada<br>Kantor Perwakilan Bank Indonesia DKI Jakarta Divisi Perlindungan Konsumen Sistem Pembayaran KPw DKI Learning Center <br>Jl. Prajurit KKO Usman dan Harun No.42 RT/RW : 01/05 Se​​nen Jakarta Pusat 10410</li>
+                            <li>Layanan Bicara Daring melalui aplikasi Webex dengan cara klik tautan berikut: <a href="https://bankindonesia.webex.com/join/bicara" target="_blank">https://bankindonesia.webex.com/join/bicara</a>.</li>
+                          </ul>
+                        </p>
+                      </li>
+                    </ol>
+                  </div>
+                </div><a class="btn btn-primary btn-lg" href="https://bicara131.bi.go.id" target="_blank" title="Cek Selengkapnya di portal BI">Buat Laporan Pengaduan Sekarang</a>
+                <hr>
+              </section>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer-->
+    <div class="d-block d-sm-none">
+      <div class="mb-0 alert alert-warning alert-dismissible fade show fixed-bottom rounded-0 border-0" role="alert"><strong class="me-2"><i class="bi bi-headset me-2"></i><span style="font-size: 0.75rem;">Portal Layanan BI</span></strong><a class="btn btn-outline-secondary rounded-1 text-dark" href="/informasi-keuangan/pengaduan-bi.html" title="Portal layanan Bank BI" style="font-size: 0.75rem;">Pelajari Selengkapnya</a>
+        <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close" style="font-size: 0.75rem;"></button>
+      </div>
+    </div>
+    <footer class="border-top">
+      <div class="container py-3 py-lg-4 px-4 px-md-0">
+        <div class="contact-box rounded-3 overflow-hidden mt-4 mt-lg-0 mb-lg-5 mb-4">
+          <div class="contact-box-header p-4 text-center mb-4">
+            <h5 class="m-0 text-white">Layanan Aduan</h5>
+          </div>
+          <div class="accordion" id="accordionFooter">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="footerOne"></h2>
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneFooter" aria-expanded="true" aria-controls="collapseOneFooter">Layanan Pengaduan Bank Indonesia</button>
+              <div class="accordion-collapse collapse show" id="collapseOneFooter" aria-labelledby="footerOne" data-bs-parent="#accordionFooter">
+                <div class="accordion-body">
+                  <div class="row d-flex align-items-center">
+                    <div class="col-2"><img class="mw-100" src="../img/logo-bank-indonesia.png" alt="Kementerian Pelindungan Pekerja Migran Indonesia / Badan Pelindungan Pekerja Migran Indonesia" style="max-height:4rem"></div>
+                    <div class="col-10">
+                      <h6 class="fs-7">Portal Layanan Pengaduan Bank Indonesia</h6>
+                    </div>
+                  </div>
+                  <div class="fs-7 mt-2">
+                    <ul> 
+                      <li class="pt-2">Call Center (Dalam Dan Luar Negeri) - bicara 131 : <a class="text-primary" href="tel:+1500131">1500131</a></li>
+                      <li class="pt-2">Email <a class="text-primary" href="mailto:bicara@bi.go.id">bicara@bi.go.id</a></li>
+                      <li class="pt-2">Portal Pengaduan : <a class="text-primary" href="https://bicara131.bi.go.id/SignIn?returlUrl=%2F">bicara131.bi.go.id</a><a class="btn btn-sm btn-secondary ms-sm-2 my-2" href="/informasi-keuangan/pengaduan-bi.html">Pelajari Selengkapnya</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="footerTwo"></h2>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoFooter" aria-expanded="false" aria-controls="collapseTwoFooter">
+                Kementerian Pelindungan Pekerja Migran Indonesia / Badan Pelindungan Pekerja Migran Indonesia
+                
+              </button>
+              <div class="accordion-collapse collapse" id="collapseTwoFooter" aria-labelledby="footerTwo" data-bs-parent="#accordionFooter">
+                <div class="accordion-body">
+                  <div class="row d-flex align-items-center">
+                    <div class="col-2"><img class="mw-100" src="../img/LogoKPPMIBP2MI.webp" alt="Kementerian Pelindungan Pekerja Migran Indonesia / Badan Pelindungan Pekerja Migran Indonesia" style="max-height:4rem"></div>
+                    <div class="col-10">
+                      <h6 class="fs-7">Kementerian Pelindungan Pekerja Migran Indonesia / Badan Pelindungan Pekerja Migran Indonesia</h6>
+                    </div>
+                  </div>
+                  <div class="fs-7 mt-2">
+                    <ul> 
+                      <li class="pt-2">Call Center - Telepon Halo PMI : <a class="text-primary" href="tel:+628001000">08001000</a></li>
+                      <li class="pt-2">Telepon dari Luar Negeri : <a class="text-primary" href="tel:+622129244810">(021) 29244810</a></li>
+                      <li class="pt-2">Email <a class="text-primary" href="mailto:halotki@bp2mi.go.id">halotki@bp2mi.go.id</a></li>
+                      <li class="pt-2">Faksimili : <a class="text-primary" href="#" 021>29244810</a></li>
+                    </ul>
+                  </div>
+                  <div class="mt-4">
+                    <h6>Sosial Media </h6>
+                    <div><a class="p-2 fs-5 me-2" href="https://www.facebook.com/bp2mi.ri" target="_blank"><i class="bi bi-facebook"></i></a><a class="p-2 fs-5 me-2" href="https://x.com/bp2mi_ri" target="_blank"><i class="bi bi-twitter"></i></a><a class="p-2 fs-5 me-2" href="https://www.instagram.com/bp2mi_ri" target="_blank"><i class="bi bi-instagram"></i></a><a class="p-2 fs-5 me-2" href="https://www.youtube.com/@BP2MI_RI" target="_blank"><i class="bi bi-youtube"></i></a><a class="p-2 fs-5" href="https://www.tiktok.com/@bp2mi.ri" target="_blank"><i class="bi bi-tiktok"></i></a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="footerThree"></h2>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreeFooter" aria-expanded="false" aria-controls="collapseThreeFooter">Layanan Lapor Diri yang dilayani oleh Kementrian Luar Negeri</button>
+              <div class="accordion-collapse collapse" id="collapseThreeFooter" aria-labelledby="footerThree" data-bs-parent="#accordionFooter">
+                <div class="accordion-body">
+                  <div class="row d-flex align-items-center">
+                    <div class="col-2"><img class="mw-100" src="../img/logo-kemenlu.png" alt="BP2MI (Badan Perlindungan Pekerja Migran Indonesia)" style="max-height:4rem"></div>
+                    <div class="col-10">
+                      <h6 class="fs-7">Layanan Lapor Diri yang dilayani oleh Kementrian Luar Negeri</h6>
+                    </div>
+                  </div>
+                  <div class="content-article">
+                    <div class="fs-7 mt-2">
+                      <p>Video Tutorial Lapor Diri : <a href="https://www.youtube.com/watch?v=B8eIcjcN40E" target="_blank">https://www.youtube.com/watch?v=B8eIcjcN40E</a></p>
+                    </div>
+                    <div class="fs-7 mt-2">
+                      <p>Manfaat: </p>
+                      <ol> 
+                        <li>Mempermudah Pengurusan Dokumen atau Surat-Surat</li>
+                        <li>Mempercepat pemberian bantuan untuk kendala WNI di Luar Negeri</li>
+                        <li>Akurasi Informasi WNI di Luar Negeri</li>
+                        <li>Kemudahan Akses Layanan</li>
+                      </ol>
+                    </div>
+                    <div class="fs-7 mt-2">
+                      <p>Daftar melalui :<a href="https://peduliwni.kemlu.go.id/" target="_blank">https://peduliwni.kemlu.go.id/</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="mb-4"><img src="../img/logo-pmi.svg" alt="Jari PMI"></div>
+            <div class="pe-lg-4">
+              <p class="fs-7 text-secondary">Diperlukan adanya Pusat Informasi bagi PMI dan Keluarga yang dapat memenuhi aspek Pelindungan dan Pemberdayaan sehingga terwujudnya “PMI Berdaya” dikarenakan kesenjangan informasi yang dapat diakses oleh PMI</p>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="row"> 
+              <div class="col-md-4 mt-4 mt-lg-0">
+                <h6>Jari PMI</h6>
+                <ul class="footer-nav">
+                  <li> <a href="..//">Beranda </a></li>
+                  <li> <a href="../latar-belakang/">Latar Belakang </a></li>
+                  <li> <a href="../latar-belakang#VisiMisi">Visi Misi </a></li>
+                  <li> <a href="../artikel/">Artikel </a></li>
+                  <li> <a href="../tanyajawab/">Tanya Jawab</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4 mt-4 mt-lg-0">
+                <h6>Pelatihan</h6>
+                <ul class="footer-nav">
+                  <li> <a href="..//pelatihan">Bahasa Asing </a></li>
+                  <li> <a href="..//pelatihan">UMKM</a></li>
+                  <li> <a href="..//pelatihan">Pengelolaan Uang</a></li>
+                  <li> <a href="..//pelatihan">Pelatihan Lainnya</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4 mt-4 mt-lg-0">
+                <h6>Negara Tujuan</h6>
+                <ul class="footer-nav" id="list-country-footer">
+                  <li> <span class="skeleton-box rounded-pill" style="width:60%"></span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row border-top mt-4">
+          <p class="text-center fs-8 text-secondary mb-0 mt-3">Copyright &copy; 2025 Jari PMI</p>
+        </div>
+      </div>
+      <button class="scroll-top"><i class="bi bi-chevron-up"></i></button>
+    </footer>
+    <!-- Header Menu-->
+    <!-- start overlay-->
+    <div class="site-overlay"></div>
+    <!-- end overlay-->
+    <!-- start site nav-->
+    <nav class="site-nav w-100 d-flex justify-content-end">
+      <div class="site-primary-nav is-fixed" id="site-primary-nav">
+        <ul class="nav-group">
+          <li><a href="../">Beranda</a></li>
+          <li class="has-children small-children"><a href="#0">Informasi Keuangan</a>
+            <ul class="site-secondary-nav has-see-all is-hidden pb-3">
+              <li class="go-back"><a href="#0">Menu</a></li>
+              <li><a href="../informasi-keuangan/">Edukasi Keuangan</a></li>
+              <li><a href="../informasi-keuangan/qris-cross-border.html">QRIS Cross Border</a></li>
+              <li><a class="is-active" href="../informasi-keuangan/pengaduan-bi.html">Portal Pengaduan BI</a></li>
+              <li><a href="../informasi-keuangan/peduli-kenali-laporkan.html">Peduli Kenali Adukan (PEKA)</a></li>
+            </ul>
+          </li>
+          <li><a href="../pelatihan/">Pelatihan</a></li>
+          <li class="has-children small-children"><a>Negara Tujuan</a>
+            <ul class="site-secondary-nav has-see-all is-hidden" id="list-country-header">
+              <li class="go-back"><a href="#0">Menu</a></li>
+              <li class="see-all"></li>
+            </ul>
+          </li>
+          <li><a href="../artikel/">Artikel</a></li>
+          <li>
+            <button class="btn btn-cta-header btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#layananAduan"> <i class="bi bi-telephone-fill me-2 text-white"></i>Layanan Aduan</button>
+          </li>
+        </ul>
+      </div>
+      <!-- primary-nav-->
+    </nav>
+    <!-- site-nav-->
+    <!-- Modals-->
+    <div class="modal modal-lg fade" id="layananAduan" tabindex="-1" aria-labelledby="layananAduanLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header align-items-start align-items-lg-center">
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="contact-box overflow-hidden mt-4 mt-lg-0 mb-lg-0">
+              <div class="contact-box-header p-4 text-center rounded-3 mb-3">
+                <h5 class="m-0 text-white">Layanan Aduan</h5>
+              </div>
+              <div class="row"> 
+                <div class="accordion" id="accordionHeader">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne"></h2>
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Layanan Pengaduan Bank Indonesia</button>
+                    <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionHeader">
+                      <div class="accordion-body">
+                        <div class="row d-flex align-items-center">
+                          <div class="col-2"><img class="mw-100" src="../img/logo-bank-indonesia.png" alt="Kementerian Pelindungan Pekerja Migran Indonesia / Badan Pelindungan Pekerja Migran Indonesia" style="max-height:4rem"></div>
+                          <div class="col-10">
+                            <h6 class="fs-7">Portal Layanan Pengaduan Bank Indonesia</h6>
+                          </div>
+                        </div>
+                        <div class="fs-7 mt-2">
+                          <ul> 
+                            <li class="pt-2">Call Center (Dalam Dan Luar Negeri) - bicara 131 : <a class="text-primary" href="tel:+1500131">1500131</a></li>
+                            <li class="pt-2">Portal Pengaduan : <a class="text-primary" href="https://bicara131.bi.go.id/SignIn?returlUrl=%2F">bicara131.bi.go.id</a></li>
+                            <li class="pt-2">Email <a class="text-primary" href="mailto:bicara@bi.go.id">bicara@bi.go.id</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo"></h2>
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Kementerian Pelindungan Pekerja Migran Indonesia / Badan Pelindungan Pekerja Migran Indonesia
+                      
+                    </button>
+                    <div class="accordion-collapse collapse" id="collapseTwo" aria-labelledby="headingTwo" data-bs-parent="#accordionHeader">
+                      <div class="accordion-body">
+                        <div class="row d-flex align-items-center">
+                          <div class="col-2"><img class="mw-100" src="../img/LogoKPPMIBP2MI.webp" alt="Kementerian Pelindungan Pekerja Migran Indonesia / Badan Pelindungan Pekerja Migran Indonesia" style="max-height:4rem"></div>
+                          <div class="col-10">
+                            <h6 class="fs-7">Kementerian Pelindungan Pekerja Migran Indonesia / Badan Pelindungan Pekerja Migran Indonesia</h6>
+                          </div>
+                        </div>
+                        <div class="fs-7 mt-2">
+                          <ul> 
+                            <li class="pt-2">Call Center - Telepon Halo PMI : <a class="text-primary" href="tel:+628001000">08001000</a></li>
+                            <li class="pt-2">Telepon dari Luar Negeri : <a class="text-primary" href="tel:+622129244810">(021) 29244810</a></li>
+                            <li class="pt-2">Email <a class="text-primary" href="mailto:halotki@bp2mi.go.id">halotki@bp2mi.go.id</a></li>
+                            <li class="pt-2">Faksimili : <a class="text-primary" href="#" 021>29244810</a></li>
+                          </ul>
+                        </div>
+                        <div class="mt-4">
+                          <h6>Sosial Media </h6>
+                          <div><a class="p-2 fs-5 me-2" href="https://www.facebook.com/bp2mi.ri" target="_blank"><i class="bi bi-facebook"></i></a><a class="p-2 fs-5 me-2" href="https://x.com/bp2mi_ri" target="_blank"><i class="bi bi-twitter"></i></a><a class="p-2 fs-5 me-2" href="https://www.instagram.com/bp2mi_ri" target="_blank"><i class="bi bi-instagram"></i></a><a class="p-2 fs-5 me-2" href="https://www.youtube.com/@BP2MI_RI" target="_blank"><i class="bi bi-youtube"></i></a><a class="p-2 fs-5" href="https://www.tiktok.com/@bp2mi.ri" target="_blank"><i class="bi bi-tiktok"></i></a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree"></h2>
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Layanan Lapor Diri yang dilayani oleh Kementrian Luar Negeri</button>
+                    <div class="accordion-collapse collapse" id="collapseThree" aria-labelledby="headingThree" data-bs-parent="#accordionHeader">
+                      <div class="accordion-body">
+                        <div class="row d-flex align-items-center">
+                          <div class="col-2"><img class="mw-100" src="../img/logo-kemenlu.png" alt="BP2MI (Badan Perlindungan Pekerja Migran Indonesia)" style="max-height:4rem"></div>
+                          <div class="col-10">
+                            <h6 class="fs-7">Layanan Lapor Diri yang dilayani oleh Kementrian Luar Negeri</h6>
+                          </div>
+                        </div>
+                        <div class="content-article">
+                          <div class="fs-7 mt-2">
+                            <p>Video Tutorial Lapor Diri : <a href="https://www.youtube.com/watch?v=B8eIcjcN40E" target="_blank">https://www.youtube.com/watch?v=B8eIcjcN40E</a></p>
+                          </div>
+                          <div class="fs-7 mt-2">
+                            <p>Manfaat: </p>
+                            <ol> 
+                              <li>Mempermudah Pengurusan Dokumen atau Surat-Surat</li>
+                              <li>Mempercepat pemberian bantuan untuk kendala WNI di Luar Negeri</li>
+                              <li>Akurasi Informasi WNI di Luar Negeri</li>
+                              <li>Kemudahan Akses Layanan</li>
+                            </ol>
+                          </div>
+                          <div class="fs-7 mt-2">
+                            <p>Daftar melalui :<a href="https://peduliwni.kemlu.go.id/" target="_blank">https://peduliwni.kemlu.go.id/</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button class="btn btn-outline-primary" type="button" data-bs-dismiss="modal">Tutup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="../js/jquery-1.11.3.min.js"></script>
+  <script src="../js/jquery.mobile.custom.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+  <script src="https://cdn.datatables.net/2.1.8/js/dataTables.bootstrap5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore-min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/keuangan-dist.js"></script>
+</html>

@@ -354,7 +354,7 @@ function homeLoadArticle() {
 	if (appendTarget.length) {
 		$.ajax({
 			method: "GET",
-			url: apiURL + '/api/articles?populate[0]=meta_seo&populate[1]=image&populate[2]=article_tags&populate[3]=article_category&sort[0][createdAt]=desc&pagination[pageSize]=6', 
+			url: apiURL + '/api/articles?populate[1]=image&populate[2]=article_tags&populate[3]=article_category&sort[0][createdAt]=desc&pagination[pageSize]=6', 
 			headers: {"Authorization": "Bearer " + tkn},
 			dataType: 'json'
 		}).done(function(data) {
@@ -552,7 +552,16 @@ function homeLoadCourse() {
 
 // running script
 jQuery(document).ready(function($){
-	//if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
+	// trigger slider home
+	const carouselHero = document.querySelector('#carouseHero')
+
+	if (carouselHero) {
+		const carousel = new bootstrap.Carousel(carouselHero, {
+			interval: 4000,
+			touch: true
+		})
+		//if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
+	}
 	//move nav element position according to window width
 	moveNavigation();
 	$(window).on('resize', function(){

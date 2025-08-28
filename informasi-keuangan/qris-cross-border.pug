@@ -1,0 +1,31 @@
+//- start variable
+- var pageActive = 'qris-cross-border'
+- var baseURL = '../'
+- var contentDescription = {}
+- ogImageURL = baseURL+"img/jaripmi-berdaya.jpg"
+- contentDescription.title = "QRIS Cross Border - Jari PMI"
+- contentDescription.description = "QRIS Antarnegara adalah solusi pembayaran digital yang memudahkan wisatawan dan pelaku usaha untuk bertransaksi lintas negara. Dengan QRIS Antarnegara, wisatawan Indonesia dapat dengan mudah bertransaksi di luar negeri menggunakan aplikasi pembayaran domestik untuk memindai kode QR di merchant negara mitra. Sebaliknya, wisatawan internasional yang datang ke Indonesia juga dapat melakukan pembayaran di Indonesia hanya dengan memindai QRIS di merchant menggunakan aplikasi pembayaran yang berpartisipasi."
+
+doctype html
+html(lang="id" page-class="home")
+    include ../pug/includes/html_head.pug
+    body
+        // Header 
+        include ../pug/includes/nav_mobile.pug
+
+        // Main content
+        main.site-main-content
+            include ../pug/qris-cross-border/section_hero.pug
+            include ../pug/qris-cross-border/section_content.pug
+
+        // Footer
+        include ../pug/includes/footer.pug
+
+        // Header Menu
+        include ../pug/includes/nav_desktop.pug
+
+        // Modals
+        include ../pug/includes/modal.pug
+
+    include ../pug/includes/html_foot.pug
+    script(src=baseURL+'js/keuangan-dist.js')

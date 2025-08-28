@@ -1,0 +1,39 @@
+section.section-hero.bg-pmi-blue-50
+  .container.pt-lg-3.pt-lg-4.px-0.w-100.overflow-x-hidden
+    .row.d-flex.align-items-center.flex-row-reverse
+        #carouseHero.carousel.slide.carousel-fade.carousel-dark(data-bs-ride='carousel')
+            .carousel-indicators
+                button.active(type='button' data-bs-target='#carouseHero' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+                button(type='button' data-bs-target='#carouseHero' data-bs-slide-to='1' aria-label='Slide 2')
+                button(type='button' data-bs-target='#carouseHero' data-bs-slide-to='2' aria-label='Slide 3')
+            .carousel-inner
+                .carousel-item
+                    a(href='/informasi-keuangan/pengaduan-webportal-bank-indonesia.html' title="Portal Layanan Bicara 131")
+                        img.d-block.w-100(src='/img/hero/portal-layanan-bicara-131.webp' alt='Portal Layanan Bicara 131' style="max-height: 720px; object-fit: cover; object-position: center;") 
+                    .carousel-caption.d-none.d-md-block.b.bg-white.rounded.bg-opacity-75
+                        h5 ⁠Pengaduan Webportal Bank Indonesia
+                        p Layanan pengaduan bagi masyarakat terkait layanan sistem pembayaran yang diselenggarakan oleh penyelenggara sistem pembayaran
+                        p 
+                            a.btn.btn-gradient.btn-lg(href='/informasi-keuangan/pengaduan-webportal-bank-indonesia.html') Selengkapnya
+                .carousel-item.active
+                    a(href='/informasi-keuangan/qris-cross-border.html' title="QRIS Cross Border")
+                        img.d-block.w-100(src='/img/hero/qris-cross-border.webp' alt='QRIS Cross Border' style="max-height: 720px; object-fit: cover; object-position: center;") 
+                    .carousel-caption.d-none.d-md-block.b.bg-white.rounded.bg-opacity-75
+                        h5 ⁠QRIS Cross Border
+                        p QRIS Antarnegara adalah solusi pembayaran digital yang memudahkan wisatawan dan pelaku usaha untuk bertransaksi lintas negara
+                        p 
+                            a.btn.btn-gradient.btn-lg(href='/informasi-keuangan/qris-cross-border.html') Selengkapnya
+                .carousel-item
+                    a(href='/informasi-keuangan/kampanye-peka.html' title="Kampanye PeKA")
+                        img.d-block.w-100(src='/img/hero/kampanye-peka.webp' alt='Image Hero Jari PMI' style="max-height: 720px; object-fit: cover; object-position: center;") 
+                    //- .carousel-caption.d-none.d-md-block.b.bg-white.rounded.bg-opacity-75
+                        h5 Kampanye PeKA
+                        p Bikin kamu jadi lebih sadar dan paham tentang berbagai produk dan layanan keuanga​n. Kamu jadi konsumen cerdas yang bisa buat keputusan keuangan dengan tepat.
+                        p 
+                            a.btn.btn-gradient.btn-lg(href='/informasi-keuangan/kampanye-peka.html') Selengkapnya
+            button.carousel-control-prev(type='button' data-bs-target='#carouseHero' data-bs-slide='prev')
+                span.carousel-control-prev-icon(aria-hidden='true')
+                span.visually-hidden Previous
+            button.carousel-control-next(type='button' data-bs-target='#carouseHero' data-bs-slide='next')
+                span.carousel-control-next-icon(aria-hidden='true')
+                span.visually-hidden Next

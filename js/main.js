@@ -175,7 +175,7 @@ function renderArticleCard (data) {
 	return `<div class="swiper-slide">
 			<div class="card article-card rounded-3">
 				<a class="text-decoration-none" href="${ROOT_PATH}/artikel/artikel-detail.html?title=${data.title.replace(/\s+/gi, '-').toLowerCase()}&id=${data.documentId}">
-					<div class="article-card-cover"><img class="card-img-top" loading="lazy" src="${data.image[0].formats.medium.url}" alt="${data.title}"/></div>
+					<div class="article-card-cover"><img class="card-img-top" loading="lazy" src="${data.image[0].formats.small.url}" alt="${data.title}"/></div>
 					<div class="article-card-body d-flex flex-column text-start p-3 justify-content-end">
 						<div>
 							<div class="mb-2"><span class="badge text-bg-info fw-normal">${data.article_category.name}</span></div>
@@ -194,7 +194,7 @@ function renderArticleList (data) {
 	return `<div class="col-12 col-md-6 col-lg-4 mb-4">
 		<div class="card article-card article-card-short rounded-3">
 			<a class="text-decoration-none" href="${ROOT_PATH}/artikel/artikel-detail.html?title=${data.title.replace(/\s+/gi, '-').toLowerCase()}&id=${data.documentId}">
-				<div class="article-card-cover"><img class="card-img-top" loading="lazy" src="${data.image[0].formats.medium.url}" alt="${data.title}"/></div>
+				<div class="article-card-cover"><img class="card-img-top" loading="lazy" src="${data.image[0].formats.small.url}" alt="${data.title}"/></div>
 				<div class="article-card-body d-flex flex-column text-start p-3 justify-content-end">
 					<div>
 						<div class="mb-2"><span class="badge text-bg-info fw-normal">${data.article_category.name}</span></div>

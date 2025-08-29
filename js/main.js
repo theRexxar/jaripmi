@@ -568,6 +568,8 @@ jQuery(document).ready(function($){
 		(!window.requestAnimationFrame) ? setTimeout(moveNavigation, 300) : window.requestAnimationFrame(moveNavigation);
 	});
 
+	$('#adsModal').modal('show');
+
 	//mobile - open lateral menu clicking on the menu icon
 	$('.site-nav-trigger').on('click', function(event){
 		event.preventDefault();
@@ -697,7 +699,6 @@ jQuery(document).ready(function($){
     });
   
 })(jQuery);
-
 
 // Remove min height
 setTimeout(function() {

@@ -1,0 +1,31 @@
+//- start variable
+- var pageActive = 'geber-pk'
+- var baseURL = '../'
+- var contentDescription = {}
+- ogImageURL = baseURL+"img/jaripmi-berdaya.jpg"
+- contentDescription.title = "GEBER PK - Jari PMI"
+- contentDescription.description = "GEBER PK adalah layanan yang disediakan oleh Jari PMI untuk membantu Pekerja Migran Indonesia (PMI) dalam mengakses informasi dan edukasi seputar keamanan bertransaksi. Dengan layanan ini, PMI dapat lebih memahami risiko dan cara melindungi diri dari penipuan dalam bertransaksi keuangan."
+
+doctype html
+html(lang="id" page-class="pengaduan-bi")
+    include ../pug/includes/html_head.pug
+    body
+        // Header 
+        include ../pug/includes/nav_mobile.pug
+
+        // Main content
+        main.site-main-content
+            include ../pug/geber/section_hero.pug
+            include ../pug/geber/section_content.pug
+
+        // Footer
+        include ../pug/includes/footer.pug
+
+        // Header Menu
+        include ../pug/includes/nav_desktop.pug
+
+        // Modals
+        include ../pug/includes/modal.pug
+
+    include ../pug/includes/html_foot.pug
+    script(src=baseURL+'js/keuangan-dist.js')

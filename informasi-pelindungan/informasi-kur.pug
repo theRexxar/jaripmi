@@ -1,0 +1,30 @@
+//- start variable
+- var pageActive = 'informasi-kur'
+- var baseURL = '../'
+- var contentDescription = {}
+- ogImageURL = baseURL+"img/jaripmi-berdaya.jpg"
+- contentDescription.title = "Informasi Kur - Jari PMI"
+- contentDescription.description = "Tips migrasi aman untuk Pekerja Migran Indonesia (PMI). Pelajari cara mempersiapkan mental, fisik, bahasa, kompetensi, dokumen, hingga etos kerja agar sukses dan terlindungi saat bekerja di luar negeri."
+
+doctype html
+html(lang="id" page-class="home")
+    include ../pug/includes/html_head.pug
+    body
+        // Header 
+        include ../pug/includes/nav_mobile.pug
+
+        // Main content
+        main.site-main-content
+            include ../pug/informasi-kur/section_hero.pug
+            include ../pug/informasi-kur/section_content.pug
+        // Footer
+        include ../pug/includes/footer.pug
+
+        // Header Menu
+        include ../pug/includes/nav_desktop.pug
+
+        // Modals
+        include ../pug/includes/modal.pug
+
+    include ../pug/includes/html_foot.pug
+    script(src=baseURL+'js/keuangan-dist.js')

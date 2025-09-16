@@ -1,0 +1,31 @@
+//- start variable
+- var pageActive = 'biaya-kiriman-pmi'
+- var baseURL = '../'
+- var contentDescription = {}
+- ogImageURL = baseURL+"img/jaripmi-berdaya.jpg"
+- contentDescription.title = "informasi mengenai pembebasan biaya masuk barang kiriman PMI - Jari PMI"
+- contentDescription.description = "Informasi pembebasan biaya masuk barang kiriman Pekerja Migran Indonesia (PMI) sesuai Peraturan Menteri Keuangan Nomor 141 Tahun 2023. Ketahui syarat, ketentuan, dan fasilitas bebas bea masuk untuk barang kiriman, barang bawaan, serta barang pindahan PMI."
+
+doctype html
+html(lang="id" page-class="home")
+    include ../pug/includes/html_head.pug
+    body
+        // Header 
+        include ../pug/includes/nav_mobile.pug
+
+        // Main content
+        main.site-main-content
+            //- include ../pug/includes/header_gap.pug
+            include ../pug/biaya-kiriman-pmi/section_hero.pug
+            include ../pug/biaya-kiriman-pmi/section_content.pug
+        // Footer
+        include ../pug/includes/footer.pug
+
+        // Header Menu
+        include ../pug/includes/nav_desktop.pug
+
+        // Modals
+        include ../pug/includes/modal.pug
+
+    include ../pug/includes/html_foot.pug
+    script(src=baseURL+'js/keuangan-dist.js')

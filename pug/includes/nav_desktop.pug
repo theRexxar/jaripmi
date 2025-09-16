@@ -5,8 +5,8 @@
 nav.site-nav.w-100.d-flex.justify-content-end
   #site-primary-nav.site-primary-nav.is-fixed
     ul.nav-group
-        li
-            a(href="/" class={"is-active" : pageActive === 'beranda'}) Beranda
+        //- li
+        //-     a(href="/" class={"is-active" : pageActive === 'beranda'}) Beranda
         li.has-children.small-children
             a(href='#0') Informasi Keuangan
             ul.site-secondary-nav.has-see-all.is-hidden.pb-3
@@ -20,7 +20,7 @@ nav.site-nav.w-100.d-flex.justify-content-end
                     a(href=baseURL+'informasi-keuangan/pengaduan-bi.html' class={"is-active" : pageActive === 'pengaduan-bi'}) Portal Pengaduan BI
                 li
                     a(href=baseURL+'informasi-keuangan/peduli-kenali-laporkan.html' class={"is-active" : pageActive === 'peka'}) Peduli Kenali Adukan (PEKA)
-        li
+        //- li
             a(href=baseURL+'pelatihan/' class={"is-active" : pageActive === 'pelatihan'}) Pelatihan
         
         li.has-children.small-children
@@ -32,13 +32,34 @@ nav.site-nav.w-100.d-flex.justify-content-end
                     //- a.anchor.arrow-move(href=baseURL+'negara/')
                         | Selengkapnya
                         i.icon-angle-right
-        li
-            a(href=baseURL+"artikel/" class={"is-active" : pageActive === 'artikel'}) Artikel
-            
+        li.has-children.small-children
+            a(href='#0') Informasi &amp; Pelindungan
+            ul.site-secondary-nav.has-see-all.is-hidden.pb-3
+                li.go-back
+                    a(href='#0') Menu
+                li
+                    a(href=baseURL+'informasi-pelindungan/biaya-kiriman-pmi.html' class={"is-active" : pageActive === 'biaya-kiriman-pmi'}) Bebas Biaya Kiriman PMI
+                li
+                    a(href=baseURL+'informasi-pelindungan/tips-migrasi-aman.html' class={"is-active" : pageActive === 'tips-migrasi-aman'}) Tips Migrasi Aman
+                li
+                    a(href=baseURL+'informasi-pelindungan/informasi-kur.html' class={"is-active" : pageActive === 'pengaduan-bi'}) Informasi KUR Penempatan
+                li
+                    a(href=baseURL+"artikel/" class={"is-active" : pageActive === 'artikel'}) Artikel PMI
+
+        li.has-children.small-children
+            a(href='#0') Pelatihan &amp; Komunitas PMI
+            ul.site-secondary-nav.has-see-all.is-hidden.pb-3
+                li.go-back
+                    a(href='#0') Menu
+                li
+                    a(href=baseURL+'pelatihan/' class={"is-active" : pageActive === 'pelatihan'}) Pelatihan
+                li
+                    a(href=baseURL+'komunitas/profil-purna-pmi.html' class={"is-active" : pageActive === 'profil-purna-pmi'}) Profil Purna PMI
+
         li
             button.btn.btn-cta-header.btn-primary(type="button" data-bs-toggle="modal" data-bs-target="#layananAduan") 
                 i.bi.bi-telephone-fill.me-2.text-white
-                | Layanan Aduan
+                | Pengaduan
     //- ul.nav-group
     //-   li.has-children.small-children.first-xs
     //-     a

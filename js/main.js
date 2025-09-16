@@ -549,6 +549,34 @@ function homeLoadCourse() {
 	}
 }
 
+function filterProfile() {
+	// Filter function
+	const filterBtns = document.querySelectorAll('.filter-btn');
+	const cards = document.querySelectorAll('.pmi-card');
+
+	console.log(filterBtns);
+
+	if ( filterBtns.length && cards.length ) {
+		filterBtns.forEach(btn => {
+			btn.addEventListener('click', () => {
+				console.log('click');
+				filterBtns.forEach(b => b.classList.remove('active'));
+				btn.classList.add('active');
+
+				const filter = btn.getAttribute('data-filter');
+				console.log(filter);
+				cards.forEach(card => {
+					if (filter === "all" || card.getAttribute('data-city') === filter) {
+						card.classList.remove('d-none');
+					} else {
+						card.classList.add('d-none');
+					}
+				});
+			});
+		});
+	}
+}
+
 
 // running script
 jQuery(document).ready(function($){
@@ -662,6 +690,9 @@ jQuery(document).ready(function($){
 
 	// load article details
 	detailArticle();
+
+	// filter profile
+	filterProfile();
 });
 
 

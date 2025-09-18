@@ -186,3 +186,15 @@
 
             .modal-footer.justify-content-center
                 button.btn.btn-outline-primary(type='button' data-bs-dismiss='modal') Tutup
+
+
+#ForexCalculator.modal.modal-lg(data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true")
+  .modal-dialog
+    .modal-content
+        .modal-header
+            h1.modal-title.fs-5#staticBackdropLabel Kalkulator Konversi Mata Uang
+            button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+        .modal-body.text-center
+            iframe(title="fx" src="https://wise.com/id/currency-converter/fx-widget/converter?sourceCurrency=SGD&targetCurrency=IDR&amount=10" height=290 width=700 frameBorder="0" allowtransparency="true")
+        .modal-footer
+            button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Tutup

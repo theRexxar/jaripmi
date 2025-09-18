@@ -187,41 +187,49 @@ footer.border-top
                     
 
         .row
-            .col-lg-5
+            .col-lg-4
                 .mb-4
                     img(src=baseURL+'img/logo-pmi.svg' alt='Jari PMI')
                 div.pe-lg-4
                     p.fs-7.text-secondary Diperlukan adanya Pusat Informasi bagi PMI dan Keluarga yang dapat memenuhi aspek Pelindungan dan Pemberdayaan sehingga terwujudnya “PMI Berdaya” dikarenakan kesenjangan informasi yang dapat diakses oleh PMI
 
-            .col-lg-7
+            .col-lg-8
                 .row 
-                    .col-md-4.mt-4.mt-lg-0
-                        h6 Jari PMI
+                    .col-md-3.mt-4.mt-lg-0
+                        h6 Informasi Keuangan
                         ul.footer-nav
                             li 
-                                a(href=baseURL+"/") Beranda 
-                            li 
-                                a(href=baseURL+"latar-belakang/") Latar Belakang 
-                            li 
-                                a(href=baseURL+"latar-belakang#VisiMisi") Visi Misi 
-                            li 
-                                a(href=baseURL+"artikel/") Artikel 
-                            li 
-                                a(href=baseURL+"tanyajawab/") Tanya Jawab
-
-                    .col-md-4.mt-4.mt-lg-0
-                        h6 Pelatihan
+                                a(href=baseURL+"/") Edukasi Keuangan 
+                            li
+                                a(href=baseURL+'informasi-keuangan/' class={"is-active" : pageActive === 'informasi-keuangan'}) Edukasi Keuangan
+                            li
+                                a(href=baseURL+'informasi-keuangan/qris-cross-border.html' class={"is-active" : pageActive === 'qris-cross-border'}) QRIS Cross Border
+                            li
+                                a(href=baseURL+'informasi-keuangan/pengaduan-bi.html' class={"is-active" : pageActive === 'pengaduan-bi'}) Portal Pengaduan BI
+                            li
+                                a(href=baseURL+'informasi-keuangan/peduli-kenali-laporkan.html' class={"is-active" : pageActive === 'peka'}) Peduli Kenali Adukan (PEKA)
+                            li
+                                a(href='#ForexCalculator' data-bs-toggle="modal" data-bs-target="#ForexCalculator") Kalkulator Konversi Mata Uang
+                    .col-md-3.mt-4.mt-lg-0
+                        h6 Informasi Keuangan
                         ul.footer-nav
-                            li 
-                                a(href=baseURL+"/pelatihan") Bahasa Asing 
-                            li 
-                                a(href=baseURL+"/pelatihan") UMKM
-                            li 
-                                a(href=baseURL+"/pelatihan") Pengelolaan Uang
-                            li 
-                                a(href=baseURL+"/pelatihan") Pelatihan Lainnya
+                            li
+                                a(href=baseURL+'informasi-pelindungan/biaya-kiriman-pmi.html' class={"is-active" : pageActive === 'biaya-kiriman-pmi'}) Bebas Biaya Kiriman PMI
+                            li
+                                a(href=baseURL+'informasi-pelindungan/tips-migrasi-aman.html' class={"is-active" : pageActive === 'tips-migrasi-aman'}) Tips Migrasi Aman
+                            li
+                                a(href=baseURL+'informasi-pelindungan/informasi-kur.html' class={"is-active" : pageActive === 'pengaduan-bi'}) Informasi KUR Penempatan
+                            li
+                                a(href=baseURL+"artikel/" class={"is-active" : pageActive === 'artikel'}) Artikel PMI
+                    .col-md-3.mt-4.mt-lg-0
+                        h6 Pelatihan &amp; Komunitas PMI
+                        ul.footer-nav
+                            li
+                                a(href=baseURL+'pelatihan/' class={"is-active" : pageActive === 'pelatihan'}) Pelatihan
+                            li
+                                a(href=baseURL+'komunitas/profil-purna-pmi.html' class={"is-active" : pageActive === 'profil-purna-pmi'}) Profil Purna PMI
 
-                    .col-md-4.mt-4.mt-lg-0
+                    .col-md-3.mt-4.mt-lg-0
                         h6 Negara Tujuan
                         ul#list-country-footer.footer-nav
                             li 
@@ -229,7 +237,14 @@ footer.border-top
                                 //- a(href=baseURL+"negara/hongkong/") Hongkong
 
         .row.border-top.mt-4
-            p.text-center.fs-8.text-secondary.mb-0.mt-3 Copyright &copy; #{year} Jari PMI
+            .col-md-6
+                p.text-center.text-md-start.fs-8.text-secondary.mb-0.mt-3 Copyright &copy; #{year} Jari PMI - BP2MI
+            .col-md-6
+                ul.list-inline.text-center.text-md-end.mb-0.mt-3
+                    li.list-inline-item 
+                        a.text-link.fs-8.text-secondary(href=baseURL+"latar-belakang/") Latar Belakang 
+                    li.list-inline-item 
+                        a.text-link.fs-8.text-secondary(href=baseURL+"latar-belakang#VisiMisi") Visi Misi 
 
     button(class="scroll-top")
         i(class="bi bi-chevron-up")

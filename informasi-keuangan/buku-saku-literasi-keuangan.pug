@@ -1,0 +1,31 @@
+//- start variable
+- var pageActive = 'buku-saku-literasi-keuangan'
+- var baseURL = '../'
+- var contentDescription = {}
+- ogImageURL = baseURL+"img/jaripmi-berdaya.jpg"
+- contentDescription.title = "Buku Saku Literasi Keuangan - Jari PMI"
+- contentDescription.description = "Pengaduan BI adalah layanan yang disediakan oleh Bank Indonesia untuk menangani pengaduan dan masukan dari masyarakat terkait layanan perbankan dan sistem pembayaran. Dengan layanan ini, masyarakat dapat menyampaikan pengaduan secara mudah dan cepat melalui berbagai saluran yang disediakan."
+
+doctype html
+html(lang="id" page-class="pengaduan-bi")
+    include ../pug/includes/html_head.pug
+    body
+        // Header 
+        include ../pug/includes/nav_mobile.pug
+
+        // Main content
+        main.site-main-content
+            include ../pug/buku-saku/section_hero.pug
+            include ../pug/buku-saku/section_content.pug
+
+        // Footer
+        include ../pug/includes/footer.pug
+
+        // Header Menu
+        include ../pug/includes/nav_desktop.pug
+
+        // Modals
+        include ../pug/includes/modal.pug
+
+    include ../pug/includes/html_foot.pug
+    script(src=baseURL+'js/keuangan-dist.js')

@@ -210,11 +210,12 @@ function renderArticleList (data) {
 }
 
 function headerArticle (data) {
+	const imageCover = data.image[0].formats.large !== undefined ? data.image[0].formats.large.url : data.image[0].formats.small.url
 	return `<div class="row d-flex justify-content-center">
 			<div class="col-lg-8">
 				<h1>${data.title}</h1>
 				<div class="d-flex"> <span class="badge text-bg-info me-3"> ${data.article_category.name} </span><span class="text-secondary fs-7 me-3"><i class="bi bi-stopwatch me-1"></i>${readingTime(data.description)} Menit Baca</span><span class="text-secondary fs-7 me-3"><i class="bi bi-clock me-1"></i>${convertTime(data.publishedAt)}</span></div>
-				<div class="my-4"><img class="mw-100 rounded" src="${data.image[0].formats.large.url}" alt="${data.title}" />
+				<div class="my-4"><img class="mw-100 rounded" src="${imageCover}" alt="${data.title}" />
 					<figcaption class="fs-8 mt-2">${data.image[0].alternativeText}</figcaption>
 			</div>
 		</div>
@@ -554,17 +555,13 @@ function filterProfile() {
 	const filterBtns = document.querySelectorAll('.filter-btn');
 	const cards = document.querySelectorAll('.pmi-card');
 
-	console.log(filterBtns);
-
 	if ( filterBtns.length && cards.length ) {
 		filterBtns.forEach(btn => {
 			btn.addEventListener('click', () => {
-				console.log('click');
 				filterBtns.forEach(b => b.classList.remove('active'));
 				btn.classList.add('active');
 
 				const filter = btn.getAttribute('data-filter');
-				console.log(filter);
 				cards.forEach(card => {
 					if (filter === "all" || card.getAttribute('data-city') === filter) {
 						card.classList.remove('d-none');
